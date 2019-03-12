@@ -14,10 +14,16 @@ public class IntroductionActivity
 
     private IntroductionContract.Presenter presenter;
 
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
+
+        getSupportActionBar().setTitle("Introduction Screen");
+
+        textView = findViewById(R.id.data);
 
         // do the setup
         IntroductionScreen.configure(this);

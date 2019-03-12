@@ -14,10 +14,16 @@ public class MenuActivity
 
     private MenuContract.Presenter presenter;
 
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        getSupportActionBar().setTitle("Menu Screen");
+
+        textView = findViewById(R.id.data);
 
         // do the setup
         MenuScreen.configure(this);
