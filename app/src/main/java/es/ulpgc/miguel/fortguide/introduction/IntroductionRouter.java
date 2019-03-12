@@ -4,6 +4,8 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class IntroductionRouter implements IntroductionContract.Router {
 
     public static String TAG = IntroductionRouter.class.getSimpleName();

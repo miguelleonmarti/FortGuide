@@ -4,6 +4,8 @@ import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class MenuRouter implements MenuContract.Router {
 
     public static String TAG = MenuRouter.class.getSimpleName();

@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class MenuScreen {
 
     public static void configure(MenuContract.View view) {
