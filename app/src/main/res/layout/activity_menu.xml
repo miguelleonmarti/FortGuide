@@ -30,7 +30,7 @@
             android:layout_weight="1"
             android:background="@color/colorButton"
             android:text="@string/button_weapon_label"
-            android:textColor="@color/colorTextButton" />
+            android:textColor="@color/colorTextButtonWhite" />
 
         <Button
             android:id="@+id/buttonPlace"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorButton"
             android:text="@string/button_place_label"
-            android:textColor="@color/colorTextButton" />
+            android:textColor="@color/colorTextButtonWhite" />
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +56,7 @@
             android:layout_weight="1"
             android:background="@color/colorButton"
             android:text="@string/button_theory_label"
-            android:textColor="@color/colorTextButton" />
+            android:textColor="@color/colorTextButtonWhite" />
 
         <Button
             android:id="@+id/buttonAdvice"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorButton"
             android:text="@string/button_advice_label"
-            android:textColor="@color/colorTextButton" />
+            android:textColor="@color/colorTextButtonWhite" />
     </LinearLayout>
 
     <LinearLayout
@@ -82,7 +82,7 @@
             android:layout_weight="1"
             android:background="@color/colorButton"
             android:text="@string/button_challenge_label"
-            android:textColor="@color/colorTextButton" />
+            android:textColor="@color/colorTextButtonWhite" />
 
         <Button
             android:id="@+id/buttonShop"
@@ -91,7 +91,7 @@
             android:layout_alignEnd="@+id/null"
             android:background="@color/colorButton"
             android:text="@string/button_shop_label"
-            android:textColor="@color/colorTextButton" />
+            android:textColor="@color/colorTextButtonWhite" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,7 +109,7 @@
             android:layout_weight="1"
             android:background="@color/colorButton"
             android:text="@string/button_support_label"
-            android:textColor="@color/colorTextButton" />
+            android:textColor="@color/colorTextButtonWhite" />
 
     </LinearLayout>
 
