@@ -21,7 +21,8 @@ public class IntroductionActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
 
-        getSupportActionBar().setTitle("Introduction Screen");
+        //getSupportActionBar().setTitle("Introduction Screen");
+        getSupportActionBar().hide();
 
         textView = findViewById(R.id.data);
 

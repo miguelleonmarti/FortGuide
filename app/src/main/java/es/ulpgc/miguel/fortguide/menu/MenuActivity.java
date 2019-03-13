@@ -21,7 +21,8 @@ public class MenuActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        getSupportActionBar().setTitle("Menu Screen");
+        //getSupportActionBar().setTitle("Menu Screen");
+        getSupportActionBar().hide();
 
         textView = findViewById(R.id.data);
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/introduction"
     android:padding="16dp"
     tools:context=".introduction.IntroductionActivity">
 
@@ -12,6 +13,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:text="Hello" />
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="93dp" />
 
-</FrameLayout>
+</android.support.constraint.ConstraintLayout>
