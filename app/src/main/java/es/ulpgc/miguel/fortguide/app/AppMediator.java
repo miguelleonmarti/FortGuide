@@ -4,11 +4,17 @@ import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
+import es.ulpgc.miguel.fortguide.place.PlaceState;
+import es.ulpgc.miguel.fortguide.support.SupportState;
+import es.ulpgc.miguel.fortguide.weapon.WeaponState;
 
 public class AppMediator extends Application {
 
     private IntroductionState introductionState;
     private MenuState menuState;
+    private PlaceState placeState;
+    private SupportState supportState;
+    private WeaponState weaponState;
 
     @Override
     public void onCreate() {
@@ -16,6 +22,9 @@ public class AppMediator extends Application {
 
         introductionState = new IntroductionState();
         menuState = new MenuState();
+        placeState = new PlaceState();
+        supportState = new SupportState();
+        weaponState = new WeaponState();
     }
 
     public IntroductionState getIntroductionState() {
@@ -32,5 +41,29 @@ public class AppMediator extends Application {
 
     public void setMenuState(MenuState menuState) {
         this.menuState = menuState;
+    }
+
+    public void setWeaponState(WeaponState weaponState) {
+        this.weaponState = weaponState;
+    }
+
+    public WeaponState getWeaponState() {
+        return weaponState;
+    }
+
+    public void setSupportState(SupportState supportState) {
+        this.supportState = supportState;
+    }
+
+    public SupportState getSupportState() {
+        return supportState;
+    }
+
+    public void setPlaceState(PlaceState state) {
+        this.placeState = placeState;
+    }
+
+    public PlaceState getPlaceState() {
+        return placeState;
     }
 }

@@ -3,6 +3,8 @@ package es.ulpgc.miguel.fortguide.place;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class PlaceRouter implements PlaceContract.Router {
 
     public static String TAG = PlaceRouter.class.getSimpleName();

@@ -3,6 +3,8 @@ package es.ulpgc.miguel.fortguide.weapon;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class WeaponRouter implements WeaponContract.Router {
 
     public static String TAG = WeaponRouter.class.getSimpleName();

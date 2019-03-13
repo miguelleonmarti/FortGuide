@@ -3,6 +3,8 @@ package es.ulpgc.miguel.fortguide.support;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class SupportRouter implements SupportContract.Router {
 
     public static String TAG = SupportRouter.class.getSimpleName();

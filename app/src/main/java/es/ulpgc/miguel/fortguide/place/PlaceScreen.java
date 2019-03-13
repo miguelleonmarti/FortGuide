@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class PlaceScreen {
 
     public static void configure(PlaceContract.View view) {

@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class WeaponScreen {
 
     public static void configure(WeaponContract.View view) {
