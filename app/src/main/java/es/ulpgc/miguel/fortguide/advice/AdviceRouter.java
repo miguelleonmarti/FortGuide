@@ -3,6 +3,8 @@ package es.ulpgc.miguel.fortguide.advice;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class AdviceRouter implements AdviceContract.Router {
 
     public static String TAG = AdviceRouter.class.getSimpleName();

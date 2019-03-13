@@ -3,6 +3,8 @@ package es.ulpgc.miguel.fortguide.challenge;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class ChallengeRouter implements ChallengeContract.Router {
 
     public static String TAG = ChallengeRouter.class.getSimpleName();

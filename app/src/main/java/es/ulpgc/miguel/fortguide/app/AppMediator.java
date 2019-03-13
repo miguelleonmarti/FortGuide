@@ -2,10 +2,13 @@ package es.ulpgc.miguel.fortguide.app;
 
 import android.app.Application;
 
+import es.ulpgc.miguel.fortguide.advice.AdviceState;
+import es.ulpgc.miguel.fortguide.challenge.ChallengeState;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
 import es.ulpgc.miguel.fortguide.place.PlaceState;
 import es.ulpgc.miguel.fortguide.support.SupportState;
+import es.ulpgc.miguel.fortguide.theory.TheoryState;
 import es.ulpgc.miguel.fortguide.weapon.WeaponState;
 
 public class AppMediator extends Application {
@@ -15,6 +18,9 @@ public class AppMediator extends Application {
     private PlaceState placeState;
     private SupportState supportState;
     private WeaponState weaponState;
+    private TheoryState theoryState;
+    private ChallengeState challengeState;
+    private AdviceState adviceState;
 
     @Override
     public void onCreate() {
@@ -65,5 +71,29 @@ public class AppMediator extends Application {
 
     public PlaceState getPlaceState() {
         return placeState;
+    }
+
+    public void setTheoryState(TheoryState theoryState) {
+        this.theoryState = theoryState;
+    }
+
+    public TheoryState getTheoryState() {
+        return theoryState;
+    }
+
+    public void setChallengeState(ChallengeState challengeState) {
+        this.challengeState = challengeState;
+    }
+
+    public ChallengeState getChallengeState() {
+        return challengeState;
+    }
+
+    public void setAdviceState(AdviceState adviceState) {
+        this.adviceState = adviceState;
+    }
+
+    public AdviceState getAdviceState() {
+        return adviceState;
     }
 }
