@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FortGuide</string>
+    <string name="button_weapon_label">ARMAS</string>
+    <string name="button_place_label">LUGARES</string>
+    <string name="button_theory_label">TEORÍAS</string>
+    <string name="button_advice_label">CONSEJOS</string>
+    <string name="button_challenge_label">DESAFÍOS</string>
+    <string name="button_shop_label">SHOP</string>
+    <string name="button_support_label">APOYO</string>
 </resources>
