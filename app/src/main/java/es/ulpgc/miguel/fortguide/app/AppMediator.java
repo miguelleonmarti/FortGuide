@@ -31,6 +31,9 @@ public class AppMediator extends Application {
         placeState = new PlaceState();
         supportState = new SupportState();
         weaponState = new WeaponState();
+        theoryState = new TheoryState();
+        challengeState = new ChallengeState();
+        adviceState = new AdviceState();
     }
 
     public IntroductionState getIntroductionState() {
