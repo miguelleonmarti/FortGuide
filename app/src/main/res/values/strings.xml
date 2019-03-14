@@ -5,7 +5,7 @@
     <string name="button_theory_label">TEORÍAS</string>
     <string name="button_advice_label">CONSEJOS</string>
     <string name="button_challenge_label">DESAFÍOS</string>
-    <string name="button_shop_label">SHOP</string>
+    <string name="button_shop_label">TIENDA</string>
     <string name="button_support_label">APOYO</string>
     <string name="button_continue_label">CONTINUAR</string>
 </resources>
