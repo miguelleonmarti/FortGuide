@@ -1,7 +1,5 @@
 package es.ulpgc.miguel.fortguide.introduction;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
 public class IntroductionPresenter implements IntroductionContract.Presenter {

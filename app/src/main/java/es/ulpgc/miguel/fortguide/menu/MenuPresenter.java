@@ -1,7 +1,5 @@
 package es.ulpgc.miguel.fortguide.menu;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
 public class MenuPresenter implements MenuContract.Presenter {

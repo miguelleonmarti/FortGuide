@@ -1,6 +1,6 @@
 package es.ulpgc.miguel.fortguide.introduction;
 
-import android.util.Log;
+
 import android.content.Intent;
 import android.content.Context;
 

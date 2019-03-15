@@ -68,9 +68,7 @@ public class AppMediator extends Application {
         return supportState;
     }
 
-    public void setPlaceState(PlaceState state) {
-        this.placeState = placeState;
-    }
+    public void setPlaceState(PlaceState placeState) { this.placeState = placeState; }
 
     public PlaceState getPlaceState() {
         return placeState;
@@ -84,9 +82,7 @@ public class AppMediator extends Application {
         return theoryState;
     }
 
-    public void setChallengeState(ChallengeState challengeState) {
-        this.challengeState = challengeState;
-    }
+    public void setChallengeState(ChallengeState challengeState) { this.challengeState = challengeState; }
 
     public ChallengeState getChallengeState() {
         return challengeState;
