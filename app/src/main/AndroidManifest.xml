@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:name=".app.AppMediator"
         android:theme="@style/AppTheme">
-        <activity android:name=".weapon.WeaponActivity">
+        <activity android:name=".menu.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
         </activity>
         <activity android:name=".theory.TheoryActivity">
         </activity>
-        <activity android:name=".menu.MenuActivity">
+        <activity android:name=".weapon.WeaponActivity">
         </activity>
     </application>
 

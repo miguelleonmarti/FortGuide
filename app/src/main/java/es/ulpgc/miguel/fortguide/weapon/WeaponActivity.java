@@ -15,10 +15,11 @@ public class WeaponActivity
 
     private WeaponContract.Presenter presenter;
 
-    Spinner weaponSpinner;
-    Button weaponSearchButton;
     Button bananaButton;
     TextView textView;
+    Spinner weaponSpinner;
+    Button weaponSearchButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

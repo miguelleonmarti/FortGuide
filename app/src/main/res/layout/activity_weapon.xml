@@ -23,7 +23,7 @@
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="360dp"
         android:background="@color/colorButton"
         android:text="@string/search_button_label"
         android:textColor="@color/colorTextButtonWhite"
@@ -34,8 +34,8 @@
 
     <Button
         android:id="@+id/bananaButton"
-        android:layout_width="42dp"
-        android:layout_height="33dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:background="@drawable/button"
         android:text="@string/banana_button_label"
@@ -43,12 +43,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/data"
+        android:id="@+id/armasTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:background="@color/colorButton"
-        android:text="@string/menu_label"
+        android:text="@string/armas_label"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/colorTextButtonWhite"

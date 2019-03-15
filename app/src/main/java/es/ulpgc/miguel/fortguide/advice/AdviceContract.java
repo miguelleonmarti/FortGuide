@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 
 interface AdviceContract {
 
-    interface View {
+  interface View {
         void injectPresenter(Presenter presenter);
 
         void displayData(AdviceViewModel viewModel);
