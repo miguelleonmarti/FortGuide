@@ -24,7 +24,7 @@
             android:orientation="vertical" >
 
             <RelativeLayout
-                android:id="@+id/relativo3"
+                android:id="@+id/relative_layout_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150sp">
@@ -52,7 +52,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativo2"
+                android:id="@+id/relative_layout_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150sp">
@@ -79,7 +79,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/relativo1"
+                android:id="@+id/relative_layout_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="125sp">
