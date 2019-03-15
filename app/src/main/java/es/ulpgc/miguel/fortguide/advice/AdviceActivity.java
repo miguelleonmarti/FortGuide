@@ -11,9 +11,9 @@ public class AdviceActivity
 
     public static String TAG = AdviceActivity.class.getSimpleName();
 
-    private AdviceContract.Presenter presenter;
+      private AdviceContract.Presenter presenter;
 
-    @Override
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice);
