@@ -8,4 +8,5 @@
     <string name="button_shop_label">TIENDA</string>
     <string name="button_support_label">APOYO</string>
     <string name="button_continue_label">CONTINUAR</string>
+    <string name="menu_label">MENÚ</string>
 </resources>

@@ -5,14 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/menu"
-    android:padding="16dp"
+    android:padding="0dp"
     tools:context=".menu.MenuActivity">
-
-    <TextView
-        android:id="@+id/data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/relative_layout_3"
@@ -34,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="25sp"
+                    android:layout_marginLeft="45sp"
                     android:background="@color/colorButton"
                     android:text="@string/button_shop_label"
                     android:textColor="@color/colorTextButtonWhite" />
@@ -44,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="25sp"
+                    android:layout_marginRight="45sp"
                     android:background="@color/colorButton"
                     android:text="@string/button_challenge_label"
                     android:textColor="@color/colorTextButtonWhite" />
@@ -62,7 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="25sp"
+                    android:layout_marginLeft="45sp"
                     android:background="@color/colorButton"
                     android:text="@string/button_advice_label"
                     android:textColor="@color/colorTextButtonWhite" />
@@ -72,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="25sp"
+                    android:layout_marginRight="45sp"
                     android:background="@color/colorButton"
                     android:text="@string/button_theory_label"
                     android:textColor="@color/colorTextButtonWhite" />
@@ -89,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="25sp"
+                    android:layout_marginLeft="45sp"
                     android:layout_weight="0"
                     android:background="@color/colorButton"
                     android:text="@string/button_weapon_label"
@@ -100,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="25sp"
+                    android:layout_marginRight="45sp"
                     android:background="@color/colorButton"
                     android:text="@string/button_place_label"
                     android:textColor="@color/colorTextButtonWhite" />
@@ -123,5 +117,18 @@
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:background="@color/colorButton"
+        android:text="@string/menu_label"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorTextButtonWhite"
+        android:textSize="24sp" />
 
 </RelativeLayout>
