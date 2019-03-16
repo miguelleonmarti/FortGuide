@@ -12,4 +12,5 @@
     <string name="search_button_label">BUSCAR</string>
     <string name="banana_button_label" />
     <string name="armas_label">ARMAS</string>
+    <string name="consejo_label">CONSEJOS</string>
 </resources>
