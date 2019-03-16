@@ -12,14 +12,14 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
 
-        <activity android:name=".menu.MenuActivity">
+        <activity android:name=".introduction.IntroductionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".introduction.IntroductionActivity">
+        <activity android:name=".menu.MenuActivity">
         </activity>
         <activity android:name=".advice.AdviceActivity">
         </activity>
@@ -32,6 +32,8 @@
         <activity android:name=".theory.TheoryActivity">
         </activity>
         <activity android:name=".weapon.WeaponActivity">
+        </activity>
+        <activity android:name=".shop.ShopActivity">
         </activity>
     </application>
 

@@ -53,5 +53,8 @@ public class IntroductionPresenter implements IntroductionContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }

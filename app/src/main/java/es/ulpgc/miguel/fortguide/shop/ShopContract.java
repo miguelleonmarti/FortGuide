@@ -1,13 +1,13 @@
-package es.ulpgc.miguel.fortguide.introduction;
+package es.ulpgc.miguel.fortguide.shop;
 
 import java.lang.ref.WeakReference;
 
-interface IntroductionContract {
+interface ShopContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(IntroductionViewModel viewModel);
+        void displayData(ShopViewModel viewModel);
     }
 
     interface Presenter {
@@ -18,8 +18,6 @@ interface IntroductionContract {
         void injectRouter(Router router);
 
         void fetchData();
-
-        void startMenuScreen();
     }
 
     interface Model {
@@ -27,10 +25,10 @@ interface IntroductionContract {
     }
 
     interface Router {
-        void passDataToNextScreen(IntroductionState state);
+        void navigateToNextScreen();
 
-        IntroductionState getDataFromPreviousScreen();
+        void passDataToNextScreen(ShopState state);
 
-        void navigateToMenuScreen();
+        ShopState getDataFromPreviousScreen();
     }
 }

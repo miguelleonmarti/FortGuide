@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class IntroductionRouter implements IntroductionContract.Router {
 
@@ -17,13 +18,6 @@ public class IntroductionRouter implements IntroductionContract.Router {
     }
 
     @Override
-    public void navigateToNextScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, IntroductionActivity.class);
-        context.startActivity(intent);
-    }
-
-    @Override
     public void passDataToNextScreen(IntroductionState state) {
         mediator.setIntroductionState(state);
     }
@@ -32,5 +26,12 @@ public class IntroductionRouter implements IntroductionContract.Router {
     public IntroductionState getDataFromPreviousScreen() {
         IntroductionState state = mediator.getIntroductionState();
         return state;
+    }
+
+    @Override
+    public void navigateToMenuScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, MenuActivity.class);
+        context.startActivity(intent);
     }
 }

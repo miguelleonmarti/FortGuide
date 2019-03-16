@@ -18,6 +18,20 @@ interface MenuContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startAdviceScreen();
+
+        void startChallengeScreen();
+
+        void startPlaceScreen();
+
+        void startShopScreen();
+
+        void startSupportScreen();
+
+        void startTheoryScreen();
+
+        void startWeaponScreen();
     }
 
     interface Model {
@@ -25,10 +39,23 @@ interface MenuContract {
     }
 
     interface Router {
-        void navigateToNextScreen();
 
         void passDataToNextScreen(MenuState state);
 
         MenuState getDataFromPreviousScreen();
+
+        void navigateToWeaponScreen();
+
+        void navigateToTheoryScreen();
+
+        void navigateToSupportScreen();
+
+        void navigateToShopScreen();
+
+        void navigateToPlaceScreen();
+
+        void navigateToChallengeScreen();
+
+        void navigateToAdviceScreen();
     }
 }

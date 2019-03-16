@@ -53,5 +53,38 @@ public class MenuPresenter implements MenuContract.Presenter {
 
     }
 
+    @Override
+    public void startAdviceScreen() {
+        router.navigateToAdviceScreen();
+    }
 
+    @Override
+    public void startChallengeScreen() {
+        router.navigateToChallengeScreen();
+    }
+
+    @Override
+    public void startPlaceScreen() {
+        router.navigateToPlaceScreen();
+    }
+
+    @Override
+    public void startShopScreen() {
+        router.navigateToShopScreen();
+    }
+
+    @Override
+    public void startSupportScreen() {
+        router.navigateToSupportScreen();
+    }
+
+    @Override
+    public void startTheoryScreen() {
+        router.navigateToTheoryScreen();
+    }
+
+    @Override
+    public void startWeaponScreen() {
+        router.navigateToWeaponScreen();
+    }
 }

@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.introduction;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -13,6 +15,7 @@ public class IntroductionActivity
 
     private IntroductionContract.Presenter presenter;
 
+    Button continueButton;
     TextView textView;
 
     @Override
@@ -21,9 +24,17 @@ public class IntroductionActivity
         setContentView(R.layout.activity_introduction);
 
         //getSupportActionBar().setTitle("Introduction Screen");
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
+        continueButton = findViewById(R.id.buttonContinue);
         textView = findViewById(R.id.data);
+
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.startMenuScreen();
+            }
+        });
 
         // do the setup
         IntroductionScreen.configure(this);

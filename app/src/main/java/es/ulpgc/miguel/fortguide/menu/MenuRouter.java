@@ -3,7 +3,14 @@ package es.ulpgc.miguel.fortguide.menu;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.advice.AdviceActivity;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.challenge.ChallengeActivity;
+import es.ulpgc.miguel.fortguide.place.PlaceActivity;
+import es.ulpgc.miguel.fortguide.shop.ShopActivity;
+import es.ulpgc.miguel.fortguide.support.SupportActivity;
+import es.ulpgc.miguel.fortguide.theory.TheoryActivity;
+import es.ulpgc.miguel.fortguide.weapon.WeaponActivity;
 
 public class MenuRouter implements MenuContract.Router {
 
@@ -16,13 +23,6 @@ public class MenuRouter implements MenuContract.Router {
     }
 
     @Override
-    public void navigateToNextScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, MenuActivity.class);
-        context.startActivity(intent);
-    }
-
-    @Override
     public void passDataToNextScreen(MenuState state) {
         mediator.setMenuState(state);
     }
@@ -32,4 +32,56 @@ public class MenuRouter implements MenuContract.Router {
         MenuState state = mediator.getMenuState();
         return state;
     }
+
+    //------ navigate to
+
+    @Override
+    public void navigateToWeaponScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, WeaponActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToTheoryScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, TheoryActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToSupportScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, SupportActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToShopScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, ShopActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToPlaceScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, PlaceActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToChallengeScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, ChallengeActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToAdviceScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, AdviceActivity.class);
+        context.startActivity(intent);
+    }
+
 }
