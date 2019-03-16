@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".app.AppMediator"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        >
+
         <activity android:name=".advice.AdviceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
