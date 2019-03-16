@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
 
-        <activity android:name=".advice.AdviceActivity">
+        <activity android:name=".menu.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".introduction.IntroductionActivity">
         </activity>
-        <activity android:name=".menu.MenuActivity">
+        <activity android:name=".advice.AdviceActivity">
         </activity>
         <activity android:name=".challenge.ChallengeActivity">
         </activity>
