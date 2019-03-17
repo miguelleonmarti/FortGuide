@@ -11,6 +11,7 @@
     <string name="menu_label">MENÚ</string>
     <string name="search_button_label">BUSCAR</string>
     <string name="banana_button_label" />
-    <string name="armas_label">ARMAS</string>
-    <string name="consejo_label">CONSEJOS</string>
+    <string name="weapon_bar_label">ARMAS</string>
+    <string name="advice_bar_label">CONSEJOS</string>
+    <string name="support_bar_label">APOYO</string>
 </resources>

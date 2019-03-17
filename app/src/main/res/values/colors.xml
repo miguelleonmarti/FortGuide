@@ -7,4 +7,5 @@
     <color name="colorButton">#F2C94C</color>
     <color name="colorTextButtonBlack">#000000</color>
     <color name="colorTextButtonWhite">#FFFFFF</color>
+    <color name="colorTextButtonWhiteOpacity">#E5FFFFFF</color>
 </resources>
