@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="@mipmap/llama"
     tools:context=".support_profile.SupportProfileActivity">
 
     <TextView
@@ -11,7 +12,96 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:text="Hello" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/bananaButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button"
+        android:text="@string/banana_button_label" />
+
+    <TextView
+        android:id="@+id/supportBar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorButton"
+        android:text="@string/support_bar_label"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorTextButtonWhite"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorTextButtonWhiteOpacity"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/data"
+        app:layout_constraintEnd_toEndOf="@+id/data"
+        app:layout_constraintStart_toStartOf="@+id/data"
+        app:layout_constraintTop_toBottomOf="@+id/supportBar">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shape="ring"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="Código de creador: abcdefgh"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonBlack"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/instagram"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/instagram" />
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/twitter" />
+
+        <ImageView
+            android:id="@+id/twitch"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/twitch" />
+
+        <ImageView
+            android:id="@+id/youtube"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/youtube" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
