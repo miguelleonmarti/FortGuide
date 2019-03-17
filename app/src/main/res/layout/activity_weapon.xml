@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/weapons"
-    android:padding="0dp"
     tools:context=".weapon.WeaponActivity">
 
     <Spinner
@@ -23,7 +22,7 @@
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="300dp"
         android:background="@color/colorButton"
         android:text="@string/search_button_label"
         android:textColor="@color/colorTextButtonWhite"
