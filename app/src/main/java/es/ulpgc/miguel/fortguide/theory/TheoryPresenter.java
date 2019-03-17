@@ -53,5 +53,10 @@ public class TheoryPresenter implements TheoryContract.Presenter {
 
     }
 
+    @Override
+    public void startNewTheoryScreen() {
+        router.navigateToNewTheoryScreen();
+    }
+
 
 }

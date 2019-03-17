@@ -18,6 +18,8 @@ interface TheoryContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startNewTheoryScreen();
     }
 
     interface Model {
@@ -25,10 +27,11 @@ interface TheoryContract {
     }
 
     interface Router {
-        void navigateToNextScreen();
 
         void passDataToNextScreen(TheoryState state);
 
         TheoryState getDataFromPreviousScreen();
+
+        void navigateToNewTheoryScreen();
     }
 }

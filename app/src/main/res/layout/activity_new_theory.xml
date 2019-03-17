@@ -34,8 +34,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_marginTop="50sp"
-        android:layout_marginBottom="500sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -44,29 +42,142 @@
             android:id="@+id/userTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTextButtonBlack"
+            android:layout_marginTop="50sp"
+            android:text="@string/user_text_label"
             android:textAlignment="center"
-            android:textSize="24sp"
-            android:text="@string/user_text_label" />
+            android:textColor="@color/colorTextButtonBlack"
+            android:textSize="24sp" />
 
         <RelativeLayout
+            android:id="@+id/relative1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="80sp"
             android:background="@color/colorTextButtonWhiteOpacity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:visibility="visible">
 
             <EditText
-                android:id="@+id/editText"
-                android:textColor="@color/colorTextButtonBlack"
+                android:id="@+id/userEditText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60sp"
                 android:ems="10"
+                android:hint="@string/user_edit_text"
                 android:inputType="textPersonName"
-                android:text="@string/user_edit_text"
+                android:textColor="@color/colorTextButtonBlack"
+                android:textColorHint="@color/colorTextButtonBlack"
+                android:textSize="24sp"
                 android:visibility="visible" />
         </RelativeLayout>
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="200sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name_text_view"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonBlack"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:id="@+id/relative2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="80sp"
+            android:background="@color/colorTextButtonWhiteOpacity"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:ems="10"
+                android:hint="@string/name_text_view"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorTextButtonBlack"
+                android:textColorHint="@color/colorTextButtonBlack"
+                android:textSize="24sp"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="350sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_text_view"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonBlack"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:id="@+id/relative3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="100sp"
+            android:background="@color/colorTextButtonWhiteOpacity"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/description_text_view"
+                android:inputType="textMultiLine"
+                android:textColor="@color/colorTextButtonBlack"
+                android:textColorHint="@color/colorTextButtonBlack"
+                android:textSize="24sp"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="650sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="75sp"
+            android:background="@color/colorButton"
+            android:text="@string/cancel_button_label" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="75sp"
+            android:background="@color/colorButton"
+            android:text="@string/send_button_label" />
+    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>

@@ -19,4 +19,8 @@
     <string name="newTheory_bar_label">NUEVA TEORÍA</string>
     <string name="user_text_label">Usuario</string>
     <string name="user_edit_text">Nombre del usuario</string>
+    <string name="name_text_view">Nombre de la teoría</string>
+    <string name="description_text_view">Descripción de la teoría</string>
+    <string name="cancel_button_label">Cancelar</string>
+    <string name="send_button_label">ENVIAR</string>
 </resources>

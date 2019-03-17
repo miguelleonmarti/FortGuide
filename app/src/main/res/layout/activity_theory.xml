@@ -38,7 +38,7 @@
         android:layout_marginTop="50sp"
         android:layout_marginLeft="110sp"
         android:layout_marginRight="110sp"
-        android:layout_marginBottom="490sp"
+        android:layout_marginBottom="550sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorTextButtonWhiteOpacity"
