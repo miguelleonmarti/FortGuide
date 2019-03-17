@@ -6,6 +6,7 @@ import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.challenge.ChallengeState;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
+import es.ulpgc.miguel.fortguide.newTheory.NewTheoryState;
 import es.ulpgc.miguel.fortguide.place.PlaceState;
 import es.ulpgc.miguel.fortguide.shop.ShopState;
 import es.ulpgc.miguel.fortguide.support.SupportState;
@@ -23,6 +24,7 @@ public class AppMediator extends Application {
   private ChallengeState challengeState;
   private AdviceState adviceState;
   private ShopState shopState;
+  private NewTheoryState newTheoryState;
 
     @Override
   public void onCreate() {
@@ -37,6 +39,7 @@ public class AppMediator extends Application {
     challengeState = new ChallengeState();
     adviceState = new AdviceState();
     shopState = new ShopState();
+    newTheoryState = new NewTheoryState();
   }
 
   public IntroductionState getIntroductionState() {
@@ -109,5 +112,13 @@ public class AppMediator extends Application {
 
   public void setShopState(ShopState shopState) {
       this.shopState = shopState;
+    }
+
+    public void setNewTheoryState(NewTheoryState state) {
+    this.newTheoryState=state;
+    }
+
+    public NewTheoryState getNewTheoryState() {
+    return newTheoryState;
     }
 }
