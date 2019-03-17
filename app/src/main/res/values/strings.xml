@@ -14,4 +14,5 @@
     <string name="weapon_bar_label">ARMAS</string>
     <string name="advice_bar_label">CONSEJOS</string>
     <string name="support_bar_label">APOYO</string>
+    <string name="place_bar_label">LUGARES</string>
 </resources>
