@@ -16,4 +16,7 @@
     <string name="support_bar_label">APOYO</string>
     <string name="place_bar_label">LUGARES</string>
     <string name="theory_bar_label">TEORÍAS</string>
+    <string name="newTheory_bar_label">NUEVA TEORÍA</string>
+    <string name="user_text_label">Usuario</string>
+    <string name="user_edit_text">Nombre del usuario</string>
 </resources>

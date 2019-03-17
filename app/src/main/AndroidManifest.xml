@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
 
-        <activity android:name=".introduction.IntroductionActivity">
+        <activity android:name=".newTheory.NewTheoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +35,7 @@
         </activity>
         <activity android:name=".shop.ShopActivity">
         </activity>
-        <activity android:name=".newTheory.NewTheoryActivity">
+        <activity android:name=".introduction.IntroductionActivity">
         </activity>
         <activity android:name=".support_profile.SupportProfileActivity">
         </activity>
