@@ -27,7 +27,7 @@ public class TheoryActivity
                 presenter.startNewTheoryScreen();
             }
         });
-        // do the setup
+        // creando el set up
         TheoryScreen.configure(this);
     }
 
