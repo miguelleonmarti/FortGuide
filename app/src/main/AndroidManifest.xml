@@ -35,6 +35,10 @@
         </activity>
         <activity android:name=".shop.ShopActivity">
         </activity>
+        <activity android:name=".newTheory.NewTheoryActivity">
+        </activity>
+        <activity android:name=".support_profile.SupportProfileActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -1,6 +1,4 @@
-package es.ulpgc.miguel.fortguide;
-
-import android.util.Log;
+package es.ulpgc.miguel.fortguide.support_profile;
 
 import java.lang.ref.WeakReference;
 

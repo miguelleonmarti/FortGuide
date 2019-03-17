@@ -1,11 +1,4 @@
-package es.ulpgc.miguel.fortguide;
-
-import android.util.Log;
-
-import java.lang.ref.WeakReference;
-
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.FragmentActivity;
+package es.ulpgc.miguel.fortguide.support_profile;
 
 public class SupportProfileModel implements SupportProfileContract.Model {
 

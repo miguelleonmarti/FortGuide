@@ -1,9 +1,10 @@
-package es.ulpgc.miguel.fortguide;
+package es.ulpgc.miguel.fortguide.support_profile;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
+
+import es.ulpgc.miguel.fortguide.R;
 
 public class SupportProfileActivity
         extends AppCompatActivity implements SupportProfileContract.View {

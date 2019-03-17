@@ -2,7 +2,7 @@ package es.ulpgc.miguel.fortguide.app;
 
 import android.app.Application;
 
-import es.ulpgc.miguel.fortguide.SupportProfileState;
+import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.challenge.ChallengeState;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
