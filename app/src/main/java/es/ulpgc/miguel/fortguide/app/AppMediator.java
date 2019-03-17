@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.app;
 
 import android.app.Application;
 
+import es.ulpgc.miguel.fortguide.SupportProfileState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.challenge.ChallengeState;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
@@ -25,6 +26,7 @@ public class AppMediator extends Application {
   private AdviceState adviceState;
   private ShopState shopState;
   private NewTheoryState newTheoryState;
+  private SupportProfileState supportProfileState;
 
     @Override
   public void onCreate() {
@@ -40,6 +42,7 @@ public class AppMediator extends Application {
     adviceState = new AdviceState();
     shopState = new ShopState();
     newTheoryState = new NewTheoryState();
+    supportProfileState = new SupportProfileState();
   }
 
   public IntroductionState getIntroductionState() {
@@ -114,11 +117,19 @@ public class AppMediator extends Application {
       this.shopState = shopState;
     }
 
-    public void setNewTheoryState(NewTheoryState state) {
-    this.newTheoryState=state;
+  public void setNewTheoryState(NewTheoryState newTheoryState) {
+        this.newTheoryState=newTheoryState;
     }
 
-    public NewTheoryState getNewTheoryState() {
-    return newTheoryState;
+  public NewTheoryState getNewTheoryState() {
+        return newTheoryState;
+    }
+
+  public void setSupportProfileState(SupportProfileState supportProfileState) {
+        this.supportProfileState = supportProfileState;
+    }
+
+  public SupportProfileState getSupportProfileState() {
+        return supportProfileState;
     }
 }
