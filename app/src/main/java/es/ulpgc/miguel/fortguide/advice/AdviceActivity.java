@@ -40,6 +40,6 @@ public class AdviceActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.consejoTextView)).setText(R.string.consejo_label);
+    ((TextView) findViewById(R.id.consejoTextView)).setText(R.string.advice_bar_label);
   }
 }

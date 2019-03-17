@@ -52,6 +52,6 @@ public class WeaponActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.armasTextView)).setText(viewModel.data);
+        ((TextView) findViewById(R.id.weaponBar)).setText(R.string.weapon_bar_label);
     }
 }
