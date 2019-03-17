@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".theory.TheoryActivity">
+    android:background="@mipmap/llama"
+    android:padding="0dp"
+    tools:context=".advice.AdviceActivity">
+
 
     <TextView
-        android:id="@+id/data"
+        android:id="@+id/theoryTextView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorButton"
+        android:text="@string/theory_bar_label"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorTextButtonWhite"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/bananaButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button"
+        android:text="@string/banana_button_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="110sp"
+        android:layout_marginRight="110sp"
+        android:layout_marginBottom="490sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:text="Hello" />
+        android:background="@color/colorTextButtonWhiteOpacity"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="50dp">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="59dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/addcross" />
+    </LinearLayout>
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="150dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
