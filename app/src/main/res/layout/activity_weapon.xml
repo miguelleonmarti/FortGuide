@@ -22,7 +22,7 @@
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="360dp"
         android:background="@color/colorButton"
         android:text="@string/search_button_label"
         android:textColor="@color/colorTextButtonWhite"

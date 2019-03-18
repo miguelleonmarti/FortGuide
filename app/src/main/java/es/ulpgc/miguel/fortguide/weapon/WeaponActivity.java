@@ -16,7 +16,7 @@ public class WeaponActivity
     private WeaponContract.Presenter presenter;
 
     Button bananaButton;
-    TextView textView;
+    TextView weaponBar;
     Spinner weaponSpinner;
     Button weaponSearchButton;
 
@@ -29,7 +29,7 @@ public class WeaponActivity
         weaponSpinner = findViewById(R.id.weaponSpinner);
         weaponSearchButton = findViewById(R.id.searchButton);
         bananaButton = findViewById(R.id.bananaButton);
-        textView = findViewById(R.id.data);
+        weaponBar = findViewById(R.id.weaponBar);
         // do the setup
         WeaponScreen.configure(this);
     }
@@ -52,6 +52,6 @@ public class WeaponActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.weaponBar)).setText(R.string.weapon_bar_label);
+        ((TextView) findViewById(R.id.armasTextView)).setText(R.string.weapon_bar_label);
     }
 }
