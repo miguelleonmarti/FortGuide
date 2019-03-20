@@ -33,9 +33,11 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@+id/weaponBar">
 
-
+        <include layout="@layout/challenge_list" />
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
 
