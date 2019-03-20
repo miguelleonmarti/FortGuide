@@ -33,15 +33,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/layout1"
         android:layout_marginTop="50sp"
         android:layout_marginLeft="110sp"
         android:layout_marginRight="110sp"
-        android:layout_marginBottom="550sp"
+        android:layout_marginBottom="600sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorTextButtonWhiteOpacity"
+        android:background="@drawable/esquinas_muy_redondeadas"
         android:orientation="vertical"
         android:visibility="visible"
         tools:layout_editor_absoluteX="110dp"
@@ -51,10 +51,10 @@
             android:id="@+id/addButton"
             android:layout_width="59dp"
             android:layout_height="53dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="60sp"
             android:background="@drawable/addcross" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@id/layout1"
