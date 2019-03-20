@@ -39,6 +39,8 @@
         </activity>
         <activity android:name=".introduction.IntroductionActivity">
         </activity>
+        <activity android:name=".theory_detail.TheoryDetailActivity">
+        </activity>
     </application>
 
 </manifest>

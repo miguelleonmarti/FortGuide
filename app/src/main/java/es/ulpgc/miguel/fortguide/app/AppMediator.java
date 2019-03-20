@@ -28,6 +28,7 @@ public class AppMediator extends Application {
   private ShopState shopState;
   private NewTheoryState newTheoryState;
   private SupportProfileState supportProfileState;
+  private TheoryDetailState theoryDetailState;
 
     @Override
   public void onCreate() {
@@ -44,6 +45,7 @@ public class AppMediator extends Application {
     shopState = new ShopState();
     newTheoryState = new NewTheoryState();
     supportProfileState = new SupportProfileState();
+    theoryDetailState = new TheoryDetailState();
   }
 
   public IntroductionState getIntroductionState() {
@@ -134,9 +136,11 @@ public class AppMediator extends Application {
         return supportProfileState;
     }
 
-    public void setTheoryDetailState(TheoryDetailState state) {
+  public void setTheoryDetailState(TheoryDetailState theoryDetailState) {
+        this.theoryDetailState = theoryDetailState;
     }
 
-    public TheoryDetailState getTheoryDetailState() {
+  public TheoryDetailState getTheoryDetailState() {
+        return theoryDetailState;
     }
 }
