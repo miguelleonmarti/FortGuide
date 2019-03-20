@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.challenges;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,6 +16,9 @@ public class ChallengeListActivity
 
     private ChallengeListContract.Presenter presenter;
 
+    private TextView challengeBar;
+  private ListView listView;
+    private Button bananaButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +26,16 @@ public class ChallengeListActivity
         setContentView(R.layout.activity_challenge_list);
 
 
-        Button bananaButton = findViewById(R.id.bananaButton);
-        TextView challengeBar = findViewById(R.id.challengeBar);
-        ListView listView = findViewById(R.id.challenge_list);
+        bananaButton = findViewById(R.id.bananaButton);
+        challengeBar = findViewById(R.id.challengeBar);
+        listView = findViewById(R.id.challenge_list);
+
+        bananaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.startMenuScreen();
+            }
+        });
 
         // do the setup
         ChallengeListScreen.configure(this);

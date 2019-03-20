@@ -53,5 +53,8 @@ public class ChallengeListPresenter implements ChallengeListContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }

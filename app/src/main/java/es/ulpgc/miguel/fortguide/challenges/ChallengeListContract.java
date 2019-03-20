@@ -18,6 +18,8 @@ interface ChallengeListContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface ChallengeListContract {
         void passDataToNextScreen(ChallengeListListState state);
 
         ChallengeListListState getDataFromPreviousScreen();
+
+        void navigateToMenuScreen();
     }
 }

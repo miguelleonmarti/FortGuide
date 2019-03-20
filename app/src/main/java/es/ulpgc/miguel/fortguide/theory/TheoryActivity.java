@@ -14,17 +14,27 @@ public class TheoryActivity
     public static String TAG = TheoryActivity.class.getSimpleName();
 
     private TheoryContract.Presenter presenter;
-    Button addTheoryButton;
+
+    Button addTheoryButton, bananaButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theory);
-        addTheoryButton= findViewById(R.id.addButton);
+
+        addTheoryButton = findViewById(R.id.addButton);
+        bananaButton = findViewById(R.id.bananaButton);
 
         addTheoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.startNewTheoryScreen();
+            }
+        });
+        bananaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.startMenuScreen();
             }
         });
         // creando el set up

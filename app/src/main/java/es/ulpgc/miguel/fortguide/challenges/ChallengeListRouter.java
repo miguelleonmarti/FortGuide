@@ -2,8 +2,10 @@ package es.ulpgc.miguel.fortguide.challenges;
 
 import android.content.Intent;
 import android.content.Context;
+import android.view.Menu;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class ChallengeListRouter implements ChallengeListContract.Router {
 
@@ -31,5 +33,12 @@ public class ChallengeListRouter implements ChallengeListContract.Router {
     public ChallengeListListState getDataFromPreviousScreen() {
         ChallengeListListState state = mediator.getChallengeListState();
         return state;
+    }
+
+    @Override
+    public void navigateToMenuScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, MenuActivity.class);
+        context.startActivity(intent);
     }
 }

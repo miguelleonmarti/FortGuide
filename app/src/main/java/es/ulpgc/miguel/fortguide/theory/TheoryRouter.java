@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryActivity;
 
 public class TheoryRouter implements TheoryContract.Router {
@@ -32,6 +33,13 @@ public class TheoryRouter implements TheoryContract.Router {
     public void navigateToNewTheoryScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, NewTheoryActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToMenuScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, MenuActivity.class);
         context.startActivity(intent);
     }
 }

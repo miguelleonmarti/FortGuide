@@ -20,6 +20,8 @@ interface TheoryContract {
         void fetchData();
 
         void startNewTheoryScreen();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -33,5 +35,7 @@ interface TheoryContract {
         TheoryState getDataFromPreviousScreen();
 
         void navigateToNewTheoryScreen();
+
+        void navigateToMenuScreen();
     }
 }

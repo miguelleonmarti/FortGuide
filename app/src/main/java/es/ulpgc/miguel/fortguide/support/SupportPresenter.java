@@ -53,5 +53,8 @@ public class SupportPresenter implements SupportContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }

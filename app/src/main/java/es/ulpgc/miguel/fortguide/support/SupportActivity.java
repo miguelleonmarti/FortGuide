@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.support;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -13,10 +15,21 @@ public class SupportActivity
 
     private SupportContract.Presenter presenter;
 
+    private Button bananaButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_support);
+
+    bananaButton = findViewById(R.id.bananaButton);
+
+    bananaButton.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+            presenter.startMenuScreen();
+          }
+        });
 
         // do the setup
         SupportScreen.configure(this);

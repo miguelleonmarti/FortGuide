@@ -18,6 +18,8 @@ interface SupportContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface SupportContract {
         void passDataToNextScreen(SupportState state);
 
         SupportState getDataFromPreviousScreen();
+
+        void navigateToMenuScreen();
     }
 }
