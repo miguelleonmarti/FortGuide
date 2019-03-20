@@ -23,4 +23,5 @@
     <string name="description_text_view">Descripción de la teoría</string>
     <string name="cancel_button_label">Cancelar</string>
     <string name="send_button_label">ENVIAR</string>
+    <string name="challenge_label_text">Challenge Content</string>
 </resources>
