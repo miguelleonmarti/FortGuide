@@ -39,6 +39,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
+        android:id="@+id/layout_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
@@ -47,7 +48,7 @@
         android:layout_marginBottom="20dp"
         android:background="@color/colorTextButtonWhiteOpacity"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/data"
         app:layout_constraintEnd_toEndOf="@+id/data"
@@ -57,67 +58,81 @@
         app:layout_constraintStart_toStartOf="@+id/data"
         app:layout_constraintTop_toBottomOf="@+id/supportBar">
 
-        <ImageButton
-            android:id="@+id/thumbUpButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="60dp"
-            android:minHeight="60dp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
-
-        <ImageButton
-            android:id="@+id/thumbDownButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="60dp"
-            android:minHeight="60dp" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@color/colorTextButtonWhiteOpacity"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:padding="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/data"
-        app:layout_constraintEnd_toEndOf="@+id/data"
-        app:layout_constraintEnd_toStartOf="@+id/data"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/data"
-        app:layout_constraintStart_toStartOf="@+id/data"
-        app:layout_constraintTop_toBottomOf="@+id/supportBar">
-
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/thumbUpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="60dp"
+                android:minHeight="60dp" />
+
+            <TextView
+                android:id="@+id/likesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="123"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonBlack"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/thumbDownButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="60dp"
+                android:minHeight="60dp" />
+
+            <TextView
+                android:id="@+id/dislikesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="456"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonBlack"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/creatorContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="5dp"
             android:text="Creador:"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/creatorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="creator12345"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTextButtonBlack"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/theoryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria "
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextButtonBlack"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
