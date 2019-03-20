@@ -22,7 +22,8 @@ public class ChallengeListActivity
         setContentView(R.layout.activity_challenge_list);
 
 
-
+        Button bananaButton = findViewById(R.id.bananaButton);
+        TextView challengeBar = findViewById(R.id.challengeBar);
         ListView listView = findViewById(R.id.challenge_list);
 
         // do the setup
