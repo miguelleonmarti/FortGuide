@@ -41,7 +41,7 @@
         android:layout_marginBottom="600sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/esquinas_muy_redondeadas"
+        android:background="@drawable/very_round_corners"
         android:orientation="vertical"
         android:visibility="visible"
         tools:layout_editor_absoluteX="110dp"

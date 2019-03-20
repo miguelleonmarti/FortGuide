@@ -40,7 +40,7 @@
         android:layout_marginBottom="300sp"
         android:layout_marginLeft="15sp"
         android:layout_marginRight="15sp"
-        android:background="@drawable/esquinas_redondeadas"
+        android:background="@drawable/round_corners"
         android:padding="10sp"
         android:orientation="vertical">
 

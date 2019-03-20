@@ -41,6 +41,8 @@
         </activity>
         <activity android:name=".support_profile.SupportProfileActivity">
         </activity>
+        <activity android:name=".advice_detail.AdviceDetailActivity">
+        </activity>
     </application>
 
 </manifest>
