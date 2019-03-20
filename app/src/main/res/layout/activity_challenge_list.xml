@@ -5,5 +5,5 @@
     android:layout_height="match_parent"
     android:background="@drawable/llama"
     android:padding="16dp"
-    tools:context=".challenge.ChallengeActivity"/>
+    tools:context=".challenges.ChallengeListActivity"/>
 

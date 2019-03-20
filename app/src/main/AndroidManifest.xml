@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".advice.AdviceActivity">
         </activity>
-        <activity android:name=".challenge.ChallengeActivity">
+        <activity android:name=".challenges.ChallengeListActivity">
         </activity>
         <activity android:name=".place.PlaceActivity">
         </activity>

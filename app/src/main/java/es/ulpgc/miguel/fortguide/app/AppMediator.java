@@ -4,7 +4,7 @@ import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
-import es.ulpgc.miguel.fortguide.challenge.ChallengeState;
+import es.ulpgc.miguel.fortguide.challenges.ChallengeListListState;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryState;
@@ -23,7 +23,7 @@ public class AppMediator extends Application {
   private SupportState supportState;
   private WeaponState weaponState;
   private TheoryState theoryState;
-  private ChallengeState challengeState;
+  private ChallengeListListState challengeListState;
   private AdviceState adviceState;
   private ShopState shopState;
   private NewTheoryState newTheoryState;
@@ -39,7 +39,7 @@ public class AppMediator extends Application {
     supportState = new SupportState();
     weaponState = new WeaponState();
     theoryState = new TheoryState();
-    challengeState = new ChallengeState();
+    challengeListState = new ChallengeListListState();
     adviceState = new AdviceState();
     shopState = new ShopState();
     newTheoryState = new NewTheoryState();
@@ -94,12 +94,12 @@ public class AppMediator extends Application {
         return theoryState;
     }
 
-  public void setChallengeState(ChallengeState challengeState) {
-        this.challengeState = challengeState;
+  public void setChallengeListState(ChallengeListListState challengeListState) {
+        this.challengeListState = challengeListState;
     }
 
-  public ChallengeState getChallengeState() {
-        return challengeState;
+  public ChallengeListListState getChallengeListState() {
+        return challengeListState;
     }
 
   public void setAdviceState(AdviceState adviceState) {

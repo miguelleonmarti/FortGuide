@@ -1,13 +1,13 @@
-package es.ulpgc.miguel.fortguide.challenge;
+package es.ulpgc.miguel.fortguide.challenges;
 
 import java.lang.ref.WeakReference;
 
-interface ChallengeContract {
+interface ChallengeListContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(ChallengeViewModel viewModel);
+        void displayData(ChallengeListViewModel viewModel);
     }
 
     interface Presenter {
@@ -27,8 +27,8 @@ interface ChallengeContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(ChallengeState state);
+        void passDataToNextScreen(ChallengeListListState state);
 
-        ChallengeState getDataFromPreviousScreen();
+        ChallengeListListState getDataFromPreviousScreen();
     }
 }
