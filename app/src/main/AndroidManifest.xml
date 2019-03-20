@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
 
-        <activity android:name=".support_profile.SupportProfileActivity">
+        <activity android:name=".challenges.ChallengeListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".advice.AdviceActivity">
         </activity>
-        <activity android:name=".challenges.ChallengeListActivity">
+        <activity android:name=".support_profile.SupportProfileActivity">
         </activity>
         <activity android:name=".place.PlaceActivity">
         </activity>

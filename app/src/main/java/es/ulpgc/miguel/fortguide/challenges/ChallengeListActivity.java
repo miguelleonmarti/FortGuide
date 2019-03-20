@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.challenges;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -13,10 +14,13 @@ public class ChallengeListActivity
 
     private ChallengeListContract.Presenter presenter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_list);
+
+        ListView listView = findViewById(R.id.challenge_list);
 
         // do the setup
         ChallengeListScreen.configure(this);
