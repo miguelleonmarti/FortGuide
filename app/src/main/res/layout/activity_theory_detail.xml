@@ -68,13 +68,14 @@
                 android:id="@+id/thumbUpButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginEnd="15dp"
                 android:background="@drawable/thumbs_up" />
 
             <TextView
                 android:id="@+id/likesText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginEnd="15dp"
                 android:text="123"
                 android:textAlignment="center"
                 android:textColor="@color/colorThumbUp"
@@ -85,14 +86,13 @@
                 android:id="@+id/thumbDownButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/thumbs_down"
-                />
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/thumbs_down" />
 
             <TextView
                 android:id="@+id/dislikesText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="456"
                 android:textAlignment="center"
                 android:textColor="@color/colorThumbDown"
