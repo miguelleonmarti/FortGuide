@@ -51,4 +51,8 @@ public void addItems(List<ChallengeItem> items){
     return itemView;
 }
 
+@Override
+    public int getCount(){return itemList.size();}
+
+
 }
