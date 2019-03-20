@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 
 import android.support.v4.app.FragmentActivity;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class TheoryDetailScreen {
 
     public static void configure(TheoryDetailContract.View view) {

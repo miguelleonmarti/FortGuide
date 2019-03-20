@@ -12,6 +12,7 @@ import es.ulpgc.miguel.fortguide.place.PlaceState;
 import es.ulpgc.miguel.fortguide.shop.ShopState;
 import es.ulpgc.miguel.fortguide.support.SupportState;
 import es.ulpgc.miguel.fortguide.theory.TheoryState;
+import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailState;
 import es.ulpgc.miguel.fortguide.weapon.WeaponState;
 
 public class AppMediator extends Application {
@@ -131,5 +132,11 @@ public class AppMediator extends Application {
 
   public SupportProfileState getSupportProfileState() {
         return supportProfileState;
+    }
+
+    public void setTheoryDetailState(TheoryDetailState state) {
+    }
+
+    public TheoryDetailState getTheoryDetailState() {
     }
 }

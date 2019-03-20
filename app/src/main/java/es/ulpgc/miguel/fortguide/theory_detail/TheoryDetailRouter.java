@@ -3,6 +3,8 @@ package es.ulpgc.miguel.fortguide.theory_detail;
 import android.content.Intent;
 import android.content.Context;
 
+import es.ulpgc.miguel.fortguide.app.AppMediator;
+
 public class TheoryDetailRouter implements TheoryDetailContract.Router {
 
     public static String TAG = TheoryDetailRouter.class.getSimpleName();
