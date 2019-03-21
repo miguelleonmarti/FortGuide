@@ -53,5 +53,8 @@ public class AdvicePresenter implements AdviceContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }

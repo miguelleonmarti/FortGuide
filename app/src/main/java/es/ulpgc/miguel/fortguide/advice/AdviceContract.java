@@ -18,6 +18,8 @@ interface AdviceContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface AdviceContract {
         void passDataToNextScreen(AdviceState state);
 
         AdviceState getDataFromPreviousScreen();
+
+        void navigateToMenuScreen();
     }
 }

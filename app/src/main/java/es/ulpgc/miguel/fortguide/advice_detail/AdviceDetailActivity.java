@@ -3,6 +3,8 @@ package es.ulpgc.miguel.fortguide.advice_detail;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -14,10 +16,21 @@ public class AdviceDetailActivity
 
     private AdviceDetailContract.Presenter presenter;
 
+    Button bananaButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice_detail);
+
+        bananaButton.findViewById(R.id.bananaButton);
+
+        bananaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.startMenuScreen();
+            }
+        });
 
         // do the setup
         AdviceDetailScreen.configure(this);

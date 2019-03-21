@@ -53,5 +53,8 @@ public class NewTheoryPresenter implements NewTheoryContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }
