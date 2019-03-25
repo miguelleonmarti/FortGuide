@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="titulo"
+            android:text="@string/title_advice_label"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp" />
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="70sp"
-            android:text="Hola buenas tardes que tal estas espero que esten bien porque esto es un teto de prueba fleje largo en verdad"
+            android:text="@string/content_advice_label"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp" />
