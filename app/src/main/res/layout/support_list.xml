@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
-            android:drawableTop="@android:drawable/btn_star_big_on"
+            android:drawableTop="@mipmap/ic_launcher_round"
             android:text="Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba."
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
