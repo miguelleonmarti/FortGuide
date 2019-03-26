@@ -8,20 +8,35 @@ import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ChallengeRepository implements RepositoryContract {
 
-private static ChallengeRepository INSTANCE;
+    private static ChallengeRepository INSTANCE;
 
     private final List<ChallengeItem> itemList = new ArrayList<>();
     private final int COUNT = 20;
 
-public static  RepositoryContract getInstance(){
-    if(INSTANCE == null){
-        INSTANCE = new ChallengeRepository();
+    public static RepositoryContract getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new ChallengeRepository();
+        }
+        return INSTANCE;
     }
-    return INSTANCE;
-}
+
+
+    private ChallengeRepository() {
+        //Add some objects.
+        for (int index = 1; index <= COUNT; index++) {
+
+        }
+    }
 
     @Override
-    public List<ChallengeItem> getChallengeList() {
-        return null;
+    public List<ChallengeItem> getChallengeList(int id) {
+        for (int index = 1; index <= COUNT; index++) {
+            ChallengeItem item = itemList.get(index - 1);
+
+            if (item.id == id) {
+                return item.items;
+            }
+        }
+        return new ArrayList<>();
     }
 }
