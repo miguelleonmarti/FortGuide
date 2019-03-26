@@ -26,15 +26,16 @@ public class SupportActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_support);
 
-    bananaButton = findViewById(R.id.bananaButton);
+        bananaButton = findViewById(R.id.bananaButton);
 
-    bananaButton.setOnClickListener(new View.OnClickListener() {
+        bananaButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
             presenter.startMenuScreen();
           }
         });
-    supportAdapter = new SupportAdapter(this, new View.OnClickListener() {
+
+        supportAdapter = new SupportAdapter(this, new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             SupportItem item = (SupportItem) view.getTag();

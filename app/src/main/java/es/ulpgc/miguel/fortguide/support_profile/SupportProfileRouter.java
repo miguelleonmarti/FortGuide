@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class SupportProfileRouter implements SupportProfileContract.Router {
@@ -36,8 +37,8 @@ public class SupportProfileRouter implements SupportProfileContract.Router {
     }
 
     @Override
-    public SupportProfileState getDataFromPreviousScreen() {
-        SupportProfileState state = mediator.getSupportProfileState();
-        return state;
+    public SupportItem getDataFromSupportScreen() {
+        SupportItem supportItem = mediator.getSupportItem();
+        return supportItem;
     }
 }

@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.support_profile;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.SupportItem;
+
 public class SupportProfilePresenter implements SupportProfileContract.Presenter {
 
     public static String TAG = SupportProfilePresenter.class.getSimpleName();
@@ -35,9 +37,9 @@ public class SupportProfilePresenter implements SupportProfileContract.Presenter
         // Log.e(TAG, "fetchData()");
 
         // set passed state
-        SupportProfileState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
+        SupportItem supportItem = router.getDataFromSupportScreen();
+        if (supportItem != null) {
+            viewModel.data = supportItem.content;
         }
 
         if (viewModel.data == null) {

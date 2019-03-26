@@ -15,7 +15,7 @@ public class SupportProfileActivity
 
     private SupportProfileContract.Presenter presenter;
 
-    Button bananaButton;
+    Button bananaButton; //TODO: faltan los botones de las redes sociales (preguntar)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +23,14 @@ public class SupportProfileActivity
         setContentView(R.layout.activity_support_profile);
 
         bananaButton = findViewById(R.id.bananaButton);
+
         bananaButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 presenter.startMenuScreen();
             }
         });
+
         // do the setup
         SupportProfileScreen.configure(this);
     }
@@ -51,6 +53,6 @@ public class SupportProfileActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        ((TextView) findViewById(R.id.creatorCodeText)).setText(viewModel.data);
     }
 }

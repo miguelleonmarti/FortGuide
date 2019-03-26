@@ -34,7 +34,7 @@ public class SupportRouter implements SupportContract.Router {
 
     @Override
     public void passDataToSupportProfileScreen(SupportItem item) {
-        mediator.setSupport(item);
+        mediator.setSupportItem(item);
     }
 
 }

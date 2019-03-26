@@ -14,26 +14,18 @@ public class SupportModel implements SupportContract.Model {
         this.supportItems = new ArrayList<>();
     }
 
-    String text = "Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba." +
-            " Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es " +
-            "un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba." +
-            " Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba." +
-            "Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba.";
-    String text1 = "Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba." +
-            " Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es " +
-            "un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba.";
 
     @Override
     public ArrayList<SupportItem> fetchData() {
         // Log.e(TAG, "fetchData()");
-        SupportItem categoryItem1 = new SupportItem(0,text);
-        SupportItem categoryItem2 = new SupportItem(1,text1);
-        SupportItem categoryItem3 = new SupportItem(2,text);
-        SupportItem categoryItem4 = new SupportItem(3,text1);
-        SupportItem categoryItem5 = new SupportItem(4,text);
-        SupportItem categoryItem6 = new SupportItem(5,text1);
-        SupportItem categoryItem7 = new SupportItem(6,text);
-        SupportItem categoryItem8 = new SupportItem(7,text1);
+        SupportItem categoryItem1 = new SupportItem(0,"111111111111111111111111111111111");
+        SupportItem categoryItem2 = new SupportItem(1,"22222222222222222");
+        SupportItem categoryItem3 = new SupportItem(2,"33333333333333333");
+        SupportItem categoryItem4 = new SupportItem(3,"444444444444444444444444444444444");
+        SupportItem categoryItem5 = new SupportItem(4,"555555555555555555555555555555555");
+        SupportItem categoryItem6 = new SupportItem(5,"666666666666666666666666666666666");
+        SupportItem categoryItem7 = new SupportItem(6,"77777777777777777");
+        SupportItem categoryItem8 = new SupportItem(7,"888888888888888888888888888888888");
 
         this.supportItems.add(categoryItem1);
         this.supportItems.add(categoryItem2);

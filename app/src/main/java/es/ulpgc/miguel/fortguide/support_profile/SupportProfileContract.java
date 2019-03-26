@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.support_profile;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.SupportItem;
+
 interface SupportProfileContract {
 
     interface View {
@@ -31,7 +33,7 @@ interface SupportProfileContract {
 
         void passDataToNextScreen(SupportProfileState state);
 
-        SupportProfileState getDataFromPreviousScreen();
+        SupportItem getDataFromSupportScreen();
 
         void navigateToMenuScreen();
     }

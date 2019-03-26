@@ -81,11 +81,6 @@ public class AppMediator extends Application {
         this.supportState = supportState;
     }
 
-    // support item setter
-    public void setSupport(SupportItem supportItem) {
-        this.supportItem = supportItem;
-    }
-
   public SupportState getSupportState() {
         return supportState;
     }
@@ -154,11 +149,21 @@ public class AppMediator extends Application {
         return theoryDetailState;
     }
 
-    public AdviceDetailState getAdviceDetailState() {
+  public AdviceDetailState getAdviceDetailState() {
     return adviceDetailState;
     }
 
-    public void setAdviceDetailState(AdviceDetailState state) {
+  public void setAdviceDetailState(AdviceDetailState state) {
     this.adviceDetailState=state;
     }
+
+  // getters y setters de: SupportItem
+
+  public void setSupportItem(SupportItem supportItem) {
+        this.supportItem = supportItem;
+    }
+
+  public SupportItem getSupportItem() {
+      return supportItem;
+  }
 }

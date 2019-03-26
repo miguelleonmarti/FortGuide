@@ -7,13 +7,6 @@
     android:background="@mipmap/llama"
     tools:context=".support_profile.SupportProfileActivity">
 
-    <TextView
-        android:id="@+id/data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
     <Button
         android:id="@+id/bananaButton"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -49,9 +42,9 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/data"
-        app:layout_constraintEnd_toEndOf="@+id/data"
-        app:layout_constraintStart_toStartOf="@+id/data"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/supportBar">
 
         <ImageView
@@ -62,12 +55,12 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/creatorCodeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:layout_marginBottom="20dp"
             android:text="Código de creador: abcdefgh"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
