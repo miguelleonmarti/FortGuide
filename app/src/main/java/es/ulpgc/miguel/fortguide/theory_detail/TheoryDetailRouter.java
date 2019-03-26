@@ -2,8 +2,10 @@ package es.ulpgc.miguel.fortguide.theory_detail;
 
 import android.content.Intent;
 import android.content.Context;
+import android.view.Menu;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class TheoryDetailRouter implements TheoryDetailContract.Router {
 
@@ -19,6 +21,13 @@ public class TheoryDetailRouter implements TheoryDetailContract.Router {
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, TheoryDetailActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToMenuScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, MenuActivity.class);
         context.startActivity(intent);
     }
 

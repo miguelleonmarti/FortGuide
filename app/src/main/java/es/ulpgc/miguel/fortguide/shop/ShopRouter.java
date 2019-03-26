@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class ShopRouter implements ShopContract.Router {
 
@@ -19,6 +20,13 @@ public class ShopRouter implements ShopContract.Router {
     public void navigateToNextScreen() {
         Context context = mediator.getApplicationContext();
         Intent intent = new Intent(context, ShopActivity.class);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void navigateToMenuScreen() {
+        Context context = mediator.getApplicationContext();
+        Intent intent = new Intent(context, MenuActivity.class);
         context.startActivity(intent);
     }
 

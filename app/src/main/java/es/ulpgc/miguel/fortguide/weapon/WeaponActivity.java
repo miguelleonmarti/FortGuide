@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.weapon;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,6 +31,13 @@ public class WeaponActivity
         weaponSearchButton = findViewById(R.id.searchButton);
         bananaButton = findViewById(R.id.bananaButton);
         weaponBar = findViewById(R.id.weaponBar);
+
+        bananaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.startMenuScreen();
+            }
+        });
         // do the setup
         WeaponScreen.configure(this);
     }

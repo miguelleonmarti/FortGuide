@@ -18,6 +18,8 @@ interface WeaponContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface WeaponContract {
         void passDataToNextScreen(WeaponState state);
 
         WeaponState getDataFromPreviousScreen();
+
+        void navigateToMenuScreen();
     }
 }

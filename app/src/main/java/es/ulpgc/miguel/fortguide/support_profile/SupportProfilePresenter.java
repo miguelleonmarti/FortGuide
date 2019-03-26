@@ -53,5 +53,8 @@ public class SupportProfilePresenter implements SupportProfileContract.Presenter
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }

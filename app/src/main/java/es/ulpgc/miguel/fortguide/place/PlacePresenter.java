@@ -53,5 +53,8 @@ public class PlacePresenter implements PlaceContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }

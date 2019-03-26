@@ -18,6 +18,8 @@ interface ShopContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface ShopContract {
         void passDataToNextScreen(ShopState state);
 
         ShopState getDataFromPreviousScreen();
+
+        void navigateToMenuScreen();
     }
 }

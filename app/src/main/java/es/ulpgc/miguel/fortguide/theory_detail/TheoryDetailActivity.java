@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.theory_detail;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -13,10 +15,20 @@ public class TheoryDetailActivity
 
     private TheoryDetailContract.Presenter presenter;
 
+    Button bananaButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theory_detail);
+
+        bananaButton = findViewById(R.id.bananaButton);
+        bananaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.startMenuScreen();
+            }
+        });
 
         // do the setup
         TheoryDetailScreen.configure(this);

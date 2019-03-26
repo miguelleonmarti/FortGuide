@@ -18,6 +18,8 @@ interface TheoryDetailContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface TheoryDetailContract {
         void passDataToNextScreen(TheoryDetailState state);
 
         TheoryDetailState getDataFromPreviousScreen();
+
+        void navigateToMenuScreen();
     }
 }

@@ -18,6 +18,8 @@ interface PlaceContract {
         void injectRouter(Router router);
 
         void fetchData();
+
+        void startMenuScreen();
     }
 
     interface Model {
@@ -30,5 +32,7 @@ interface PlaceContract {
         void passDataToNextScreen(PlaceState state);
 
         PlaceState getDataFromPreviousScreen();
+
+        void navigateToMenuScreen();
     }
 }

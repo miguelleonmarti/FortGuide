@@ -53,5 +53,8 @@ public class TheoryDetailPresenter implements TheoryDetailContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }

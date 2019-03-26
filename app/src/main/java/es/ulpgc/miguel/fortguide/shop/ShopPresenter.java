@@ -53,5 +53,8 @@ public class ShopPresenter implements ShopContract.Presenter {
 
     }
 
-
+    @Override
+    public void startMenuScreen() {
+        router.navigateToMenuScreen();
+    }
 }
