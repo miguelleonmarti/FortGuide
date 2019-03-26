@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface RepositoryContract {
     List<ChallengeItem> getChallengeList(int id);
+    List<ChallengeItem> getChallengeList();
 
 }
