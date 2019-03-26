@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.support;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.SupportItem;
+
 public class SupportPresenter implements SupportContract.Presenter {
 
     public static String TAG = SupportPresenter.class.getSimpleName();
@@ -35,20 +37,9 @@ public class SupportPresenter implements SupportContract.Presenter {
         // Log.e(TAG, "fetchData()");
 
         // set passed state
-        SupportState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
-        }
-
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
-        }
 
         // update the view
+        viewModel.profiles = model.fetchData();
         view.get().displayData(viewModel);
 
     }
@@ -56,5 +47,11 @@ public class SupportPresenter implements SupportContract.Presenter {
     @Override
     public void startMenuScreen() {
         router.navigateToMenuScreen();
+    }
+
+    @Override
+    public void selectCategoryListData(SupportItem item) {
+        router.navigateToSupportProfileScreen();
+        router.passDataToSupportProfileScreen(item);
     }
 }

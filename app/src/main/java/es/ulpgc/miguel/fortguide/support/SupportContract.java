@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.fortguide.support;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+
+import es.ulpgc.miguel.fortguide.data.SupportItem;
 
 interface SupportContract {
 
@@ -20,18 +23,18 @@ interface SupportContract {
         void fetchData();
 
         void startMenuScreen();
+
+        void selectCategoryListData(SupportItem item);
     }
 
     interface Model {
-        String fetchData();
+        ArrayList<SupportItem> fetchData();
     }
 
     interface Router {
-        void navigateToNextScreen();
+        void navigateToSupportProfileScreen();
 
-        void passDataToNextScreen(SupportState state);
-
-        SupportState getDataFromPreviousScreen();
+        void passDataToSupportProfileScreen(SupportItem supportItem);
 
         void navigateToMenuScreen();
     }

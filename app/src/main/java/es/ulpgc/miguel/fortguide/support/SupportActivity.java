@@ -4,9 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
+import es.ulpgc.miguel.fortguide.data.SupportItem;
 
 public class SupportActivity
         extends AppCompatActivity implements SupportContract.View {
@@ -16,6 +18,8 @@ public class SupportActivity
     private SupportContract.Presenter presenter;
 
     private Button bananaButton;
+
+    private SupportAdapter supportAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +34,20 @@ public class SupportActivity
             presenter.startMenuScreen();
           }
         });
+    supportAdapter = new SupportAdapter(this, new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            SupportItem item = (SupportItem) view.getTag();
+            presenter.selectCategoryListData(item);
+        }
+    });
+
+    GridView gridView = findViewById(R.id.gridView);
+    gridView.setAdapter(supportAdapter);
 
         // do the setup
-        SupportScreen.configure(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // do some work
-        presenter.fetchData();
+    SupportScreen.configure(this);
+    presenter.fetchData();
     }
 
     @Override
@@ -54,5 +61,6 @@ public class SupportActivity
 
         // deal with the data
         ((TextView) findViewById(R.id.supportBar)).setText(R.string.support_bar_label);
+        supportAdapter.setItems(viewModel.profiles);
     }
 }

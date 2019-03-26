@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
+import es.ulpgc.miguel.fortguide.support_profile.SupportProfileActivity;
 
 public class SupportRouter implements SupportContract.Router {
 
@@ -17,21 +19,10 @@ public class SupportRouter implements SupportContract.Router {
     }
 
     @Override
-    public void navigateToNextScreen() {
+    public void navigateToSupportProfileScreen() {
         Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, SupportActivity.class);
+        Intent intent = new Intent(context, SupportProfileActivity.class);
         context.startActivity(intent);
-    }
-
-    @Override
-    public void passDataToNextScreen(SupportState state) {
-        mediator.setSupportState(state);
-    }
-
-    @Override
-    public SupportState getDataFromPreviousScreen() {
-        SupportState state = mediator.getSupportState();
-        return state;
     }
 
     @Override
@@ -40,4 +31,10 @@ public class SupportRouter implements SupportContract.Router {
         Intent intent = new Intent(context, MenuActivity.class);
         context.startActivity(intent);
     }
+
+    @Override
+    public void passDataToSupportProfileScreen(SupportItem item) {
+        mediator.setSupport(item);
+    }
+
 }
