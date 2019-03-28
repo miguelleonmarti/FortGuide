@@ -1,0 +1,48 @@
+{
+  "support": [
+    {
+      "id": 1,
+      "image": 1,
+      "content": "Willyrex",
+      "details": "Es un famoso YouTuber",
+      "code": "willyrex",
+      "instagram": "http://instagram.com",
+      "twitter": "http://twitter.com",
+      "twitch": "http://twitch.tv",
+      "youtube": "http://youtube.com"
+    },
+    {
+      "id": 2,
+      "image": 2,
+      "content": "Ninja",
+      "details": "Es un famoso Streamer",
+      "code": "ninja",
+      "instagram": "http://instagram.com",
+      "twitter": "http://twitter.com",
+      "twitch": "http://twitch.tv",
+      "youtube": "http://youtube.com"
+    },
+    {
+      "id": 3,
+      "image": 3,
+      "content": "Tfue",
+      "details": "Es un famoso Streamer americano",
+      "code": "tfue",
+      "instagram": "http://instagram.com",
+      "twitter": "http://twitter.com",
+      "twitch": "http://twitch.tv",
+      "youtube": "http://youtube.com"
+    },
+    {
+      "id": 4,
+      "image": 4,
+      "content": "Rubius",
+      "details": "Es un famoso YouTuber",
+      "code": "rubiuh",
+      "instagram": "http://instagram.com",
+      "twitter": "http://twitter.com",
+      "twitch": "http://twitch.tv",
+      "youtube": "http://youtube.com"
+    }
+  ]
+}
