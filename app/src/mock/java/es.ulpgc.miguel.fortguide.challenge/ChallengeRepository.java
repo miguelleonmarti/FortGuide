@@ -12,7 +12,7 @@ public class ChallengeRepository implements RepositoryContract {
     private static ChallengeRepository INSTANCE;
 
     private final List<ChallengeItem> itemList = new ArrayList<>();
-    private final int COUNT = 11;
+    private final int COUNT = 10;
 
     public static RepositoryContract getInstance() {
         if (INSTANCE == null) {
@@ -31,10 +31,8 @@ public class ChallengeRepository implements RepositoryContract {
 
     @Override
     public List<ChallengeItem> getChallengeList() {
-      return itemList;
+        return itemList;
     }
-
-
 
 
     private void addChallenge(ChallengeItem item) {
@@ -42,11 +40,22 @@ public class ChallengeRepository implements RepositoryContract {
     }
 
 
-    private ChallengeItem createChallenge( int position) {
+    private ChallengeItem createChallenge(int position) {
         String content = "Semana " + position;
 
         return new ChallengeItem(
-                position, content);
+                position, content, fetchChallengeDetails(position));
     }
+
+    private String fetchChallengeDetails(int position) {
+        String content = "Details" + "." + position;
+        StringBuilder builder = new StringBuilder();
+        builder.append(content);
+
+        for (int index = 0; index < position; index++) {
+            builder.append("\nMore details");
+        }
+        return builder.toString();
     }
+}
 

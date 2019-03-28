@@ -1,6 +1,5 @@
-package es.ulpgc.miguel.fortguide.challenges_detail;
+package es.ulpgc.miguel.fortguide.challenge;
 
-import android.util.Log;
 import android.content.Intent;
 import android.content.Context;
 

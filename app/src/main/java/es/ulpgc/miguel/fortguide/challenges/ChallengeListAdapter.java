@@ -33,7 +33,7 @@ public class ChallengeListAdapter extends ArrayAdapter<ChallengeItem> {
         notifyDataSetChanged();
     }
 
-    public void setItems(ArrayList<ChallengeItem> items) {
+    public void setItems(List<ChallengeItem> items) {
         itemList = items;
         notifyDataSetChanged();
     }

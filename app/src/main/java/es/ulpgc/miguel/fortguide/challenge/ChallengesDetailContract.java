@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.challenges_detail;
+package es.ulpgc.miguel.fortguide.challenge;
 
 import java.lang.ref.WeakReference;
 

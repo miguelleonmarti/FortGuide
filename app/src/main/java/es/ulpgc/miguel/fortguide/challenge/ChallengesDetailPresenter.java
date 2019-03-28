@@ -1,6 +1,4 @@
-package es.ulpgc.miguel.fortguide.challenges_detail;
-
-import android.util.Log;
+package es.ulpgc.miguel.fortguide.challenge;
 
 import java.lang.ref.WeakReference;
 

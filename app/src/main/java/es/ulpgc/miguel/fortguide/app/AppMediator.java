@@ -4,7 +4,7 @@ import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
 import es.ulpgc.miguel.fortguide.challenges.ChallengeListState;
-import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailState;
+import es.ulpgc.miguel.fortguide.challenge.ChallengesDetailState;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;

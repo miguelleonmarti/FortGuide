@@ -7,5 +7,5 @@ import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 
 public class ChallengeListViewModel {
 
-    public ArrayList<ChallengeItem> challenges;
+    public List<ChallengeItem> challenges;
 }
