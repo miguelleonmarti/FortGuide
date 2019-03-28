@@ -16,7 +16,7 @@ public class ChallengeListScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = (AppMediator) context.get().getApplication();
-        ChallengeListListState state = mediator.getChallengeListState();
+        ChallengeListState state = mediator.getChallengeListState();
         RepositoryContract repository = ChallengeRepository.getInstance();
 
         ChallengeListContract.Router router = new ChallengeListRouter(mediator);

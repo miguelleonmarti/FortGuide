@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
 
-        <activity android:name=".challenges.ChallengeListActivity">
+        <activity android:name=".challenges_detail.ChallengesDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,6 +42,8 @@
         <activity android:name=".support_profile.SupportProfileActivity">
         </activity>
         <activity android:name=".advice_detail.AdviceDetailActivity">
+        </activity>
+        <activity android:name=".challenges.ChallengeListActivity">
         </activity>
     </application>
 

@@ -25,13 +25,13 @@ public class ChallengeListRouter implements ChallengeListContract.Router {
     }
 
     @Override
-    public void passDataToNextScreen(ChallengeListListState state) {
+    public void passDataToNextScreen(ChallengeListState state) {
         mediator.setChallengeListState(state);
     }
 
     @Override
-    public ChallengeListListState getDataFromPreviousScreen() {
-        ChallengeListListState state = mediator.getChallengeListState();
+    public ChallengeListState getDataFromPreviousScreen() {
+        ChallengeListState state = mediator.getChallengeListState();
         return state;
     }
 

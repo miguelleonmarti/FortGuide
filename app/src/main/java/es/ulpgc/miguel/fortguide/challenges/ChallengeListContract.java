@@ -32,9 +32,9 @@ interface ChallengeListContract {
     interface Router {
         void navigateToNextScreen();
 
-        void passDataToNextScreen(ChallengeListListState state);
+        void passDataToNextScreen(ChallengeListState state);
 
-        ChallengeListListState getDataFromPreviousScreen();
+        ChallengeListState getDataFromPreviousScreen();
 
         void navigateToMenuScreen();
     }

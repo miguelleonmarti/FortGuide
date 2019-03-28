@@ -3,10 +3,11 @@ package es.ulpgc.miguel.fortguide.app;
 import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
+import es.ulpgc.miguel.fortguide.challenges.ChallengeListState;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailState;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
-import es.ulpgc.miguel.fortguide.challenges.ChallengeListListState;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryState;
@@ -25,7 +26,8 @@ public class AppMediator extends Application {
   private SupportState supportState;
   private WeaponState weaponState;
   private TheoryState theoryState;
-  private ChallengeListListState challengeListState;
+  private ChallengeListState challengeListState;
+  private ChallengesDetailState challengesDetailState;
   private AdviceState adviceState;
   private ShopState shopState;
   private NewTheoryState newTheoryState;
@@ -45,7 +47,7 @@ public class AppMediator extends Application {
     supportState = new SupportState();
     weaponState = new WeaponState();
     theoryState = new TheoryState();
-    challengeListState = new ChallengeListListState();
+    challengeListState = new ChallengeListState();
     adviceState = new AdviceState();
     shopState = new ShopState();
     newTheoryState = new NewTheoryState();
@@ -101,11 +103,11 @@ public class AppMediator extends Application {
         return theoryState;
     }
 
-  public void setChallengeListState(ChallengeListListState challengeListState) {
+  public void setChallengeListState(ChallengeListState challengeListState) {
         this.challengeListState = challengeListState;
     }
 
-  public ChallengeListListState getChallengeListState() {
+  public ChallengeListState getChallengeListState() {
         return challengeListState;
     }
 
@@ -166,4 +168,14 @@ public class AppMediator extends Application {
   public SupportItem getSupportItem() {
       return supportItem;
   }
+
+  //getters y setters de: ChallengeDetail
+
+    public ChallengesDetailState getChallengesDetailState() {
+        return challengesDetailState;
+    }
+
+    public void setChallengesDetailState(ChallengesDetailState challengesDetailState) {
+        this.challengesDetailState = challengesDetailState;
+    }
 }

@@ -14,7 +14,7 @@ public class ChallengeListPresenter implements ChallengeListContract.Presenter {
     private ChallengeListContract.Model model;
     private ChallengeListContract.Router router;
 
-    public ChallengeListPresenter(ChallengeListListState state) {
+    public ChallengeListPresenter(ChallengeListState state) {
         viewModel = state;
     }
 
