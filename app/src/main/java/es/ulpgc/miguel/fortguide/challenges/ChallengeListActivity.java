@@ -49,7 +49,7 @@ public class ChallengeListActivity
 
         // do the setup
         ChallengeListScreen.configure(this);
-        presenter.fetchData();
+        presenter.fetchChallengeListData();
     }
 
     @Override
@@ -57,7 +57,7 @@ public class ChallengeListActivity
         super.onResume();
 
         // do some work
-        presenter.fetchData();
+        presenter.fetchChallengeListData();
     }
 
     @Override
@@ -66,7 +66,7 @@ public class ChallengeListActivity
     }
 
     @Override
-    public void displayData(ChallengeListViewModel viewModel) {
+    public void displayChallengeListData(ChallengeListViewModel viewModel) {
         //Log.e(TAG, "displayData()");
 
         // deal with the data

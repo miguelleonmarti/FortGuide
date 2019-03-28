@@ -34,12 +34,12 @@ public class ChallengeListPresenter implements ChallengeListContract.Presenter {
     }
 
     @Override
-    public void fetchData() {
+    public void fetchChallengeListData() {
         // Log.e(TAG, "fetchData()");
 
         // set passed state
        viewModel.challenges = (ArrayList<ChallengeItem>) model.fetchChallengeListData();
-       view.get().displayData(viewModel);
+       view.get().displayChallengeListData(viewModel);
 
     }
 

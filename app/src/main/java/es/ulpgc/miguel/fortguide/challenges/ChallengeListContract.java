@@ -10,7 +10,7 @@ interface ChallengeListContract {
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void displayData(ChallengeListViewModel viewModel);
+        void displayChallengeListData(ChallengeListViewModel viewModel);
     }
 
     interface Presenter {
@@ -20,7 +20,7 @@ interface ChallengeListContract {
 
         void injectRouter(Router router);
 
-        void fetchData();
+        void fetchChallengeListData();
 
         void startMenuScreen();
     }

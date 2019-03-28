@@ -7,11 +7,12 @@ import java.util.List;
 public class ChallengeItem extends ChallengeAbstract {
 
     public final List<ChallengeItem> items;
+    public final String details;
 
-
-    public ChallengeItem(int id, String content) {
-       super(id,content);
+    public ChallengeItem(int id, String content, String details) {
+        super(id, content);
         items = new ArrayList<>();
+        this.details = details;
     }
 
     @Override
