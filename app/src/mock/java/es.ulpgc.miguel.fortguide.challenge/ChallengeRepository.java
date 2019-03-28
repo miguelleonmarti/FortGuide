@@ -12,7 +12,7 @@ public class ChallengeRepository implements RepositoryContract {
     private static ChallengeRepository INSTANCE;
 
     private final List<ChallengeItem> itemList = new ArrayList<>();
-    private final int COUNT = 20;
+    private final int COUNT = 11;
 
     public static RepositoryContract getInstance() {
         if (INSTANCE == null) {
@@ -30,22 +30,11 @@ public class ChallengeRepository implements RepositoryContract {
     }
 
     @Override
-    public List<ChallengeItem> getChallengeList(int id) {
-        for (int index = 1; index <= COUNT; index++) {
-            ChallengeItem item = itemList.get(index - 1);
-
-            if (item.id == id) {
-                return item.items;
-            }
-        }
-        return new ArrayList<>();
-    }
-
-
-    @Override
     public List<ChallengeItem> getChallengeList() {
-        return itemList;
+      return itemList;
     }
+
+
 
 
     private void addChallenge(ChallengeItem item) {

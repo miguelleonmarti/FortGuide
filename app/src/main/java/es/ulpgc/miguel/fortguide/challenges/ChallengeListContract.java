@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.fortguide.challenges;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 
 interface ChallengeListContract {
 
@@ -23,7 +26,7 @@ interface ChallengeListContract {
     }
 
     interface Model {
-        String fetchData();
+        List<ChallengeItem> fetchChallengeListData();
     }
 
     interface Router {

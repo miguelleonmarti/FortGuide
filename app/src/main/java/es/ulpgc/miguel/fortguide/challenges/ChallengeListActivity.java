@@ -7,7 +7,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import es.ulpgc.miguel.fortguide.R;
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 
 public class ChallengeListActivity
         extends AppCompatActivity implements ChallengeListContract.View {
@@ -17,8 +20,10 @@ public class ChallengeListActivity
     private ChallengeListContract.Presenter presenter;
 
     private TextView challengeBar;
-  private ListView listView;
+    private ListView listView;
     private Button bananaButton;
+
+    private ChallengeListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +33,23 @@ public class ChallengeListActivity
 
         bananaButton = findViewById(R.id.bananaButton);
         challengeBar = findViewById(R.id.challengeBar);
-        listView = findViewById(R.id.challenge_list);
 
-        bananaButton.setOnClickListener(new View.OnClickListener() {
+
+
+        listAdapter = new ChallengeListAdapter(this, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ChallengeItem item = (ChallengeItem) listView.getTag();
                 presenter.startMenuScreen();
             }
         });
 
+        listView = findViewById(R.id.challenge_list);
+        listView.setAdapter(listAdapter);
+
         // do the setup
         ChallengeListScreen.configure(this);
+        presenter.fetchData();
     }
 
     @Override
@@ -59,6 +70,6 @@ public class ChallengeListActivity
         //Log.e(TAG, "displayData()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        listAdapter.setItems(viewModel.challenges);
     }
 }
