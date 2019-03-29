@@ -44,7 +44,7 @@ public class ChallengeListActivity
       }
     });
 
-    listView = findViewById(R.id.challenge_list);
+    listView = findViewById(R.id.challenges_list);
     listView.setAdapter(listAdapter);
 
     // do the setup
