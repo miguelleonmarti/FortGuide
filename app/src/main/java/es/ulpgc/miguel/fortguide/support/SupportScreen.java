@@ -8,22 +8,22 @@ import es.ulpgc.miguel.fortguide.app.AppMediator;
 
 public class SupportScreen {
 
-    public static void configure(SupportContract.View view) {
+  public static void configure(SupportContract.View view) {
 
-        WeakReference<FragmentActivity> context =
-                new WeakReference<>((FragmentActivity) view);
+    WeakReference<FragmentActivity> context =
+        new WeakReference<>((FragmentActivity) view);
 
-        AppMediator mediator = (AppMediator) context.get().getApplication();
-        SupportState state = mediator.getSupportState();
+    AppMediator mediator = (AppMediator) context.get().getApplication();
+    SupportState state = mediator.getSupportState();
 
-        SupportContract.Router router = new SupportRouter(mediator);
-        SupportContract.Presenter presenter = new SupportPresenter(state);
-        SupportContract.Model model = new SupportModel();
-        presenter.injectModel(model);
-        presenter.injectRouter(router);
-        presenter.injectView(new WeakReference<>(view));
+    SupportContract.Router router = new SupportRouter(mediator);
+    SupportContract.Presenter presenter = new SupportPresenter(state);
+    SupportContract.Model model = new SupportModel();
+    presenter.injectModel(model);
+    presenter.injectRouter(router);
+    presenter.injectView(new WeakReference<>(view));
 
-        view.injectPresenter(presenter);
+    view.injectPresenter(presenter);
 
-    }
+  }
 }

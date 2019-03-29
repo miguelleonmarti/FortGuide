@@ -4,31 +4,31 @@ import java.lang.ref.WeakReference;
 
 interface ChallengesDetailContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(ChallengesDetailViewModel viewModel);
-    }
+    void displayData(ChallengesDetailViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
-    }
+    void fetchData();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(ChallengesDetailState state);
+    void passDataToNextScreen(ChallengesDetailState state);
 
-        ChallengesDetailState getDataFromPreviousScreen();
-    }
+    ChallengesDetailState getDataFromPreviousScreen();
+  }
 }

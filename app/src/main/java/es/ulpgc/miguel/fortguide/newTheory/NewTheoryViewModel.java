@@ -2,5 +2,5 @@ package es.ulpgc.miguel.fortguide.newTheory;
 
 public class NewTheoryViewModel {
 
-    public String data="NUEVA TEORÍA";
+  public String data = "NUEVA TEORÍA";
 }

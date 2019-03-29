@@ -14,74 +14,74 @@ import es.ulpgc.miguel.fortguide.weapon.WeaponActivity;
 
 public class MenuRouter implements MenuContract.Router {
 
-    public static String TAG = MenuRouter.class.getSimpleName();
+  public static String TAG = MenuRouter.class.getSimpleName();
 
-    private AppMediator mediator;
+  private AppMediator mediator;
 
-    public MenuRouter(AppMediator mediator) {
-        this.mediator = mediator;
-    }
+  public MenuRouter(AppMediator mediator) {
+    this.mediator = mediator;
+  }
 
-    @Override
-    public void passDataToNextScreen(MenuState state) {
-        mediator.setMenuState(state);
-    }
+  @Override
+  public void passDataToNextScreen(MenuState state) {
+    mediator.setMenuState(state);
+  }
 
-    @Override
-    public MenuState getDataFromPreviousScreen() {
-        MenuState state = mediator.getMenuState();
-        return state;
-    }
+  @Override
+  public MenuState getDataFromPreviousScreen() {
+    MenuState state = mediator.getMenuState();
+    return state;
+  }
 
-    //------ navigate to
+  //------ navigate to
 
-    @Override
-    public void navigateToWeaponScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, WeaponActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToWeaponScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, WeaponActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToTheoryScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, TheoryActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToTheoryScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, TheoryActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToSupportScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, SupportActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToSupportScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, SupportActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToShopScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, ShopActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToShopScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, ShopActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToPlaceScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, PlaceActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToPlaceScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, PlaceActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToChallengeScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, ChallengeListActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToChallengeScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, ChallengeListActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToAdviceScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, AdviceActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToAdviceScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, AdviceActivity.class);
+    context.startActivity(intent);
+  }
 
 }

@@ -8,22 +8,22 @@ import es.ulpgc.miguel.fortguide.app.AppMediator;
 
 public class PlaceScreen {
 
-    public static void configure(PlaceContract.View view) {
+  public static void configure(PlaceContract.View view) {
 
-        WeakReference<FragmentActivity> context =
-                new WeakReference<>((FragmentActivity) view);
+    WeakReference<FragmentActivity> context =
+        new WeakReference<>((FragmentActivity) view);
 
-        AppMediator mediator = (AppMediator) context.get().getApplication();
-        PlaceState state = mediator.getPlaceState();
+    AppMediator mediator = (AppMediator) context.get().getApplication();
+    PlaceState state = mediator.getPlaceState();
 
-        PlaceContract.Router router = new PlaceRouter(mediator);
-        PlaceContract.Presenter presenter = new PlacePresenter(state);
-        PlaceContract.Model model = new PlaceModel();
-        presenter.injectModel(model);
-        presenter.injectRouter(router);
-        presenter.injectView(new WeakReference<>(view));
+    PlaceContract.Router router = new PlaceRouter(mediator);
+    PlaceContract.Presenter presenter = new PlacePresenter(state);
+    PlaceContract.Model model = new PlaceModel();
+    presenter.injectModel(model);
+    presenter.injectRouter(router);
+    presenter.injectView(new WeakReference<>(view));
 
-        view.injectPresenter(presenter);
+    view.injectPresenter(presenter);
 
-    }
+  }
 }

@@ -9,7 +9,7 @@ import android.widget.TextView;
 import es.ulpgc.miguel.fortguide.R;
 
 public class AdviceActivity
-        extends AppCompatActivity implements AdviceContract.View {
+    extends AppCompatActivity implements AdviceContract.View {
 
   public static String TAG = AdviceActivity.class.getSimpleName();
 

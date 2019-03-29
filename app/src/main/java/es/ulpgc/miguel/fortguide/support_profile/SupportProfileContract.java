@@ -6,35 +6,35 @@ import es.ulpgc.miguel.fortguide.data.SupportItem;
 
 interface SupportProfileContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(SupportProfileViewModel viewModel);
-    }
+    void displayData(SupportProfileViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void startMenuScreen();
-    }
+    void startMenuScreen();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(SupportProfileState state);
+    void passDataToNextScreen(SupportProfileState state);
 
-        SupportItem getDataFromSupportScreen();
+    SupportItem getDataFromSupportScreen();
 
-        void navigateToMenuScreen();
-    }
+    void navigateToMenuScreen();
+  }
 }

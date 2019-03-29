@@ -10,56 +10,56 @@ import android.widget.TextView;
 import es.ulpgc.miguel.fortguide.R;
 
 public class WeaponActivity
-        extends AppCompatActivity implements WeaponContract.View {
+    extends AppCompatActivity implements WeaponContract.View {
 
-    public static String TAG = WeaponActivity.class.getSimpleName();
+  public static String TAG = WeaponActivity.class.getSimpleName();
 
-    private WeaponContract.Presenter presenter;
+  private WeaponContract.Presenter presenter;
 
-    Button bananaButton;
-    TextView weaponBar;
-    Spinner weaponSpinner;
-    Button weaponSearchButton;
+  Button bananaButton;
+  TextView weaponBar;
+  Spinner weaponSpinner;
+  Button weaponSearchButton;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weapon);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_weapon);
 
-        weaponSpinner = findViewById(R.id.weaponSpinner);
-        weaponSearchButton = findViewById(R.id.searchButton);
-        bananaButton = findViewById(R.id.bananaButton);
-        weaponBar = findViewById(R.id.weaponBar);
+    weaponSpinner = findViewById(R.id.weaponSpinner);
+    weaponSearchButton = findViewById(R.id.searchButton);
+    bananaButton = findViewById(R.id.bananaButton);
+    weaponBar = findViewById(R.id.weaponBar);
 
-        bananaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.startMenuScreen();
-            }
-        });
-        // do the setup
-        WeaponScreen.configure(this);
-    }
+    bananaButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startMenuScreen();
+      }
+    });
+    // do the setup
+    WeaponScreen.configure(this);
+  }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+  @Override
+  protected void onResume() {
+    super.onResume();
 
-        // do some work
-        presenter.fetchData();
-    }
+    // do some work
+    presenter.fetchData();
+  }
 
-    @Override
-    public void injectPresenter(WeaponContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
+  @Override
+  public void injectPresenter(WeaponContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void displayData(WeaponViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+  @Override
+  public void displayData(WeaponViewModel viewModel) {
+    //Log.e(TAG, "displayData()");
 
-        // deal with the data
-        ((TextView) findViewById(R.id.weaponBar)).setText(R.string.weapon_bar_label);
-    }
+    // deal with the data
+    ((TextView) findViewById(R.id.weaponBar)).setText(R.string.weapon_bar_label);
+  }
 }

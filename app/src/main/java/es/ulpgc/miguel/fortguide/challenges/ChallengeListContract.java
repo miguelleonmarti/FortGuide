@@ -7,35 +7,37 @@ import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 
 interface ChallengeListContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayChallengeListData(ChallengeListViewModel viewModel);
-    }
+    void displayChallengeListData(ChallengeListViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchChallengeListData();
+    void fetchChallengeListData();
 
-        void startMenuScreen();
-    }
+    void selectChallengeListData(ChallengeItem item);
 
-    interface Model {
-        List<ChallengeItem> fetchChallengeListData();
-    }
+    void startMenuScreen();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Model {
+    List<ChallengeItem> fetchChallengeListData();
+  }
 
-        void passDataToNextScreen(ChallengeListState state);
+  interface Router {
+    void navigateToChallengeDetailsScreen();
 
-        ChallengeListState getDataFromPreviousScreen();
+    void passDataToChallengeDetailsScreen(ChallengeItem item);
 
-        void navigateToMenuScreen();
-    }
+    ChallengeListState getDataFromPreviousScreen();
+
+    void navigateToMenuScreen();
+  }
 }

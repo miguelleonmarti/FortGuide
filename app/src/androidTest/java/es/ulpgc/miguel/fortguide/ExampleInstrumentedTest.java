@@ -17,11 +17,11 @@ import static org.junit.Assert.*;
 @SuppressWarnings("ALL")
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
+  @Test
+  public void useAppContext() {
+    // Context of the app under test.
+    Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("es.ulpgc.miguel.fortguide", appContext.getPackageName());
-    }
+    assertEquals("es.ulpgc.miguel.fortguide", appContext.getPackageName());
+  }
 }

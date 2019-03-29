@@ -2,15 +2,15 @@ package es.ulpgc.miguel.fortguide.support_profile;
 
 public class SupportProfileModel implements SupportProfileContract.Model {
 
-    public static String TAG = SupportProfileModel.class.getSimpleName();
+  public static String TAG = SupportProfileModel.class.getSimpleName();
 
-    public SupportProfileModel() {
+  public SupportProfileModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

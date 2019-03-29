@@ -4,58 +4,58 @@ import java.lang.ref.WeakReference;
 
 interface MenuContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(MenuViewModel viewModel);
-    }
+    void displayData(MenuViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void startAdviceScreen();
+    void startAdviceScreen();
 
-        void startChallengeScreen();
+    void startChallengeScreen();
 
-        void startPlaceScreen();
+    void startPlaceScreen();
 
-        void startShopScreen();
+    void startShopScreen();
 
-        void startSupportScreen();
+    void startSupportScreen();
 
-        void startTheoryScreen();
+    void startTheoryScreen();
 
-        void startWeaponScreen();
-    }
+    void startWeaponScreen();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
+  interface Router {
 
-        void passDataToNextScreen(MenuState state);
+    void passDataToNextScreen(MenuState state);
 
-        MenuState getDataFromPreviousScreen();
+    MenuState getDataFromPreviousScreen();
 
-        void navigateToWeaponScreen();
+    void navigateToWeaponScreen();
 
-        void navigateToTheoryScreen();
+    void navigateToTheoryScreen();
 
-        void navigateToSupportScreen();
+    void navigateToSupportScreen();
 
-        void navigateToShopScreen();
+    void navigateToShopScreen();
 
-        void navigateToPlaceScreen();
+    void navigateToPlaceScreen();
 
-        void navigateToChallengeScreen();
+    void navigateToChallengeScreen();
 
-        void navigateToAdviceScreen();
-    }
+    void navigateToAdviceScreen();
+  }
 }

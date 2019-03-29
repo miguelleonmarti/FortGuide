@@ -8,36 +8,36 @@ import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class WeaponRouter implements WeaponContract.Router {
 
-    public static String TAG = WeaponRouter.class.getSimpleName();
+  public static String TAG = WeaponRouter.class.getSimpleName();
 
-    private AppMediator mediator;
+  private AppMediator mediator;
 
-    public WeaponRouter(AppMediator mediator) {
-        this.mediator = mediator;
-    }
+  public WeaponRouter(AppMediator mediator) {
+    this.mediator = mediator;
+  }
 
-    @Override
-    public void navigateToNextScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, WeaponActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToNextScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, WeaponActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToMenuScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, MenuActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToMenuScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, MenuActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void passDataToNextScreen(WeaponState state) {
-        mediator.setWeaponState(state);
-    }
+  @Override
+  public void passDataToNextScreen(WeaponState state) {
+    mediator.setWeaponState(state);
+  }
 
-    @Override
-    public WeaponState getDataFromPreviousScreen() {
-        WeaponState state = mediator.getWeaponState();
-        return state;
-    }
+  @Override
+  public WeaponState getDataFromPreviousScreen() {
+    WeaponState state = mediator.getWeaponState();
+    return state;
+  }
 }

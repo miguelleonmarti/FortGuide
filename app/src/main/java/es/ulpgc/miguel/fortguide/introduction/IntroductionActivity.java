@@ -9,55 +9,55 @@ import android.widget.TextView;
 import es.ulpgc.miguel.fortguide.R;
 
 public class IntroductionActivity
-        extends AppCompatActivity implements IntroductionContract.View {
+    extends AppCompatActivity implements IntroductionContract.View {
 
-    public static String TAG = IntroductionActivity.class.getSimpleName();
+  public static String TAG = IntroductionActivity.class.getSimpleName();
 
-    private IntroductionContract.Presenter presenter;
+  private IntroductionContract.Presenter presenter;
 
-    Button continueButton;
-    TextView textView;
+  Button continueButton;
+  TextView textView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)  {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_introduction);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_introduction);
 
-        //getSupportActionBar().setTitle("Introduction Screen");
-        //getSupportActionBar().hide();
+    //getSupportActionBar().setTitle("Introduction Screen");
+    //getSupportActionBar().hide();
 
-        continueButton = findViewById(R.id.buttonContinue);
-        textView = findViewById(R.id.data);
+    continueButton = findViewById(R.id.buttonContinue);
+    textView = findViewById(R.id.data);
 
-        continueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.startMenuScreen();
-            }
-        });
+    continueButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startMenuScreen();
+      }
+    });
 
-        // do the setup
-        IntroductionScreen.configure(this);
-    }
+    // do the setup
+    IntroductionScreen.configure(this);
+  }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+  @Override
+  protected void onResume() {
+    super.onResume();
 
-        // do some work
-        presenter.fetchData();
-    }
+    // do some work
+    presenter.fetchData();
+  }
 
-    @Override
-    public void injectPresenter(IntroductionContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
+  @Override
+  public void injectPresenter(IntroductionContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void displayData(IntroductionViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+  @Override
+  public void displayData(IntroductionViewModel viewModel) {
+    //Log.e(TAG, "displayData()");
 
-        // deal with the data
-        ((TextView) findViewById(R.id.data)).setText(viewModel.data);
-    }
+    // deal with the data
+    ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+  }
 }

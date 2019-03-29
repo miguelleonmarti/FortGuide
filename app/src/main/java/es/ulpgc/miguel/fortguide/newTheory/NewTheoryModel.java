@@ -2,15 +2,15 @@ package es.ulpgc.miguel.fortguide.newTheory;
 
 public class NewTheoryModel implements NewTheoryContract.Model {
 
-    public static String TAG = NewTheoryModel.class.getSimpleName();
+  public static String TAG = NewTheoryModel.class.getSimpleName();
 
-    public NewTheoryModel() {
+  public NewTheoryModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

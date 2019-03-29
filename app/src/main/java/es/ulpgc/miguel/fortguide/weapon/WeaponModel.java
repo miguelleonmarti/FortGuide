@@ -2,15 +2,15 @@ package es.ulpgc.miguel.fortguide.weapon;
 
 public class WeaponModel implements WeaponContract.Model {
 
-    public static String TAG = WeaponModel.class.getSimpleName();
+  public static String TAG = WeaponModel.class.getSimpleName();
 
-    public WeaponModel() {
+  public WeaponModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

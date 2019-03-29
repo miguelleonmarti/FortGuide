@@ -9,36 +9,36 @@ import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class SupportProfileRouter implements SupportProfileContract.Router {
 
-    public static String TAG = SupportProfileRouter.class.getSimpleName();
+  public static String TAG = SupportProfileRouter.class.getSimpleName();
 
-    private AppMediator mediator;
+  private AppMediator mediator;
 
-    public SupportProfileRouter(AppMediator mediator) {
-        this.mediator = mediator;
-    }
+  public SupportProfileRouter(AppMediator mediator) {
+    this.mediator = mediator;
+  }
 
-    @Override
-    public void navigateToNextScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, SupportProfileActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToNextScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, SupportProfileActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToMenuScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, MenuActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToMenuScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, MenuActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void passDataToNextScreen(SupportProfileState state) {
-        mediator.setSupportProfileState(state);
-    }
+  @Override
+  public void passDataToNextScreen(SupportProfileState state) {
+    mediator.setSupportProfileState(state);
+  }
 
-    @Override
-    public SupportItem getDataFromSupportScreen() {
-        SupportItem supportItem = mediator.getSupportItem();
-        return supportItem;
-    }
+  @Override
+  public SupportItem getDataFromSupportScreen() {
+    SupportItem supportItem = mediator.getSupportItem();
+    return supportItem;
+  }
 }

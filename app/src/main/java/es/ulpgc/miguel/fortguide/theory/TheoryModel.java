@@ -2,15 +2,15 @@ package es.ulpgc.miguel.fortguide.theory;
 
 public class TheoryModel implements TheoryContract.Model {
 
-    public static String TAG = TheoryModel.class.getSimpleName();
+  public static String TAG = TheoryModel.class.getSimpleName();
 
-    public TheoryModel() {
+  public TheoryModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

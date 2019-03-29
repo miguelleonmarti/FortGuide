@@ -9,49 +9,49 @@ import android.widget.TextView;
 import es.ulpgc.miguel.fortguide.R;
 
 public class NewTheoryActivity
-        extends AppCompatActivity implements NewTheoryContract.View {
+    extends AppCompatActivity implements NewTheoryContract.View {
 
-    public static String TAG = NewTheoryActivity.class.getSimpleName();
+  public static String TAG = NewTheoryActivity.class.getSimpleName();
 
-    private NewTheoryContract.Presenter presenter;
+  private NewTheoryContract.Presenter presenter;
 
-    Button bananaButton;
+  Button bananaButton;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_theory);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_new_theory);
 
     bananaButton.findViewById(R.id.bananaButton);
 
     bananaButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            presenter.startMenuScreen();
-        }
+      @Override
+      public void onClick(View v) {
+        presenter.startMenuScreen();
+      }
     });
-        // do the setup
-        NewTheoryScreen.configure(this);
-    }
+    // do the setup
+    NewTheoryScreen.configure(this);
+  }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+  @Override
+  protected void onResume() {
+    super.onResume();
 
-        // do some work
-        presenter.fetchData();
-    }
+    // do some work
+    presenter.fetchData();
+  }
 
-    @Override
-    public void injectPresenter(NewTheoryContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
+  @Override
+  public void injectPresenter(NewTheoryContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void displayData(NewTheoryViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+  @Override
+  public void displayData(NewTheoryViewModel viewModel) {
+    //Log.e(TAG, "displayData()");
 
-        // deal with the data
-        ((TextView) findViewById(R.id.newTheoryTextView)).setText(viewModel.data);
-    }
+    // deal with the data
+    ((TextView) findViewById(R.id.newTheoryTextView)).setText(viewModel.data);
+  }
 }

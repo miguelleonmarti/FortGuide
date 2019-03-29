@@ -2,15 +2,15 @@ package es.ulpgc.miguel.fortguide.place;
 
 public class PlaceModel implements PlaceContract.Model {
 
-    public static String TAG = PlaceModel.class.getSimpleName();
+  public static String TAG = PlaceModel.class.getSimpleName();
 
-    public PlaceModel() {
+  public PlaceModel() {
 
-    }
+  }
 
-    @Override
-    public String fetchData() {
-        // Log.e(TAG, "fetchData()");
-        return "Hello";
-    }
+  @Override
+  public String fetchData() {
+    // Log.e(TAG, "fetchData()");
+    return "Hello";
+  }
 }

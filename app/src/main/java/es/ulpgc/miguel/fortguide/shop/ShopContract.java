@@ -4,35 +4,35 @@ import java.lang.ref.WeakReference;
 
 interface ShopContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(ShopViewModel viewModel);
-    }
+    void displayData(ShopViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void startMenuScreen();
-    }
+    void startMenuScreen();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
-        void navigateToNextScreen();
+  interface Router {
+    void navigateToNextScreen();
 
-        void passDataToNextScreen(ShopState state);
+    void passDataToNextScreen(ShopState state);
 
-        ShopState getDataFromPreviousScreen();
+    ShopState getDataFromPreviousScreen();
 
-        void navigateToMenuScreen();
-    }
+    void navigateToMenuScreen();
+  }
 }

@@ -9,50 +9,50 @@ import android.widget.TextView;
 import es.ulpgc.miguel.fortguide.R;
 
 public class SupportProfileActivity
-        extends AppCompatActivity implements SupportProfileContract.View {
+    extends AppCompatActivity implements SupportProfileContract.View {
 
-    public static String TAG = SupportProfileActivity.class.getSimpleName();
+  public static String TAG = SupportProfileActivity.class.getSimpleName();
 
-    private SupportProfileContract.Presenter presenter;
+  private SupportProfileContract.Presenter presenter;
 
-    Button bananaButton; //TODO: faltan los botones de las redes sociales (preguntar)
+  Button bananaButton; //TODO: faltan los botones de las redes sociales (preguntar)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_support_profile);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_support_profile);
 
-        bananaButton = findViewById(R.id.bananaButton);
+    bananaButton = findViewById(R.id.bananaButton);
 
-        bananaButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                presenter.startMenuScreen();
-            }
-        });
+    bananaButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startMenuScreen();
+      }
+    });
 
-        // do the setup
-        SupportProfileScreen.configure(this);
-    }
+    // do the setup
+    SupportProfileScreen.configure(this);
+  }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+  @Override
+  protected void onResume() {
+    super.onResume();
 
-        // do some work
-        presenter.fetchData();
-    }
+    // do some work
+    presenter.fetchData();
+  }
 
-    @Override
-    public void injectPresenter(SupportProfileContract.Presenter presenter) {
-        this.presenter = presenter;
-    }
+  @Override
+  public void injectPresenter(SupportProfileContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
 
-    @Override
-    public void displayData(SupportProfileViewModel viewModel) {
-        //Log.e(TAG, "displayData()");
+  @Override
+  public void displayData(SupportProfileViewModel viewModel) {
+    //Log.e(TAG, "displayData()");
 
-        // deal with the data
-        ((TextView) findViewById(R.id.creatorCodeText)).setText(viewModel.data);
-    }
+    // deal with the data
+    ((TextView) findViewById(R.id.creatorCodeText)).setText(viewModel.data);
+  }
 }

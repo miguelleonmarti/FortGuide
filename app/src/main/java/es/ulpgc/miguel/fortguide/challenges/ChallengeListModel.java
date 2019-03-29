@@ -9,17 +9,17 @@ import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ChallengeListModel implements ChallengeListContract.Model {
 
-    public static String TAG = ChallengeListModel.class.getSimpleName();
+  public static String TAG = ChallengeListModel.class.getSimpleName();
 
-    private RepositoryContract repository;
+  private RepositoryContract repository;
 
-    public ChallengeListModel(RepositoryContract repository) {
-this.repository = repository;
-    }
+  public ChallengeListModel(RepositoryContract repository) {
+    this.repository = repository;
+  }
 
-    @Override
-    public List<ChallengeItem> fetchChallengeListData() {
-         Log.e(TAG, "fetchChallengeListData()");
-      return repository.getChallengeList();
-    }
+  @Override
+  public List<ChallengeItem> fetchChallengeListData() {
+    Log.e(TAG, "fetchChallengeListData()");
+    return repository.getChallengeList();
+  }
 }

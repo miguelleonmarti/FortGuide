@@ -4,38 +4,38 @@ import java.lang.ref.WeakReference;
 
 interface TheoryContract {
 
-    interface View {
-        void injectPresenter(Presenter presenter);
+  interface View {
+    void injectPresenter(Presenter presenter);
 
-        void displayData(TheoryViewModel viewModel);
-    }
+    void displayData(TheoryViewModel viewModel);
+  }
 
-    interface Presenter {
-        void injectView(WeakReference<View> view);
+  interface Presenter {
+    void injectView(WeakReference<View> view);
 
-        void injectModel(Model model);
+    void injectModel(Model model);
 
-        void injectRouter(Router router);
+    void injectRouter(Router router);
 
-        void fetchData();
+    void fetchData();
 
-        void startNewTheoryScreen();
+    void startNewTheoryScreen();
 
-        void startMenuScreen();
-    }
+    void startMenuScreen();
+  }
 
-    interface Model {
-        String fetchData();
-    }
+  interface Model {
+    String fetchData();
+  }
 
-    interface Router {
+  interface Router {
 
-        void passDataToNextScreen(TheoryState state);
+    void passDataToNextScreen(TheoryState state);
 
-        TheoryState getDataFromPreviousScreen();
+    TheoryState getDataFromPreviousScreen();
 
-        void navigateToNewTheoryScreen();
+    void navigateToNewTheoryScreen();
 
-        void navigateToMenuScreen();
-    }
+    void navigateToMenuScreen();
+  }
 }

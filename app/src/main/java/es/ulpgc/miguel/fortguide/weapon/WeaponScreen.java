@@ -8,22 +8,22 @@ import es.ulpgc.miguel.fortguide.app.AppMediator;
 
 public class WeaponScreen {
 
-    public static void configure(WeaponContract.View view) {
+  public static void configure(WeaponContract.View view) {
 
-        WeakReference<FragmentActivity> context =
-                new WeakReference<>((FragmentActivity) view);
+    WeakReference<FragmentActivity> context =
+        new WeakReference<>((FragmentActivity) view);
 
-        AppMediator mediator = (AppMediator) context.get().getApplication();
-        WeaponState state = mediator.getWeaponState();
+    AppMediator mediator = (AppMediator) context.get().getApplication();
+    WeaponState state = mediator.getWeaponState();
 
-        WeaponContract.Router router = new WeaponRouter(mediator);
-        WeaponContract.Presenter presenter = new WeaponPresenter(state);
-        WeaponContract.Model model = new WeaponModel();
-        presenter.injectModel(model);
-        presenter.injectRouter(router);
-        presenter.injectView(new WeakReference<>(view));
+    WeaponContract.Router router = new WeaponRouter(mediator);
+    WeaponContract.Presenter presenter = new WeaponPresenter(state);
+    WeaponContract.Model model = new WeaponModel();
+    presenter.injectModel(model);
+    presenter.injectRouter(router);
+    presenter.injectView(new WeakReference<>(view));
 
-        view.injectPresenter(presenter);
+    view.injectPresenter(presenter);
 
-    }
+  }
 }

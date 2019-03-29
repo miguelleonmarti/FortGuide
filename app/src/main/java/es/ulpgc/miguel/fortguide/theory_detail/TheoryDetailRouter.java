@@ -9,36 +9,36 @@ import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class TheoryDetailRouter implements TheoryDetailContract.Router {
 
-    public static String TAG = TheoryDetailRouter.class.getSimpleName();
+  public static String TAG = TheoryDetailRouter.class.getSimpleName();
 
-    private AppMediator mediator;
+  private AppMediator mediator;
 
-    public TheoryDetailRouter(AppMediator mediator) {
-        this.mediator = mediator;
-    }
+  public TheoryDetailRouter(AppMediator mediator) {
+    this.mediator = mediator;
+  }
 
-    @Override
-    public void navigateToNextScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, TheoryDetailActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToNextScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, TheoryDetailActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void navigateToMenuScreen() {
-        Context context = mediator.getApplicationContext();
-        Intent intent = new Intent(context, MenuActivity.class);
-        context.startActivity(intent);
-    }
+  @Override
+  public void navigateToMenuScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, MenuActivity.class);
+    context.startActivity(intent);
+  }
 
-    @Override
-    public void passDataToNextScreen(TheoryDetailState state) {
-        mediator.setTheoryDetailState(state);
-    }
+  @Override
+  public void passDataToNextScreen(TheoryDetailState state) {
+    mediator.setTheoryDetailState(state);
+  }
 
-    @Override
-    public TheoryDetailState getDataFromPreviousScreen() {
-        TheoryDetailState state = mediator.getTheoryDetailState();
-        return state;
-    }
+  @Override
+  public TheoryDetailState getDataFromPreviousScreen() {
+    TheoryDetailState state = mediator.getTheoryDetailState();
+    return state;
+  }
 }
