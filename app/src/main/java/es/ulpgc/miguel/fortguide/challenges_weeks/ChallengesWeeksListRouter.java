@@ -1,21 +1,20 @@
-package es.ulpgc.miguel.fortguide.challenges;
+package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import android.content.Intent;
 import android.content.Context;
-import android.view.Menu;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.challenge.ChallengesDetailActivity;
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
-public class ChallengeListRouter implements ChallengeListContract.Router {
+public class ChallengesWeeksListRouter implements ChallengesWeeksListContract.Router {
 
-  public static String TAG = ChallengeListRouter.class.getSimpleName();
+  public static String TAG = ChallengesWeeksListRouter.class.getSimpleName();
 
   private AppMediator mediator;
 
-  public ChallengeListRouter(AppMediator mediator) {
+  public ChallengesWeeksListRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
 
@@ -27,14 +26,14 @@ public class ChallengeListRouter implements ChallengeListContract.Router {
   }
 
   @Override
-  public void passDataToChallengeDetailsScreen(ChallengeItem item) {
-    mediator.setChallengeItem(item);
+  public void passDataToChallengeDetailsScreen(ChallengesWeeksItem item) {
+    mediator.setChallengesWeeksItem(item);
   }
 
 
   @Override
-  public ChallengeListState getDataFromPreviousScreen() {
-    ChallengeListState state = mediator.getChallengeListState();
+  public ChallengesWeeksListState getDataFromPreviousScreen() {
+    ChallengesWeeksListState state = mediator.getChallengesWeeksListState();
     return state;
   }
 

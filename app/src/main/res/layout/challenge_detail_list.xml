@@ -4,5 +4,7 @@
     android:id="@+id/challenges_detail_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".challenges.ChallengeListActivity"
+    android:footerDividersEnabled="false"
+    android:headerDividersEnabled="false"
+    tools:context=".challenges_weeks.ChallengesWeeksListActivity"
     tools:listitem="@layout/challenge_detail_list_content" />

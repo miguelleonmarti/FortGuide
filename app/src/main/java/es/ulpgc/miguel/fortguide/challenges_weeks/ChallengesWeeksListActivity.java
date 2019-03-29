@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.challenges;
+package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,38 +8,36 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
-import java.util.List;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
 
+public class ChallengesWeeksListActivity
+    extends AppCompatActivity implements ChallengesWeeksListContract.View {
 
-public class ChallengeListActivity
-    extends AppCompatActivity implements ChallengeListContract.View {
+  public static String TAG = ChallengesWeeksListActivity.class.getSimpleName();
 
-  public static String TAG = ChallengeListActivity.class.getSimpleName();
-
-  private ChallengeListContract.Presenter presenter;
+  private ChallengesWeeksListContract.Presenter presenter;
 
   private TextView challengeBar;
   private ListView listView;
   private Button bananaButton;
 
-  private ChallengeListAdapter listAdapter;
+  private ChallengesWeeksListAdapter listAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_challenge_list);
+    setContentView(R.layout.activity_challenges_weeks_list);
 
 
     bananaButton = findViewById(R.id.bananaButton);
     challengeBar = findViewById(R.id.challengeBar);
 
 
-    listAdapter = new ChallengeListAdapter(this, new View.OnClickListener() {
+    listAdapter = new ChallengesWeeksListAdapter(this, new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        ChallengeItem item = (ChallengeItem) listView.getTag();
+        ChallengesWeeksItem item = (ChallengesWeeksItem) listView.getTag();
         presenter.startMenuScreen();
       }
     });
@@ -48,7 +46,7 @@ public class ChallengeListActivity
     listView.setAdapter(listAdapter);
 
     // do the setup
-    ChallengeListScreen.configure(this);
+    ChallengesWeeksListScreen.configure(this);
     presenter.fetchChallengeListData();
   }
 
@@ -61,12 +59,12 @@ public class ChallengeListActivity
   }
 
   @Override
-  public void injectPresenter(ChallengeListContract.Presenter presenter) {
+  public void injectPresenter(ChallengesWeeksListContract.Presenter presenter) {
     this.presenter = presenter;
   }
 
   @Override
-  public void displayChallengeListData(ChallengeListViewModel viewModel) {
+  public void displayChallengeListData(ChallengesWeeksListViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
     // deal with the data

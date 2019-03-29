@@ -1,16 +1,16 @@
-package es.ulpgc.miguel.fortguide.challenges;
+package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
-interface ChallengeListContract {
+interface ChallengesWeeksListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayChallengeListData(ChallengeListViewModel viewModel);
+    void displayChallengeListData(ChallengesWeeksListViewModel viewModel);
   }
 
   interface Presenter {
@@ -22,21 +22,21 @@ interface ChallengeListContract {
 
     void fetchChallengeListData();
 
-    void selectChallengeListData(ChallengeItem item);
+    void selectChallengeListData(ChallengesWeeksItem item);
 
     void startMenuScreen();
   }
 
   interface Model {
-    List<ChallengeItem> fetchChallengeListData();
+    List<ChallengesWeeksItem> fetchChallengeListData();
   }
 
   interface Router {
     void navigateToChallengeDetailsScreen();
 
-    void passDataToChallengeDetailsScreen(ChallengeItem item);
+    void passDataToChallengeDetailsScreen(ChallengesWeeksItem item);
 
-    ChallengeListState getDataFromPreviousScreen();
+    ChallengesWeeksListState getDataFromPreviousScreen();
 
     void navigateToMenuScreen();
   }

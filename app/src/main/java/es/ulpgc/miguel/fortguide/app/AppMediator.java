@@ -4,9 +4,9 @@ import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
 import es.ulpgc.miguel.fortguide.challenge.ChallengesDetailState;
-import es.ulpgc.miguel.fortguide.challenges.ChallengeListState;
+import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
@@ -27,7 +27,7 @@ public class AppMediator extends Application {
   private SupportState supportState;
   private WeaponState weaponState;
   private TheoryState theoryState;
-  private ChallengeListState challengeListState;
+  private ChallengesWeeksListState challengesWeeksListState;
   private ChallengesDetailState challengesDetailState;
   private AdviceState adviceState;
   private ShopState shopState;
@@ -37,7 +37,7 @@ public class AppMediator extends Application {
   private AdviceDetailState adviceDetailState;
 
   private SupportItem supportItem;
-  private ChallengeItem challengeItem;
+  private ChallengesWeeksItem challengesWeeksItem;
 
   @Override
   public void onCreate() {
@@ -49,7 +49,7 @@ public class AppMediator extends Application {
     supportState = new SupportState();
     weaponState = new WeaponState();
     theoryState = new TheoryState();
-    challengeListState = new ChallengeListState();
+    challengesWeeksListState = new ChallengesWeeksListState();
     adviceState = new AdviceState();
     shopState = new ShopState();
     newTheoryState = new NewTheoryState();
@@ -106,12 +106,12 @@ public class AppMediator extends Application {
     return theoryState;
   }
 
-  public void setChallengeListState(ChallengeListState challengeListState) {
-    this.challengeListState = challengeListState;
+  public void setChallengesWeeksListState(ChallengesWeeksListState challengesWeeksListState) {
+    this.challengesWeeksListState = challengesWeeksListState;
   }
 
-  public ChallengeListState getChallengeListState() {
-    return challengeListState;
+  public ChallengesWeeksListState getChallengesWeeksListState() {
+    return challengesWeeksListState;
   }
 
   public void setAdviceState(AdviceState adviceState) {
@@ -182,13 +182,13 @@ public class AppMediator extends Application {
     this.challengesDetailState = challengesDetailState;
   }
 
-  // getters y setters de: challengeItem
+  // getters y setters de: challengesWeeksItem
 
-  public ChallengeItem getChallengeItem() {
-    return challengeItem;
+  public ChallengesWeeksItem getChallengesWeeksItem() {
+    return challengesWeeksItem;
   }
 
-  public void setChallengeItem(ChallengeItem challengeItem) {
-    this.challengeItem = challengeItem;
+  public void setChallengesWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
+    this.challengesWeeksItem = challengesWeeksItem;
   }
 }

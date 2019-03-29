@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.challenges;
+package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,29 +11,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
-public class ChallengeListAdapter extends ArrayAdapter<ChallengeItem> {
+public class ChallengesWeeksListAdapter extends ArrayAdapter<ChallengesWeeksItem> {
 
-  private List<ChallengeItem> itemList = new ArrayList();
+  private List<ChallengesWeeksItem> itemList = new ArrayList();
   private final View.OnClickListener clickListener;
 
-  public ChallengeListAdapter(Context context, View.OnClickListener listener) {
+  public ChallengesWeeksListAdapter(Context context, View.OnClickListener listener) {
     super(context, 0, new ArrayList());
     clickListener = listener;
   }
 
-  public void addItem(ChallengeItem item) {
+  public void addItem(ChallengesWeeksItem item) {
     itemList.add(item);
     notifyDataSetChanged();
   }
 
-  public void addItems(List<ChallengeItem> items) {
+  public void addItems(List<ChallengesWeeksItem> items) {
     itemList = items;
     notifyDataSetChanged();
   }
 
-  public void setItems(List<ChallengeItem> items) {
+  public void setItems(List<ChallengesWeeksItem> items) {
     itemList = items;
     notifyDataSetChanged();
   }
@@ -44,7 +44,7 @@ public class ChallengeListAdapter extends ArrayAdapter<ChallengeItem> {
 
     if (itemView == null) {
       itemView = LayoutInflater.from(parent.getContext())
-          .inflate(R.layout.challenge_list_content, parent, false);
+          .inflate(R.layout.challenges_weeks_list_content, parent, false);
     }
 
     itemView.setTag(itemList.get(position));
@@ -62,7 +62,7 @@ public class ChallengeListAdapter extends ArrayAdapter<ChallengeItem> {
   }
 
   @Override
-  public ChallengeItem getItem(int position) {
+  public ChallengesWeeksItem getItem(int position) {
     return itemList.get(position);
   }
 

@@ -3,15 +3,14 @@ package es.ulpgc.miguel.fortguide.challenge;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ulpgc.miguel.fortguide.data.ChallengeAbstract;
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ChallengeRepository implements RepositoryContract {
 
   private static ChallengeRepository INSTANCE;
 
-  private final List<ChallengeItem> itemList = new ArrayList<>();
+  private final List<ChallengesWeeksItem> itemList = new ArrayList<>();
   private final int COUNT = 10;
 
   public static RepositoryContract getInstance() {
@@ -30,21 +29,21 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   @Override
-  public List<ChallengeItem> getChallengeList() {
+  public List<ChallengesWeeksItem> getChallengeList() {
     return itemList;
   }
 
 
-  private void addChallenge(ChallengeItem item) {
+  private void addChallenge(ChallengesWeeksItem item) {
     itemList.add(item);
   }
 
 
-  private ChallengeItem createChallenge(int position) {
+  private ChallengesWeeksItem createChallenge(int position) {
     String content = "Semana " + position;
 
-    return new ChallengeItem(
-        position, content, fetchChallengeDetails(position));
+    return new ChallengesWeeksItem(
+        position, content);
   }
 
   private String fetchChallengeDetails(int position) {
