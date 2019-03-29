@@ -3,6 +3,7 @@ package es.ulpgc.miguel.fortguide.challenge;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
@@ -38,6 +39,18 @@ public class ChallengeRepository implements RepositoryContract {
     itemList.add(item);
   }
 
+  private void addChallenge(List<ChallengeItem> itemList, ChallengeItem item) {
+    itemList.add(item);
+  }
+
+
+  private ChallengeItem createChallenge(int id, int position) {
+    String content = "Desafio" + id + "." + position;
+
+    return new ChallengeItem(
+        position, content, fetchChallengeDetails(id, position)
+    );
+  }
 
   private ChallengesWeeksItem createChallenge(int position) {
     String content = "Semana " + position;
@@ -46,8 +59,8 @@ public class ChallengeRepository implements RepositoryContract {
         position, content);
   }
 
-  private String fetchChallengeDetails(int position) {
-    String content = "Details" + "." + position;
+  private String fetchChallengeDetails(int id, int position) {
+    String content = "Dificultad" + "." + position;
     StringBuilder builder = new StringBuilder();
     builder.append(content);
 

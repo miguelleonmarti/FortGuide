@@ -14,6 +14,7 @@ public class ChallengesDetailActivity
 
   private ChallengesDetailContract.Presenter presenter;
 
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
