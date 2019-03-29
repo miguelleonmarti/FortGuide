@@ -77,6 +77,6 @@ public class MenuPresenterMockitoTest {
     presenter.startChallengeScreen();
     verify(routerMock).navigateToChallengeScreen();
   }
-//TODO hacer le test paracambiar a tienda
+//TODO hacer el test para cambiar a tienda
 
 }
