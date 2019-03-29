@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/challenges_list"
+    android:id="@+id/challenges_detail_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".challenges.ChallengeListActivity"
-    tools:listitem="@layout/challenge_list_content" />
-
+    tools:listitem="@layout/challenge_detail_list_content" />
