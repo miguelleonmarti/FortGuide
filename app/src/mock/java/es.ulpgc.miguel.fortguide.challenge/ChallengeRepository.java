@@ -69,5 +69,21 @@ public class ChallengeRepository implements RepositoryContract {
     }
     return builder.toString();
   }
+
+  // TODO: ELIMINAR
+  @Override
+  public void loadSupport(FetchSupportDataCallback callback) {
+
+  }
+
+  @Override
+  public void getSupportList(GetSupportListCallback callback) {
+
+  }
+
+  @Override
+  public void getSupportItem(int id, GetSupportItemCallback callback) {
+
+  }
 }
 

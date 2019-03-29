@@ -1,7 +1,9 @@
 package es.ulpgc.miguel.fortguide.support;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 
 public class SupportPresenter implements SupportContract.Presenter {
@@ -35,13 +37,13 @@ public class SupportPresenter implements SupportContract.Presenter {
   @Override
   public void fetchData() {
     // Log.e(TAG, "fetchData()");
-
-    // set passed state
-
-    // update the view
-    viewModel.profiles = model.fetchData();
-    view.get().displayData(viewModel);
-
+    model.fetchSupportListData(new RepositoryContract.GetSupportListCallback() {
+      @Override
+      public void setSupportList(List<SupportItem> supportList) {
+        viewModel.profiles = supportList;
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override

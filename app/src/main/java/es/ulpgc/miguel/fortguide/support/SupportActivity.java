@@ -1,10 +1,11 @@
 package es.ulpgc.miguel.fortguide.support;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -35,7 +36,7 @@ public class SupportActivity
       }
     });
 
-    supportAdapter = new SupportAdapter(this, new View.OnClickListener() {
+    supportAdapter = new SupportAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         SupportItem item = (SupportItem) view.getTag();
@@ -43,8 +44,8 @@ public class SupportActivity
       }
     });
 
-    GridView gridView = findViewById(R.id.gridView);
-    gridView.setAdapter(supportAdapter);
+    RecyclerView recyclerView = findViewById(R.id.supportList);
+    recyclerView.setAdapter(supportAdapter);
 
     // do the setup
     SupportScreen.configure(this);
@@ -57,11 +58,15 @@ public class SupportActivity
   }
 
   @Override
-  public void displayData(SupportViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
+  public void displayData(final SupportViewModel viewModel) {
+    Log.e(TAG, "displayData()");
 
-    // deal with the data
-    ((TextView) findViewById(R.id.supportBar)).setText(R.string.support_bar_label);
-    supportAdapter.setItems(viewModel.profiles);
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        ((TextView) findViewById(R.id.supportBar)).setText(R.string.support_bar_label);
+        supportAdapter.setItems(viewModel.profiles);
+      }
+    });
   }
 }
