@@ -2,7 +2,7 @@ package es.ulpgc.miguel.fortguide.introduction;
 
 import java.lang.ref.WeakReference;
 
-interface IntroductionContract {
+public interface IntroductionContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
