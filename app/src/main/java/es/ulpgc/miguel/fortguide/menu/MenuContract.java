@@ -2,7 +2,7 @@ package es.ulpgc.miguel.fortguide.menu;
 
 import java.lang.ref.WeakReference;
 
-interface MenuContract {
+public interface MenuContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
