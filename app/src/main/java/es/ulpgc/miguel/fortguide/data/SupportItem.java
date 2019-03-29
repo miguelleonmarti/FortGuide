@@ -2,10 +2,10 @@ package es.ulpgc.miguel.fortguide.data;
 
 public class SupportItem {
 
-  public final int id, image;
-  public final String content, details, code, instagram, twitter, twitch, youtube;
+  public final int id;
+  public final String image, content, details, code, instagram, twitter, twitch, youtube;
 
-  public SupportItem(int id, int image, String content, String details, String code, String instagram, String twitter, String twitch, String youtube) {
+  public SupportItem(int id, String image, String content, String details, String code, String instagram, String twitter, String twitch, String youtube) {
     this.id = id;
     this.image = image;
     this.content = content;
@@ -21,7 +21,7 @@ public class SupportItem {
     return id;
   }
 
-  public int getImage() {
+  public String getImage() {
     return image;
   }
 

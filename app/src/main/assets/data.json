@@ -2,47 +2,113 @@
   "support": [
     {
       "id": 1,
-      "image": 1,
+      "image": "",
       "content": "Willyrex",
-      "details": "Es un famoso YouTuber",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
       "code": "willyrex",
-      "instagram": "http://instagram.com",
-      "twitter": "http://twitter.com",
-      "twitch": "http://twitch.tv",
-      "youtube": "http://youtube.com"
+      "instagram": "https://instagram.com/willyrex",
+      "twitter": "https://twitter.com/WillyrexYT",
+      "twitch": "https://twitch.tv/willyrex",
+      "youtube": "https://www.youtube.com/user/Willyrex"
     },
     {
       "id": 2,
-      "image": 2,
+      "image": "",
       "content": "Ninja",
-      "details": "Es un famoso Streamer",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
       "code": "ninja",
-      "instagram": "http://instagram.com",
-      "twitter": "http://twitter.com",
-      "twitch": "http://twitch.tv",
-      "youtube": "http://youtube.com"
+      "instagram": "https://instagram.com/ninja",
+      "twitter": "https://twitter.com/ninja",
+      "twitch": "https://twitch.tv/ninja",
+      "youtube": "https://www.youtube.com/user/NinjasHyper"
     },
     {
       "id": 3,
-      "image": 3,
+      "image": "",
       "content": "Tfue",
-      "details": "Es un famoso Streamer americano",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
       "code": "tfue",
-      "instagram": "http://instagram.com",
-      "twitter": "http://twitter.com",
-      "twitch": "http://twitch.tv",
-      "youtube": "http://youtube.com"
+      "instagram": "https://instagram.com/tfue",
+      "twitter": "https://twitter.com/ttfue",
+      "twitch": "https://twitch.tv/tfue",
+      "youtube": "https://www.youtube.com/user/TTfue"
     },
     {
       "id": 4,
-      "image": 4,
+      "image": "",
+      "content": "KittyPlays",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
+      "code": "kittyplays",
+      "instagram": "https://instagram.com/kittyplays",
+      "twitter": "https://twitter.com/kittyplays",
+      "twitch": "https://twitch.tv",
+      "youtube": "https://www.youtube.com/user/KittyPlaysVideos"
+    },
+    {
+      "id": 5,
+      "image": "",
+      "content": "DrLupo",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
+      "code": "drlupo",
+      "instagram": "https://instagram.com/drlupo",
+      "twitter": "https://twitter.com/drlupo",
+      "twitch": "https://twitch.tv/drlupo",
+      "youtube": "https://www.youtube.com/channel/UCNF0LEQ2abMr0PAX3cfkAMg"
+    },
+    {
+      "id": 6,
+      "image": "",
+      "content": "Pokimane",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
+      "code": "pokimane",
+      "instagram": "https://instagram.com/pokimanelol",
+      "twitter": "https://twitter.com/pokimanelol",
+      "twitch": "https://twitch.tv/pokimane",
+      "youtube": "https://www.youtube.com/user/pokimane"
+    },
+    {
+      "id": 7,
+      "image": "",
+      "content": "Valkyrae",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
+      "code": "valkyraexd",
+      "instagram": "https://instagram.com/valkyrae",
+      "twitter": "https://twitter.com/valkyrae",
+      "twitch": "https://twitch.tv/valkyrae",
+      "youtube": "https://www.youtube.com/channel/UCWxlUwW9BgGISaakjGM37aw"
+    },
+    {
+      "id": 8,
+      "image": "",
+      "content": "Cloak",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
+      "code": "fazecloak",
+      "instagram": "https://instagram.com/cloakzy",
+      "twitter": "https://twitter.com/cloakzy",
+      "twitch": "https://twitch.tv/cloakzy",
+      "youtube": "https://www.youtube.com/channel/UCctNbNYKhhzSKXH60vB7x4A"
+    },
+    {
+      "id": 9,
+      "image": "",
       "content": "Rubius",
-      "details": "Es un famoso YouTuber",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
       "code": "rubiuh",
-      "instagram": "http://instagram.com",
-      "twitter": "http://twitter.com",
-      "twitch": "http://twitch.tv",
-      "youtube": "http://youtube.com"
+      "instagram": "https://instagram.com/elrubiuswtf",
+      "twitter": "https://twitter.com/Rubiu5",
+      "twitch": "https://twitch.tv/rubius",
+      "youtube": "https://www.youtube.com/user/elrubiusOMG"
+    },
+    {
+      "id": 10,
+      "image": "",
+      "content": "Shroud",
+      "details": "Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido. Descripción de prueba para los creadores de contenido.",
+      "code": "shroud",
+      "instagram": "https://instagram.com/shroud",
+      "twitter": "https://twitter.com/shroud",
+      "twitch": "https://twitch.tv/shroud",
+      "youtube": "https://www.youtube.com/channel/UCoz3Kpu5lv-ALhR4h9bDvcw"
     }
   ]
 }
