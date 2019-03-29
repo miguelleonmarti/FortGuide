@@ -29,7 +29,6 @@ public class ChallengeRepository implements RepositoryContract {
     }
   }
 
-  @Override
   public List<ChallengesWeeksItem> getChallengeList() {
     return itemList;
   }

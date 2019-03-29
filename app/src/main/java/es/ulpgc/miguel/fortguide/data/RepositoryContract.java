@@ -5,7 +5,7 @@ import java.util.List;
 import es.ulpgc.miguel.fortguide.challenge.SupportRepository;
 
 public interface RepositoryContract {
-  List<ChallengesWeeksItem> getChallengeList();
+  //List<ChallengesWeeksItem> getChallengeList();
 
   interface FetchSupportDataCallback{
     void onSupportDataFetched(boolean error);

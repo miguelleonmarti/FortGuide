@@ -45,11 +45,6 @@ public class SupportRepository implements RepositoryContract {
   }
 
   @Override
-  public List<ChallengeItem> getChallengeList() {
-    return null;
-  }
-
-  @Override
   public void loadSupport(final FetchSupportDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
