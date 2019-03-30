@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.challenge;
+package es.ulpgc.miguel.fortguide.challenges_detail;
 
 import android.content.Intent;
 import android.content.Context;

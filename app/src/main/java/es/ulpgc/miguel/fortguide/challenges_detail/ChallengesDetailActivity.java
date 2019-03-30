@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.challenge;
+package es.ulpgc.miguel.fortguide.challenges_detail;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

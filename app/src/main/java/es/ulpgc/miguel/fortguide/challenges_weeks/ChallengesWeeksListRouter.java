@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
-import es.ulpgc.miguel.fortguide.challenge.ChallengesDetailActivity;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailActivity;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 

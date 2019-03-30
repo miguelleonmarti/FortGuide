@@ -3,7 +3,7 @@ package es.ulpgc.miguel.fortguide.app;
 import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
-import es.ulpgc.miguel.fortguide.challenge.ChallengesDetailState;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailState;
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;

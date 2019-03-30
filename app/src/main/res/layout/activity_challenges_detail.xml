@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/llama"
     android:padding="0dp"
-    tools:context=".challenge.ChallengesDetailActivity">
+    tools:context=".challenges_detail.ChallengesDetailActivity">
 
 
     <TextView
