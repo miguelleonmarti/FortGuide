@@ -7,10 +7,4 @@ public class ChallengesDetailModel implements ChallengesDetailContract.Model {
   public ChallengesDetailModel() {
 
   }
-
-  @Override
-  public String fetchData() {
-    // Log.e(TAG, "fetchData()");
-    return "Hello";
-  }
 }

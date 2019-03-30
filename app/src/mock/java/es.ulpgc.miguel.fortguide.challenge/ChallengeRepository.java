@@ -38,18 +38,6 @@ public class ChallengeRepository implements RepositoryContract {
     itemList.add(item);
   }
 
-  private void addChallenge(List<ChallengeItem> itemList, ChallengeItem item) {
-    itemList.add(item);
-  }
-
-
-  private ChallengeItem createChallenge(int id, int position) {
-    String content = "Desafio" + id + "." + position;
-
-    return new ChallengeItem(
-        position, content, fetchChallengeDetails(id, position)
-    );
-  }
 
   private ChallengesWeeksItem createChallenge(int position) {
     String content = "Semana " + position;

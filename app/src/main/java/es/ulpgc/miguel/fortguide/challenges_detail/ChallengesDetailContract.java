@@ -1,13 +1,19 @@
 package es.ulpgc.miguel.fortguide.challenges_detail;
 
+import android.view.MenuItem;
+
 import java.lang.ref.WeakReference;
+
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 
 interface ChallengesDetailContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayData(ChallengesDetailViewModel viewModel);
+    void displayChallengeDetailData(ChallengesDetailViewModel viewModel);
+
+    boolean onOptionsItemSelected(MenuItem item);
   }
 
   interface Presenter {
@@ -17,11 +23,11 @@ interface ChallengesDetailContract {
 
     void injectRouter(Router router);
 
-    void fetchData();
+    void fetchChallengeDetailData();
   }
 
   interface Model {
-    String fetchData();
+
   }
 
   interface Router {
@@ -29,6 +35,6 @@ interface ChallengesDetailContract {
 
     void passDataToNextScreen(ChallengesDetailState state);
 
-    ChallengesDetailState getDataFromPreviousScreen();
+    ChallengeItem getDataFromPreviousScreen();
   }
 }

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class ChallengesDetailRouter implements ChallengesDetailContract.Router {
 
@@ -18,7 +20,7 @@ public class ChallengesDetailRouter implements ChallengesDetailContract.Router {
   @Override
   public void navigateToNextScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ChallengesDetailActivity.class);
+    Intent intent = new Intent(context, MenuActivity.class);
     context.startActivity(intent);
   }
 
@@ -28,8 +30,8 @@ public class ChallengesDetailRouter implements ChallengesDetailContract.Router {
   }
 
   @Override
-  public ChallengesDetailState getDataFromPreviousScreen() {
-    ChallengesDetailState state = mediator.getChallengesDetailState();
-    return state;
+  public ChallengeItem getDataFromPreviousScreen() {
+    ChallengeItem challenge = mediator.getChallengeItem();
+    return challenge;
   }
 }

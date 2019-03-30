@@ -6,6 +6,7 @@ import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
 import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailState;
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
@@ -38,6 +39,7 @@ public class AppMediator extends Application {
 
   private SupportItem supportItem;
   private ChallengesWeeksItem challengesWeeksItem;
+  private ChallengeItem challenge;
 
   @Override
   public void onCreate() {
@@ -190,5 +192,13 @@ public class AppMediator extends Application {
 
   public void setChallengesWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
     this.challengesWeeksItem = challengesWeeksItem;
+  }
+
+  public ChallengeItem getChallengeItem() {
+    return challenge;
+  }
+
+  public void setChallengeItem(ChallengeItem challengeItem) {
+    this.challenge = challenge;
   }
 }

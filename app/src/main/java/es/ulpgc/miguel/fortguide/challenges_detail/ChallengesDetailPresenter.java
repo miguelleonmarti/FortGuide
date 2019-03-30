@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.challenges_detail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+
 public class ChallengesDetailPresenter implements ChallengesDetailContract.Presenter {
 
   public static String TAG = ChallengesDetailPresenter.class.getSimpleName();
@@ -31,26 +33,16 @@ public class ChallengesDetailPresenter implements ChallengesDetailContract.Prese
   }
 
   @Override
-  public void fetchData() {
+  public void fetchChallengeDetailData() {
     // Log.e(TAG, "fetchData()");
 
     // set passed state
-    ChallengesDetailState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
+    ChallengeItem challenge = router.getDataFromPreviousScreen();
+    if(challenge != null){
+      viewModel.challenge = challenge;
     }
 
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
+    view.get().displayChallengeDetailData(viewModel);
   }
 
 
