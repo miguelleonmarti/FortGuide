@@ -110,5 +110,417 @@
       "twitch": "https://twitch.tv/shroud",
       "youtube": "https://www.youtube.com/channel/UCoz3Kpu5lv-ALhR4h9bDvcw"
     }
+  ],
+  "challenge": [
+    {
+      "id": 1,
+      "title": "Semana 1",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Semana 2",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Semana 3",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Semana 4",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Semana 5",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Semana 6",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Semana 7",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Semana 8",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Semana 9",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Semana 10",
+      "content": [
+        {
+          "id": 1,
+          "title": "Dificultad: fácil",
+          "content": "Visita todos los campamentos piratas 0/7"
+        },
+        {
+          "id": 2,
+          "title": "Dificultad: fácil",
+          "content": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+        },
+        {
+          "id": 3,
+          "title": "Dificultad: fácil",
+          "content": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+        },
+        {
+          "id": 4,
+          "title": "Dificultad: fácil",
+          "content": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+        },
+        {
+          "id": 5,
+          "title": "Dificultad: media",
+          "content": "Usa un respiradero volcánico en partidas diferentes 0/7"
+        },
+        {
+          "id": 6,
+          "title": "Dificultad: media",
+          "content": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+        },
+        {
+          "id": 7,
+          "title": "Dificultad: difícil",
+          "content": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+        }
+      ]
+    }
   ]
 }
