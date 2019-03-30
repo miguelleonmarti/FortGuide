@@ -42,7 +42,7 @@ public class ChallengesWeeksListActivity
       }
     });
 
-    listView = findViewById(R.id.challenges_list);
+    listView = findViewById(R.id.challenges_weeks_list);
     listView.setAdapter(listAdapter);
 
     // do the setup
