@@ -5,6 +5,6 @@
     android:id="@+id/supportList"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutManager="LinearLayoutManager"
+    app:layoutManager="android.support.v7.widget.GridLayoutManager"
     tools:context=".support.SupportActivity"
     tools:listitem="@layout/support_list_content" />

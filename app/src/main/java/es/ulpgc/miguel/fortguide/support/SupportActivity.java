@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.support;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +47,7 @@ public class SupportActivity
 
     RecyclerView recyclerView = findViewById(R.id.supportList);
     recyclerView.setAdapter(supportAdapter);
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // numero de columnas
 
     // do the setup
     SupportScreen.configure(this);

@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorTextButtonWhiteOpacity"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="10dp">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="GuilleSergio"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextButtonBlack"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/detailView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
-        android:drawableTop="@mipmap/ic_launcher_round"
         android:text="Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba."
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
-        android:textColorLink="@color/colorTextButtonBlack" />
+        android:textColorLink="@color/colorTextButtonBlack"
+        android:textSize="14sp"
+        android:textStyle="italic" />
 </LinearLayout>
 

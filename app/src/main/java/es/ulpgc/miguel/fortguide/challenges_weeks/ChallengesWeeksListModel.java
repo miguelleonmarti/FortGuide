@@ -20,6 +20,6 @@ public class ChallengesWeeksListModel implements ChallengesWeeksListContract.Mod
   @Override
   public List<ChallengesWeeksItem> fetchChallengeListData() {
     Log.e(TAG, "fetchChallengeListData()");
-    return repository.getChallengeList();
+      return repository.getChallengeList();
   }
 }
