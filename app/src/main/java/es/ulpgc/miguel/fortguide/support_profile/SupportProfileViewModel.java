@@ -1,6 +1,7 @@
 package es.ulpgc.miguel.fortguide.support_profile;
 
-public class SupportProfileViewModel {
+import es.ulpgc.miguel.fortguide.data.SupportItem;
 
-  public String data = "";
+public class SupportProfileViewModel {
+  public SupportItem profile;
 }

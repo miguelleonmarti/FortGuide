@@ -22,6 +22,8 @@ interface SupportProfileContract {
     void fetchData();
 
     void startMenuScreen();
+
+    void startSocialNetworkScreen(String socialNetwork);
   }
 
   interface Model {
@@ -29,12 +31,13 @@ interface SupportProfileContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
 
     void passDataToNextScreen(SupportProfileState state);
 
     SupportItem getDataFromSupportScreen();
 
     void navigateToMenuScreen();
+
+    void navigateToSocialNetworkScreen(String socialNetwork);
   }
 }

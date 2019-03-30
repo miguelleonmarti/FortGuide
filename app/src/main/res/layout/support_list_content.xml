@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -24,7 +24,7 @@
         android:text="GuilleSergio"
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
         android:textColorLink="@color/colorTextButtonBlack"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textStyle="italic" />
 </LinearLayout>
 

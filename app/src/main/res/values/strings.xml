@@ -32,4 +32,9 @@
     <string name="challenge_detail_label">Desafios-Semana</string>
     <string name="challenge_detail_title_label">Challenge Detail Title</string>
     <string name="challenge_detail_content_label">Challenge Detail Content</string>
+    <string name="creator_code_label">Código de creador:</string>
+    <string name="content_description_instagram">instagram</string>
+    <string name="content_description_twitter">twitter</string>
+    <string name="content_description_twitch">twitch</string>
+    <string name="content_description_youtube">youtube</string>
 </resources>

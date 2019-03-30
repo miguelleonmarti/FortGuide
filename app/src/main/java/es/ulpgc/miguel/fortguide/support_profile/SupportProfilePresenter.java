@@ -39,15 +39,15 @@ public class SupportProfilePresenter implements SupportProfileContract.Presenter
     // set passed state
     SupportItem supportItem = router.getDataFromSupportScreen();
     if (supportItem != null) {
-      viewModel.data = supportItem.content;
+      viewModel.profile = supportItem;
     }
 
-    if (viewModel.data == null) {
+    if (viewModel.profile == null) {
       // call the model
-      String data = model.fetchData();
+      String code = model.fetchData(); //TODO: hay que poner el resto??
 
       // set initial state
-      viewModel.data = data;
+      //viewModel.data = data;
     }
 
     // update the view
@@ -58,5 +58,18 @@ public class SupportProfilePresenter implements SupportProfileContract.Presenter
   @Override
   public void startMenuScreen() {
     router.navigateToMenuScreen();
+  }
+
+  @Override
+  public void startSocialNetworkScreen(String socialNetwork) {
+    if (socialNetwork.equals("instagram")) {
+      router.navigateToSocialNetworkScreen(viewModel.profile.instagram);
+    } else if (socialNetwork.equals("twitter")) {
+      router.navigateToSocialNetworkScreen(viewModel.profile.twitter);
+    } else if (socialNetwork.equals("twitch")) {
+      router.navigateToSocialNetworkScreen(viewModel.profile.twitch);
+    } else if (socialNetwork.equals("youtube")) {
+      router.navigateToSocialNetworkScreen(viewModel.profile.youtube);
+    }
   }
 }

@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.support_profile;
 
 import android.content.Intent;
 import android.content.Context;
+import android.net.Uri;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
@@ -18,9 +19,10 @@ public class SupportProfileRouter implements SupportProfileContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
+  public void navigateToSocialNetworkScreen(String socialNetwork) {
+    Uri uri = Uri.parse(socialNetwork); // missing 'http://' will cause crashed
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, SupportProfileActivity.class);
+    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
     context.startActivity(intent);
   }
 

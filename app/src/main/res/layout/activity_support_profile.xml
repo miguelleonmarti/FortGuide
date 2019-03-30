@@ -44,50 +44,66 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:shape="ring"
             tools:src="@tools:sample/avatars" />
+
+
+        <TextView
+            android:id="@+id/creatorCodeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:paddingTop="10dp"
+            android:text="@string/creator_code_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonBlack"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/creatorCodeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="Código de creador: abcdefgh"
+            android:text="abcdefgh"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/instagram"
+            android:id="@+id/instagramButton"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginBottom="20dp"
+            android:contentDescription="@string/content_description_instagram"
             android:src="@drawable/instagram" />
 
         <ImageView
-            android:id="@+id/twitter"
+            android:id="@+id/twitterButton"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginBottom="20dp"
+            android:contentDescription="@string/content_description_twitter"
             android:src="@drawable/twitter" />
 
         <ImageView
-            android:id="@+id/twitch"
+            android:id="@+id/twitchButton"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginBottom="20dp"
+            android:contentDescription="@string/content_description_twitch"
             android:src="@drawable/twitch" />
 
         <ImageView
-            android:id="@+id/youtube"
+            android:id="@+id/youtubeButton"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginBottom="20dp"
+            android:contentDescription="@string/content_description_youtube"
             android:src="@drawable/youtube" />
 
     </LinearLayout>
