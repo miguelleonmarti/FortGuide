@@ -63,7 +63,7 @@ public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHold
 
     ViewHolder(View view) {
       super(view);
-      textView = view.findViewById(R.id.textView1);
+      textView = view.findViewById(R.id.detailView);
     }
   }
 }
