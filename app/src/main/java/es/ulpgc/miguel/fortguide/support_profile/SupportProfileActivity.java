@@ -24,7 +24,7 @@ public class SupportProfileActivity
   private SupportProfileContract.Presenter presenter;
 
   Button bananaButton;
-  ImageView instagramButton, twitterButton, twitchButton, youtubeButton; //TODO: faltan los botones de las redes sociales (preguntar)
+  ImageView instagramButton, twitterButton, twitchButton, youtubeButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +90,7 @@ public class SupportProfileActivity
     SupportItem supportItem = viewModel.profile;
     // deal with the data
     ((TextView) findViewById(R.id.creatorCodeText)).setText(supportItem.code);
-    //loadImageFromURL((ImageView) findViewById(R.id.imageView), supportItem.image); //TODO: NO SE SI VA AQUI
+    loadImageFromURL((ImageView) findViewById(R.id.imageView), supportItem.image);
   }
 
 

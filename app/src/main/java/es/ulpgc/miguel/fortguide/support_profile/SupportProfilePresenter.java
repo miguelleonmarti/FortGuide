@@ -62,14 +62,21 @@ public class SupportProfilePresenter implements SupportProfileContract.Presenter
 
   @Override
   public void startSocialNetworkScreen(String socialNetwork) {
-    if (socialNetwork.equals("instagram")) {
-      router.navigateToSocialNetworkScreen(viewModel.profile.instagram);
-    } else if (socialNetwork.equals("twitter")) {
-      router.navigateToSocialNetworkScreen(viewModel.profile.twitter);
-    } else if (socialNetwork.equals("twitch")) {
-      router.navigateToSocialNetworkScreen(viewModel.profile.twitch);
-    } else if (socialNetwork.equals("youtube")) {
-      router.navigateToSocialNetworkScreen(viewModel.profile.youtube);
+    switch (socialNetwork) {
+      case "instagram":
+        router.navigateToSocialNetworkScreen(viewModel.profile.instagram);
+        break;
+      case "twitter":
+        router.navigateToSocialNetworkScreen(viewModel.profile.twitter);
+        break;
+      case "twitch":
+        router.navigateToSocialNetworkScreen(viewModel.profile.twitch);
+        break;
+      case "youtube":
+        router.navigateToSocialNetworkScreen(viewModel.profile.youtube);
+        break;
+      default:
+        break;
     }
   }
 }
