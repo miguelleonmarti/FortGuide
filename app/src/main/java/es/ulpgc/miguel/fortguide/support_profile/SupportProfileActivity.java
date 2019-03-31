@@ -1,6 +1,5 @@
 package es.ulpgc.miguel.fortguide.support_profile;
 
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -91,7 +90,7 @@ public class SupportProfileActivity
     SupportItem supportItem = viewModel.profile;
     // deal with the data
     ((TextView) findViewById(R.id.creatorCodeText)).setText(supportItem.code);
-    loadImageFromURL((ImageView) findViewById(R.id.imageView), supportItem.image); //TODO: NO SE SI VA AQUI
+    //loadImageFromURL((ImageView) findViewById(R.id.imageView), supportItem.image); //TODO: NO SE SI VA AQUI
   }
 
 
