@@ -1,22 +1,24 @@
 package es.ulpgc.miguel.fortguide.data;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChallengesWeeksItem extends ChallengeAbstract {
+public class ChallengesWeeksItem {
 
-  public final List<ChallengesWeeksItem> items;
+  public int id;
+
+  public String content;
+  public String details;
 
 
-
-  public ChallengesWeeksItem(int id, String content) {  // Contructor de la clase Challenge.
-    super(id, content);
-    items = new ArrayList<>(); //Creamos un nuevo arrayList de desafios.
-  }
+@SerializedName("challenges")
+  public List<ChallengesWeeksItem> items;
 
   @Override
   public String toString() {
-    return super.toString();
+    return content;
   }
 }
 
