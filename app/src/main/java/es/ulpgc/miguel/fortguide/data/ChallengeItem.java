@@ -1,17 +1,16 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class ChallengeItem {
+public class ChallengeItem extends ChallengeAbstract {
 
-  public int id;
+public final String details;
 
-  public String content;
-  public String details;
-
-  public int challengeWeeksId;
-
+public ChallengeItem(int id,String content,String details){
+  super(id,content);
+  this.details = details;
+}
 
   @Override
   public String toString() {
-    return content;
+    return super.toString();
   }
 }
