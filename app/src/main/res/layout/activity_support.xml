@@ -9,13 +9,6 @@
     tools:context=".support.SupportActivity">
 
     <TextView
-        android:id="@+id/data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-    <TextView
         android:id="@+id/supportBar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
