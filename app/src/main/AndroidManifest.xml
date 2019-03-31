@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
 
-        <activity android:name=".support.SupportActivity">
+        <activity android:name=".introduction.IntroductionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,7 @@
         </activity>
         <activity android:name=".newTheory.NewTheoryActivity">
         </activity>
-        <activity android:name=".introduction.IntroductionActivity">
+        <activity android:name=".support.SupportActivity">
         </activity>
         <activity android:name=".support_profile.SupportProfileActivity">
         </activity>
