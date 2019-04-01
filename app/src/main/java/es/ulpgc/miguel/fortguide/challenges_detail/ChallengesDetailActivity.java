@@ -23,11 +23,11 @@ public class ChallengesDetailActivity
   private ChallengeDetailAdapter listAdapter;
 
 
-  Button banana;
-  TextView title;
-  TextView detail;
-  ImageView starImage;
-  CheckBox checkbox;
+  private Button banana;
+  private TextView title;
+  private TextView detail;
+  private ImageView starImage;
+  private CheckBox checkbox;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

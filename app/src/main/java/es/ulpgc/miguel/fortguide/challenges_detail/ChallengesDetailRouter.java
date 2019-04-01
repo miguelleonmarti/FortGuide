@@ -18,7 +18,7 @@ public class ChallengesDetailRouter implements ChallengesDetailContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
+  public void navigateToMenuScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, MenuActivity.class);
     context.startActivity(intent);

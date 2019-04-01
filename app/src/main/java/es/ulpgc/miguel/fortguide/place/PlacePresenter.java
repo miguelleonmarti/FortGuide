@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.fortguide.place;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 
 public class PlacePresenter implements PlaceContract.Presenter {
 
@@ -33,24 +36,15 @@ public class PlacePresenter implements PlaceContract.Presenter {
   @Override
   public void fetchData() {
     // Log.e(TAG, "fetchData()");
-
-    // set passed state
-    PlaceState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
+    List<PlaceItem> placeItemList = model.fetchData();
+    viewModel.places = placeItemList;
     view.get().displayData(viewModel);
+  }
 
+  @Override
+  public void selectPlaceListData(PlaceItem placeItem) {
+    router.passDataToNextScreen(placeItem);
+    router.navigateToMenuScreen();
   }
 
   @Override

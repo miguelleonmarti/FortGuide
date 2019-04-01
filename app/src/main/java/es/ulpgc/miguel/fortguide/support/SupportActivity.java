@@ -41,7 +41,7 @@ public class SupportActivity
       @Override
       public void onClick(View view) {
         SupportItem item = (SupportItem) view.getTag();
-        presenter.selectCategoryListData(item);
+        presenter.selectSupportListData(item);
       }
     });
 

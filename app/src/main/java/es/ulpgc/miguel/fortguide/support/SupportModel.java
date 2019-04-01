@@ -11,7 +11,6 @@ public class SupportModel implements SupportContract.Model {
   public static String TAG = SupportModel.class.getSimpleName();
 
   private List<SupportItem> supportItems;
-
   private RepositoryContract repository;
 
   public SupportModel(RepositoryContract repository) {

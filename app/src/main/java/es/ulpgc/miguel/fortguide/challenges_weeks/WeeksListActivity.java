@@ -43,8 +43,9 @@ public class WeeksListActivity
     WeeksAdapter = new WeeksListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        WeeksItem item = (WeeksItem) view.getTag();
-        presenter.selectWeeksListData(item);
+        //WeeksItem item = (WeeksItem) view.getTag(); //TODO: TE LO COMENTO PARA QUE NO DE ERROR
+        //presenter.selectWeeksListData(item);
+        presenter.startMenuScreen();
       }
     });
 

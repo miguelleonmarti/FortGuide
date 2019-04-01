@@ -65,7 +65,6 @@ public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHold
 
     holder.detailView.setText(itemList.get(position).details);
     holder.contentView.setText(itemList.get(position).content);
-    // TODO: preguntar a luis si es asi
     loadImageFromURL(holder.imageView, itemList.get(position).image);
   }
 

@@ -31,7 +31,7 @@ interface ChallengesDetailContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
+    void navigateToMenuScreen();
 
     void passDataToNextScreen(ChallengesDetailState state);
 

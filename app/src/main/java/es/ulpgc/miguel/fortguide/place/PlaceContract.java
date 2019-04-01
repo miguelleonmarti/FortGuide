@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.fortguide.place;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 
 interface PlaceContract {
 
@@ -20,16 +23,20 @@ interface PlaceContract {
     void fetchData();
 
     void startMenuScreen();
+
+    void selectPlaceListData(PlaceItem placeItem);
+
+    //void selectPlaceListData(PlaceItem placeItem);
   }
 
   interface Model {
-    String fetchData();
+    List<PlaceItem> fetchData();
   }
 
   interface Router {
     void navigateToNextScreen();
 
-    void passDataToNextScreen(PlaceState state);
+    void passDataToNextScreen(PlaceItem placeItem);
 
     PlaceState getDataFromPreviousScreen();
 

@@ -52,7 +52,7 @@ public class SupportPresenter implements SupportContract.Presenter {
   }
 
   @Override
-  public void selectCategoryListData(SupportItem item) {
+  public void selectSupportListData(SupportItem item) {
     router.navigateToSupportProfileScreen();
     router.passDataToSupportProfileScreen(item);
   }

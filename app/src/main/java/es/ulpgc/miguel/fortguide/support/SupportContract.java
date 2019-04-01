@@ -26,7 +26,7 @@ interface SupportContract {
 
     void startMenuScreen();
 
-    void selectCategoryListData(SupportItem item);
+    void selectSupportListData(SupportItem item);
   }
 
   interface Model {

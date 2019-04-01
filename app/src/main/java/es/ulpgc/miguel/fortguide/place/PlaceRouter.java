@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class PlaceRouter implements PlaceContract.Router {
@@ -31,8 +32,8 @@ public class PlaceRouter implements PlaceContract.Router {
   }
 
   @Override
-  public void passDataToNextScreen(PlaceState state) {
-    mediator.setPlaceState(state);
+  public void passDataToNextScreen(PlaceItem placeItem) {
+    mediator.setPlaceItem(placeItem);
   }
 
   @Override

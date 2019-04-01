@@ -7,6 +7,7 @@ import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailState;
 import es.ulpgc.miguel.fortguide.challenges_weeks.WeeksListState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.WeeksItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
@@ -38,8 +39,9 @@ public class AppMediator extends Application {
   private AdviceDetailState adviceDetailState;
 
   private SupportItem supportItem;
-  private WeeksItem weeksItem;
+  private WeeksItem weeksItem; //TODO: no es un buen nombre, no concuerda con el resto
   private ChallengeItem challenge;
+  private PlaceItem placeItem;
 
   @Override
   public void onCreate() {
@@ -108,7 +110,7 @@ public class AppMediator extends Application {
     return theoryState;
   }
 
-  public void setWeeksListState(WeeksListState weeksListState) {
+  public void setChallengesWeeksListState(WeeksListState weeksListState) {
     this.weeksListState = weeksListState;
   }
 
@@ -184,13 +186,13 @@ public class AppMediator extends Application {
     this.challengesDetailState = challengesDetailState;
   }
 
-  // getters y setters de: weeksItem
+  // getters y setters de: challengesWeeksItem
 
-  public WeeksItem getWeeksItem() {
+  public WeeksItem getChallengesWeeksItem() {
     return weeksItem;
   }
 
-  public void setWeeksItem(WeeksItem weeksItem) {
+  public void setChallengesWeeksItem(WeeksItem weeksItem) {
     this.weeksItem = weeksItem;
   }
 
@@ -200,5 +202,33 @@ public class AppMediator extends Application {
 
   public void setChallengeItem(ChallengeItem challengeItem) {
     this.challenge = challenge;
+  }
+
+  public void setWeeksListState(WeeksListState weeksListState) {
+    this.weeksListState = weeksListState;
+  }
+
+  public WeeksItem getWeeksItem() {
+    return weeksItem;
+  }
+
+  public void setWeeksItem(WeeksItem weeksItem) {
+    this.weeksItem = weeksItem;
+  }
+
+  public ChallengeItem getChallenge() {
+    return challenge;
+  }
+
+  public void setChallenge(ChallengeItem challenge) {
+    this.challenge = challenge;
+  }
+
+  public PlaceItem getPlaceItem() {
+    return placeItem;
+  }
+
+  public void setPlaceItem(PlaceItem placeItem) {
+    this.placeItem = placeItem;
   }
 }
