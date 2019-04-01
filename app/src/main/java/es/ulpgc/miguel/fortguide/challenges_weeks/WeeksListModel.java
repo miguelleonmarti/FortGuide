@@ -22,13 +22,13 @@ public class WeeksListModel implements WeeksListContract.Model {
   }
 
   @Override
- public void fetchChallengesWeeksListData(final RepositoryContract.GetChallengesWeeksListCallback callback){
-    Log.e(TAG, "fetchChallengesWeeksListData");
-    repository.loadChallengeWeeks(new RepositoryContract.FetchChallengesWeeksDataCallback() {
+ public void fetchWeeksListData(final RepositoryContract.GetWeeksListCallback callback){
+    Log.e(TAG, "fetchWeeksListData");
+    repository.loadWeeks(new RepositoryContract.FetchWeeksDataCallback() {
       @Override
-      public void onChallengeWeeksDataFetched(boolean error) {
+      public void onWeeksDataFetched(boolean error) {
         if(!error){
-          repository.getChallengesWeeksList(callback);
+          repository.getWeeksList(callback);
         }
       }
     });

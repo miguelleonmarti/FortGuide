@@ -22,7 +22,7 @@ public class WeeksListActivity
 
   private Button bananaButton;
 
-  private WeeksListAdapter ChallengesWeeksAdapter;
+  private WeeksListAdapter WeeksAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,23 +40,23 @@ public class WeeksListActivity
     });
 
 
-    ChallengesWeeksAdapter = new WeeksListAdapter(new View.OnClickListener() {
+    WeeksAdapter = new WeeksListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         WeeksItem item = (WeeksItem) view.getTag();
-        presenter.selectChallengeListData(item);
+        presenter.selectWeeksListData(item);
       }
     });
 
     RecyclerView recyclerView = findViewById(R.id.challenges_weeks_list);
-    recyclerView.setAdapter(ChallengesWeeksAdapter);
+    recyclerView.setAdapter(WeeksAdapter);
     recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
     // do the setup
     WeeksListScreen.configure(this);
 
     //do some work
-    presenter.fetchChallengeListData();
+    presenter.fetchWeeksListData();
   }
 
   @Override
@@ -65,14 +65,14 @@ public class WeeksListActivity
   }
 
   @Override
-  public void displayChallengeListData(final WeeksListViewModel viewModel) {
-    Log.e(TAG, "displayChallengeListData()");
+  public void displayWeeksListData(final WeeksListViewModel viewModel) {
+    Log.e(TAG, "displayWeeksListData()");
 
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
         ((TextView) findViewById(R.id.challengeBar)).setText(R.string.challenge_text_label);
-        ChallengesWeeksAdapter.setItems(viewModel.challenges);
+        WeeksAdapter.setItems(viewModel.weeks);
       }
     });
   }

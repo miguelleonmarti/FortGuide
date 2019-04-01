@@ -31,7 +31,7 @@ public class ChallengeRepository implements RepositoryContract {
   private static ChallengeRepository INSTANCE;
 
   private Context context;
-  private List<WeeksItem> challengesList;
+  private List<WeeksItem> weeksList;
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
@@ -45,37 +45,37 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   @Override
-  public void loadChallengeWeeks(final FetchChallengesWeeksDataCallback callback) {
+  public void loadWeeks(final FetchWeeksDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !loadChallengesWeeksFromJSON(loadJSONFromAsset());
+        boolean error = !loadWeeksFromJSON(loadJSONFromAsset());
         if (callback != null) {
-          callback.onChallengeWeeksDataFetched(error);
+          callback.onWeeksDataFetched(error);
         }
       }
     });
   }
 
   @Override
-  public void getChallengesWeeksList(final ChallengeRepository.GetChallengesWeeksListCallback callback) {
+  public void getWeeksList(final ChallengeRepository.GetWeeksListCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setChallengesWeeksItemList(loadChallengesWeekstList());
+          callback.setWeeksItemList(loadWeekstList());
         }
       }
     });
   }
 
   @Override
-  public void getChallengeItem(int id, ChallengeRepository.GetChallengeItemCallback callback) {
+  public void getWeeksItem(int id, ChallengeRepository.GetWeeksItemCallback callback) {
 
   }
 
-  private boolean loadChallengesWeeksFromJSON(String json) {
-    Log.e(TAG, "loadChallengesWeeksFromJSON()");
+  private boolean loadWeeksFromJSON(String json) {
+    Log.e(TAG, "loadWeeksFromJSON()");
 
     GsonBuilder gsonBuilder = new GsonBuilder();
     Gson gson = gsonBuilder.create();
@@ -85,17 +85,17 @@ public class ChallengeRepository implements RepositoryContract {
       JSONObject jsonObject = new JSONObject(json);
       JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT);
 
-      challengesList = new ArrayList();
+      weeksList = new ArrayList();
 
       if (jsonArray.length() > 0) {
 
-        final List<WeeksItem> challengesList = Arrays.asList(
+        final List<WeeksItem> weeksList = Arrays.asList(
             gson.fromJson(jsonArray.toString(), WeeksItem[].class)
         );
 
 
-        for (WeeksItem weeksItem : challengesList) {
-          insertChallengeItem(weeksItem);
+        for (WeeksItem weeksItem : weeksList) {
+          insertWeeksItem(weeksItem);
         }
         return true;
       }
@@ -129,12 +129,12 @@ public class ChallengeRepository implements RepositoryContract {
     return json;
   }
 
-  private void insertChallengeItem(WeeksItem weeksItem) {
-    challengesList.add(weeksItem);
+  private void insertWeeksItem(WeeksItem weeksItem) {
+    weeksList.add(weeksItem);
   }
 
-  private List<WeeksItem> loadChallengesWeekstList() {
-    return challengesList;
+  private List<WeeksItem> loadWeekstList() {
+    return weeksList;
   }
 
   // TODO: ELIMINAR

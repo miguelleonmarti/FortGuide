@@ -10,7 +10,7 @@ interface WeeksListContract {
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayChallengeListData(WeeksListViewModel viewModel);
+    void displayWeeksListData(WeeksListViewModel viewModel);
   }
 
   interface Presenter {
@@ -18,13 +18,13 @@ interface WeeksListContract {
     void injectModel(Model model);
     void injectRouter(Router router);
 
-    void fetchChallengeListData();
-    void selectChallengeListData(WeeksItem item);
+    void fetchWeeksListData();
+    void selectWeeksListData(WeeksItem item);
     void startMenuScreen();
   }
 
   interface Model {
-    void fetchChallengesWeeksListData(RepositoryContract.GetChallengesWeeksListCallback callback);
+    void fetchWeeksListData(RepositoryContract.GetWeeksListCallback callback);
   }
 
   interface Router {

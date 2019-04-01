@@ -143,17 +143,17 @@ public class SupportRepository implements RepositoryContract {
 
 //TODO Eiminar
 @Override
-public void loadChallengeWeeks(FetchChallengesWeeksDataCallback callback) {
+public void loadWeeks(FetchWeeksDataCallback callback) {
 
 }
 
   @Override
-  public void getChallengesWeeksList(GetChallengesWeeksListCallback callback) {
+  public void getWeeksList(GetWeeksListCallback callback) {
 
   }
 
   @Override
-  public void getChallengeItem(int id, GetChallengeItemCallback callback) {
+  public void getWeeksItem(int id, GetWeeksItemCallback callback) {
 
   }
 

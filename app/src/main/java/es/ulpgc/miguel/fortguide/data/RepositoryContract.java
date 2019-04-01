@@ -8,23 +8,23 @@ import es.ulpgc.miguel.fortguide.challenge.SupportRepository;
 public interface RepositoryContract {
 
 
-  interface FetchChallengesWeeksDataCallback{
-    void onChallengeWeeksDataFetched(boolean error);
+  interface FetchWeeksDataCallback {
+    void onWeeksDataFetched(boolean error);
   }
 
-  interface GetChallengesWeeksListCallback{
-    void setChallengesWeeksItemList(List<WeeksItem> challengesWeeksList);
+  interface GetWeeksListCallback {
+    void setWeeksItemList(List<WeeksItem> WeeksList);
   }
 
-  interface GetChallengeItemCallback{
-    void setChallengeItem(ChallengeItem challengeItem);
+  interface GetWeeksItemCallback {
+    void setWeeksItem(WeeksItem weeksItem);
   }
 
-  void loadChallengeWeeks(ChallengeRepository.FetchChallengesWeeksDataCallback callback);
+  void loadWeeks(ChallengeRepository.FetchWeeksDataCallback callback);
 
-  void getChallengesWeeksList(ChallengeRepository.GetChallengesWeeksListCallback callback);
+  void getWeeksList(ChallengeRepository.GetWeeksListCallback callback);
 
-  void getChallengeItem(int id, ChallengeRepository.GetChallengeItemCallback callback);
+  void getWeeksItem(int id, ChallengeRepository.GetWeeksItemCallback callback);
 
   interface FetchSupportDataCallback{
     void onSupportDataFetched(boolean error);

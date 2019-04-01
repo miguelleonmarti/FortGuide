@@ -20,23 +20,23 @@ public class WeeksListPresenter implements WeeksListContract.Presenter {
   }
 
   @Override
-  public void fetchChallengeListData() {
+  public void fetchWeeksListData() {
     // Log.e(TAG, "fetchData()");
 
     // call the model
-    model.fetchChallengesWeeksListData(new RepositoryContract.GetChallengesWeeksListCallback() {
+    model.fetchWeeksListData(new RepositoryContract.GetWeeksListCallback() {
 
       @Override
-      public void setChallengesWeeksItemList(List<WeeksItem> challengesWeeksList) {
-        viewModel.challenges = challengesWeeksList;
-        view.get().displayChallengeListData(viewModel);
+      public void setWeeksItemList(List<WeeksItem> WeeksList) {
+        viewModel.weeks = WeeksList;
+        view.get().displayWeeksListData(viewModel);
       }
     });
 
   }
 
   @Override
-  public void selectChallengeListData(WeeksItem item) {
+  public void selectWeeksListData(WeeksItem item) {
     router.passDataToChallengeDetailsScreen(item);
     router.navigateToChallengeDetailsScreen();
   }
