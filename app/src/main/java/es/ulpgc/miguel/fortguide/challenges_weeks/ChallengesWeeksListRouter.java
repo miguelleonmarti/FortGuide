@@ -26,22 +26,14 @@ public class ChallengesWeeksListRouter implements ChallengesWeeksListContract.Ro
   }
 
   @Override
-  public void passDataToChallengeDetailsScreen(ChallengesWeeksItem item) {
-    mediator.setChallengesWeeksItem(item);
-  }
-
-
-  @Override
-  public ChallengesWeeksListState getDataFromPreviousScreen() {
-    ChallengesWeeksListState state = mediator.getChallengesWeeksListState();
-    return state;
-  }
-
-
-  @Override
   public void navigateToMenuScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, MenuActivity.class);
     context.startActivity(intent);
+  }
+
+  @Override
+  public void passDataToChallengeDetailsScreen(ChallengesWeeksItem item) {
+    mediator.setChallengesWeeksItem(item);
   }
 }

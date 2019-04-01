@@ -45,11 +45,8 @@ public class SupportRepository implements RepositoryContract {
     this.context = context;
   }
 
-  //TODO: quitar esto de aquí
-  @Override
-  public List<ChallengesWeeksItem> getChallengeList() {
-    return null;
-  }
+
+
 
   @Override
   public void loadSupport(final FetchSupportDataCallback callback) {
@@ -144,6 +141,22 @@ public class SupportRepository implements RepositoryContract {
 
   private List<SupportItem> loadSupportList() {
     return this.supportList;
+  }
+
+//TODO Eiminar
+@Override
+public void loadChallengeWeeks(FetchChallengesWeeksDataCallback callback) {
+
+}
+
+  @Override
+  public void getChallengesWeeksList(GetChallengesWeeksListCallback callback) {
+
+  }
+
+  @Override
+  public void getChallengeItem(int id, GetChallengeItemCallback callback) {
+
   }
 
 }

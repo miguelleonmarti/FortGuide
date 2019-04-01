@@ -17,7 +17,7 @@ public class ChallengesWeeksListScreen {
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
     ChallengesWeeksListState state = mediator.getChallengesWeeksListState();
-    RepositoryContract repository = ChallengeRepository.getInstance();
+    RepositoryContract repository = ChallengeRepository.getInstance(context.get());
 
     ChallengesWeeksListContract.Router router = new ChallengesWeeksListRouter(mediator);
     ChallengesWeeksListContract.Presenter presenter = new ChallengesWeeksListPresenter(state);

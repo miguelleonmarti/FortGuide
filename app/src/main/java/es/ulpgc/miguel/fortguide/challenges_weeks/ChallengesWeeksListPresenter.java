@@ -1,8 +1,11 @@
 package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
+import es.ulpgc.miguel.fortguide.challenge.ChallengeRepository;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ChallengesWeeksListPresenter implements ChallengesWeeksListContract.Presenter {
 
@@ -21,9 +24,15 @@ public class ChallengesWeeksListPresenter implements ChallengesWeeksListContract
   public void fetchChallengeListData() {
     // Log.e(TAG, "fetchData()");
 
-    // set passed state
-    viewModel.challenges = model.fetchChallengeListData();
-    view.get().displayChallengeListData(viewModel);
+    // call the model
+    model.fetchChallengesWeeksListData(new RepositoryContract.GetChallengesWeeksListCallback() {
+
+      @Override
+      public void setChallengesWeeksItemList(List<ChallengesWeeksItem> challengesWeeksList) {
+        viewModel.challenges = challengesWeeksList;
+        view.get().displayChallengeListData(viewModel);
+      }
+    });
 
   }
 

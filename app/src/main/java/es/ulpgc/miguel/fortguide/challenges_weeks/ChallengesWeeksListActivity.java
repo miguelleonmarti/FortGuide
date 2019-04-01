@@ -2,9 +2,11 @@ package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -18,11 +20,9 @@ public class ChallengesWeeksListActivity
 
   private ChallengesWeeksListContract.Presenter presenter;
 
-  private TextView challengeBar;
-  private ListView listView;
   private Button bananaButton;
 
-  private ChallengesWeeksListAdapter listAdapter;
+  private ChallengesWeeksListAdapter ChallengesWeeksAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -31,30 +31,31 @@ public class ChallengesWeeksListActivity
 
 
     bananaButton = findViewById(R.id.bananaButton);
-    challengeBar = findViewById(R.id.challengeBar);
 
-
-    listAdapter = new ChallengesWeeksListAdapter(this, new View.OnClickListener() {
+    bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        ChallengesWeeksItem item = (ChallengesWeeksItem) listView.getTag();
         presenter.startMenuScreen();
       }
     });
 
-    listView = findViewById(R.id.challenges_weeks_list);
-    listView.setAdapter(listAdapter);
+
+    ChallengesWeeksAdapter = new ChallengesWeeksListAdapter(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag();
+        presenter.selectChallengeListData(item);
+      }
+    });
+
+    RecyclerView recyclerView = findViewById(R.id.challenges_weeks_list);
+    recyclerView.setAdapter(ChallengesWeeksAdapter);
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
     // do the setup
     ChallengesWeeksListScreen.configure(this);
-    presenter.fetchChallengeListData();
-  }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
+    //do some work
     presenter.fetchChallengeListData();
   }
 
@@ -64,10 +65,15 @@ public class ChallengesWeeksListActivity
   }
 
   @Override
-  public void displayChallengeListData(ChallengesWeeksListViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
+  public void displayChallengeListData(final ChallengesWeeksListViewModel viewModel) {
+    Log.e(TAG, "displayChallengeListData()");
 
-    // deal with the data
-    listAdapter.setItems(viewModel.challenges);
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        ((TextView) findViewById(R.id.challengeBar)).setText(R.string.challenge_text_label);
+        ChallengesWeeksAdapter.setItems(viewModel.challenges);
+      }
+    });
   }
 }

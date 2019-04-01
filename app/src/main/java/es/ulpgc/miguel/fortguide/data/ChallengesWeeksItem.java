@@ -5,19 +5,19 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChallengesWeeksItem extends  ChallengeAbstract {
+public class ChallengesWeeksItem  {
 
- public final List<ChallengesWeeksItem> items;
+  public int id;
 
-public ChallengesWeeksItem(int id,String content){
-  super(id,content);
-  items = new ArrayList<>();
-}
+  public String content;
+  public String details;
 
+  @SerializedName("challenges")
+ public  List<ChallengesWeeksItem> items;
 
   @Override
   public String toString() {
-    return super.toString();
+    return content;
   }
 }
 
