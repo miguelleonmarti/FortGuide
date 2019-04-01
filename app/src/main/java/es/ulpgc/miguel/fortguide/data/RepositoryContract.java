@@ -13,7 +13,7 @@ public interface RepositoryContract {
   }
 
   interface GetChallengesWeeksListCallback{
-    void setChallengesWeeksItemList(List<ChallengesWeeksItem> challengesWeeksList);
+    void setChallengesWeeksItemList(List<WeeksItem> challengesWeeksList);
   }
 
   interface GetChallengeItemCallback{

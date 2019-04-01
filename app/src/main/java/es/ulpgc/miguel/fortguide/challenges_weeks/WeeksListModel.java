@@ -5,19 +5,19 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.WeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-public class ChallengesWeeksListModel implements ChallengesWeeksListContract.Model {
+public class WeeksListModel implements WeeksListContract.Model {
 
-  public static String TAG = ChallengesWeeksListModel.class.getSimpleName();
+  public static String TAG = WeeksListModel.class.getSimpleName();
 
-  private List<ChallengesWeeksItem> challengesWeeksItems;
+  private List<WeeksItem> weeksItems;
 
   private RepositoryContract repository;
 
-  public ChallengesWeeksListModel(RepositoryContract repository) {
-    this.challengesWeeksItems  = new ArrayList<>();
+  public WeeksListModel(RepositoryContract repository) {
+    this.weeksItems = new ArrayList<>();
     this.repository = repository;
   }
 

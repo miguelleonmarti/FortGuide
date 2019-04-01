@@ -17,8 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.WeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ChallengeRepository implements RepositoryContract {
@@ -32,7 +31,7 @@ public class ChallengeRepository implements RepositoryContract {
   private static ChallengeRepository INSTANCE;
 
   private Context context;
-  private List<ChallengesWeeksItem> challengesList;
+  private List<WeeksItem> challengesList;
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
@@ -90,13 +89,13 @@ public class ChallengeRepository implements RepositoryContract {
 
       if (jsonArray.length() > 0) {
 
-        final List<ChallengesWeeksItem> challengesList = Arrays.asList(
-            gson.fromJson(jsonArray.toString(), ChallengesWeeksItem[].class)
+        final List<WeeksItem> challengesList = Arrays.asList(
+            gson.fromJson(jsonArray.toString(), WeeksItem[].class)
         );
 
 
-        for (ChallengesWeeksItem challengesWeeksItem : challengesList) {
-          insertChallengeItem(challengesWeeksItem);
+        for (WeeksItem weeksItem : challengesList) {
+          insertChallengeItem(weeksItem);
         }
         return true;
       }
@@ -130,11 +129,11 @@ public class ChallengeRepository implements RepositoryContract {
     return json;
   }
 
-  private void insertChallengeItem(ChallengesWeeksItem challengesWeeksItem) {
-    challengesList.add(challengesWeeksItem);
+  private void insertChallengeItem(WeeksItem weeksItem) {
+    challengesList.add(weeksItem);
   }
 
-  private List<ChallengesWeeksItem> loadChallengesWeekstList() {
+  private List<WeeksItem> loadChallengesWeekstList() {
     return challengesList;
   }
 

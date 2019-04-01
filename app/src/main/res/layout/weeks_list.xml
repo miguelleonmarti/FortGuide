@@ -6,6 +6,6 @@
     android:id="@+id/challenges_weeks_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".challenges_weeks.ChallengesWeeksListActivity"
-    tools:listitem="@layout/challenges_weeks_list_content" />
+    tools:context=".challenges_weeks.WeeksListActivity"
+    tools:listitem="@layout/weeks_list_content" />
 

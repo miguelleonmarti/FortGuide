@@ -5,7 +5,7 @@ import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.advice.AdviceActivity;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
-import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListActivity;
+import es.ulpgc.miguel.fortguide.challenges_weeks.WeeksListActivity;
 import es.ulpgc.miguel.fortguide.place.PlaceActivity;
 import es.ulpgc.miguel.fortguide.shop.ShopActivity;
 import es.ulpgc.miguel.fortguide.support.SupportActivity;
@@ -73,7 +73,7 @@ public class MenuRouter implements MenuContract.Router {
   @Override
   public void navigateToChallengeScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ChallengesWeeksListActivity.class);
+    Intent intent = new Intent(context, WeeksListActivity.class);
     context.startActivity(intent);
   }
 

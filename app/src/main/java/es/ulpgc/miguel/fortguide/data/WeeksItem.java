@@ -2,10 +2,9 @@ package es.ulpgc.miguel.fortguide.data;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ChallengesWeeksItem  {
+public class WeeksItem {
 
   public int id;
 
@@ -13,7 +12,7 @@ public class ChallengesWeeksItem  {
   public String details;
 
   @SerializedName("challenges")
- public  List<ChallengesWeeksItem> items;
+ public  List<WeeksItem> items;
 
   @Override
   public String toString() {

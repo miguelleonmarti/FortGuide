@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 

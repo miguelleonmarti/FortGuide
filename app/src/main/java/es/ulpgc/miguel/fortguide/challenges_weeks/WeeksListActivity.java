@@ -10,24 +10,24 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.WeeksItem;
 
 
-public class ChallengesWeeksListActivity
-    extends AppCompatActivity implements ChallengesWeeksListContract.View {
+public class WeeksListActivity
+    extends AppCompatActivity implements WeeksListContract.View {
 
-  public static String TAG = ChallengesWeeksListActivity.class.getSimpleName();
+  public static String TAG = WeeksListActivity.class.getSimpleName();
 
-  private ChallengesWeeksListContract.Presenter presenter;
+  private WeeksListContract.Presenter presenter;
 
   private Button bananaButton;
 
-  private ChallengesWeeksListAdapter ChallengesWeeksAdapter;
+  private WeeksListAdapter ChallengesWeeksAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_challenges_weeks_list);
+    setContentView(R.layout.activity_weeks_list);
 
 
     bananaButton = findViewById(R.id.bananaButton);
@@ -40,10 +40,10 @@ public class ChallengesWeeksListActivity
     });
 
 
-    ChallengesWeeksAdapter = new ChallengesWeeksListAdapter(new View.OnClickListener() {
+    ChallengesWeeksAdapter = new WeeksListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag();
+        WeeksItem item = (WeeksItem) view.getTag();
         presenter.selectChallengeListData(item);
       }
     });
@@ -53,19 +53,19 @@ public class ChallengesWeeksListActivity
     recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
     // do the setup
-    ChallengesWeeksListScreen.configure(this);
+    WeeksListScreen.configure(this);
 
     //do some work
     presenter.fetchChallengeListData();
   }
 
   @Override
-  public void injectPresenter(ChallengesWeeksListContract.Presenter presenter) {
+  public void injectPresenter(WeeksListContract.Presenter presenter) {
     this.presenter = presenter;
   }
 
   @Override
-  public void displayChallengeListData(final ChallengesWeeksListViewModel viewModel) {
+  public void displayChallengeListData(final WeeksListViewModel viewModel) {
     Log.e(TAG, "displayChallengeListData()");
 
     runOnUiThread(new Runnable() {

@@ -1,17 +1,16 @@
 package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.WeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-interface ChallengesWeeksListContract {
+interface WeeksListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayChallengeListData(ChallengesWeeksListViewModel viewModel);
+    void displayChallengeListData(WeeksListViewModel viewModel);
   }
 
   interface Presenter {
@@ -20,7 +19,7 @@ interface ChallengesWeeksListContract {
     void injectRouter(Router router);
 
     void fetchChallengeListData();
-    void selectChallengeListData(ChallengesWeeksItem item);
+    void selectChallengeListData(WeeksItem item);
     void startMenuScreen();
   }
 
@@ -30,7 +29,7 @@ interface ChallengesWeeksListContract {
 
   interface Router {
     void navigateToChallengeDetailsScreen();
-    void passDataToChallengeDetailsScreen(ChallengesWeeksItem item);
+    void passDataToChallengeDetailsScreen(WeeksItem item);
     void navigateToMenuScreen();
   }
 }

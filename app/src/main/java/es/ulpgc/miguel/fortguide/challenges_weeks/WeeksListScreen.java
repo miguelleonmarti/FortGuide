@@ -8,20 +8,20 @@ import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.challenge.ChallengeRepository;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-public class ChallengesWeeksListScreen {
+public class WeeksListScreen {
 
-  public static void configure(ChallengesWeeksListContract.View view) {
+  public static void configure(WeeksListContract.View view) {
 
     WeakReference<FragmentActivity> context =
         new WeakReference<>((FragmentActivity) view);
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
-    ChallengesWeeksListState state = mediator.getChallengesWeeksListState();
+    WeeksListState state = mediator.getWeeksListState();
     RepositoryContract repository = ChallengeRepository.getInstance(context.get());
 
-    ChallengesWeeksListContract.Router router = new ChallengesWeeksListRouter(mediator);
-    ChallengesWeeksListContract.Presenter presenter = new ChallengesWeeksListPresenter(state);
-    ChallengesWeeksListContract.Model model = new ChallengesWeeksListModel(repository);
+    WeeksListContract.Router router = new WeeksListRouter(mediator);
+    WeeksListContract.Presenter presenter = new WeeksListPresenter(state);
+    WeeksListContract.Model model = new WeeksListModel(repository);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));

@@ -1,40 +1,38 @@
 package es.ulpgc.miguel.fortguide.challenges_weeks;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.WeeksItem;
 
-public class ChallengesWeeksListAdapter extends RecyclerView.Adapter<ChallengesWeeksListAdapter.ViewHolder> {
+public class WeeksListAdapter extends RecyclerView.Adapter<WeeksListAdapter.ViewHolder> {
 
-  private List<ChallengesWeeksItem> itemList;
+  private List<WeeksItem> itemList;
   private final View.OnClickListener clickListener;
 
-  public ChallengesWeeksListAdapter(View.OnClickListener listener) {
+  public WeeksListAdapter(View.OnClickListener listener) {
     itemList = new ArrayList<>();
     clickListener = listener;
   }
 
-  public void addItem(ChallengesWeeksItem item) {
+  public void addItem(WeeksItem item) {
     itemList.add(item);
     notifyDataSetChanged();
   }
 
-  public void addItems(List<ChallengesWeeksItem> items) {
+  public void addItems(List<WeeksItem> items) {
     itemList = items;
     notifyDataSetChanged();
   }
 
-  public void setItems(List<ChallengesWeeksItem> items) {
+  public void setItems(List<WeeksItem> items) {
     itemList = items;
     notifyDataSetChanged();
   }
@@ -47,7 +45,7 @@ public class ChallengesWeeksListAdapter extends RecyclerView.Adapter<ChallengesW
   @Override
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(parent.getContext())
-        .inflate(R.layout.challenges_weeks_list_content, parent, false);
+        .inflate(R.layout.weeks_list_content, parent, false);
     return new ViewHolder(view);
   }
 

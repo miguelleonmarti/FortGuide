@@ -5,16 +5,16 @@ import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailActivity;
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.WeeksItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
-public class ChallengesWeeksListRouter implements ChallengesWeeksListContract.Router {
+public class WeeksListRouter implements WeeksListContract.Router {
 
-  public static String TAG = ChallengesWeeksListRouter.class.getSimpleName();
+  public static String TAG = WeeksListRouter.class.getSimpleName();
 
   private AppMediator mediator;
 
-  public ChallengesWeeksListRouter(AppMediator mediator) {
+  public WeeksListRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
 
@@ -33,7 +33,7 @@ public class ChallengesWeeksListRouter implements ChallengesWeeksListContract.Ro
   }
 
   @Override
-  public void passDataToChallengeDetailsScreen(ChallengesWeeksItem item) {
-    mediator.setChallengesWeeksItem(item);
+  public void passDataToChallengeDetailsScreen(WeeksItem item) {
+    mediator.setWeeksItem(item);
   }
 }

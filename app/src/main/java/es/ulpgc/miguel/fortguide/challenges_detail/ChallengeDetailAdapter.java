@@ -45,7 +45,7 @@ public class ChallengeDetailAdapter extends ArrayAdapter<ChallengeItem> {
 
     if (itemView == null) {
       itemView = LayoutInflater.from(parent.getContext())
-          .inflate(R.layout.challenges_weeks_list_content, parent, false);
+          .inflate(R.layout.weeks_list_content, parent, false);
     }
 
     itemView.setTag(itemList.get(position));
