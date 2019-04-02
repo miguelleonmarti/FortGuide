@@ -14,6 +14,7 @@ import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryState;
 import es.ulpgc.miguel.fortguide.place.PlaceState;
+import es.ulpgc.miguel.fortguide.place_detail.PlaceDetailState;
 import es.ulpgc.miguel.fortguide.shop.ShopState;
 import es.ulpgc.miguel.fortguide.support.SupportState;
 import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
@@ -37,6 +38,7 @@ public class AppMediator extends Application {
   private SupportProfileState supportProfileState;
   private TheoryDetailState theoryDetailState;
   private AdviceDetailState adviceDetailState;
+  private PlaceDetailState placeDetailState;
 
   private SupportItem supportItem;
   private ChallengesWeeksItem challengesWeeksItem;
@@ -50,6 +52,7 @@ public class AppMediator extends Application {
     introductionState = new IntroductionState();
     menuState = new MenuState();
     placeState = new PlaceState();
+    placeDetailState = new PlaceDetailState();
     supportState = new SupportState();
     weaponState = new WeaponState();
     theoryState = new TheoryState();
@@ -197,7 +200,6 @@ public class AppMediator extends Application {
   }
 
 
-
   public ChallengeItem getChallengeItem() {
     return challengeItem;
   }
@@ -212,5 +214,13 @@ public class AppMediator extends Application {
 
   public void setPlaceItem(PlaceItem placeItem) {
     this.placeItem = placeItem;
+  }
+
+  public void setPlaceDetailState(PlaceDetailState placeDetailState) {
+    this.placeDetailState = placeDetailState;
+  }
+
+  public PlaceDetailState getPlaceDetailState() {
+    return placeDetailState;
   }
 }
