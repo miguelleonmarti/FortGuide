@@ -13,11 +13,11 @@ public interface RepositoryContract {
   }
 
   interface GetWeeksListCallback {
-    void setWeeksItemList(List<WeeksItem> WeeksList);
+    void setWeeksItemList(List<ChallengesWeeksItem> WeeksList);
   }
 
   interface GetWeeksItemCallback {
-    void setWeeksItem(WeeksItem weeksItem);
+    void setWeeksItem(ChallengesWeeksItem challengesWeeksItem);
   }
 
   void loadWeeks(ChallengeRepository.FetchWeeksDataCallback callback);

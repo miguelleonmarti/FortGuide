@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class WeeksItem {
+public class ChallengesWeeksItem {
 
   public int id;
 
@@ -12,7 +12,7 @@ public class WeeksItem {
   public String details;
 
   @SerializedName("weeks")
- public  List<WeeksItem> items;
+ public  List<ChallengesWeeksItem> items;
 
   @Override
   public String toString() {

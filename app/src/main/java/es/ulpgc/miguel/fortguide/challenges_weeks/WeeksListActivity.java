@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.WeeksItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
 
 public class WeeksListActivity
@@ -43,8 +43,8 @@ public class WeeksListActivity
     WeeksAdapter = new WeeksListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        //WeeksItem item = (WeeksItem) view.getTag(); //TODO: TE LO COMENTO PARA QUE NO DE ERROR
-        //presenter.selectWeeksListData(item);
+        ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag(); //TODO: TE LO COMENTO PARA QUE NO DE ERROR
+        presenter.selectWeeksListData(item);
         presenter.startMenuScreen();
       }
     });

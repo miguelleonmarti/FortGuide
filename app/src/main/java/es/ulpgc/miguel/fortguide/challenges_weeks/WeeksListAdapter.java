@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.WeeksItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
 public class WeeksListAdapter extends RecyclerView.Adapter<WeeksListAdapter.ViewHolder> {
 
-  private List<WeeksItem> itemList;
+  private List<ChallengesWeeksItem> itemList;
   private final View.OnClickListener clickListener;
 
   public WeeksListAdapter(View.OnClickListener listener) {
@@ -22,17 +22,17 @@ public class WeeksListAdapter extends RecyclerView.Adapter<WeeksListAdapter.View
     clickListener = listener;
   }
 
-  public void addItem(WeeksItem item) {
+  public void addItem(ChallengesWeeksItem item) {
     itemList.add(item);
     notifyDataSetChanged();
   }
 
-  public void addItems(List<WeeksItem> items) {
+  public void addItems(List<ChallengesWeeksItem> items) {
     itemList = items;
     notifyDataSetChanged();
   }
 
-  public void setItems(List<WeeksItem> items) {
+  public void setItems(List<ChallengesWeeksItem> items) {
     itemList = items;
     notifyDataSetChanged();
   }
