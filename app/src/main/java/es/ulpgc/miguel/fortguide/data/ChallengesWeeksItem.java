@@ -11,8 +11,8 @@ public class ChallengesWeeksItem {
   public String content;
   public String details;
 
-  @SerializedName("weeks")
- public  List<ChallengesWeeksItem> items;
+  @SerializedName("challenges")
+ public  List<ChallengeItem> items;
 
   @Override
   public String toString() {

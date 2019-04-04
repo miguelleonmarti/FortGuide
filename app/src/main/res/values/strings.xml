@@ -37,4 +37,12 @@
     <string name="content_description_twitter">twitter</string>
     <string name="content_description_twitch">twitch</string>
     <string name="content_description_youtube">youtube</string>
+    <string name="star_image_label">starImage</string>
+    <string name="chestNumber_label_TextView">chestNumber</string>
+    <string name="PeoplePercent_label_textView">PeoplePercent</string>
+    <string name="detail_label_text">Detail Text</string>
+    <string name="content_label_text">Content text</string>
+    <string name="place_image_label">placeImage</string>
+    <string name="chest_image_label">chestImage</string>
+    <string name="people_image_label">peopleImage</string>
 </resources>

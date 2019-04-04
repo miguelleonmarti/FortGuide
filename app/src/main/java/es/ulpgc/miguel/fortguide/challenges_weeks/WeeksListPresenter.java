@@ -29,6 +29,7 @@ public class WeeksListPresenter implements WeeksListContract.Presenter {
       @Override
       public void setWeeksItemList(List<ChallengesWeeksItem> WeeksList) {
         viewModel.weeks = WeeksList;
+
         view.get().displayWeeksListData(viewModel);
       }
     });
@@ -40,6 +41,7 @@ public class WeeksListPresenter implements WeeksListContract.Presenter {
     router.passDataToChallengeDetailsScreen(item);
     router.navigateToChallengeDetailsScreen();
   }
+
 
   @Override
   public void startMenuScreen() {

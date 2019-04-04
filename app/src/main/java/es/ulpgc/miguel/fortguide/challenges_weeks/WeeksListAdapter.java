@@ -12,7 +12,8 @@ import java.util.List;
 import es.ulpgc.miguel.fortguide.R;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
-public class WeeksListAdapter extends RecyclerView.Adapter<WeeksListAdapter.ViewHolder> {
+public class WeeksListAdapter
+    extends RecyclerView.Adapter<WeeksListAdapter.ViewHolder> {
 
   private List<ChallengesWeeksItem> itemList;
   private final View.OnClickListener clickListener;

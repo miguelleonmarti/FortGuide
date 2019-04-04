@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
@@ -26,7 +27,7 @@ public class ChallengeRepository implements RepositoryContract {
 
 
   public static final String JSON_FILE = "data.json";
-  public static final String JSON_ROOT = "challenges";
+  public static final String JSON_ROOT = "challengesweeks";
 
   private static ChallengeRepository INSTANCE;
 
@@ -41,15 +42,21 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   private ChallengeRepository(Context context) {
+
     this.context = context;
   }
 
   @Override
   public void loadWeeks(final FetchWeeksDataCallback callback) {
+
+
     AsyncTask.execute(new Runnable() {
+
       @Override
       public void run() {
+
         boolean error = !loadWeeksFromJSON(loadJSONFromAsset());
+
         if (callback != null) {
           callback.onWeeksDataFetched(error);
         }
@@ -58,20 +65,63 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   @Override
-  public void getWeeksList(final ChallengeRepository.GetWeeksListCallback callback) {
+  public void getChallengeDetailList(
+      final ChallengesWeeksItem challengesWeeksItem, final GetChallengeDetailListCallback callback) {
+
+    getChallengeDetailList(challengesWeeksItem.id, callback);
+  }
+
+  @Override
+  public void getChallengeDetailList(
+      final int weeksId, final GetChallengeDetailListCallback callback) {
+
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setWeeksItemList(loadWeekstList());
+          callback.setChallengeDetailList(loadChallenges(weeksId));
         }
       }
     });
   }
 
   @Override
-  public void getWeeksItem(int id, ChallengeRepository.GetWeeksItemCallback callback) {
+  public void getChallengeDetails(final int id, final GetChallengeDetailCallback callback) {
 
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setChallengeDetail(loadChallenge(id));
+        }
+      }
+    });
+  }
+
+
+  @Override
+  public void getWeeksList(final GetWeeksListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setWeeksItemList(loadWeeksList());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getWeeksItem(final int id, final GetWeeksItemCallback callback) {
+
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setWeeksItem(loadChallengesWeeksItem(id));
+        }
+      }
+    });
   }
 
   private boolean loadWeeksFromJSON(String json) {
@@ -97,6 +147,9 @@ public class ChallengeRepository implements RepositoryContract {
         for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
           insertWeeksItem(challengesWeeksItem);
         }
+
+
+
         return true;
       }
 
@@ -129,11 +182,42 @@ public class ChallengeRepository implements RepositoryContract {
     return json;
   }
 
+  private List<ChallengeItem> loadChallenges(int weeksId) {
+    List<ChallengeItem> challenges = new ArrayList();
+
+    for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+      if (challengesWeeksItem.id == weeksId) {
+        challenges = challengesWeeksItem.items;
+      }
+    }
+    return challenges;
+  }
+
+  private ChallengeItem loadChallenge(int id) {
+    for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+      for (ChallengeItem challengeItem : challengesWeeksItem.items) {
+        if (challengeItem.id == id) {
+          return challengeItem;
+        }
+      }
+    }
+    return null;
+  }
+
+  private ChallengesWeeksItem loadChallengesWeeksItem(int id) {
+    for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+      if (challengesWeeksItem.id == id) {
+        return challengesWeeksItem;
+      }
+    }
+    return null;
+  }
+
   private void insertWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
     weeksList.add(challengesWeeksItem);
   }
 
-  private List<ChallengesWeeksItem> loadWeekstList() {
+  private List<ChallengesWeeksItem> loadWeeksList() {
     return weeksList;
   }
 

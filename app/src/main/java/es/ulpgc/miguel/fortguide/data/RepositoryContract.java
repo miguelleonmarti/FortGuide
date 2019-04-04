@@ -12,6 +12,14 @@ public interface RepositoryContract {
     void onWeeksDataFetched(boolean error);
   }
 
+  interface GetChallengeDetailListCallback{
+    void  setChallengeDetailList(List<ChallengeItem> challengeItems);
+  }
+
+  interface  GetChallengeDetailCallback{
+    void setChallengeDetail(ChallengeItem item);
+  }
+
   interface GetWeeksListCallback {
     void setWeeksItemList(List<ChallengesWeeksItem> WeeksList);
   }
@@ -22,9 +30,17 @@ public interface RepositoryContract {
 
   void loadWeeks(ChallengeRepository.FetchWeeksDataCallback callback);
 
+  void getChallengeDetailList(
+      ChallengesWeeksItem challengesWeeksItem,ChallengeRepository.GetChallengeDetailListCallback callback);
+
+  void getChallengeDetailList(
+      int weeksId, ChallengeRepository.GetChallengeDetailListCallback callback);
+
+  void getChallengeDetails(int id, ChallengeRepository.GetChallengeDetailCallback callback);
+  void getWeeksItem(int id, ChallengeRepository.GetWeeksItemCallback callback);
   void getWeeksList(ChallengeRepository.GetWeeksListCallback callback);
 
-  void getWeeksItem(int id, ChallengeRepository.GetWeeksItemCallback callback);
+
 
   interface FetchSupportDataCallback{
     void onSupportDataFetched(boolean error);

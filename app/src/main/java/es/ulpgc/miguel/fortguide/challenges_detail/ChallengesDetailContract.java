@@ -5,15 +5,17 @@ import android.view.MenuItem;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 interface ChallengesDetailContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayChallengeDetailData(ChallengesDetailViewModel viewModel);
+    void displayChallengeDetailListData(ChallengesDetailViewModel viewModel);
 
-    boolean onOptionsItemSelected(MenuItem item);
+
   }
 
   interface Presenter {
@@ -23,18 +25,26 @@ interface ChallengesDetailContract {
 
     void injectRouter(Router router);
 
-    void fetchChallengeDetailData();
+    void fetchChallengeDetailListData();
+
+    void selectChallengeDetailListData(ChallengeItem item);
+
+    void startMenuScreen();
   }
 
   interface Model {
 
+    void fetchChallengesDetailData(
+        ChallengesWeeksItem challengesWeeksItem, RepositoryContract.GetChallengeDetailListCallback callback);
   }
 
   interface Router {
     void navigateToMenuScreen();
 
-    void passDataToNextScreen(ChallengesDetailState state);
+     void passDataToNextScreen(ChallengeItem item);
 
-    ChallengeItem getDataFromPreviousScreen();
+    public void navigateToChallengeDetailScreen();
+
+    ChallengesWeeksItem getDataFromWeeksListScreen();
   }
 }

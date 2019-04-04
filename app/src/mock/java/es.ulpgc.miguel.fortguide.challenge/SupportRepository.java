@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 
@@ -146,6 +147,21 @@ public class SupportRepository implements RepositoryContract {
 public void loadWeeks(FetchWeeksDataCallback callback) {
 
 }
+
+  @Override
+  public void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, GetChallengeDetailListCallback callback) {
+
+  }
+
+  @Override
+  public void getChallengeDetailList(int weeksId, GetChallengeDetailListCallback callback) {
+
+  }
+
+  @Override
+  public void getChallengeDetails(int id, GetChallengeDetailCallback callback) {
+
+  }
 
   @Override
   public void getWeeksList(GetWeeksListCallback callback) {

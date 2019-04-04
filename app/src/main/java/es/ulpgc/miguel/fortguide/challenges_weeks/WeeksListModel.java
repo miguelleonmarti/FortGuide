@@ -12,12 +12,10 @@ public class WeeksListModel implements WeeksListContract.Model {
 
   public static String TAG = WeeksListModel.class.getSimpleName();
 
-  private List<ChallengesWeeksItem> challengesWeeksItems;
 
   private RepositoryContract repository;
 
   public WeeksListModel(RepositoryContract repository) {
-    this.challengesWeeksItems = new ArrayList<>();
     this.repository = repository;
   }
 

@@ -22,6 +22,7 @@ public class WeeksListRouter implements WeeksListContract.Router {
   public void navigateToChallengeDetailsScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, ChallengesDetailActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }
 

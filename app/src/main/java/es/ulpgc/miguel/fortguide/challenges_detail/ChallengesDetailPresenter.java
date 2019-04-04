@@ -1,8 +1,13 @@
 package es.ulpgc.miguel.fortguide.challenges_detail;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ChallengesDetailPresenter implements ChallengesDetailContract.Presenter {
 
@@ -33,17 +38,38 @@ public class ChallengesDetailPresenter implements ChallengesDetailContract.Prese
   }
 
   @Override
-  public void fetchChallengeDetailData() {
-    // Log.e(TAG, "fetchData()");
+  public void fetchChallengeDetailListData() {
+    Log.e(TAG, "fetchChallengeDetailListData()");
 
     // set passed state
-    ChallengeItem challenge = router.getDataFromPreviousScreen();
-    if(challenge != null){
-      viewModel.challenge = challenge;
+    ChallengesWeeksItem item = router.getDataFromWeeksListScreen();
+
+    if (item != null) {
+      viewModel.challengesWeeksItem = item;
     }
 
-    view.get().displayChallengeDetailData(viewModel);
+    //call the model
+    model.fetchChallengesDetailData(viewModel.challengesWeeksItem,
+        new RepositoryContract.GetChallengeDetailListCallback() {
+
+          @Override
+          public void setChallengeDetailList(List<ChallengeItem> challengeItems) {
+            viewModel.challenges = challengeItems;
+
+            view.get().displayChallengeDetailListData(viewModel);
+          }
+        });
+  }
+
+  @Override
+  public void selectChallengeDetailListData(ChallengeItem item) {
+    router.passDataToNextScreen(item);
+    router.navigateToChallengeDetailScreen();
   }
 
 
+  @Override
+  public void startMenuScreen() {
+    router.navigateToMenuScreen();
+  }
 }

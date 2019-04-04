@@ -45,13 +45,11 @@ public class WeeksListActivity
       public void onClick(View view) {
         ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag(); //TODO: TE LO COMENTO PARA QUE NO DE ERROR
         presenter.selectWeeksListData(item);
-        presenter.startMenuScreen();
       }
     });
 
     RecyclerView recyclerView = findViewById(R.id.challenges_weeks_list);
     recyclerView.setAdapter(WeeksAdapter);
-    recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
     // do the setup
     WeeksListScreen.configure(this);

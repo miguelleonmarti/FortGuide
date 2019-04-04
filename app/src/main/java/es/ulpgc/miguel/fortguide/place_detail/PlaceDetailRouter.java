@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.PlaceDetailItem;
 
 public class PlaceDetailRouter implements PlaceDetailContract.Router {
 
@@ -28,8 +29,8 @@ public class PlaceDetailRouter implements PlaceDetailContract.Router {
   }
 
   @Override
-  public PlaceDetailState getDataFromPreviousScreen() {
-    PlaceDetailState state = mediator.getPlaceDetailState();
-    return state;
+  public PlaceDetailItem getDataFromPlaceScreen() {
+    PlaceDetailItem placeDetailItem = mediator.getPlaceDetailItem();
+    return placeDetailItem;
   }
 }

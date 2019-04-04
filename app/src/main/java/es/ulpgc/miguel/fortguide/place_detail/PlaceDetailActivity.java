@@ -22,13 +22,6 @@ public class PlaceDetailActivity
     PlaceDetailScreen.configure(this);
   }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
-    presenter.fetchData();
-  }
 
   @Override
   public void injectPresenter(PlaceDetailContract.Presenter presenter) {
@@ -36,7 +29,7 @@ public class PlaceDetailActivity
   }
 
   @Override
-  public void displayData(PlaceDetailViewModel viewModel) {
+  public void displayPlaceDetailData(PlaceDetailViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
     // deal with the data

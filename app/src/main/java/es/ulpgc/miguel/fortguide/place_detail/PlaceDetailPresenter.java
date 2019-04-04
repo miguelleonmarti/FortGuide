@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.place_detail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.PlaceDetailItem;
+
 public class PlaceDetailPresenter implements PlaceDetailContract.Presenter {
 
   public static String TAG = PlaceDetailPresenter.class.getSimpleName();
@@ -31,26 +33,15 @@ public class PlaceDetailPresenter implements PlaceDetailContract.Presenter {
   }
 
   @Override
-  public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+  public void fetchPlaceDetailData() {
+    // Log.e(TAG, "fetchPlaceDetailData()");
 
     // set passed state
-    PlaceDetailState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
+    PlaceDetailItem placeDetailItem = router.getDataFromPlaceScreen();
+    if( placeDetailItem != null){
+      viewModel.placeDetailItem = placeDetailItem;
     }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
+view.get().displayPlaceDetailData(viewModel);
   }
 
 

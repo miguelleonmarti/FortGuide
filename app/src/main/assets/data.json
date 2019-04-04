@@ -111,11 +111,11 @@
       "youtube": "https://www.youtube.com/channel/UCoz3Kpu5lv-ALhR4h9bDvcw"
     }
   ],
-  "challenges": [
+  "challengesweeks": [
     {
       "id": 1,
       "content": "Semana 1",
-      "detail": [
+      "challenges": [
         {
           "id": 1,
           "content": "Dificultad: fácil",
