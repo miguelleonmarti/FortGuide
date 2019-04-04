@@ -6,6 +6,7 @@ import android.content.Context;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
+import es.ulpgc.miguel.fortguide.place_detail.PlaceDetailActivity;
 
 public class PlaceRouter implements PlaceContract.Router {
 
@@ -18,9 +19,9 @@ public class PlaceRouter implements PlaceContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
+  public void navigateToPlaceDetailScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, PlaceActivity.class);
+    Intent intent = new Intent(context, PlaceDetailActivity.class);
     context.startActivity(intent);
   }
 

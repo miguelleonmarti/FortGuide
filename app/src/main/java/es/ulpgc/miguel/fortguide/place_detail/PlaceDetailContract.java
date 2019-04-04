@@ -18,6 +18,7 @@ interface PlaceDetailContract {
     void injectRouter(Router router);
 
     void fetchPlaceDetailData();
+    void startMenuScreen();
   }
 
   interface Model {
@@ -25,7 +26,7 @@ interface PlaceDetailContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
+    public void navigateToMenuScreen();
 
     void passDataToNextScreen(PlaceDetailState state);
 

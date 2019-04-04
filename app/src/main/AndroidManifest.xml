@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".place.PlaceActivity">
         </activity>
+        <activity android:name=".place_detail.PlaceDetailActivity">
+        </activity>
         <activity android:name=".theory_detail.TheoryDetailActivity">
         </activity>
         <activity android:name=".theory.TheoryActivity">

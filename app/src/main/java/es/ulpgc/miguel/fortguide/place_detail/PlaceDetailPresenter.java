@@ -33,6 +33,11 @@ public class PlaceDetailPresenter implements PlaceDetailContract.Presenter {
   }
 
   @Override
+  public void startMenuScreen() {
+    router.navigateToMenuScreen();
+  }
+
+  @Override
   public void fetchPlaceDetailData() {
     // Log.e(TAG, "fetchPlaceDetailData()");
 

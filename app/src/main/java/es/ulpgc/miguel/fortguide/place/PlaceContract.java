@@ -24,6 +24,8 @@ interface PlaceContract {
 
     void startMenuScreen();
 
+    void starPlaceDetailScreen();
+
     void selectPlaceListData(PlaceItem placeItem);
 
     //void selectPlaceListData(PlaceItem placeItem);
@@ -34,7 +36,7 @@ interface PlaceContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
+    void navigateToPlaceDetailScreen();
 
     void passDataToNextScreen(PlaceItem placeItem);
 

@@ -44,11 +44,14 @@ public class PlacePresenter implements PlaceContract.Presenter {
   @Override
   public void selectPlaceListData(PlaceItem placeItem) {
     router.passDataToNextScreen(placeItem);
-    router.navigateToMenuScreen();
+    router.navigateToPlaceDetailScreen();
   }
 
   @Override
   public void startMenuScreen() {
     router.navigateToMenuScreen();
   }
+
+@Override
+  public void starPlaceDetailScreen(){router.navigateToPlaceDetailScreen();}
 }
