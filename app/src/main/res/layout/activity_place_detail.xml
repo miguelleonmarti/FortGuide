@@ -28,17 +28,22 @@
         android:layout_height="wrap_content" />
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeBar">
 
         <ImageView
             android:id="@+id/placeImageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="64dp"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/place_image_label"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
@@ -46,19 +51,17 @@
             android:id="@+id/chestImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="24dp"
+            android:layout_margin="10dp"
             android:contentDescription="@string/chest_image_label"
             app:layout_constraintLeft_toRightOf="@+id/placeImageView"
-            app:layout_constraintTop_toTopOf="@+id/placeImageView"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/chest" />
 
         <ImageView
             android:id="@+id/peopleImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="24dp"
+            android:layout_margin="10dp"
             android:contentDescription="@string/people_image_label"
             app:layout_constraintLeft_toRightOf="@+id/placeImageView"
             app:layout_constraintTop_toBottomOf="@+id/chestImageView"
@@ -68,51 +71,58 @@
             android:id="@+id/chestNumberTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="10dp"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/chestImageView"
             app:layout_constraintLeft_toRightOf="@+id/chestImageView"
-            app:layout_constraintTop_toTopOf="@+id/chestImageView"
             tools:text="@string/chestNumber_label_TextView" />
 
         <TextView
             android:id="@+id/peoplePercentTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="10dp"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/peopleImageView"
             app:layout_constraintLeft_toRightOf="@+id/peopleImageView"
-            app:layout_constraintTop_toTopOf="@+id/peopleImageView"
             tools:text="@string/PeoplePercent_label_textView" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayoutBottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="300dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/round_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeBar">
 
         <TextView
             android:id="@+id/contentTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_margin="10dp"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/content_label_text" />
 
         <TextView
             android:id="@+id/detailTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_margin="10dp"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contentTextView"
             tools:text="@string/detail_label_text" />
     </android.support.constraint.ConstraintLayout>
