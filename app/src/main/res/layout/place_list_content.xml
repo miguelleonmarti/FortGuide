@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@drawable/round_corners"
+    android:contentDescription="image"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -15,8 +16,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView

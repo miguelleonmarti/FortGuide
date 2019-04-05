@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 interface PlaceContract {
 
@@ -24,23 +25,18 @@ interface PlaceContract {
 
     void startMenuScreen();
 
-    void starPlaceDetailScreen();
-
     void selectPlaceListData(PlaceItem placeItem);
 
-    //void selectPlaceListData(PlaceItem placeItem);
   }
 
   interface Model {
-    List<PlaceItem> fetchData();
+    void fetchPlaceListData(RepositoryContract.GetPlaceListCallback callback);
   }
 
   interface Router {
     void navigateToPlaceDetailScreen();
 
     void passDataToNextScreen(PlaceItem placeItem);
-
-    PlaceState getDataFromPreviousScreen();
 
     void navigateToMenuScreen();
   }

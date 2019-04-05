@@ -17,7 +17,6 @@ public class SupportScreen {
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
     SupportState state = mediator.getSupportState();
-
     RepositoryContract repository = AppRepository.getInstance(context.get());
 
     SupportContract.Router router = new SupportRouter(mediator);

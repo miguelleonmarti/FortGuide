@@ -37,9 +37,4 @@ public class PlaceRouter implements PlaceContract.Router {
     mediator.setPlaceItem(placeItem);
   }
 
-  @Override
-  public PlaceState getDataFromPreviousScreen() {
-    PlaceState state = mediator.getPlaceState();
-    return state;
-  }
 }

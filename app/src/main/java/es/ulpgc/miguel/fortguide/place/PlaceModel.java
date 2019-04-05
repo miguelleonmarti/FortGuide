@@ -1,30 +1,37 @@
 package es.ulpgc.miguel.fortguide.place;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class PlaceModel implements PlaceContract.Model {
 
   public static String TAG = PlaceModel.class.getSimpleName();
 
-  private List<PlaceItem> placeItems = new ArrayList();
+  private List<PlaceItem> placeItems;
+  private RepositoryContract repository;
 
-
-  public PlaceModel() {
-
+  public PlaceModel(RepositoryContract repository) {
+    this.repository = repository;
+    this.placeItems = new ArrayList<>();
   }
 
   @Override
-  public List<PlaceItem> fetchData() {
-    // Log.e(TAG, "fetchData()");
-    placeItems.add(new PlaceItem(1, "","Lugar 1","Hola esto es un ejemplo","23","45"));
-    placeItems.add(new PlaceItem(2, "","Lugar 2","","",""));
-    placeItems.add(new PlaceItem(3, "","Lugar 3","","",""));
-    placeItems.add(new PlaceItem(4, "","Lugar 4","","",""));
-    placeItems.add(new PlaceItem(5, "","Lugar 5","","",""));
-    placeItems.add(new PlaceItem(6, "","Lugar 6","","",""));
-    return placeItems;
+  public void fetchPlaceListData(final RepositoryContract.GetPlaceListCallback callback) {
+    Log.e(TAG, "fetchPlaceListData()");
+
+    repository.loadPlace(new RepositoryContract.FetchPlaceDataCallback() {
+      @Override
+      public void onPlaceDataFetched(boolean error) {
+        if (!error) {
+          repository.getPlaceList(callback);
+        }
+      }
+    });
+
   }
 }

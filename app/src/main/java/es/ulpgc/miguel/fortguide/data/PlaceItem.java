@@ -1,8 +1,8 @@
 package es.ulpgc.miguel.fortguide.data;
 
 public class PlaceItem {
-  public int id;
-  public String image, content, details, chest, people;
+  public final int id;
+  public final String image, content, details, chest, people;
 
   public PlaceItem(int id, String image, String content, String details, String chest, String people) {
     this.id = id;
@@ -12,6 +12,8 @@ public class PlaceItem {
     this.chest = chest;
     this.people = people;
   }
+
+  // getters
 
   public int getId() {
     return id;

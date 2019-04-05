@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class PlacePresenter implements PlaceContract.Presenter {
 
@@ -36,9 +37,13 @@ public class PlacePresenter implements PlaceContract.Presenter {
   @Override
   public void fetchData() {
     // Log.e(TAG, "fetchData()");
-    List<PlaceItem> placeItemList = model.fetchData();
-    viewModel.places = placeItemList;
-    view.get().displayData(viewModel);
+    model.fetchPlaceListData(new RepositoryContract.GetPlaceListCallback(){
+      @Override
+      public void setPlaceList(List<PlaceItem> placeList) {
+        viewModel.places = placeList;
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override
@@ -52,6 +57,4 @@ public class PlacePresenter implements PlaceContract.Presenter {
     router.navigateToMenuScreen();
   }
 
-@Override
-  public void starPlaceDetailScreen(){router.navigateToPlaceDetailScreen();}
 }

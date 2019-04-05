@@ -1,6 +1,5 @@
 package es.ulpgc.miguel.fortguide.place;
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +40,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
   }
 
   public void setItems(List<PlaceItem> items) {
-    placeItemList = items;
+    this.placeItemList = items;
     notifyDataSetChanged();
   }
 
@@ -53,7 +52,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
   }
 
   @Override
-  public void onBindViewHolder(ViewHolder holder, int position) {
+  public void onBindViewHolder(final ViewHolder holder, int position) {
     holder.itemView.setTag(placeItemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
@@ -67,8 +66,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
   }
 
   class ViewHolder extends RecyclerView.ViewHolder {
-    final TextView contentView;
     final ImageView imageView;
+    final TextView contentView;
 
     ViewHolder(View view) {
       super(view);

@@ -33,7 +33,7 @@ public class PlaceActivity
 
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
+      public void onClick(View view) {
         presenter.startMenuScreen();
       }
     });
@@ -48,11 +48,13 @@ public class PlaceActivity
 
     RecyclerView recyclerView = findViewById(R.id.placeList);
     recyclerView.setAdapter(placeAdapter);
-    recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); //TODO: CAMBIAR EL NUMERO DE COLUMNAS O NO?
 
 
     // do the setup
     PlaceScreen.configure(this);
+
+    // do some work
     presenter.fetchData();
   }
 
@@ -62,10 +64,15 @@ public class PlaceActivity
   }
 
   @Override
-  public void displayData(PlaceViewModel viewModel) {
+  public void displayData(final PlaceViewModel viewModel) {
     Log.e(TAG, "displayData()");
     // deal with the data
-    ((TextView) findViewById(R.id.placeBar)).setText("LUGARES");
-    placeAdapter.setItems(viewModel.places);
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        ((TextView) findViewById(R.id.placeBar)).setText("LUGARES"); //TODO: CAMBIAR POR EL STRINGS.XML
+        placeAdapter.setItems(viewModel.places);
+      }
+    });
   }
 }

@@ -29,14 +29,14 @@ public class AppRepository implements RepositoryContract {
 
   private static final String JSON_FILE = "data.json";
   private static final String JSON_ROOT_SUPPORT = "support";
-  private static final String JSON_ROOT_PLACE = "place"; //TODO: NO SE HA IMPLEMENTADO ESTA PARTE
+  private static final String JSON_ROOT_PLACE = "place";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
 
-  private static AppRepository INSTANCE;
+  public static AppRepository INSTANCE;
 
   private Context context;
   private List<SupportItem> supportList;
-  private List<PlaceItem> placeList; // TODO: NO SE HA IMPLEMENTADO ESTA PARTE
+  private List<PlaceItem> placeList;
   private List<ChallengesWeeksItem> challengeList;
 
   public static RepositoryContract getInstance(Context context) {
@@ -80,7 +80,7 @@ public class AppRepository implements RepositoryContract {
   @Override
   public void getSupportItem(int id, AppRepository.GetSupportItemCallback callback) {
 
-  }
+  } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
 
   private void insertSupportItem(SupportItem supportItem) {
     supportList.add(supportItem);
@@ -161,6 +161,93 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
+  private List<ChallengeItem> loadChallenges(int weeksId) {
+    List<ChallengeItem> challenges = new ArrayList();
+
+    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
+      if (challengesWeeksItem.id == weeksId) {
+        challenges = challengesWeeksItem.items;
+      }
+    }
+    return challenges;
+  }
+
+  private ChallengeItem loadChallenge(int id) {
+    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
+      for (ChallengeItem challengeItem : challengesWeeksItem.items) {
+        if (challengeItem.id == id) {
+          return challengeItem;
+        }
+      }
+    }
+    return null;
+  }
+
+  private ChallengesWeeksItem loadChallengesWeeksItem(int id) {
+    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
+      if (challengesWeeksItem.id == id) {
+        return challengesWeeksItem;
+      }
+    }
+    return null;
+  }
+
+  private void insertWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
+    challengeList.add(challengesWeeksItem);
+  }
+
+  private List<ChallengesWeeksItem> loadWeeksList() {
+    return challengeList;
+  }
+
+  // place
+
+  @Override
+  public void loadPlace(final FetchPlaceDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadPlaceFromJSON(loadJSONFromAsset());
+        if (callback!=null) {
+          callback.onPlaceDataFetched(error);
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getPlaceList(final GetPlaceListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadCatalogFromJSON(loadJSONFromAsset());
+        if (callback != null) {
+          callback.setPlaceList(loadPlaceList());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getPlaceItem(final int id, final GetPlaceItemCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback!=null) {
+          callback.setPlaceItem(supportList.get(id));
+        }
+      }
+    });
+  } //TODO: ESTA IMPLEMENTADO PERO NO HACE FALTA
+
+  private void insertPlaceItem(PlaceItem placeItem) {
+    placeList.add(placeItem);
+  }
+
+  private List<PlaceItem> loadPlaceList() {
+    return this.placeList;
+  }
+
   // loading data from JSON
 
   private boolean loadCatalogFromJSON(String json) {
@@ -185,6 +272,40 @@ public class AppRepository implements RepositoryContract {
 
         for (SupportItem supportItem : supportList) {
           insertSupportItem(supportItem);
+        }
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  } //TODO: CAMBIAR NOMBRE
+
+  private boolean loadPlaceFromJSON(String json) {
+    Log.e(TAG, "loadPlaceFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_PLACE);
+
+      placeList = new ArrayList();
+
+      if (jsonArray.length() > 0) {
+
+        final List<PlaceItem> placeList = Arrays.asList(
+            gson.fromJson(jsonArray.toString(), PlaceItem[].class)
+        );
+
+
+        for (PlaceItem placeItem : placeList) {
+          insertPlaceItem(placeItem);
         }
 
         return true;
@@ -230,10 +351,10 @@ public class AppRepository implements RepositoryContract {
     }
 
     return false;
-  }
+  } //TODO: CAMBIAR NOMBRE
 
   private String loadJSONFromAsset() {
-    //Log.e(TAG, "loadJSONFromAsset()");
+    Log.e(TAG, "loadJSONFromAsset()");
 
     String json = null;
 
@@ -251,46 +372,5 @@ public class AppRepository implements RepositoryContract {
     }
 
     return json;
-  }
-
-  // TODO: REVISAR
-
-  private List<ChallengeItem> loadChallenges(int weeksId) {
-    List<ChallengeItem> challenges = new ArrayList();
-
-    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      if (challengesWeeksItem.id == weeksId) {
-        challenges = challengesWeeksItem.items;
-      }
-    }
-    return challenges;
-  }
-
-  private ChallengeItem loadChallenge(int id) {
-    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      for (ChallengeItem challengeItem : challengesWeeksItem.items) {
-        if (challengeItem.id == id) {
-          return challengeItem;
-        }
-      }
-    }
-    return null;
-  }
-
-  private ChallengesWeeksItem loadChallengesWeeksItem(int id) {
-    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      if (challengesWeeksItem.id == id) {
-        return challengesWeeksItem;
-      }
-    }
-    return null;
-  }
-
-  private void insertWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
-    challengeList.add(challengesWeeksItem);
-  }
-
-  private List<ChallengesWeeksItem> loadWeeksList() {
-    return challengeList;
   }
 }

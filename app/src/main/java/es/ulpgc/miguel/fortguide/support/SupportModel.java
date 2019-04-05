@@ -1,5 +1,7 @@
 package es.ulpgc.miguel.fortguide.support;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,8 @@ public class SupportModel implements SupportContract.Model {
 
   @Override
   public void fetchSupportListData(final RepositoryContract.GetSupportListCallback callback) {
-    // Log.e(TAG, "fetchData()");
+    Log.e(TAG, "fetchSupportListData()");
+
     repository.loadSupport(new RepositoryContract.FetchSupportDataCallback() {
       @Override
       public void onSupportDataFetched(boolean error) {

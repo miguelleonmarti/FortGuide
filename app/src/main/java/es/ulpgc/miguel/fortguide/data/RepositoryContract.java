@@ -25,6 +25,7 @@ public interface RepositoryContract {
 
   void getSupportItem(int id, AppRepository.GetSupportItemCallback callback);
 
+
   // callbacks and methods of Challenge
 
   interface FetchWeeksDataCallback {
@@ -59,6 +60,25 @@ public interface RepositoryContract {
 
   void getWeeksList(AppRepository.GetWeeksListCallback callback);
 
-  // callbacks and methods of Place
+
+  // callbacks and methods of Place TODO
+
+  interface FetchPlaceDataCallback {
+    void onPlaceDataFetched(boolean error);
+  }
+
+  interface GetPlaceListCallback {
+    void setPlaceList(List<PlaceItem> placeList);
+  }
+
+  interface GetPlaceItemCallback {
+    void setPlaceItem(SupportItem supportItem);
+  }
+
+  void loadPlace(AppRepository.FetchPlaceDataCallback callback);
+
+  void getPlaceList(AppRepository.GetPlaceListCallback callback);
+
+  void getPlaceItem(int id, AppRepository.GetPlaceItemCallback callback);
 
 }

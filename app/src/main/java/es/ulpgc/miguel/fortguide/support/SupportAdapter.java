@@ -23,32 +23,32 @@ import com.bumptech.glide.request.RequestOptions;
 
 public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHolder> {
 
-  private List<SupportItem> itemList;
+  private List<SupportItem> supportItemList;
   private final View.OnClickListener clickListener;
 
   public SupportAdapter(View.OnClickListener clickListener) {
-    itemList = new ArrayList();
+    this.supportItemList = new ArrayList();
     this.clickListener = clickListener;
   }
 
-  public void addItem(SupportItem item) {
-    itemList.add(item);
+  public void addItem(SupportItem supportItem) {
+    supportItemList.add(supportItem);
     notifyDataSetChanged();
   }
 
-  public void addItems(List<SupportItem> items) {
-    itemList.addAll(items);
+  public void addItems(List<SupportItem> supportItemList) {
+    this.supportItemList.addAll(supportItemList);
     notifyDataSetChanged();
   }
 
-  public void setItems(List<SupportItem> items) {
-    itemList = items;
+  public void setItems(List<SupportItem> supportItemList) {
+    this.supportItemList = supportItemList;
     notifyDataSetChanged();
   }
 
   @Override
   public int getItemCount() {
-    return itemList.size();
+    return supportItemList.size();
   }
 
   @Override
@@ -60,18 +60,18 @@ public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHold
 
   @Override
   public void onBindViewHolder(final ViewHolder holder, int position) {
-    holder.itemView.setTag(itemList.get(position));
+    holder.itemView.setTag(supportItemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
-    holder.detailView.setText(itemList.get(position).details);
-    holder.contentView.setText(itemList.get(position).content);
-    loadImageFromURL(holder.imageView, itemList.get(position).image);
+    holder.detailView.setText(supportItemList.get(position).details);
+    holder.contentView.setText(supportItemList.get(position).content);
+    loadImageFromURL(holder.imageView, supportItemList.get(position).image);
   }
 
   class ViewHolder extends RecyclerView.ViewHolder {
-    final TextView detailView;
-    final TextView contentView;
     final ImageView imageView;
+    final TextView contentView;
+    final TextView detailView;
 
     ViewHolder(View view) {
       super(view);
