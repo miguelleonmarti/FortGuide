@@ -27,10 +27,10 @@ public class AppRepository implements RepositoryContract {
 
   public static String TAG = AppRepository.class.getSimpleName();
 
-  public static final String JSON_FILE = "data.json";
-  public static final String JSON_ROOT_SUPPORT = "support";
-  public static final String JSON_ROOT_PLACE = "place"; //TODO: NO SE HA IMPLEMENTADO ESTA PARTE
-  public static final String JSON_ROOT_CHALLENGE = "challengesweeks";
+  private static final String JSON_FILE = "data.json";
+  private static final String JSON_ROOT_SUPPORT = "support";
+  private static final String JSON_ROOT_PLACE = "place"; //TODO: NO SE HA IMPLEMENTADO ESTA PARTE
+  private static final String JSON_ROOT_CHALLENGE = "challenge";
 
   private static AppRepository INSTANCE;
 
