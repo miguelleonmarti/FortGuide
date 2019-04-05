@@ -1,9 +1,7 @@
 package es.ulpgc.miguel.fortguide.data;
 
 import java.util.List;
-
-import es.ulpgc.miguel.fortguide.challenge.ChallengeRepository;
-import es.ulpgc.miguel.fortguide.challenge.SupportRepository;
+import es.ulpgc.miguel.fortguide.challenge.AppRepository;
 
 public interface RepositoryContract {
 
@@ -21,11 +19,11 @@ public interface RepositoryContract {
     void setSupportItem(SupportItem supportItem);
   }
 
-  void loadSupport(SupportRepository.FetchSupportDataCallback callback);
+  void loadSupport(AppRepository.FetchSupportDataCallback callback);
 
-  void getSupportList(SupportRepository.GetSupportListCallback callback);
+  void getSupportList(AppRepository.GetSupportListCallback callback);
 
-  void getSupportItem(int id, SupportRepository.GetSupportItemCallback callback);
+  void getSupportItem(int id, AppRepository.GetSupportItemCallback callback);
 
   // callbacks and methods of Challenge
 
@@ -49,19 +47,17 @@ public interface RepositoryContract {
     void setWeeksItem(ChallengesWeeksItem challengesWeeksItem);
   }
 
-  void loadWeeks(ChallengeRepository.FetchWeeksDataCallback callback);
+  void loadWeeks(AppRepository.FetchWeeksDataCallback callback);
 
-  void getChallengeDetailList(
-      ChallengesWeeksItem challengesWeeksItem, ChallengeRepository.GetChallengeDetailListCallback callback);
+  void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, AppRepository.GetChallengeDetailListCallback callback);
 
-  void getChallengeDetailList(
-      int weeksId, ChallengeRepository.GetChallengeDetailListCallback callback);
+  void getChallengeDetailList(int weeksId, AppRepository.GetChallengeDetailListCallback callback);
 
-  void getChallengeDetails(int id, ChallengeRepository.GetChallengeDetailCallback callback);
+  void getChallengeDetails(int id, AppRepository.GetChallengeDetailCallback callback);
 
-  void getWeeksItem(int id, ChallengeRepository.GetWeeksItemCallback callback);
+  void getWeeksItem(int id, AppRepository.GetWeeksItemCallback callback);
 
-  void getWeeksList(ChallengeRepository.GetWeeksListCallback callback);
+  void getWeeksList(AppRepository.GetWeeksListCallback callback);
 
   // callbacks and methods of Place
 

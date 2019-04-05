@@ -28,10 +28,8 @@ public class ChallengesDetailActivity
 
   private ChallengesDetailAdapter listAdapter;
 
-
-  Button bananaButton;
- ImageView starImage;
-
+  private Button bananaButton;
+  private ImageView starImage;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +37,7 @@ public class ChallengesDetailActivity
     setContentView(R.layout.activity_challenges_detail);
 
     bananaButton = findViewById(R.id.bananaButton);
+    starImage = findViewById(R.id.starImage);
 
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -47,14 +46,10 @@ public class ChallengesDetailActivity
       }
     });
 
-    starImage = findViewById(R.id.starImage);
-
-
-
     listAdapter = new ChallengesDetailAdapter(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
-        ChallengeItem item = (ChallengeItem) v.getTag();
+      public void onClick(View view) {
+        ChallengeItem item = (ChallengeItem) view.getTag();
         presenter.selectChallengeDetailListData(item);
       }
     });

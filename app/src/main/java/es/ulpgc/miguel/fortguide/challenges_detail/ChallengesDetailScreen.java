@@ -5,7 +5,7 @@ import java.lang.ref.WeakReference;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
-import es.ulpgc.miguel.fortguide.challenge.ChallengeRepository;
+import es.ulpgc.miguel.fortguide.challenge.AppRepository;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ChallengesDetailScreen {
@@ -17,7 +17,7 @@ public class ChallengesDetailScreen {
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
     ChallengesDetailState state = mediator.getChallengesDetailState();
-    RepositoryContract repository = ChallengeRepository.getInstance(context.get());
+    RepositoryContract repository = AppRepository.getInstance(context.get());
 
     ChallengesDetailContract.Router router = new ChallengesDetailRouter(mediator);
     ChallengesDetailContract.Presenter presenter = new ChallengesDetailPresenter(state);

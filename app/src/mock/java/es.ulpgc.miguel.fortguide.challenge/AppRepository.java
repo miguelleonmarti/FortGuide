@@ -19,37 +19,81 @@ import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+import es.ulpgc.miguel.fortguide.data.SupportItem;
 
-public class ChallengeRepository implements RepositoryContract {
+public class AppRepository implements RepositoryContract {
 
-  public static String TAG = ChallengeRepository.class.getSimpleName();
-
+  public static String TAG = AppRepository.class.getSimpleName();
 
   public static final String JSON_FILE = "data.json";
-  public static final String JSON_ROOT = "challengesweeks";
+  public static final String JSON_ROOT_SUPPORT = "support";
+  public static final String JSON_ROOT_PLACE = "place"; //TODO: NO SE HA IMPLEMENTADO ESTA PARTE
+  public static final String JSON_ROOT_CHALLENGE = "challengesweeks";
 
-  private static ChallengeRepository INSTANCE;
+  private static AppRepository INSTANCE;
 
   private Context context;
-  private List<ChallengesWeeksItem> weeksList;
+  private List<SupportItem> supportList;
+  private List<PlaceItem> placeList; // TODO: NO SE HA IMPLEMENTADO ESTA PARTE
+  private List<ChallengesWeeksItem> challengeList;
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
-      INSTANCE = new ChallengeRepository(context);
+      INSTANCE = new AppRepository(context);
     }
     return INSTANCE;
   }
 
-  private ChallengeRepository(Context context) {
-
+  private AppRepository(Context context) {
     this.context = context;
   }
 
+  // support
+
+  @Override
+  public void loadSupport(final FetchSupportDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadCatalogFromJSON(loadJSONFromAsset());
+        if (callback != null) {
+          callback.onSupportDataFetched(error);
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getSupportList(final AppRepository.GetSupportListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setSupportList(loadSupportList());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getSupportItem(int id, AppRepository.GetSupportItemCallback callback) {
+
+  }
+
+  private void insertSupportItem(SupportItem supportItem) {
+    supportList.add(supportItem);
+  }
+
+  private List<SupportItem> loadSupportList() {
+    return this.supportList;
+  }
+
+  // challenge
+
   @Override
   public void loadWeeks(final FetchWeeksDataCallback callback) {
-
-
     AsyncTask.execute(new Runnable() {
 
       @Override
@@ -65,21 +109,17 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   @Override
-  public void getChallengeDetailList(
-      final ChallengesWeeksItem challengesWeeksItem, final GetChallengeDetailListCallback callback) {
-
+  public void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, GetChallengeDetailListCallback callback) {
     getChallengeDetailList(challengesWeeksItem.id, callback);
   }
 
   @Override
-  public void getChallengeDetailList(
-      final int weeksId, final GetChallengeDetailListCallback callback) {
-
+  public void getChallengeDetailList(final int weeksId, final GetChallengeDetailListCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setChallengeDetailList(loadChallenges(weeksId));
+          callback.setChallengeDetailList(loadChallenges(weeksId)); //TODO: FALTA EL METODO
         }
       }
     });
@@ -87,7 +127,6 @@ public class ChallengeRepository implements RepositoryContract {
 
   @Override
   public void getChallengeDetails(final int id, final GetChallengeDetailCallback callback) {
-
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
@@ -97,7 +136,6 @@ public class ChallengeRepository implements RepositoryContract {
       }
     });
   }
-
 
   @Override
   public void getWeeksList(final GetWeeksListCallback callback) {
@@ -113,19 +151,20 @@ public class ChallengeRepository implements RepositoryContract {
 
   @Override
   public void getWeeksItem(final int id, final GetWeeksItemCallback callback) {
-
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setWeeksItem(loadChallengesWeeksItem(id));
+          callback.setWeeksItem(loadChallengesWeeksItem(id)); //TODO: FALTAN METODOS
         }
       }
     });
   }
 
-  private boolean loadWeeksFromJSON(String json) {
-    Log.e(TAG, "loadWeeksFromJSON()");
+  // loading data from JSON
+
+  private boolean loadCatalogFromJSON(String json) {
+    Log.e(TAG, "loadCatalogFromJSON()");
 
     GsonBuilder gsonBuilder = new GsonBuilder();
     Gson gson = gsonBuilder.create();
@@ -133,22 +172,20 @@ public class ChallengeRepository implements RepositoryContract {
     try {
 
       JSONObject jsonObject = new JSONObject(json);
-      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_SUPPORT);
 
-      weeksList = new ArrayList();
+      supportList = new ArrayList();
 
       if (jsonArray.length() > 0) {
 
-        final List<ChallengesWeeksItem> weeksList = Arrays.asList(
-            gson.fromJson(jsonArray.toString(), ChallengesWeeksItem[].class)
+        final List<SupportItem> supportList = Arrays.asList(
+            gson.fromJson(jsonArray.toString(), SupportItem[].class)
         );
 
 
-        for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
-          insertWeeksItem(challengesWeeksItem);
+        for (SupportItem supportItem : supportList) {
+          insertSupportItem(supportItem);
         }
-
-
 
         return true;
       }
@@ -160,6 +197,40 @@ public class ChallengeRepository implements RepositoryContract {
     return false;
   }
 
+  private boolean loadWeeksFromJSON(String json) {
+    Log.e(TAG, "loadWeeksFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_CHALLENGE);
+
+      challengeList = new ArrayList();
+
+      if (jsonArray.length() > 0) {
+
+        final List<ChallengesWeeksItem> weeksList = Arrays.asList(
+            gson.fromJson(jsonArray.toString(), ChallengesWeeksItem[].class)
+        );
+
+
+        for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+          insertWeeksItem(challengesWeeksItem); //TODO: FALTAN METODOS
+        }
+
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  }
 
   private String loadJSONFromAsset() {
     //Log.e(TAG, "loadJSONFromAsset()");
@@ -182,10 +253,12 @@ public class ChallengeRepository implements RepositoryContract {
     return json;
   }
 
+  // TODO: REVISAR
+
   private List<ChallengeItem> loadChallenges(int weeksId) {
     List<ChallengeItem> challenges = new ArrayList();
 
-    for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
       if (challengesWeeksItem.id == weeksId) {
         challenges = challengesWeeksItem.items;
       }
@@ -194,7 +267,7 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   private ChallengeItem loadChallenge(int id) {
-    for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
       for (ChallengeItem challengeItem : challengesWeeksItem.items) {
         if (challengeItem.id == id) {
           return challengeItem;
@@ -205,7 +278,7 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   private ChallengesWeeksItem loadChallengesWeeksItem(int id) {
-    for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
       if (challengesWeeksItem.id == id) {
         return challengesWeeksItem;
       }
@@ -214,27 +287,10 @@ public class ChallengeRepository implements RepositoryContract {
   }
 
   private void insertWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
-    weeksList.add(challengesWeeksItem);
+    challengeList.add(challengesWeeksItem);
   }
 
   private List<ChallengesWeeksItem> loadWeeksList() {
-    return weeksList;
-  }
-
-  // TODO: ELIMINAR
-  @Override
-  public void loadSupport(FetchSupportDataCallback callback) {
-
-  }
-
-  @Override
-  public void getSupportList(GetSupportListCallback callback) {
-
-  }
-
-  @Override
-  public void getSupportItem(int id, GetSupportItemCallback callback) {
-
+    return challengeList;
   }
 }
-
