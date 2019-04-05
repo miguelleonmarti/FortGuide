@@ -17,6 +17,8 @@ public class SupportItem {
     this.youtube = youtube;
   }
 
+  // getters
+
   public int getId() {
     return id;
   }

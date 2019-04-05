@@ -16,7 +16,6 @@ public class IntroductionActivity
   private IntroductionContract.Presenter presenter;
 
   Button continueButton;
-  TextView textView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class IntroductionActivity
     //getSupportActionBar().hide();
 
     continueButton = findViewById(R.id.buttonContinue);
-    textView = findViewById(R.id.data);
 
     continueButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -58,6 +56,5 @@ public class IntroductionActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.data)).setText(viewModel.data);
   }
 }

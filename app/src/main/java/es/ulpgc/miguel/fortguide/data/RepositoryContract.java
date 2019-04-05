@@ -7,16 +7,37 @@ import es.ulpgc.miguel.fortguide.challenge.SupportRepository;
 
 public interface RepositoryContract {
 
+  // callbacks and methods of Support
+
+  interface FetchSupportDataCallback {
+    void onSupportDataFetched(boolean error);
+  }
+
+  interface GetSupportListCallback {
+    void setSupportList(List<SupportItem> supportList);
+  }
+
+  interface GetSupportItemCallback {
+    void setSupportItem(SupportItem supportItem);
+  }
+
+  void loadSupport(SupportRepository.FetchSupportDataCallback callback);
+
+  void getSupportList(SupportRepository.GetSupportListCallback callback);
+
+  void getSupportItem(int id, SupportRepository.GetSupportItemCallback callback);
+
+  // callbacks and methods of Challenge
 
   interface FetchWeeksDataCallback {
     void onWeeksDataFetched(boolean error);
   }
 
-  interface GetChallengeDetailListCallback{
-    void  setChallengeDetailList(List<ChallengeItem> challengeItems);
+  interface GetChallengeDetailListCallback {
+    void setChallengeDetailList(List<ChallengeItem> challengeItems);
   }
 
-  interface  GetChallengeDetailCallback{
+  interface GetChallengeDetailCallback {
     void setChallengeDetail(ChallengeItem item);
   }
 
@@ -31,32 +52,17 @@ public interface RepositoryContract {
   void loadWeeks(ChallengeRepository.FetchWeeksDataCallback callback);
 
   void getChallengeDetailList(
-      ChallengesWeeksItem challengesWeeksItem,ChallengeRepository.GetChallengeDetailListCallback callback);
+      ChallengesWeeksItem challengesWeeksItem, ChallengeRepository.GetChallengeDetailListCallback callback);
 
   void getChallengeDetailList(
       int weeksId, ChallengeRepository.GetChallengeDetailListCallback callback);
 
   void getChallengeDetails(int id, ChallengeRepository.GetChallengeDetailCallback callback);
+
   void getWeeksItem(int id, ChallengeRepository.GetWeeksItemCallback callback);
+
   void getWeeksList(ChallengeRepository.GetWeeksListCallback callback);
 
+  // callbacks and methods of Place
 
-
-  interface FetchSupportDataCallback{
-    void onSupportDataFetched(boolean error);
-  }
-
-  interface GetSupportListCallback{
-    void setSupportList(List<SupportItem> supportList);
-  }
-
-  interface GetSupportItemCallback{
-    void setSupportItem(SupportItem supportItem);
-  }
-
-  void loadSupport(SupportRepository.FetchSupportDataCallback callback);
-
-  void getSupportList(SupportRepository.GetSupportListCallback callback);
-
-  void getSupportItem(int id, SupportRepository.GetSupportItemCallback callback);
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,128 +8,137 @@
     android:padding="0dp"
     tools:context=".menu.MenuActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/relative_layout_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="120dp">
 
-            <RelativeLayout
-                android:id="@+id/relative_layout_3"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/buttonShop"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150sp">
+                android:layout_marginLeft="45sp"
+                android:background="@color/colorButton"
+                android:text="@string/button_shop_label"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
 
-                <Button
-                    android:id="@+id/buttonShop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="45sp"
-                    android:background="@color/colorButton"
-                    android:text="@string/button_shop_label"
-                    android:textColor="@color/colorTextButtonWhite" />
-
-                <Button
-                    android:id="@+id/buttonChallenge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="45sp"
-                    android:background="@color/colorButton"
-                    android:text="@string/button_challenge_label"
-                    android:textColor="@color/colorTextButtonWhite" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relative_layout_2"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/buttonChallenge"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150sp">
+                android:layout_marginRight="45sp"
+                android:background="@color/colorButton"
+                android:text="@string/button_challenge_label"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-                <Button
-                    android:id="@+id/buttonAdvice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="45sp"
-                    android:background="@color/colorButton"
-                    android:text="@string/button_advice_label"
-                    android:textColor="@color/colorTextButtonWhite" />
+        </android.support.constraint.ConstraintLayout>
 
-                <Button
-                    android:id="@+id/buttonTheory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="45sp"
-                    android:background="@color/colorButton"
-                    android:text="@string/button_theory_label"
-                    android:textColor="@color/colorTextButtonWhite" />
-            </RelativeLayout>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/relative_layout_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp">
 
-            <RelativeLayout
-                android:id="@+id/relative_layout_1"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/buttonAdvice"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150sp">
+                android:layout_marginLeft="45sp"
+                android:background="@color/colorButton"
+                android:text="@string/button_advice_label"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
 
-                <Button
-                    android:id="@+id/buttonWeapon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="45sp"
-                    android:layout_weight="0"
-                    android:background="@color/colorButton"
-                    android:text="@string/button_weapon_label"
-                    android:textColor="@color/colorTextButtonWhite" />
-
-                <Button
-                    android:id="@+id/buttonPlace"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="45sp"
-                    android:background="@color/colorButton"
-                    android:text="@string/button_place_label"
-                    android:textColor="@color/colorTextButtonWhite" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/buttonTheory"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150sp">
+                android:layout_marginRight="45sp"
+                android:background="@color/colorButton"
+                android:text="@string/button_theory_label"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
-                <Button
-                    android:id="@+id/buttonSupport"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@color/colorButton"
-                    android:text="@string/button_support_label"
-                    android:textColor="@color/colorTextButtonWhite" />
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/relative_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp">
 
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
+            <Button
+                android:id="@+id/buttonWeapon"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45sp"
+                android:background="@color/colorButton"
+                android:text="@string/button_weapon_label"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/data"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:background="@color/colorButton"
-        android:text="@string/menu_label"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/colorTextButtonWhite"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="0dp" />
+            <Button
+                android:id="@+id/buttonPlace"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="45dp"
+                android:background="@color/colorButton"
+                android:text="@string/button_place_label"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp">
+
+            <Button
+                android:id="@+id/buttonSupport"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@color/colorButton"
+                android:text="@string/button_support_label"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextButtonWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

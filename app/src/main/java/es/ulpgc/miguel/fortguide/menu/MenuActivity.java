@@ -16,7 +16,7 @@ public class MenuActivity
   private MenuContract.Presenter presenter;
 
   Button adviceButton, challengeButton, placeButton, shopButton, supportButton, theoryButton, weaponButton;
-  TextView textView;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class MenuActivity
     supportButton = findViewById(R.id.buttonSupport);
     theoryButton = findViewById(R.id.buttonTheory);
     weaponButton = findViewById(R.id.buttonWeapon);
-    textView = findViewById(R.id.data); // TODO: QUITAR ESTE TEXTVIEW (NO SE QUITA PARA QUE NO DE ERRORES)
 
     adviceButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -101,6 +100,6 @@ public class MenuActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+
   }
 }
