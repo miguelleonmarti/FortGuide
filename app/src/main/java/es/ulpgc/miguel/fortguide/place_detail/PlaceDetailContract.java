@@ -3,6 +3,7 @@ package es.ulpgc.miguel.fortguide.place_detail;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.miguel.fortguide.data.PlaceDetailItem;
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 
 interface PlaceDetailContract {
 
@@ -26,10 +27,10 @@ interface PlaceDetailContract {
   }
 
   interface Router {
-    public void navigateToMenuScreen();
+    void navigateToMenuScreen();
 
     void passDataToNextScreen(PlaceDetailState state);
 
-    PlaceDetailItem getDataFromPlaceScreen();
+    PlaceItem getDataFromPlaceScreen();
   }
 }

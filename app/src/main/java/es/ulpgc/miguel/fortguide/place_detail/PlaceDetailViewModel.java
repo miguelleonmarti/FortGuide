@@ -1,9 +1,9 @@
 package es.ulpgc.miguel.fortguide.place_detail;
 
-import es.ulpgc.miguel.fortguide.data.PlaceDetailItem;
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 
 public class PlaceDetailViewModel {
 
-  public PlaceDetailItem  placeDetailItem;
+  public PlaceItem placeItem;
   public String data = "";
 }

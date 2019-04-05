@@ -20,7 +20,7 @@ import java.util.List;
 import es.ulpgc.miguel.fortguide.R;
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
 
-public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
+public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> {
 
   private List<PlaceItem> placeItemList;
   private final View.OnClickListener clickListener;
@@ -58,7 +58,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
     holder.itemView.setOnClickListener(clickListener);
 
     holder.contentView.setText(placeItemList.get(position).content);
-    //loadImageFromURL(holder.imageView, placeItemList.get(position).image);
+    loadImageFromURL(holder.imageView, placeItemList.get(position).image);
   }
 
   @Override
@@ -68,12 +68,12 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
 
   class ViewHolder extends RecyclerView.ViewHolder {
     final TextView contentView;
-    //final ImageView imageView;
+    final ImageView imageView;
 
     ViewHolder(View view) {
       super(view);
       contentView = view.findViewById(R.id.contentView);
-      //imageView = view.findViewById(R.id.imageView);
+      imageView = view.findViewById(R.id.imageView);
     }
   }
 

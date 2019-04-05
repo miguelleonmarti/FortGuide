@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/placeBar">
 
         <TextView
-            android:id="@+id/contentTextView"
+            android:id="@+id/contentPlaceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -115,7 +115,7 @@
             tools:text="@string/content_label_text" />
 
         <TextView
-            android:id="@+id/detailTextView"
+            android:id="@+id/detailPlaceTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -123,7 +123,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contentTextView"
+            app:layout_constraintTop_toBottomOf="@+id/contentPlaceTextView"
             tools:text="@string/detail_label_text" />
     </android.support.constraint.ConstraintLayout>
 

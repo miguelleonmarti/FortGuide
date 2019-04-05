@@ -37,8 +37,8 @@ public class PlaceDetailActivity
     placeImageView = findViewById(R.id.placeImageView);
     chestNumberText = findViewById(R.id.chestNumberTextView);
     peoplePercentTextView = findViewById(R.id.peoplePercentTextView);
-    contentTextView = findViewById(R.id.contentTextView);
-    detailTextView = findViewById(R.id.detailTextView);
+    contentTextView = findViewById(R.id.contentPlaceTextView);
+    detailTextView = findViewById(R.id.detailPlaceTextView);
 
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -65,8 +65,11 @@ public class PlaceDetailActivity
     Log.e(TAG, "displayPlaceDetailData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.placeBar)).setText(R.string.place_bar_label);
-
+    ((TextView) findViewById(R.id.placeBar)).setText(R.string.place_bar_label + viewModel.placeItem.content);
+    ((TextView) findViewById(R.id.contentPlaceTextView)).setText(viewModel.placeItem.content);
+    ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.details);
+    ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.chest);
+    ((TextView) findViewById(R.id.peoplePercentTextView)).setText(viewModel.placeItem.people);
   }
 
   @Override

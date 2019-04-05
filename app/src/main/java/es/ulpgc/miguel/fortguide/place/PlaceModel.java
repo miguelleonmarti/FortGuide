@@ -19,7 +19,7 @@ public class PlaceModel implements PlaceContract.Model {
   @Override
   public List<PlaceItem> fetchData() {
     // Log.e(TAG, "fetchData()");
-    placeItems.add(new PlaceItem(1, "","Lugar 1","","",""));
+    placeItems.add(new PlaceItem(1, "","Lugar 1","Hola esto es un ejemplo","23","45"));
     placeItems.add(new PlaceItem(2, "","Lugar 2","","",""));
     placeItems.add(new PlaceItem(3, "","Lugar 3","","",""));
     placeItems.add(new PlaceItem(4, "","Lugar 4","","",""));
