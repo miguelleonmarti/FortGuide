@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.fortguide.shop;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.ShopItem;
 
 interface ShopContract {
 
@@ -23,7 +26,7 @@ interface ShopContract {
   }
 
   interface Model {
-    String fetchData();
+    List<ShopItem> fetchData();
   }
 
   interface Router {

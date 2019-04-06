@@ -27,7 +27,7 @@ public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHold
   private final View.OnClickListener clickListener;
 
   public SupportAdapter(View.OnClickListener clickListener) {
-    this.supportItemList = new ArrayList();
+    this.supportItemList = new ArrayList<>();
     this.clickListener = clickListener;
   }
 
@@ -63,15 +63,14 @@ public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHold
     holder.itemView.setTag(supportItemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
-    holder.detailView.setText(supportItemList.get(position).details);
-    holder.contentView.setText(supportItemList.get(position).content);
-    loadImageFromURL(holder.imageView, supportItemList.get(position).image);
+    holder.detailView.setText(supportItemList.get(position).getDetails());
+    holder.contentView.setText(supportItemList.get(position).getContent());
+    loadImageFromURL(holder.imageView, supportItemList.get(position).getImage());
   }
 
   class ViewHolder extends RecyclerView.ViewHolder {
     final ImageView imageView;
-    final TextView contentView;
-    final TextView detailView;
+    final TextView contentView, detailView;
 
     ViewHolder(View view) {
       super(view);

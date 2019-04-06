@@ -89,8 +89,8 @@ public class SupportProfileActivity
     //Log.e(TAG, "displayData()");
     SupportItem supportItem = viewModel.profile;
     // deal with the data
-    ((TextView) findViewById(R.id.creatorCodeText)).setText(supportItem.code);
-    loadImageFromURL((ImageView) findViewById(R.id.imageView), supportItem.image);
+    ((TextView) findViewById(R.id.creatorCodeText)).setText(supportItem.getCode());
+    loadImageFromURL((ImageView) findViewById(R.id.imageView), supportItem.getImage());
   }
 
 

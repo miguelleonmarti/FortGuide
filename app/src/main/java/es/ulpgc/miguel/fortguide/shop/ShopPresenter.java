@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.fortguide.shop;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.ShopItem;
 
 public class ShopPresenter implements ShopContract.Presenter {
 
@@ -35,17 +38,9 @@ public class ShopPresenter implements ShopContract.Presenter {
     // Log.e(TAG, "fetchData()");
 
     // set passed state
-    ShopState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
+    List<ShopItem> shopItems = model.fetchData();
+    if (shopItems != null) {
+      viewModel.items = shopItems;
     }
 
     // update the view

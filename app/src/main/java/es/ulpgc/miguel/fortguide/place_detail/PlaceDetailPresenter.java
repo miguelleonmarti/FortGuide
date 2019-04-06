@@ -44,10 +44,10 @@ public class PlaceDetailPresenter implements PlaceDetailContract.Presenter {
 
     // set passed state
     PlaceItem placeItem = router.getDataFromPlaceScreen();
-    if( placeItem != null){
+    if (placeItem != null) {
       viewModel.placeItem = placeItem;
     }
-view.get().displayPlaceDetailData(viewModel);
+    view.get().displayPlaceDetailData(viewModel);
   }
 
 

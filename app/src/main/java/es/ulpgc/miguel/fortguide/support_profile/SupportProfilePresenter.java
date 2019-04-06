@@ -64,16 +64,16 @@ public class SupportProfilePresenter implements SupportProfileContract.Presenter
   public void startSocialNetworkScreen(String socialNetwork) {
     switch (socialNetwork) {
       case "instagram":
-        router.navigateToSocialNetworkScreen(viewModel.profile.instagram);
+        router.navigateToSocialNetworkScreen(viewModel.profile.getInstagram());
         break;
       case "twitter":
-        router.navigateToSocialNetworkScreen(viewModel.profile.twitter);
+        router.navigateToSocialNetworkScreen(viewModel.profile.getTwitter());
         break;
       case "twitch":
-        router.navigateToSocialNetworkScreen(viewModel.profile.twitch);
+        router.navigateToSocialNetworkScreen(viewModel.profile.getTwitch());
         break;
       case "youtube":
-        router.navigateToSocialNetworkScreen(viewModel.profile.youtube);
+        router.navigateToSocialNetworkScreen(viewModel.profile.getYoutube());
         break;
       default:
         break;

@@ -20,12 +20,10 @@ public class PlaceDetailActivity
 
   private PlaceDetailContract.Presenter presenter;
 
+  // defining buttons, images and texts
   private Button bananaButton;
-  private ImageView placeImageView;
-  TextView chestNumberText;
-  TextView peoplePercentTextView;
-  TextView contentTextView;
-  TextView detailTextView;
+  private ImageView placeImage;
+  private TextView chestText, peopleText, contentText, detailsText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +31,13 @@ public class PlaceDetailActivity
     setContentView(R.layout.activity_place_detail);
 
     bananaButton = findViewById(R.id.bananaButton);
+    placeImage = findViewById(R.id.placeImageView);
+    chestText = findViewById(R.id.chestNumberTextView);
+    peopleText = findViewById(R.id.peoplePercentTextView);
+    contentText = findViewById(R.id.contentPlaceTextView);
+    detailsText = findViewById(R.id.detailPlaceTextView);
 
-    placeImageView = findViewById(R.id.placeImageView);
-    chestNumberText = findViewById(R.id.chestNumberTextView);
-    peoplePercentTextView = findViewById(R.id.peoplePercentTextView);
-    contentTextView = findViewById(R.id.contentPlaceTextView);
-    detailTextView = findViewById(R.id.detailPlaceTextView);
+    // bananaButton is the only button that can be clicked on
 
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -50,7 +49,7 @@ public class PlaceDetailActivity
     // do the setup
     PlaceDetailScreen.configure(this);
 
-    // do some work
+    // calling the presenter in order to fetch data
     presenter.fetchPlaceDetailData();
   }
 
@@ -70,6 +69,7 @@ public class PlaceDetailActivity
     ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.details);
     ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.chest);
     ((TextView) findViewById(R.id.peoplePercentTextView)).setText(viewModel.placeItem.people);
+
   }
 
   @Override

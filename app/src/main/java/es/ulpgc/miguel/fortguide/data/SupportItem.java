@@ -2,8 +2,8 @@ package es.ulpgc.miguel.fortguide.data;
 
 public class SupportItem {
 
-  public final int id;
-  public final String image, content, details, code, instagram, twitter, twitch, youtube;
+  private final int id;
+  private final String image, content, details, code, instagram, twitter, twitch, youtube;
 
   public SupportItem(int id, String image, String content, String details, String code, String instagram, String twitter, String twitch, String youtube) {
     this.id = id;

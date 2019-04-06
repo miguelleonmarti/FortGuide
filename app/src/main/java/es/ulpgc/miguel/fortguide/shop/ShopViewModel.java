@@ -1,6 +1,10 @@
 package es.ulpgc.miguel.fortguide.shop;
 
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.ShopItem;
+
 public class ShopViewModel {
 
-  public String data = "";
+  public List<ShopItem> items;
 }
