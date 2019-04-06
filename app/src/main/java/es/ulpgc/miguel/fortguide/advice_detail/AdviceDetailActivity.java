@@ -23,7 +23,7 @@ public class AdviceDetailActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_advice_detail);
 
-    bananaButton.findViewById(R.id.bananaButton);
+    bananaButton = findViewById(R.id.bananaButton);
 
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -34,15 +34,9 @@ public class AdviceDetailActivity
 
     // do the setup
     AdviceDetailScreen.configure(this);
-  }
-
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
     presenter.fetchData();
   }
+
 
   @Override
   public void injectPresenter(AdviceDetailContract.Presenter presenter) {
@@ -54,6 +48,8 @@ public class AdviceDetailActivity
     Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.adviceDetailTextView)).setText(viewModel.data);
+    ((TextView)findViewById(R.id.tituloTextView)).setText(viewModel.item.getContent());
+    ((TextView)findViewById(R.id.descripcionTextView)).setText(viewModel.item.getDetails());
+
   }
 }

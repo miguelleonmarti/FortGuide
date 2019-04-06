@@ -12,7 +12,6 @@ import java.lang.ref.WeakReference;
 public class AdviceScreen {
 
   public static void configure(AdviceContract.View view) {
-    //TODO Poner comentario
     WeakReference<FragmentActivity> context =
         new WeakReference<>((FragmentActivity) view);
 

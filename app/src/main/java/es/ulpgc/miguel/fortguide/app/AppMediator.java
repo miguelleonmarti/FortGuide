@@ -67,6 +67,7 @@ public class AppMediator extends Application {
     supportProfileState = new SupportProfileState();
     theoryDetailState = new TheoryDetailState();
     challengesDetailState = new ChallengesDetailState();
+    adviceDetailState = new AdviceDetailState();
   }
 
   public IntroductionState getIntroductionState() {
@@ -237,17 +238,13 @@ public class AppMediator extends Application {
     this.placeDetailItem = placeDetailItem;
   }
 public AdviceItem getAdvice(){
-    AdviceItem item = adviceItem;
-    return item;
+    return adviceItem;
   }
   public void setAdvice(AdviceItem item){
     adviceItem=item;
 
   }
 
-  public void setAdviceState(AdviceItem item) {
-    this.adviceItem=item;
-  }
 }
 
 

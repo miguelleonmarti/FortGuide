@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
+
 public class AdviceDetailPresenter implements AdviceDetailContract.Presenter {
 
   public static String TAG = AdviceDetailPresenter.class.getSimpleName();
@@ -34,25 +36,12 @@ public class AdviceDetailPresenter implements AdviceDetailContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    AdviceItem item = router.getDataFromPreviousScreen();
+    if(item !=null) {
+        viewModel.item = item;
+        view.get().displayData(viewModel);
 
-    // set passed state
-    AdviceDetailState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
     }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
   }
 
   @Override

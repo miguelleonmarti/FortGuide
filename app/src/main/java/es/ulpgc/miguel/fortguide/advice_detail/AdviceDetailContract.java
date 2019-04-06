@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.advice_detail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
+
 interface AdviceDetailContract {
 
   interface View {
@@ -27,11 +29,8 @@ interface AdviceDetailContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
 
-    void passDataToNextScreen(AdviceDetailState state);
-
-    AdviceDetailState getDataFromPreviousScreen();
+    AdviceItem getDataFromPreviousScreen();
 
     void navigateToMenuScreen();
   }

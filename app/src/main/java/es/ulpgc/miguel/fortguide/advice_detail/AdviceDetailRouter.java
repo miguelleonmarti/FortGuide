@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class AdviceDetailRouter implements AdviceDetailContract.Router {
@@ -17,21 +18,9 @@ public class AdviceDetailRouter implements AdviceDetailContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, AdviceDetailActivity.class);
-    context.startActivity(intent);
-  }
-
-  @Override
-  public void passDataToNextScreen(AdviceDetailState state) {
-    mediator.setAdviceDetailState(state);
-  }
-
-  @Override
-  public AdviceDetailState getDataFromPreviousScreen() {
-    AdviceDetailState state = mediator.getAdviceDetailState();
-    return state;
+  public AdviceItem getDataFromPreviousScreen() {
+    AdviceItem item = mediator.getAdvice();
+    return item;
   }
 
   @Override

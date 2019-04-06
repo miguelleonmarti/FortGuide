@@ -1,6 +1,8 @@
 package es.ulpgc.miguel.fortguide.advice_detail;
 
-public class AdviceDetailViewModel {
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
 
-  public String data = "CONSEJOS";
+public class AdviceDetailViewModel {
+  public AdviceItem item;
+
 }

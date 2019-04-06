@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ public class AdviceActivity
       }
     });
 
-    listAdapter = new AdviceAdapter(new View.OnClickListener() { // TODO: Hacer el clicklistener
+    listAdapter = new AdviceAdapter(new View.OnClickListener() {
 
       @Override
       public void onClick(View view) {
@@ -44,7 +45,7 @@ public class AdviceActivity
     });
     RecyclerView recyclerView = findViewById(R.id.adviceList);
     recyclerView.setAdapter(listAdapter);
-    recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
+
     // do the setup
     AdviceScreen.configure(this);
     presenter.fetchData();

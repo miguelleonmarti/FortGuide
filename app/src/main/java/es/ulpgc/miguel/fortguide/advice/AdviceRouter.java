@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.advice;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailActivity;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
@@ -27,7 +28,7 @@ public class AdviceRouter implements AdviceContract.Router {
 
   @Override
   public void passDataToAdviceDetailScreen(AdviceItem item) {
-    mediator.setAdviceState(item);
+    mediator.setAdvice(item);
   }
 
   @Override

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         >
 
-        <activity android:name=".introduction.IntroductionActivity">
+        <activity android:name=".advice.AdviceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".menu.MenuActivity">
         </activity>
-        <activity android:name=".advice.AdviceActivity">
+        <activity android:name=".introduction.IntroductionActivity">
         </activity>
         <activity android:name=".challenges_weeks.WeeksListActivity">
         </activity>
