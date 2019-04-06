@@ -1,6 +1,10 @@
 package es.ulpgc.miguel.fortguide.advice;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 interface AdviceContract {
 
@@ -18,21 +22,20 @@ interface AdviceContract {
     void injectRouter(Router router);
 
     void fetchData();
-
+    void selectAdviceListData(AdviceItem item);
     void startMenuScreen();
   }
 
   interface Model {
-    String fetchData();
+    void fetchAdviceListData(RepositoryContract.GetAdviceListCallback callback);
   }
 
   interface Router {
-    void navigateToNextScreen();
+    void navigateToAdviceDetailScreen();
 
-    void passDataToNextScreen(AdviceState state);
+    void passDataToAdviceDetailScreen(AdviceItem item);
 
     AdviceState getDataFromPreviousScreen();
-
     void navigateToMenuScreen();
   }
 }

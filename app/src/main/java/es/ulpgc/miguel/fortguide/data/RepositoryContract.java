@@ -81,4 +81,22 @@ public interface RepositoryContract {
 
   void getPlaceItem(int id, AppRepository.GetPlaceItemCallback callback);
 
+  // callbacks and methods of Advice
+
+  interface FetchAdviceDataCallback{
+    void onAdviceDataFetched(boolean error);
+  }
+
+  interface GetAdviceListCallback{
+    void setAdviceList(List<AdviceItem> adviceList);
+  }
+  interface GetAdviceItemCallback{
+    void setAdviceItem(AdviceItem adviceItem);
+  }
+
+  void loadAdvice (AppRepository.FetchAdviceDataCallback callback);
+
+  void getAdviceList(AppRepository.GetAdviceListCallback callback);
+
+  void getAdviceItem(int id, AppRepository.GetAdviceItemCallback callback);
 }

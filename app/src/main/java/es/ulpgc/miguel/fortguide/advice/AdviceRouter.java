@@ -2,7 +2,10 @@ package es.ulpgc.miguel.fortguide.advice;
 
 import android.content.Context;
 import android.content.Intent;
+
+import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailActivity;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
 public class AdviceRouter implements AdviceContract.Router {
@@ -16,15 +19,15 @@ public class AdviceRouter implements AdviceContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
+  public void navigateToAdviceDetailScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, AdviceActivity.class);
+    Intent intent = new Intent(context, AdviceDetailActivity.class);
     context.startActivity(intent);
   }
 
   @Override
-  public void passDataToNextScreen(AdviceState state) {
-    mediator.setAdviceState(state);
+  public void passDataToAdviceDetailScreen(AdviceItem item) {
+    mediator.setAdviceState(item);
   }
 
   @Override
@@ -32,7 +35,6 @@ public class AdviceRouter implements AdviceContract.Router {
     AdviceState state = mediator.getAdviceState();
     return state;
   }
-
   @Override
   public void navigateToMenuScreen() {
     Context context = mediator.getApplicationContext();

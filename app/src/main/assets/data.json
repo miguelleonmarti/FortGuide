@@ -676,5 +676,42 @@
       "chest": 10,
       "people": 6
     }
+  ],
+  "advice": [
+    {
+      "id": 1,
+      "content": "¿Cómo mejoro mi puntería?",
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+    },
+    {
+      "id": 2,
+      "content": "¿Cómo mejoro mi construcción?",
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+    },
+    {
+      "id": 3,
+      "content": "¿Qué arma es mejor?",
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+    },
+    {
+      "id": 4,
+      "content": "¿Dónde aterrizo?",
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+    },
+    {
+      "id": 5,
+      "content": "¿Qué controles debo utilizar?",
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+    },
+    {
+      "id": 6,
+      "content": "¿Madera o metal?",
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+    },
+    {
+      "id": 7,
+      "content": "¿Escopetas o subfusiles?",
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+    }
   ]
 }

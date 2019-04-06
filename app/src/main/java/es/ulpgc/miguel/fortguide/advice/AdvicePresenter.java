@@ -1,6 +1,10 @@
 package es.ulpgc.miguel.fortguide.advice;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class AdvicePresenter implements AdviceContract.Presenter {
 
@@ -33,25 +37,23 @@ public class AdvicePresenter implements AdviceContract.Presenter {
   @Override
   public void fetchData() {
     // Log.e(TAG, "fetchData()");
-
-    // set passed state
-    AdviceState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
+    model.fetchAdviceListData(new RepositoryContract.GetAdviceListCallback(){
+      @Override
+      public void setAdviceList(List<AdviceItem> adviceList) {
+        viewModel.items = adviceList;
+        view.get().displayData(viewModel);
+      }
+    });
     view.get().displayData(viewModel);
 
   }
+
+  @Override
+  public void selectAdviceListData(AdviceItem item){
+    router.passDataToAdviceDetailScreen(item);
+    router.navigateToAdviceDetailScreen();
+  }
+
 
   @Override
   public void startMenuScreen() {

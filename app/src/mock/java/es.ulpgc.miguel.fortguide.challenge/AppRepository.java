@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
@@ -31,6 +32,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_SUPPORT = "support";
   private static final String JSON_ROOT_PLACE = "place";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
+  private static final String JSON_ROOT_ADVICE = "advice";
 
   public static AppRepository INSTANCE;
 
@@ -38,6 +40,7 @@ public class AppRepository implements RepositoryContract {
   private List<SupportItem> supportList;
   private List<PlaceItem> placeList;
   private List<ChallengesWeeksItem> challengeList;
+  private List<AdviceItem> adviceList;
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
@@ -353,6 +356,40 @@ public class AppRepository implements RepositoryContract {
     return false;
   } //TODO: CAMBIAR NOMBRE
 
+  private boolean loadAdviceFromJSON(String json) {
+    Log.e(TAG, "loadPlaceFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_ADVICE);
+
+      adviceList = new ArrayList();
+
+      if (jsonArray.length() > 0) {
+
+        final List<AdviceItem> adviceList = Arrays.asList(
+            gson.fromJson(jsonArray.toString(), AdviceItem[].class)
+        );
+
+
+        for (AdviceItem adviceItem : adviceList) {
+          insertAdviceItem(adviceItem);
+        }
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  }
+
   private String loadJSONFromAsset() {
     Log.e(TAG, "loadJSONFromAsset()");
 
@@ -373,4 +410,46 @@ public class AppRepository implements RepositoryContract {
 
     return json;
   }
+
+  //advice
+
+
+  @Override
+  public void loadAdvice(final FetchAdviceDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadAdviceFromJSON(loadJSONFromAsset());
+        if (callback != null) {
+          callback.onAdviceDataFetched(error);
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getAdviceList(final AppRepository.GetAdviceListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setAdviceList(loadAdviceList());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getAdviceItem(int id, AppRepository.GetAdviceItemCallback callback) {
+
+  } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
+
+  private void insertAdviceItem(AdviceItem adviceItem) {
+    adviceList.add(adviceItem);
+  }
+
+  private List<AdviceItem> loadAdviceList() {
+    return this.adviceList;
+  }
+
 }
