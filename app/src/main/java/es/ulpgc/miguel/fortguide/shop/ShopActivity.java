@@ -29,13 +29,9 @@ public class ShopActivity
         presenter.startMenuScreen();
       }
     });
+
     // do the setup
     ShopScreen.configure(this);
-  }
-
-  @Override
-  protected void onResume() {
-    super.onResume();
 
     // do some work
     presenter.fetchData();

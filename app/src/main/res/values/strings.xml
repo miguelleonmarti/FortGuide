@@ -45,4 +45,5 @@
     <string name="place_image_label">placeImage</string>
     <string name="chest_image_label">chestImage</string>
     <string name="people_image_label">peopleImage</string>
+    <string name="shop_bar_label">TIENDA</string>
 </resources>
