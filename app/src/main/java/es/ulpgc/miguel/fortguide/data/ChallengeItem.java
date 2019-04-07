@@ -1,43 +1,27 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class ChallengeItem  {
+public class ChallengeItem extends Item{
 
-  public int id;
-
-  public String content;
-  public String details;
-
-  public int weeksId;
+  private int weeksId;
 
 public ChallengeItem(int id,String content,String details,int weeksId){
-  this.id = id;
-  this.content = content;
-  this.details = details;
+  super(id, content, details);
   this.weeksId = weeksId;
 }
 
+  @Override
   public int getId() {
-    return id;
+    return super.getId();
   }
 
-  public void setId(int id) {
-    this.id = id;
-  }
-
+  @Override
   public String getContent() {
-    return content;
+    return super.getContent();
   }
 
-  public void setContent(String content) {
-    this.content = content;
-  }
-
+  @Override
   public String getDetails() {
-    return details;
-  }
-
-  public void setDetails(String details) {
-    this.details = details;
+    return super.getDetails();
   }
 
   public int getWeeksId() {
@@ -46,10 +30,5 @@ public ChallengeItem(int id,String content,String details,int weeksId){
 
   public void setWeeksId(int weeksId) {
     this.weeksId = weeksId;
-  }
-
-  @Override
-  public String toString() {
-    return content;
   }
 }

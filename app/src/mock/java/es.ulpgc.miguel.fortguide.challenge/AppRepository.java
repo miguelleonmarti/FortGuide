@@ -113,7 +113,7 @@ public class AppRepository implements RepositoryContract {
 
   @Override
   public void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, GetChallengeDetailListCallback callback) {
-    getChallengeDetailList(challengesWeeksItem.id, callback);
+    getChallengeDetailList(challengesWeeksItem.getId(), callback);
   }
 
   @Override
@@ -168,8 +168,8 @@ public class AppRepository implements RepositoryContract {
     List<ChallengeItem> challenges = new ArrayList();
 
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      if (challengesWeeksItem.id == weeksId) {
-        challenges = challengesWeeksItem.items;
+      if (challengesWeeksItem.getId() == weeksId) {
+        challenges = challengesWeeksItem.getItems();
       }
     }
     return challenges;
@@ -177,7 +177,7 @@ public class AppRepository implements RepositoryContract {
 
   private ChallengeItem loadChallenge(int id) {
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      for (ChallengeItem challengeItem : challengesWeeksItem.items) {
+      for (ChallengeItem challengeItem : challengesWeeksItem.getItems()) {
         if (challengeItem.getId() == id) {
           return challengeItem;
         }
@@ -188,7 +188,7 @@ public class AppRepository implements RepositoryContract {
 
   private ChallengesWeeksItem loadChallengesWeeksItem(int id) {
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      if (challengesWeeksItem.id == id) {
+      if (challengesWeeksItem.getId() == id) {
         return challengesWeeksItem;
       }
     }
@@ -344,8 +344,8 @@ public class AppRepository implements RepositoryContract {
           insertWeeksItem(challengesWeeksItem);
         }
         for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
-          for(ChallengeItem challengeItem: challengesWeeksItem.items){
-            challengeItem.weeksId = challengesWeeksItem.id;
+          for(ChallengeItem challengeItem: challengesWeeksItem.getItems()){
+            challengeItem.setWeeksId(challengesWeeksItem.getId());
           }
         }
 
