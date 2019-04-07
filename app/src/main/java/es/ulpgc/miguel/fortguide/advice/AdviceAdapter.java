@@ -46,6 +46,7 @@ public class AdviceAdapter extends RecyclerView.Adapter<AdviceAdapter.ViewHolder
 
         }
     }
+
     @Override
     public int getItemCount(){return adviceItemList.size();}
 

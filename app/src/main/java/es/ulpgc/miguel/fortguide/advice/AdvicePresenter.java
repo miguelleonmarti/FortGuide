@@ -44,8 +44,6 @@ public class AdvicePresenter implements AdviceContract.Presenter {
         view.get().displayData(viewModel);
       }
     });
-    view.get().displayData(viewModel);
-
   }
 
   @Override
