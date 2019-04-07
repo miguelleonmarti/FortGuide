@@ -1,29 +1,30 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class ShopItem {
-  private int id;
-  private String image, content, details;
+public class ShopItem extends Item {
+
+  private final String image;
 
   public ShopItem(int id, String image, String content, String details) {
-    this.id = id;
+    super(id, content, details);
     this.image = image;
-    this.content = content;
-    this.details = details;
   }
 
+  @Override
   public int getId() {
-    return id;
+    return super.getId();
+  }
+
+  @Override
+  public String getContent() {
+    return super.getContent();
+  }
+
+  @Override
+  public String getDetails() {
+    return super.getDetails();
   }
 
   public String getImage() {
     return image;
-  }
-
-  public String getContent() {
-    return content;
-  }
-
-  public String getDetails() {
-    return details;
   }
 }

@@ -1,15 +1,12 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class SupportItem {
+public class SupportItem extends Item{
 
-  private final int id;
-  private final String image, content, details, code, instagram, twitter, twitch, youtube;
+  private final String image, code, instagram, twitter, twitch, youtube;
 
   public SupportItem(int id, String image, String content, String details, String code, String instagram, String twitter, String twitch, String youtube) {
-    this.id = id;
+    super(id, content, details);
     this.image = image;
-    this.content = content;
-    this.details = details;
     this.code = code;
     this.instagram = instagram;
     this.twitter = twitter;
@@ -17,22 +14,23 @@ public class SupportItem {
     this.youtube = youtube;
   }
 
-  // getters
-
+  @Override
   public int getId() {
-    return id;
+    return super.getId();
+  }
+
+  @Override
+  public String getContent() {
+    return super.getContent();
+  }
+
+  @Override
+  public String getDetails() {
+    return super.getDetails();
   }
 
   public String getImage() {
     return image;
-  }
-
-  public String getContent() {
-    return content;
-  }
-
-  public String getDetails() {
-    return details;
   }
 
   public String getCode() {

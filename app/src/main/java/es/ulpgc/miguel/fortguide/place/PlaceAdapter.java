@@ -56,8 +56,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
     holder.itemView.setTag(placeItemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
-    holder.contentView.setText(placeItemList.get(position).content);
-    loadImageFromURL(holder.imageView, placeItemList.get(position).image);
+    holder.contentView.setText(placeItemList.get(position).getContent());
+    loadImageFromURL(holder.imageView, placeItemList.get(position).getImage());
   }
 
   @Override

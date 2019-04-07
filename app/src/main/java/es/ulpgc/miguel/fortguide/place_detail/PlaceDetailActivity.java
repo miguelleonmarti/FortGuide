@@ -68,12 +68,12 @@ public class PlaceDetailActivity
     PlaceItem placeItem = viewModel.placeItem;
 
     // deal with the data
-    ((TextView) findViewById(R.id.placeBar)).setText("LUGARES-" + viewModel.placeItem.content.toUpperCase()); //Cambiarlo a un String
-    ((TextView) findViewById(R.id.contentPlaceTextView)).setText(viewModel.placeItem.content);
-    ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.details);
-    ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.chest);
-    ((TextView) findViewById(R.id.peoplePercentTextView)).setText(viewModel.placeItem.people);
-    loadImageFromURL((ImageView) findViewById(R.id.placeImageView), placeItem.image);
+    ((TextView) findViewById(R.id.placeBar)).setText("LUGARES-" + viewModel.placeItem.getContent().toUpperCase()); //Cambiarlo a un String
+    ((TextView) findViewById(R.id.contentPlaceTextView)).setText(viewModel.placeItem.getContent());
+    ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.getDetails());
+    ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.getChest());
+    ((TextView) findViewById(R.id.peoplePercentTextView)).setText(viewModel.placeItem.getPeople());
+    loadImageFromURL((ImageView) findViewById(R.id.placeImageView), placeItem.getPeople());
   }
 
   @Override

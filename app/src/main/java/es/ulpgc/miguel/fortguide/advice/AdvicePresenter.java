@@ -1,5 +1,7 @@
 package es.ulpgc.miguel.fortguide.advice;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class AdvicePresenter implements AdviceContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    Log.e(TAG, "fetchData()");
     model.fetchAdviceListData(new RepositoryContract.GetAdviceListCallback(){
       @Override
       public void setAdviceList(List<AdviceItem> adviceList) {

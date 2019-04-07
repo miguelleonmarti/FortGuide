@@ -1,26 +1,24 @@
 package es.ulpgc.miguel.fortguide.data;
 
 
-public class AdviceItem {
-    public int id;
-    public String content;
-    public String details;
+public class AdviceItem extends Item{
 
     public AdviceItem(int id, String content, String details){
-        this.id=id;
-        this.content=content;
-        this.details=details;
+        super(id, content, details);
     }
 
+    @Override
     public int getId() {
-        return id;
+        return super.getId();
     }
 
+    @Override
     public String getContent() {
-        return content;
+        return super.getContent();
     }
 
+    @Override
     public String getDetails() {
-        return details;
+        return super.getDetails();
     }
 }
