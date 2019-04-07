@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 
-interface SupportProfileContract {
+public interface SupportProfileContract {
 
   interface View {
     void injectPresenter(Presenter presenter);

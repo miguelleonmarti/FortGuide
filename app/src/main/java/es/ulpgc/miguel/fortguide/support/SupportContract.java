@@ -7,7 +7,7 @@ import java.util.List;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 
-interface SupportContract {
+public interface SupportContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
