@@ -19,18 +19,21 @@ public class WeeksListActivity
 
   private WeeksListContract.Presenter presenter;
 
+  // declaring the buttons, texts and images
   private Button bananaButton;
 
-  private WeeksListAdapter WeeksAdapter;
+  // declaring the adapter for the RecyclerView
+  private WeeksListAdapter weeksListAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_weeks_list);
 
-
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
 
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -38,8 +41,8 @@ public class WeeksListActivity
       }
     });
 
-
-    WeeksAdapter = new WeeksListAdapter(new View.OnClickListener() {
+    // initializing the adapter
+    weeksListAdapter = new WeeksListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag(); //TODO: TE LO COMENTO PARA QUE NO DE ERROR
@@ -47,13 +50,14 @@ public class WeeksListActivity
       }
     });
 
+    // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.challenges_weeks_list);
-    recyclerView.setAdapter(WeeksAdapter);
+    recyclerView.setAdapter(weeksListAdapter);
 
     // do the setup
     WeeksListScreen.configure(this);
 
-    //do some work
+    // calling the presenter in order to fetch data
     presenter.fetchWeeksListData();
   }
 
@@ -66,11 +70,12 @@ public class WeeksListActivity
   public void displayWeeksListData(final WeeksListViewModel viewModel) {
     Log.e(TAG, "displayWeeksListData()");
 
+    // we need to get into the main thread to display the fetched data
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
         ((TextView) findViewById(R.id.challengeBar)).setText(R.string.challenge_text_label);
-        WeeksAdapter.setItems(viewModel.challengesWeeksItemList);
+        weeksListAdapter.setItems(viewModel.challengesWeeksItemList);
       }
     });
   }
