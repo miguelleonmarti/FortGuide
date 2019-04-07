@@ -18,19 +18,12 @@
         app:srcCompat="@drawable/star" />
 
     <TextView
-        android:id="@+id/detailChallengeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/challenge_detail_content_label" />
-
-    <TextView
         android:id="@+id/contentChallengeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintLeft_toRightOf="@+id/starImage"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/challenge_detail_title_label" />
 
@@ -38,8 +31,27 @@
         android:id="@+id/challengeCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintLeft_toRightOf="@+id/contentChallengeTextView"
+        app:layout_constraintTop_toTopOf="@+id/contentChallengeTextView" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/detailChallengeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/challenge_detail_content_label" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
 
