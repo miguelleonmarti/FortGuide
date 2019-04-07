@@ -84,7 +84,7 @@ public class MenuPresenterMockitoTest {
 
   @Test
   public void goToShopScreen() {
-    presenter.startChallengeScreen();
+    presenter.startShopScreen();
     verify(routerMock).navigateToShopScreen();
   }
 
