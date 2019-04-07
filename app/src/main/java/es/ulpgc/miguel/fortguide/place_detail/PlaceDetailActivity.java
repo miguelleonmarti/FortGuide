@@ -68,7 +68,7 @@ public class PlaceDetailActivity
     PlaceItem placeItem = viewModel.placeItem;
 
     // deal with the data
-    ((TextView) findViewById(R.id.placeBar)).setText("LUGARES-" + viewModel.placeItem.content); //Cambiarlo a un String
+    ((TextView) findViewById(R.id.placeBar)).setText("LUGARES-" + viewModel.placeItem.content.toUpperCase()); //Cambiarlo a un String
     ((TextView) findViewById(R.id.contentPlaceTextView)).setText(viewModel.placeItem.content);
     ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.details);
     ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.chest);
