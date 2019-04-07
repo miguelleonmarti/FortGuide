@@ -2,7 +2,6 @@ package es.ulpgc.miguel.fortguide.place_detail;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.data.PlaceDetailItem;
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
 
 public interface PlaceDetailContract {

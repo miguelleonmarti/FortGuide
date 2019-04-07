@@ -5,5 +5,4 @@ import es.ulpgc.miguel.fortguide.data.PlaceItem;
 public class PlaceDetailViewModel {
 
   public PlaceItem placeItem;
-  public String data = "";
 }

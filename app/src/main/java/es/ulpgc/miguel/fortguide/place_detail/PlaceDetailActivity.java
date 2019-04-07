@@ -10,7 +10,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.RequestManager;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+
 import es.ulpgc.miguel.fortguide.R;
+import es.ulpgc.miguel.fortguide.data.ChallengeItem;
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.place.PlaceActivity;
 
 public class PlaceDetailActivity
@@ -22,8 +30,7 @@ public class PlaceDetailActivity
 
   // declaring the buttons, texts and images
   private Button bananaButton;
-  private ImageView placeImage;
-  private TextView chestText, peopleText, contentText, detailsText;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +39,7 @@ public class PlaceDetailActivity
 
     // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
-    placeImage = findViewById(R.id.placeImageView);
-    chestText = findViewById(R.id.chestNumberTextView);
-    peopleText = findViewById(R.id.peoplePercentTextView);
-    contentText = findViewById(R.id.contentPlaceTextView);
-    detailsText = findViewById(R.id.detailPlaceTextView);
+
 
     // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
@@ -62,14 +65,15 @@ public class PlaceDetailActivity
   @Override
   public void displayPlaceDetailData(PlaceDetailViewModel viewModel) {
     Log.e(TAG, "displayPlaceDetailData()");
+    PlaceItem placeItem = viewModel.placeItem;
 
     // deal with the data
-    ((TextView) findViewById(R.id.placeBar)).setText(R.string.place_bar_label + viewModel.placeItem.content);
+    ((TextView) findViewById(R.id.placeBar)).setText("LUGARES-" + viewModel.placeItem.content); //Cambiarlo a un String
     ((TextView) findViewById(R.id.contentPlaceTextView)).setText(viewModel.placeItem.content);
     ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.details);
     ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.chest);
     ((TextView) findViewById(R.id.peoplePercentTextView)).setText(viewModel.placeItem.people);
-
+    loadImageFromURL((ImageView) findViewById(R.id.placeImageView), placeItem.image);
   }
 
   @Override
@@ -81,4 +85,19 @@ public class PlaceDetailActivity
     }
     return super.onOptionsItemSelected(item);
   }
+
+  /**
+   * Carga desde una URL la imagen
+   *
+   * @param imageView imagen en la que se guarda
+   * @param imageUrl  url o ruta de la imagen
+   */
+  private void loadImageFromURL(ImageView imageView, String imageUrl) {
+    RequestManager reqManager = Glide.with(imageView.getContext());
+    RequestBuilder reqBuilder = reqManager.load(imageUrl);
+    RequestOptions reqOptions = new RequestOptions();
+    reqOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
+    reqBuilder.apply(reqOptions);
+    reqBuilder.into(imageView);
   }
+}

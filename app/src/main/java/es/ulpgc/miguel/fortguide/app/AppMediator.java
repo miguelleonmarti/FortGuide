@@ -8,7 +8,6 @@ import es.ulpgc.miguel.fortguide.challenges_weeks.WeeksListState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
-import es.ulpgc.miguel.fortguide.data.PlaceDetailItem;
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
@@ -48,7 +47,6 @@ public class AppMediator extends Application {
   private ChallengesWeeksItem challengesWeeksItem;
   private ChallengeItem challengeItem;
   private PlaceItem placeItem;
-  private PlaceDetailItem placeDetailItem;
   private AdviceItem adviceItem;
 
   @Override
@@ -225,14 +223,6 @@ public class AppMediator extends Application {
 
   public PlaceDetailState getPlaceDetailState() {
     return placeDetailState;
-  }
-
-  public PlaceDetailItem getPlaceDetailItem() {
-    return placeDetailItem;
-  }
-
-  public void setPlaceDetailItem(PlaceDetailItem placeDetailItem) {
-    this.placeDetailItem = placeDetailItem;
   }
 
   public AdviceItem getAdvice() {
