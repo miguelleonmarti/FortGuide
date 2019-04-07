@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
@@ -40,13 +41,7 @@ public class ChallengesDetailActivity
       }
     });
 
-    listAdapter = new ChallengesDetailAdapter(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        ChallengeItem item = (ChallengeItem) view.getTag();
-        presenter.selectChallengeDetailListData(item);
-      }
-    });
+    listAdapter = new ChallengesDetailAdapter();
 
     RecyclerView recyclerView = findViewById(R.id.challenges_detail_list);
     recyclerView.setAdapter(listAdapter);

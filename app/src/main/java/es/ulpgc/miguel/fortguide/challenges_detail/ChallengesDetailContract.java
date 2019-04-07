@@ -27,8 +27,6 @@ interface ChallengesDetailContract {
 
     void fetchChallengeDetailListData();
 
-    void selectChallengeDetailListData(ChallengeItem item);
-
     void startMenuScreen();
   }
 

@@ -211,6 +211,18 @@ public class AppMediator extends Application {
     this.challengesWeeksItem = challengesWeeksItem;
   }
 
+  public void setWeeksListState(WeeksListState weeksListState) {
+    this.weeksListState = weeksListState;
+  }
+
+  public AdviceItem getAdviceItem() {
+    return adviceItem;
+  }
+
+  public void setAdviceItem(AdviceItem adviceItem) {
+    this.adviceItem = adviceItem;
+  }
+
   public ChallengeItem getChallengeItem() {
     return challengeItem;
   }

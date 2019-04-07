@@ -61,11 +61,7 @@ public class ChallengesDetailPresenter implements ChallengesDetailContract.Prese
         });
   }
 
-  @Override
-  public void selectChallengeDetailListData(ChallengeItem item) {
-    router.passDataToNextScreen(item);
-    router.navigateToChallengeDetailScreen();
-  }
+
 
 
   @Override

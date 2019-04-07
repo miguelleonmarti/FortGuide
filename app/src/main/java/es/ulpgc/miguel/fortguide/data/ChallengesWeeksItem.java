@@ -11,8 +11,15 @@ public class ChallengesWeeksItem {
   public String content;
   public String details;
 
-  @SerializedName("challengeItemList")
- public  List<ChallengeItem> items;
+  public ChallengesWeeksItem(int id, String content, String details) {
+    this.id = id;
+    this.content = content;
+    this.details = details;
+  }
+
+
+  @SerializedName("detail")
+  public List<ChallengeItem> items;
 
   @Override
   public String toString() {

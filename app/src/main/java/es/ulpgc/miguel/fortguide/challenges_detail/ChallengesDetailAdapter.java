@@ -17,12 +17,12 @@ public class ChallengesDetailAdapter
     extends RecyclerView.Adapter<ChallengesDetailAdapter.ViewHolder> {
 
   private List<ChallengeItem> challengesList;
-  private final View.OnClickListener clickListener;
 
-  public ChallengesDetailAdapter(View.OnClickListener listener) {
+
+  public ChallengesDetailAdapter() {
 
     challengesList = new ArrayList();
-    clickListener = listener;
+
   }
 
   public void addItem(ChallengeItem item) {
@@ -42,11 +42,7 @@ public class ChallengesDetailAdapter
 
   @Override
   public int getItemCount() {
-    if (challengesList == null) {
-      return 0;
-    } else {
       return challengesList.size();
-    }
   }
 
   @Override
@@ -59,10 +55,9 @@ public class ChallengesDetailAdapter
   @Override
   public void onBindViewHolder(final ViewHolder holder, int position) {
     holder.itemView.setTag(challengesList.get(position));
-    holder.itemView.setOnClickListener(clickListener);
 
-    holder.contentView.setText(challengesList.get(position).content);
-    holder.detailView.setText(challengesList.get(position).details);
+    holder.contentView.setText(challengesList.get(position).getContent());
+    holder.detailView.setText(challengesList.get(position).getDetails());
   }
 
 
@@ -70,13 +65,12 @@ public class ChallengesDetailAdapter
   class ViewHolder extends RecyclerView.ViewHolder {
     final TextView contentView;
     final TextView detailView;
-    final CheckBox checkBox;
+
 
     ViewHolder(View view) {
       super(view);
       contentView = view.findViewById(R.id.contentChallengeTextView);
       detailView = view.findViewById(R.id.detailChallengeTextView);
-      checkBox = view.findViewById(R.id.challengeCheckbox);
     }
   }
 }

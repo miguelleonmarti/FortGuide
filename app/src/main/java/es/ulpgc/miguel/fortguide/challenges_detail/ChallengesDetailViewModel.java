@@ -9,4 +9,5 @@ public class ChallengesDetailViewModel {
 
   public ChallengesWeeksItem challengesWeeksItem;
   public List<ChallengeItem> challengeItemList;
+  public ChallengeItem challengeItem;
 }

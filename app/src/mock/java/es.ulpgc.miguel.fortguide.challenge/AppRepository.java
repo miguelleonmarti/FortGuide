@@ -178,7 +178,7 @@ public class AppRepository implements RepositoryContract {
   private ChallengeItem loadChallenge(int id) {
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
       for (ChallengeItem challengeItem : challengesWeeksItem.items) {
-        if (challengeItem.id == id) {
+        if (challengeItem.getId() == id) {
           return challengeItem;
         }
       }
@@ -341,9 +341,13 @@ public class AppRepository implements RepositoryContract {
 
 
         for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
-          insertWeeksItem(challengesWeeksItem); //TODO: FALTAN METODOS
+          insertWeeksItem(challengesWeeksItem);
         }
-
+        for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
+          for(ChallengeItem challengeItem: challengesWeeksItem.items){
+            challengeItem.weeksId = challengesWeeksItem.id;
+          }
+        }
 
         return true;
       }

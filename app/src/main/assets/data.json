@@ -115,41 +115,41 @@
     {
       "id": 1,
       "content": "Semana 1",
-      "challenges": [
+      "detail": [
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -160,37 +160,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -201,37 +201,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -242,37 +242,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -283,37 +283,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -324,37 +324,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -365,37 +365,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -406,37 +406,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -447,37 +447,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     },
@@ -488,37 +488,37 @@
         {
           "id": 1,
           "content": "Dificultad: fácil",
-          "detail": "Visita todos los campamentos piratas 0/7"
+          "details": "Visita todos los campamentos piratas 0/7"
         },
         {
           "id": 2,
           "content": "Dificultad: fácil",
-          "detail": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
+          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
         },
         {
           "id": 3,
           "content": "Dificultad: fácil",
-          "detail": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
+          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
         },
         {
           "id": 4,
           "content": "Dificultad: fácil",
-          "detail": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
+          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
         },
         {
           "id": 5,
           "content": "Dificultad: media",
-          "detail": "Usa un respiradero volcánico en partidas diferentes 0/7"
+          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
         },
         {
           "id": 6,
           "content": "Dificultad: media",
-          "detail": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
+          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
         },
         {
           "id": 7,
           "content": "Dificultad: difícil",
-          "detail": "Inflinge daño a un vehículo conducido por un ponente 0/200"
+          "details": "Inflinge daño a un vehículo conducido por un ponente 0/200"
         }
       ]
     }
