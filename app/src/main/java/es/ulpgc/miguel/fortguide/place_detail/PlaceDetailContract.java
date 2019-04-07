@@ -5,7 +5,7 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.miguel.fortguide.data.PlaceDetailItem;
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
 
-interface PlaceDetailContract {
+public interface PlaceDetailContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
