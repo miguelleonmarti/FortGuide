@@ -19,8 +19,10 @@ public class SupportActivity
 
   private SupportContract.Presenter presenter;
 
+  // declaring the buttons, texts and images
   private Button bananaButton;
 
+  // declaring the adapter for the RecyclerView
   private SupportAdapter supportAdapter;
 
   @Override
@@ -28,8 +30,10 @@ public class SupportActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_support);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
 
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -37,6 +41,7 @@ public class SupportActivity
       }
     });
 
+    // initializing the adapter
     supportAdapter = new SupportAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -45,6 +50,7 @@ public class SupportActivity
       }
     });
 
+    // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.supportList);
     recyclerView.setAdapter(supportAdapter);
     recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // numero de columnas
@@ -52,7 +58,7 @@ public class SupportActivity
     // do the setup
     SupportScreen.configure(this);
 
-    // do some work
+    // calling teh presenter in order to fetch data
     presenter.fetchData();
   }
 
@@ -65,6 +71,7 @@ public class SupportActivity
   public void displayData(final SupportViewModel viewModel) {
     Log.e(TAG, "displayData()");
 
+    // we need to get into the main thread to display the fetched data
     runOnUiThread(new Runnable() {
       @Override
       public void run() {

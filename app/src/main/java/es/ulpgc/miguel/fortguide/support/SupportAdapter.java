@@ -24,6 +24,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHolder> {
 
+  // declaring the items list and listener
   private List<SupportItem> supportItemList;
   private final View.OnClickListener clickListener;
 
@@ -70,23 +71,20 @@ public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHold
   }
 
   class ViewHolder extends RecyclerView.ViewHolder {
+    // declaring the elements of each card
     final ImageView imageView;
     final TextView contentView, detailView;
 
     ViewHolder(View view) {
       super(view);
+
+      // finding the cards elements id
       detailView = view.findViewById(R.id.detailView);
       contentView = view.findViewById(R.id.contentView);
       imageView = view.findViewById(R.id.imageView);
     }
   }
 
-  /**
-   * Carga desde una URL la imagen
-   *
-   * @param imageView imagen en la que se guarda
-   * @param imageUrl  url o ruta de la imagen
-   */
   private void loadImageFromURL(ImageView imageView, String imageUrl) {
     RequestManager reqManager = Glide.with(imageView.getContext());
     RequestBuilder reqBuilder = reqManager.load(imageUrl);
