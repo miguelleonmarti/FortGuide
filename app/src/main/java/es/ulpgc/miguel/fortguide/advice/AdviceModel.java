@@ -14,8 +14,8 @@ public class AdviceModel implements AdviceContract.Model {
 
   private RepositoryContract repositorio;
   private List<AdviceItem> adviceItems;
-  public AdviceModel(RepositoryContract repositorio) {
-    this.repositorio = repositorio;
+  public AdviceModel(RepositoryContract repository) {
+    this.repositorio = repository;
     this.adviceItems = new ArrayList<>();
   }
 

@@ -48,8 +48,8 @@ public class AdviceDetailActivity
     Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView)findViewById(R.id.tituloTextView)).setText(viewModel.adviceItem.getContent());
-    ((TextView)findViewById(R.id.descripcionTextView)).setText(viewModel.adviceItem.getDetails());
+    ((TextView)findViewById(R.id.contentTextView)).setText(viewModel.adviceItem.getContent());
+    ((TextView)findViewById(R.id.detailTextView)).setText(viewModel.adviceItem.getDetails());
 
   }
 }

@@ -18,11 +18,11 @@ public class AdviceScreen {
     AppMediator mediator = (AppMediator) context.get().getApplication();
     AdviceState state = mediator.getAdviceState();
 
-    RepositoryContract repositorio = AppRepository.getInstance(context.get());
+    RepositoryContract repository = AppRepository.getInstance(context.get());
 
     AdviceContract.Router router = new AdviceRouter(mediator);
     AdviceContract.Presenter presenter = new AdvicePresenter(state);
-    AdviceContract.Model model = new AdviceModel(repositorio);
+    AdviceContract.Model model = new AdviceModel(repository);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));
