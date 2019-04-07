@@ -60,7 +60,7 @@ public class AppRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !loadCatalogFromJSON(loadJSONFromAsset());
+        boolean error = !loadSupportFromJSON(loadJSONFromAsset());
         if (callback != null) {
           callback.onSupportDataFetched(error);
         }
@@ -223,7 +223,6 @@ public class AppRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !loadCatalogFromJSON(loadJSONFromAsset());
         if (callback != null) {
           callback.setPlaceList(loadPlaceList());
         }
@@ -253,7 +252,7 @@ public class AppRepository implements RepositoryContract {
 
   // loading data from JSON
 
-  private boolean loadCatalogFromJSON(String json) {
+  private boolean loadSupportFromJSON(String json) {
     Log.e(TAG, "loadCatalogFromJSON()");
 
     GsonBuilder gsonBuilder = new GsonBuilder();
