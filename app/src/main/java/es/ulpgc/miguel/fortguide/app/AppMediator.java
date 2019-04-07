@@ -26,6 +26,7 @@ import es.ulpgc.miguel.fortguide.weapon.WeaponState;
 
 public class AppMediator extends Application {
 
+  // declaring states
   private IntroductionState introductionState;
   private MenuState menuState;
   private PlaceState placeState;
@@ -42,6 +43,7 @@ public class AppMediator extends Application {
   private AdviceDetailState adviceDetailState;
   private PlaceDetailState placeDetailState;
 
+  //declaring items
   private SupportItem supportItem;
   private ChallengesWeeksItem challengesWeeksItem;
   private ChallengeItem challengeItem;
@@ -69,6 +71,8 @@ public class AppMediator extends Application {
     challengesDetailState = new ChallengesDetailState();
     adviceDetailState = new AdviceDetailState();
   }
+
+  // getters and setters of states
 
   public IntroductionState getIntroductionState() {
     return introductionState;
@@ -174,8 +178,6 @@ public class AppMediator extends Application {
     this.adviceDetailState = state;
   }
 
-  // getters y setters de: SupportItem
-
   public void setSupportItem(SupportItem supportItem) {
     this.supportItem = supportItem;
   }
@@ -183,8 +185,6 @@ public class AppMediator extends Application {
   public SupportItem getSupportItem() {
     return supportItem;
   }
-
-  //getters y setters de: ChallengeDetail
 
   public ChallengesDetailState getChallengesDetailState() {
     return challengesDetailState;
@@ -194,8 +194,6 @@ public class AppMediator extends Application {
     this.challengesDetailState = challengesDetailState;
   }
 
-  // getters y setters de: challengesWeeksItem
-
   public ChallengesWeeksItem getChallengesWeeksItem() {
     ChallengesWeeksItem item = challengesWeeksItem;
     return item;
@@ -204,7 +202,6 @@ public class AppMediator extends Application {
   public void setChallengesWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
     this.challengesWeeksItem = challengesWeeksItem;
   }
-
 
   public ChallengeItem getChallengeItem() {
     return challengeItem;
@@ -237,11 +234,13 @@ public class AppMediator extends Application {
   public void setPlaceDetailItem(PlaceDetailItem placeDetailItem) {
     this.placeDetailItem = placeDetailItem;
   }
-public AdviceItem getAdvice(){
+
+  public AdviceItem getAdvice() {
     return adviceItem;
   }
-  public void setAdvice(AdviceItem item){
-    adviceItem=item;
+
+  public void setAdvice(AdviceItem adviceItem) {
+    this.adviceItem = adviceItem;
 
   }
 

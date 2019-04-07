@@ -15,30 +15,29 @@ public class NewTheoryActivity
 
   private NewTheoryContract.Presenter presenter;
 
-  Button bananaButton;
+  // declaring the buttons, texts and images
+  private Button bananaButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_new_theory);
 
+    // finding buttons, texts and images id
     bananaButton.findViewById(R.id.bananaButton);
 
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         presenter.startMenuScreen();
       }
     });
+
     // do the setup
     NewTheoryScreen.configure(this);
-  }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 

@@ -1,6 +1,5 @@
 package es.ulpgc.miguel.fortguide.challenges_detail;
 
-import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,15 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.challenges_weeks.WeeksListActivity;
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
-import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
 
 public class ChallengesDetailActivity
@@ -78,7 +72,7 @@ public class ChallengesDetailActivity
       public void run() {
 
         // deal with the data
-        listAdapter.setItems(viewModel.challenges);
+        listAdapter.setItems(viewModel.challengeItemList);
       }
     });
 

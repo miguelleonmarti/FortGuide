@@ -40,7 +40,7 @@ public class ShopPresenter implements ShopContract.Presenter {
     // set passed state
     List<ShopItem> shopItems = model.fetchData();
     if (shopItems != null) {
-      viewModel.items = shopItems;
+      viewModel.shopItemList = shopItems;
     }
 
     // update the view

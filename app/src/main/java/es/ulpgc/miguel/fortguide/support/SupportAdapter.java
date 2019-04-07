@@ -24,7 +24,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 public class SupportAdapter extends RecyclerView.Adapter<SupportAdapter.ViewHolder> {
 
-  // declaring the items list and listener
+  // declaring the shopItemList list and listener
   private List<SupportItem> supportItemList;
   private final View.OnClickListener clickListener;
 

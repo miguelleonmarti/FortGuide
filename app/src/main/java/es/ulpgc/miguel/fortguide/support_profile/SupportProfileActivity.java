@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.support_profile;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +24,7 @@ public class SupportProfileActivity
 
   private SupportProfileContract.Presenter presenter;
 
+  // declaring the buttons, texts and images
   Button bananaButton;
   ImageView instagramButton, twitterButton, twitchButton, youtubeButton;
 
@@ -31,12 +33,14 @@ public class SupportProfileActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_support_profile);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
     instagramButton = findViewById(R.id.instagramButton);
     twitterButton = findViewById(R.id.twitterButton);
     twitchButton = findViewById(R.id.twitchButton);
     youtubeButton = findViewById(R.id.youtubeButton);
 
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -75,7 +79,7 @@ public class SupportProfileActivity
     // do the setup
     SupportProfileScreen.configure(this);
 
-    // do some work
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 
@@ -86,7 +90,7 @@ public class SupportProfileActivity
 
   @Override
   public void displayData(SupportProfileViewModel viewModel) {
-    //Log.e(TAG, "displayData()");
+    Log.e(TAG, "displayData()");
     SupportItem supportItem = viewModel.profile;
     // deal with the data
     ((TextView) findViewById(R.id.creatorCodeText)).setText(supportItem.getCode());

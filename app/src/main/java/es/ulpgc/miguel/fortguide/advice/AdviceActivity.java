@@ -2,12 +2,9 @@ package es.ulpgc.miguel.fortguide.advice;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
@@ -64,7 +61,7 @@ public class AdviceActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        listAdapter.setItems(viewModel.items); //Pone los items en las celdas del Recycler  }
+        listAdapter.setItems(viewModel.adviceItemList); //Pone los shopItemList en las celdas del Recycler  }
       }
     });
     }

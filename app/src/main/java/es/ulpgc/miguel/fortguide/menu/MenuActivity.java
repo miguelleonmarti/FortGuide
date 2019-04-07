@@ -15,17 +15,15 @@ public class MenuActivity
 
   private MenuContract.Presenter presenter;
 
+  // declaring the buttons, texts and images
   Button adviceButton, challengeButton, placeButton, shopButton, supportButton, theoryButton, weaponButton;
-
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_menu);
 
-    //getSupportActionBar().setTitle("Menu Screen");
-    //getSupportActionBar().hide();
-
+    // finding buttons, texts and images id
     adviceButton = findViewById(R.id.buttonAdvice);
     challengeButton = findViewById(R.id.buttonChallenge);
     placeButton = findViewById(R.id.buttonPlace);
@@ -34,6 +32,7 @@ public class MenuActivity
     theoryButton = findViewById(R.id.buttonTheory);
     weaponButton = findViewById(R.id.buttonWeapon);
 
+    // listeners
     adviceButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -77,11 +76,11 @@ public class MenuActivity
       }
     });
 
-
     // do the setup
     MenuScreen.configure(this);
   }
 
+  //TODO: QUITAR ESTO
   @Override
   protected void onResume() {
     super.onResume();

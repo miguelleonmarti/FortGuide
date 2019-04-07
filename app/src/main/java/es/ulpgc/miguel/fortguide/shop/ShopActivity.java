@@ -19,10 +19,10 @@ public class ShopActivity
 
   private ShopContract.Presenter presenter;
 
-  // defining the button
+  // declaring the buttons, texts and images
   private Button bananaButton;
 
-  // defining the adapter
+  // declaring the adapter for the RecyclerView
   private ShopAdapter shopAdapter;
 
   @Override
@@ -30,7 +30,10 @@ public class ShopActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_shop);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
+
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -38,6 +41,7 @@ public class ShopActivity
       }
     });
 
+    // initializing the adapter
     shopAdapter = new ShopAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -46,6 +50,7 @@ public class ShopActivity
       }
     });
 
+    // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.shopList);
     recyclerView.setAdapter(shopAdapter);
     recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -66,12 +71,12 @@ public class ShopActivity
   public void displayData(final ShopViewModel viewModel) {
     Log.e(TAG, "displayData()");
 
-    // deal with the data
+    // we need to get into the main thread to display the fetched data
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
         ((TextView) findViewById(R.id.shopBar)).setText("TIENDA"); //TODO: CAMBIAR A STRINGS.XML
-        shopAdapter.setItems(viewModel.items);
+        shopAdapter.setItems(viewModel.shopItemList);
       }
     });
   }

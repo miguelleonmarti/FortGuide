@@ -2,7 +2,6 @@ package es.ulpgc.miguel.fortguide.challenges_weeks;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -71,7 +70,7 @@ public class WeeksListActivity
       @Override
       public void run() {
         ((TextView) findViewById(R.id.challengeBar)).setText(R.string.challenge_text_label);
-        WeeksAdapter.setItems(viewModel.weeks);
+        WeeksAdapter.setItems(viewModel.challengesWeeksItemList);
       }
     });
   }

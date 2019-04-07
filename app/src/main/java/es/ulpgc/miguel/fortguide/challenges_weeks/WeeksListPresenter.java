@@ -28,7 +28,7 @@ public class WeeksListPresenter implements WeeksListContract.Presenter {
 
       @Override
       public void setWeeksItemList(List<ChallengesWeeksItem> WeeksList) {
-        viewModel.weeks = WeeksList;
+        viewModel.challengesWeeksItemList = WeeksList;
 
         view.get().displayWeeksListData(viewModel);
       }

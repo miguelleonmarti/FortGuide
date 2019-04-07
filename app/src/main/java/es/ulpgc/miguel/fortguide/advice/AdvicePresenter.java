@@ -40,7 +40,7 @@ public class AdvicePresenter implements AdviceContract.Presenter {
     model.fetchAdviceListData(new RepositoryContract.GetAdviceListCallback(){
       @Override
       public void setAdviceList(List<AdviceItem> adviceList) {
-        viewModel.items = adviceList;
+        viewModel.adviceItemList = adviceList;
         view.get().displayData(viewModel);
       }
     });

@@ -20,8 +20,10 @@ public class PlaceActivity
 
   private PlaceContract.Presenter presenter;
 
+  // declaring the buttons, texts and images
   private Button bananaButton;
 
+  // declaring the adapter for the RecyclerView
   private PlaceAdapter placeAdapter;
 
   @Override
@@ -29,8 +31,10 @@ public class PlaceActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_place);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
 
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -38,6 +42,7 @@ public class PlaceActivity
       }
     });
 
+    // initializing the adapter
     placeAdapter = new PlaceAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -46,15 +51,15 @@ public class PlaceActivity
       }
     });
 
+    // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.placeList);
     recyclerView.setAdapter(placeAdapter);
     recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); //TODO: CAMBIAR EL NUMERO DE COLUMNAS O NO?
 
-
     // do the setup
     PlaceScreen.configure(this);
 
-    // do some work
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 
@@ -66,7 +71,8 @@ public class PlaceActivity
   @Override
   public void displayData(final PlaceViewModel viewModel) {
     Log.e(TAG, "displayData()");
-    // deal with the data
+
+    // we need to get into the main thread to display the fetched data
     runOnUiThread(new Runnable() {
       @Override
       public void run() {

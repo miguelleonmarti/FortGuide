@@ -15,14 +15,18 @@ public class TheoryDetailActivity
 
   private TheoryDetailContract.Presenter presenter;
 
-  Button bananaButton;
+  // declaring the buttons, texts and images
+  private Button bananaButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_theory_detail);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
+
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -32,13 +36,8 @@ public class TheoryDetailActivity
 
     // do the setup
     TheoryDetailScreen.configure(this);
-  }
 
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 

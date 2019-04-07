@@ -15,6 +15,7 @@ public class TheoryActivity
 
   private TheoryContract.Presenter presenter;
 
+  // declaring the buttons, texts and images
   Button addTheoryButton, bananaButton;
 
   @Override
@@ -22,9 +23,11 @@ public class TheoryActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_theory);
 
+    // finding buttons, texts and images id
     addTheoryButton = findViewById(R.id.addButton);
     bananaButton = findViewById(R.id.bananaButton);
 
+    // listeners
     addTheoryButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -37,16 +40,11 @@ public class TheoryActivity
         presenter.startMenuScreen();
       }
     });
-    // creando el set up
+
+    // do the setup
     TheoryScreen.configure(this);
-  }
 
-
-  @Override
-  protected void onResume() {
-    super.onResume();
-
-    // do some work
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 

@@ -1,7 +1,5 @@
 package es.ulpgc.miguel.fortguide.advice_detail;
 
-import android.util.Log;
-
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
@@ -38,7 +36,7 @@ public class AdviceDetailPresenter implements AdviceDetailContract.Presenter {
   public void fetchData() {
     AdviceItem item = router.getDataFromPreviousScreen();
     if(item !=null) {
-        viewModel.item = item;
+        viewModel.adviceItem = item;
         view.get().displayData(viewModel);
 
     }

@@ -58,7 +58,7 @@ public class SupportActivity
     // do the setup
     SupportScreen.configure(this);
 
-    // calling teh presenter in order to fetch data
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 

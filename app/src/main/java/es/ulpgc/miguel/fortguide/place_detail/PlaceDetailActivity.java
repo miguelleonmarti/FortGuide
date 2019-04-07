@@ -20,7 +20,7 @@ public class PlaceDetailActivity
 
   private PlaceDetailContract.Presenter presenter;
 
-  // defining buttons, images and texts
+  // declaring the buttons, texts and images
   private Button bananaButton;
   private ImageView placeImage;
   private TextView chestText, peopleText, contentText, detailsText;
@@ -30,6 +30,7 @@ public class PlaceDetailActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_place_detail);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
     placeImage = findViewById(R.id.placeImageView);
     chestText = findViewById(R.id.chestNumberTextView);
@@ -37,8 +38,7 @@ public class PlaceDetailActivity
     contentText = findViewById(R.id.contentPlaceTextView);
     detailsText = findViewById(R.id.detailPlaceTextView);
 
-    // bananaButton is the only button that can be clicked on
-
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {

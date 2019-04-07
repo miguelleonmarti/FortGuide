@@ -54,7 +54,7 @@ public class ChallengesDetailPresenter implements ChallengesDetailContract.Prese
 
           @Override
           public void setChallengeDetailList(List<ChallengeItem> challengeItems) {
-            viewModel.challenges = challengeItems;
+            viewModel.challengeItemList = challengeItems;
 
             view.get().displayChallengeDetailListData(viewModel);
           }
