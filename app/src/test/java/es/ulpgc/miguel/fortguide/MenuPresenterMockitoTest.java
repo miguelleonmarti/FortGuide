@@ -9,7 +9,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-
 import es.ulpgc.miguel.fortguide.menu.MenuContract;
 import es.ulpgc.miguel.fortguide.menu.MenuPresenter;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
@@ -46,37 +45,47 @@ public class MenuPresenterMockitoTest {
     presenter.injectRouter(routerMock);
 
   }
+
   @Test
-  public void goToWeaponScreen(){
+  public void goToWeaponScreen() {
     presenter.startWeaponScreen();
     verify(routerMock).navigateToWeaponScreen();
   }
 
   @Test
-  public void goToAdviceScreen(){
+  public void goToAdviceScreen() {
     presenter.startAdviceScreen();
     verify(routerMock).navigateToAdviceScreen();
   }
+
   @Test
-  public void goToPlaceScreen(){
+  public void goToPlaceScreen() {
     presenter.startPlaceScreen();
     verify(routerMock).navigateToPlaceScreen();
   }
+
   @Test
-  public void goToSupportScreen(){
+  public void goToSupportScreen() {
     presenter.startWeaponScreen();
     verify(routerMock).navigateToWeaponScreen();
   }
+
   @Test
-  public void goToTheoryScreen(){
+  public void goToTheoryScreen() {
     presenter.startTheoryScreen();
     verify(routerMock).navigateToTheoryScreen();
   }
+
   @Test
-  public void goToChallengeScreen(){
+  public void goToChallengeScreen() {
     presenter.startChallengeScreen();
     verify(routerMock).navigateToChallengeScreen();
   }
-//TODO hacer el test para cambiar a tienda
+
+  @Test
+  public void goToShopScreen() {
+    presenter.startChallengeScreen();
+    verify(routerMock).navigateToShopScreen();
+  }
 
 }
