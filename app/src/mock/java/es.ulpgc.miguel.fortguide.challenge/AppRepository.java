@@ -6,7 +6,6 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +29,7 @@ import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.ShopItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
+import es.ulpgc.miguel.fortguide.data.WeaponItem;
 
 public class AppRepository implements RepositoryContract {
 
@@ -41,6 +41,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_CHALLENGE = "challenge";
   private static final String JSON_ROOT_ADVICE = "advice";
   private static final String JSON_ROOT_SHOP = "https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en";
+  private static final String JSON_ROOT_WEAPON = "https://fortnite-public-api.theapinetwork.com/prod09/weapons/get";
 
   public static AppRepository INSTANCE;
 
@@ -50,6 +51,7 @@ public class AppRepository implements RepositoryContract {
   private List<ChallengesWeeksItem> challengeList;
   private List<AdviceItem> adviceList;
   private List<ShopItem> shopList;
+  private List<WeaponItem> weaponList; //TODO: FALTA USARLO PARA RECOPILAR LOS DATOS
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
@@ -465,13 +467,12 @@ public class AppRepository implements RepositoryContract {
 
   // shop
 
-
   @Override
   public void loadShop(final FetchShopDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !load();
+        boolean error = !loadShopFromJSON();
         if (callback != null) {
           callback.onShopDataFetched(error);
         }
@@ -507,33 +508,7 @@ public class AppRepository implements RepositoryContract {
     return this.shopList;
   }
 
-  // parse JSON from URL
-
-  private String readAll(Reader rd) throws IOException {
-    StringBuilder sb = new StringBuilder();
-    int cp;
-    while ((cp = rd.read()) != -1) {
-      sb.append((char) cp);
-    }
-    return sb.toString();
-  }
-
-  public JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-    InputStream is = new URL(url).openStream();
-    try {
-      BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-      String jsonText = readAll(rd);
-      JSONObject json = new JSONObject(jsonText);
-      return json;
-    } finally {
-      is.close();
-    }
-  }
-
-  private boolean load() {
-    //GsonBuilder gsonBuilder = new GsonBuilder();
-    //Gson gson = gsonBuilder.create();
-
+  private boolean loadShopFromJSON() {
     try {
       JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_SHOP);
       JSONArray jsonArray = jsonObject.getJSONArray("items");
@@ -559,6 +534,70 @@ public class AppRepository implements RepositoryContract {
 
   private void insertShopItem(ShopItem shopItem) {
     shopList.add(shopItem);
+  }
+
+  // weapon TODO: dejamos el loadShopFromJSON preparado, solo hay que usarlo, esta hecho
+
+  private boolean loadWeaponFromJSON() {
+    try {
+      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_WEAPON);
+      JSONArray jsonArray = jsonObject.getJSONArray("weapons");
+
+      weaponList = new ArrayList<>();
+
+      for (int i = 0; i < jsonArray.length(); i++) {
+        JSONObject weapon = jsonArray.getJSONObject(i);
+        JSONObject images = weapon.getJSONObject("images");
+        JSONObject stats = weapon.getJSONObject("stats");
+        JSONObject damage = stats.getJSONObject("damage");
+        JSONObject magazine = stats.getJSONObject("magazine");
+
+        String id = weapon.getString("hash");
+        String name = weapon.getString("name");
+        String rarity = weapon.getString("rarity");
+        String image = images.getString("image");
+        String damageBody = damage.getString("body");
+        String damageHead = damage.getString("head");
+        String dps = stats.getString("dps");
+        String fireRate = stats.getString("firerate");
+        String reload = magazine.getString("reload");
+        String size = magazine.getString("size");
+        String ammo = stats.getString("ammocost");
+
+        insertWeaponItem(new WeaponItem(id, name, rarity, image, damageBody, damageHead, dps, fireRate, reload, size, ammo));
+      }
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
+  private void insertWeaponItem(WeaponItem weaponItem){
+    weaponList.add(weaponItem);
+  }
+
+  // common (shop and weapon)
+
+  private String readAll(Reader rd) throws IOException {
+    StringBuilder sb = new StringBuilder();
+    int cp;
+    while ((cp = rd.read()) != -1) {
+      sb.append((char) cp);
+    }
+    return sb.toString();
+  }
+
+  private JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+    InputStream is = new URL(url).openStream();
+    try {
+      BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+      String jsonText = readAll(rd);
+      JSONObject json = new JSONObject(jsonText);
+      return json;
+    } finally {
+      is.close();
+    }
   }
 
 }
