@@ -45,7 +45,7 @@ public class ChallengesWeeksListActivity
     challengesWeeksListAdapter = new ChallengesWeeksListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag(); //TODO: TE LO COMENTO PARA QUE NO DE ERROR
+        ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag();
         presenter.selectWeeksListData(item);
       }
     });
@@ -74,7 +74,7 @@ public class ChallengesWeeksListActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        ((TextView) findViewById(R.id.challengeBar)).setText(R.string.challenge_text_label);
+        ((TextView) findViewById(R.id.challengeBar)).setText(R.string.challenge_bar_text_label);
         challengesWeeksListAdapter.setItems(viewModel.challengesWeeksItemList);
       }
     });

@@ -74,7 +74,8 @@ public class ChallengesDetailActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        // deal with the data TODO: NO FALTA EL BAR??
+        // deal with the data
+        ((TextView) findViewById(R.id.challengeDetailBarTextView)).setText(viewModel.challengesWeeksItem.getContent());
         listAdapter.setItems(viewModel.challengeItemList);
       }
     });

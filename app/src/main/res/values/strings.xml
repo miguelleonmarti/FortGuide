@@ -26,7 +26,7 @@
     <string name="cancel_button_label">Cancelar</string>
     <string name="send_button_label">ENVIAR</string>
     <string name="challenge_label_text">Challenge Content</string>
-    <string name="challenge_text_label">DESAFIOS</string>
+    <string name="challenge_bar_text_label">DESAFIOS</string>
     <string name="title_advice_label">Titulo</string>
     <string name="content_advice_label">Hola buenas tardes que tal estas espero que esten bien porque esto es un teto de prueba fleje largo en verdad</string>
     <string name="challenge_detail_label">Desafios-Semana</string>

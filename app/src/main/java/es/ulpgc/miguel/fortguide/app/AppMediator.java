@@ -88,52 +88,48 @@ public class AppMediator extends Application {
     this.menuState = menuState;
   }
 
-  public void setWeaponState(WeaponState weaponState) {
-    this.weaponState = weaponState;
-  }
-
   public WeaponState getWeaponState() {
     return weaponState;
   }
 
-  public void setSupportState(SupportState supportState) {
-    this.supportState = supportState;
+  public void setWeaponState(WeaponState weaponState) {
+    this.weaponState = weaponState;
   }
 
   public SupportState getSupportState() {
     return supportState;
   }
 
-  public void setPlaceState(PlaceState placeState) {
-    this.placeState = placeState;
+  public void setSupportState(SupportState supportState) {
+    this.supportState = supportState;
   }
 
   public PlaceState getPlaceState() {
     return placeState;
   }
 
-  public void setTheoryState(TheoryState theoryState) {
-    this.theoryState = theoryState;
+  public void setPlaceState(PlaceState placeState) {
+    this.placeState = placeState;
   }
 
   public TheoryState getTheoryState() {
     return theoryState;
   }
 
-  public void setChallengesWeeksListState(ChallengesWeeksListState challengesWeeksListState) {
-    this.challengesWeeksListState = challengesWeeksListState;
+  public void setTheoryState(TheoryState theoryState) {
+    this.theoryState = theoryState;
   }
 
-  public ChallengesWeeksListState getChallengesWeeksListState() {
-    return challengesWeeksListState;
+  public ChallengesWeeksListState getChallengesWeeksListState() { return challengesWeeksListState; }
+
+  public void setChallengesWeeksListState(ChallengesWeeksListState challengesWeeksListState) { this.challengesWeeksListState = challengesWeeksListState; }
+
+  public AdviceState getAdviceState() {
+    return adviceState;
   }
 
   public void setAdviceState(AdviceState adviceState) {
     this.adviceState = adviceState;
-  }
-
-  public AdviceState getAdviceState() {
-    return adviceState;
   }
 
   public ShopState getShopState() {
@@ -144,29 +140,23 @@ public class AppMediator extends Application {
     this.shopState = shopState;
   }
 
-  public void setNewTheoryState(NewTheoryState newTheoryState) {
-    this.newTheoryState = newTheoryState;
-  }
-
   public NewTheoryState getNewTheoryState() {
     return newTheoryState;
   }
 
-  public void setSupportProfileState(SupportProfileState supportProfileState) {
-    this.supportProfileState = supportProfileState;
-  }
+  public void setNewTheoryState(NewTheoryState newTheoryState) { this.newTheoryState = newTheoryState; }
 
   public SupportProfileState getSupportProfileState() {
     return supportProfileState;
   }
 
-  public void setTheoryDetailState(TheoryDetailState theoryDetailState) {
-    this.theoryDetailState = theoryDetailState;
-  }
+  public void setSupportProfileState(SupportProfileState supportProfileState) { this.supportProfileState = supportProfileState; }
 
   public TheoryDetailState getTheoryDetailState() {
     return theoryDetailState;
   }
+
+  public void setTheoryDetailState(TheoryDetailState theoryDetailState) { this.theoryDetailState = theoryDetailState; }
 
   public AdviceDetailState getAdviceDetailState() {
     return adviceDetailState;
@@ -180,37 +170,32 @@ public class AppMediator extends Application {
     return challengesDetailState;
   }
 
-  public void setChallengesDetailState(ChallengesDetailState challengesDetailState) {
-    this.challengesDetailState = challengesDetailState;
-  }
-
-  public void setPlaceDetailState(PlaceDetailState placeDetailState) {
-    this.placeDetailState = placeDetailState;
-  }
+  public void setChallengesDetailState(ChallengesDetailState challengesDetailState) { this.challengesDetailState = challengesDetailState; }
 
   public PlaceDetailState getPlaceDetailState() {
     return placeDetailState;
   }
 
+  public void setPlaceDetailState(PlaceDetailState placeDetailState) { this.placeDetailState = placeDetailState;
+  }
+
+
+
   //getter and setter of items
 
-  public void setSupportItem(SupportItem supportItem) {
-    this.supportItem = supportItem;
+  public ChallengesWeeksItem getChallengesWeeksItem() { return challengesWeeksItem; }
+
+  public void setChallengesWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
+    this.challengesWeeksItem = challengesWeeksItem;
   }
 
   public SupportItem getSupportItem() {
     return supportItem;
   }
 
-  public ChallengesWeeksItem getChallengesWeeksItem() {
-    ChallengesWeeksItem item = challengesWeeksItem;
-    return item;
+  public void setSupportItem(SupportItem supportItem) {
+    this.supportItem = supportItem;
   }
-
-  public void setChallengesWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
-    this.challengesWeeksItem = challengesWeeksItem;
-  }
-
 
   public AdviceItem getAdviceItem() {
     return adviceItem;
@@ -240,11 +225,7 @@ public class AppMediator extends Application {
     return adviceItem;
   }
 
-  public void setAdvice(AdviceItem adviceItem) {
-    this.adviceItem = adviceItem;
-
-  }
-
+  public void setAdvice(AdviceItem adviceItem) { this.adviceItem = adviceItem; }
 }
 
 
