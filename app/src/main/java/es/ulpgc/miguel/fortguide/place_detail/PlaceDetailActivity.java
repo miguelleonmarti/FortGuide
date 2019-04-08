@@ -40,7 +40,6 @@ public class PlaceDetailActivity
     // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
 
-
     // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -66,6 +65,7 @@ public class PlaceDetailActivity
   public void displayPlaceDetailData(final PlaceDetailViewModel viewModel) {
     Log.e(TAG, "displayPlaceDetailData()");
 
+    // we need to get into the main thread to display the fetched data
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
@@ -77,16 +77,6 @@ public class PlaceDetailActivity
         loadImageFromURL((ImageView) findViewById(R.id.placeImageView), viewModel.placeItem.getImage());
       }
     });
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    int id = item.getItemId();
-    if (id == android.R.id.home) {
-      navigateUpTo(new Intent(this, PlaceActivity.class));
-      return true;
-    }
-    return super.onOptionsItemSelected(item);
   }
 
   /**
