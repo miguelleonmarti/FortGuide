@@ -719,31 +719,41 @@
       "id": 1,
       "user": "Misterhit",
       "content": "Teoría del volcán",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo",
+      "likes": 75,
+      "dislikes": 15
     },
     {
       "id": 2,
       "user": "Tacuapinpan",
       "content": "Teoría del tsunami",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo",
+      "likes": 75,
+      "dislikes": 15
     },
     {
       "id": 3,
       "user": "MSalAguila",
       "content": "Teoría del yeti",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo",
+      "likes": 75,
+      "dislikes": 15
     },
     {
       "id": 4,
       "user": "migueel_1998",
       "content": "Teoría del cometa",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo" ,
+      "likes": 75,
+      "dislikes": 15
     },
     {
       "id": 5,
       "user": "Kodekey",
       "content": "Teoría del barco",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo",
+      "likes": 75,
+      "dislikes": 15
     }
   ]
 }
