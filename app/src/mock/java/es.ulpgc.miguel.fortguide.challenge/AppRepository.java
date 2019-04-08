@@ -42,6 +42,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_ADVICE = "advice";
   private static final String JSON_ROOT_SHOP = "https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en";
   private static final String JSON_ROOT_WEAPON = "https://fortnite-public-api.theapinetwork.com/prod09/weapons/get";
+  private static final String JSON_ROOT_STATUS = "https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status";
 
   public static AppRepository INSTANCE;
 
@@ -536,7 +537,7 @@ public class AppRepository implements RepositoryContract {
     shopList.add(shopItem);
   }
 
-  // weapon TODO: dejamos el loadShopFromJSON preparado, solo hay que usarlo, esta hecho
+  // weapon TODO: dejamos el loadWeaponFromJSON preparado, solo hay que usarlo, esta hecho
 
   private boolean loadWeaponFromJSON() {
     try {
@@ -576,6 +577,22 @@ public class AppRepository implements RepositoryContract {
   private void insertWeaponItem(WeaponItem weaponItem){
     weaponList.add(weaponItem);
   }
+
+  // status (preparado pero no utilizado)
+
+  private boolean loadStatusFromJSON() {
+    try {
+      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_STATUS);
+      String status = jsonObject.getString("status");
+      //TODO: UTILIZAR EL STRING STATUS
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
+  //
 
   // common (shop and weapon)
 
