@@ -16,42 +16,42 @@ import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListState;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-  @RunWith(MockitoJUnitRunner.class)
-  public class ChallengesDetailPresenterMockitoTest {
+@RunWith(MockitoJUnitRunner.class)
+public class ChallengesDetailPresenterMockitoTest {
 
-    @Mock
-    public ChallengesDetailListContract.Model modelMock;
+  @Mock
+  public ChallengesDetailListContract.Model modelMock;
 
-    @Mock
-    private ChallengesDetailListContract.View viewMock;
+  @Mock
+  private ChallengesDetailListContract.View viewMock;
 
-    @Mock
-    private ChallengesDetailListContract.Router routerMock;
+  @Mock
+  private ChallengesDetailListContract.Router routerMock;
 
-    private ChallengesDetailListContract.Presenter presenter;
+  private ChallengesDetailListContract.Presenter presenter;
 
-    @Before
-    public void setupIntroductionScreen() {
+  @Before
+  public void setupIntroductionScreen() {
 
-      // To inject the mocks in the test this method needs to be called
-      MockitoAnnotations.initMocks(this);
+    // To inject the mocks in the test this method needs to be called
+    MockitoAnnotations.initMocks(this);
 
-      // Get a reference to the class under test
-      presenter = new ChallengesDetailListPresenter(new ChallengesDetailListState());
+    // Get a reference to the class under test
+    presenter = new ChallengesDetailListPresenter(new ChallengesDetailListState());
 
-      // Inject dependencies to the class under test
-      presenter.injectView(new WeakReference<>(viewMock));
-      presenter.injectModel(modelMock);
-      presenter.injectRouter(routerMock);
+    // Inject dependencies to the class under test
+    presenter.injectView(new WeakReference<>(viewMock));
+    presenter.injectModel(modelMock);
+    presenter.injectRouter(routerMock);
 
-    }
+  }
 
 
-    @Test
-    public void goToMenuScreen() {
-      presenter.startMenuScreen();
-      verify(routerMock).navigateToMenuScreen();
-    }
+  @Test
+  public void goToMenuScreen() {
+    presenter.startMenuScreen();
+    verify(routerMock).navigateToMenuScreen();
+  }
 
-    //TODO Faltan metodos que testear
+  //TODO Faltan metodos que testear
 }

@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
 
-interface AdviceDetailContract {
+public interface AdviceDetailContract {
 
   interface View {
     void injectPresenter(Presenter presenter);

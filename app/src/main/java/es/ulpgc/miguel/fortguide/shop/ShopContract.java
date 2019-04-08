@@ -7,7 +7,7 @@ import es.ulpgc.miguel.fortguide.challenge.AppRepository;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.ShopItem;
 
-interface ShopContract {
+public interface ShopContract {
 
   interface View {
     void injectPresenter(Presenter presenter);

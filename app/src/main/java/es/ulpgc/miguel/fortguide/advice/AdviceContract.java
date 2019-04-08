@@ -6,7 +6,7 @@ import java.util.List;
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-interface AdviceContract {
+public interface AdviceContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
