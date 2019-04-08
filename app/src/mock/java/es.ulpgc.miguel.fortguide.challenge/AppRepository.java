@@ -29,6 +29,7 @@ import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.ShopItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
+import es.ulpgc.miguel.fortguide.data.TheoryItem;
 import es.ulpgc.miguel.fortguide.data.WeaponItem;
 
 public class AppRepository implements RepositoryContract {
@@ -44,6 +45,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_WEAPON = "https://fortnite-public-api.theapinetwork.com/prod09/weapons/get";
   private static final String JSON_ROOT_STATUS = "https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status";
   private static final String JSON_ROOT_ENGLISH_CHALLENGE = "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current";
+  private static final String JSON_ROOT_THEORY = "theory";
 
   public static AppRepository INSTANCE;
 
@@ -54,6 +56,7 @@ public class AppRepository implements RepositoryContract {
   private List<AdviceItem> adviceList;
   private List<ShopItem> shopList;
   private List<WeaponItem> weaponList; //TODO: FALTA USARLO PARA RECOPILAR LOS DATOS
+  private List<TheoryItem> theoryList;
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
@@ -427,6 +430,40 @@ public class AppRepository implements RepositoryContract {
     return json;
   }
 
+  private boolean loadTheoryFromJSON(String json) {
+    Log.e(TAG, "loadPlaceFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_THEORY);
+
+      theoryList = new ArrayList();
+
+      if (jsonArray.length() > 0) {
+
+        final List<TheoryItem> adviceList = Arrays.asList(
+            gson.fromJson(jsonArray.toString(), TheoryItem[].class)
+        );
+
+
+        for (TheoryItem theoryItem : theoryList) {
+          insertAdviceItem(theoryItem);
+        }
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  }
+
   //advice
 
   @Override
@@ -650,4 +687,43 @@ public class AppRepository implements RepositoryContract {
     }
   }
 
+  //theory
+
+  @Override
+  public void loadTheory(final FetchTheoryDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadTheoryFromJSON(loadJSONFromAsset());
+        if (callback != null) {
+          callback.onTheoryDataFetched(error);
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getTheoryList(final AppRepository.GetTheoryListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setTheoryList(loadTheoryList());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getTheoryItem(int id, AppRepository.GetTheoryItemCallback callback) {
+
+  } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
+
+  private void insertAdviceItem(TheoryItem theoryItem) {
+    theoryList.add(theoryItem);
+  }
+
+  private List<TheoryItem> loadTheoryList() {
+    return this.theoryList;
+  }
 }

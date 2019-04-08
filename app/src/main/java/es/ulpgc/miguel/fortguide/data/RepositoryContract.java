@@ -121,4 +121,23 @@ public interface RepositoryContract {
 
   void getShopItem(int id, AppRepository.GetShopItemCallback callback);
 
+  // callbacks and methods of Theory
+
+  interface FetchTheoryDataCallback{
+    void onTheoryDataFetched(boolean error);
+  }
+
+  interface GetTheoryListCallback{
+    void setTheoryList(List<TheoryItem> theoryList);
+  }
+
+  interface GetTheoryItemCallback{
+    void setTheoryItem(TheoryItem theoryItem);
+  }
+
+  void loadTheory (AppRepository.FetchTheoryDataCallback callback);
+
+  void getTheoryList(AppRepository.GetTheoryListCallback callback);
+
+  void getTheoryItem(int id, AppRepository.GetTheoryItemCallback callback);
 }
