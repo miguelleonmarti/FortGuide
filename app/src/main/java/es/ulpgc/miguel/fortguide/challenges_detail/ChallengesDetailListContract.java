@@ -6,7 +6,7 @@ import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-interface ChallengesDetailListContract {
+public interface ChallengesDetailListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);

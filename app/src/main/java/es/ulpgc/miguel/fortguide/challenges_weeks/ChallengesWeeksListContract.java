@@ -5,7 +5,7 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-interface ChallengesWeeksListContract {
+public interface ChallengesWeeksListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
