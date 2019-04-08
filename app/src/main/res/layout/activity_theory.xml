@@ -30,42 +30,24 @@
 
     <RelativeLayout
         android:id="@+id/layout1"
-        android:layout_marginTop="50sp"
-        android:layout_marginLeft="110sp"
-        android:layout_marginRight="110sp"
-        android:layout_marginBottom="600sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="150sp"
+        android:layout_height="75sp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/very_round_corners"
         android:orientation="vertical"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="50dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/addButton"
             android:layout_width="59dp"
             android:layout_height="53dp"
-            android:layout_marginTop="10sp"
-            android:layout_marginLeft="60sp"
+            android:layout_marginStart="35sp"
+            android:layout_marginTop="5sp"
             android:background="@drawable/addcross" />
     </RelativeLayout>
-
-    <LinearLayout
-        app:layout_constraintTop_toBottomOf="@id/layout1"
-        android:layout_marginRight="20sp"
-        android:layout_marginLeft="20sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="150dp">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>
