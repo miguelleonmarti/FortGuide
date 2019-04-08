@@ -16,15 +16,18 @@ public class AdviceDetailActivity
 
   private AdviceDetailContract.Presenter presenter;
 
-  Button bananaButton;
+  // declaring the buttons, texts and images
+  private Button bananaButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_advice_detail);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
 
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -34,6 +37,8 @@ public class AdviceDetailActivity
 
     // do the setup
     AdviceDetailScreen.configure(this);
+
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 

@@ -51,6 +51,10 @@ public class TheoryDetailActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+    ((TextView)findViewById(R.id.contentTextView)).setText(viewModel.theoryItem.getContent());
+    ((TextView)findViewById(R.id.detailTextView)).setText(viewModel.theoryItem.getDetails());
+    ((TextView)findViewById(R.id.userTextView)).setText(viewModel.theoryItem.getUser());
+    ((TextView)findViewById(R.id.likesTextView)).setText(viewModel.theoryItem.getLikes());
+    ((TextView)findViewById(R.id.dislikesTextView)).setText(viewModel.theoryItem.getDislikes());
   }
 }

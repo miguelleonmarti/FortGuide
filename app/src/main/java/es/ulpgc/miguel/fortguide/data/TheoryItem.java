@@ -5,10 +5,10 @@ public class TheoryItem {
   private String user;
   private String content;
   private String details;
-  private int likes;
-  private int dislikes;
+  private String likes;
+  private String dislikes;
 
-  public TheoryItem(int id,String user, String content, String details, int likes, int dislikes){
+  public TheoryItem(int id,String user, String content, String details, String likes, String dislikes){
     this.id = id;
     this.user = user;
     this.content = content;
@@ -33,11 +33,11 @@ public class TheoryItem {
     return details;
   }
 
-  public int getLikes() {
+  public String getLikes() {
     return likes;
   }
 
-  public int getDislikes() {
+  public String getDislikes() {
     return dislikes;
   }
 
@@ -53,11 +53,11 @@ public class TheoryItem {
     this.details = details;
   }
 
-  public void setLikes(int likes) {
+  public void setLikes(String likes) {
     this.likes = likes;
   }
 
-  public void setDislikes(int dislikes) {
+  public void setDislikes(String dislikes) {
     this.dislikes = dislikes;
   }
 }

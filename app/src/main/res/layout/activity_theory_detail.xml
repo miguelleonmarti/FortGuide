@@ -8,13 +8,6 @@
     tools:context=".support_profile.SupportProfileActivity">
 
     <TextView
-        android:id="@+id/data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-    <TextView
         android:id="@+id/supportBar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -37,21 +30,13 @@
         android:id="@+id/layout_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
         android:background="@drawable/round_corners"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/data"
-        app:layout_constraintEnd_toEndOf="@+id/data"
-        app:layout_constraintEnd_toStartOf="@+id/data"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/data"
-        app:layout_constraintStart_toStartOf="@+id/data"
-        app:layout_constraintTop_toBottomOf="@+id/supportBar">
+        app:layout_constraintTop_toBottomOf="@+id/supportBar"
+        tools:layout_editor_absoluteX="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,15 +52,14 @@
                 android:background="@drawable/thumbs_up" />
 
             <TextView
-                android:id="@+id/likesText"
+                android:id="@+id/likesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:text="123"
                 android:textAlignment="center"
                 android:textColor="@color/colorThumbUp"
-                android:textSize="36sp"
-                 />
+                android:textSize="36sp" />
 
             <ImageButton
                 android:id="@+id/thumbDownButton"
@@ -85,18 +69,17 @@
                 android:background="@drawable/thumbs_down" />
 
             <TextView
-                android:id="@+id/dislikesText"
+                android:id="@+id/dislikesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="456"
                 android:textAlignment="center"
                 android:textColor="@color/colorThumbDown"
-                android:textSize="36sp"
-                />
+                android:textSize="36sp" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/creatorContent"
+            android:id="@+id/userContentTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -104,11 +87,10 @@
             android:text="Creador:"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
-            android:textSize="24sp"
-             />
+            android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/creatorText"
+            android:id="@+id/userTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
@@ -116,28 +98,27 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/colorTextButtonBlack"
-            android:textSize="24sp"
-             />
+            android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/theoryText"
+            android:id="@+id/contentTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20sp"
             android:text="Titulo"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/detailView"
+            android:id="@+id/detailTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorTextButtonBlack"
             android:layout_marginTop="50sp"
-            android:textAlignment="center"
             android:text="Esto es un texto fleje largo para que se vea que va hacia abajo como deberia, llenandose asi el fondo"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp" />
 
     </LinearLayout>

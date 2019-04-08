@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.theory_detail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.TheoryItem;
+
 public class TheoryDetailPresenter implements TheoryDetailContract.Presenter {
 
   public static String TAG = TheoryDetailPresenter.class.getSimpleName();
@@ -32,25 +34,12 @@ public class TheoryDetailPresenter implements TheoryDetailContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    TheoryItem item = router.getDataFromPreviousScreen();
+    if(item !=null) {
+      viewModel.theoryItem = item;
+      view.get().displayData(viewModel);
 
-    // set passed state
-    TheoryDetailState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
     }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
   }
 
   @Override
