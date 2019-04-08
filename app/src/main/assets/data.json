@@ -713,5 +713,37 @@
       "content": "¿Escopetas o subfusiles?",
       "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
     }
+  ],
+  "theory": [
+    {
+      "id": 1,
+      "user": "Misterhit",
+      "content": "Teoría del volcán",
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+    },
+    {
+      "id": 2,
+      "user": "Tacuapinpan",
+      "content": "Teoría del tsunami",
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+    },
+    {
+      "id": 3,
+      "user": "MSalAguila",
+      "content": "Teoría del yeti",
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+    },
+    {
+      "id": 4,
+      "user": "migueel_1998",
+      "content": "Teoría del cometa",
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+    },
+    {
+      "id": 5,
+      "user": "Kodekey",
+      "content": "Teoría del barco",
+      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo"
+    }
   ]
 }

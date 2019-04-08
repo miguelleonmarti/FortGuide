@@ -16,7 +16,7 @@ public class NewTheoryActivity
   private NewTheoryContract.Presenter presenter;
 
   // declaring the buttons, texts and images
-  private Button bananaButton;
+   Button bananaButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class NewTheoryActivity
     setContentView(R.layout.activity_new_theory);
 
     // finding buttons, texts and images id
-    bananaButton.findViewById(R.id.bananaButton);
+    bananaButton=findViewById(R.id.bananaButton);
 
     // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
