@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/llama"
     android:padding="0dp"
-    tools:context=".advice.AdviceActivity">
+    tools:context=".theory.TheoryActivity">
 
 
     <TextView

@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.data.TheoryItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryActivity;
+import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailActivity;
 
 public class TheoryRouter implements TheoryContract.Router {
 
@@ -19,8 +21,8 @@ public class TheoryRouter implements TheoryContract.Router {
 
 
   @Override
-  public void passDataToNextScreen(TheoryState state) {
-    mediator.setTheoryState(state);
+  public void passDataToTheoryDetailScreen(TheoryItem item) {
+    mediator.setTheory(item);
   }
 
   @Override
@@ -33,6 +35,13 @@ public class TheoryRouter implements TheoryContract.Router {
   public void navigateToNewTheoryScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, NewTheoryActivity.class);
+    context.startActivity(intent);
+  }
+
+  @Override
+  public void navigateToTheoryDetailScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent intent = new Intent(context, TheoryDetailActivity.class);
     context.startActivity(intent);
   }
 

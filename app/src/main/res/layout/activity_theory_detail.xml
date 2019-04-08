@@ -41,7 +41,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@color/colorTextButtonWhiteOpacity"
+        android:background="@drawable/round_corners"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="30dp"
@@ -75,7 +75,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorThumbUp"
                 android:textSize="36sp"
-                android:textStyle="bold" />
+                 />
 
             <ImageButton
                 android:id="@+id/thumbDownButton"
@@ -92,7 +92,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorThumbDown"
                 android:textSize="36sp"
-                android:textStyle="bold" />
+                />
         </LinearLayout>
 
         <TextView
@@ -105,7 +105,7 @@
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp"
-            android:textStyle="bold" />
+             />
 
         <TextView
             android:id="@+id/creatorText"
@@ -117,16 +117,28 @@
             android:textAllCaps="false"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp"
-            android:textStyle="bold|italic" />
+             />
 
         <TextView
             android:id="@+id/theoryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria teoria "
-            android:textAlignment="textStart"
+            android:layout_marginTop="20sp"
+            android:layout_gravity="center_horizontal"
+            android:text="Titulo"
+            android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/detailView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTextButtonBlack"
+            android:layout_marginTop="50sp"
+            android:textAlignment="center"
+            android:text="Esto es un texto fleje largo para que se vea que va hacia abajo como deberia, llenandose asi el fondo"
+            android:textSize="24sp" />
 
     </LinearLayout>
 

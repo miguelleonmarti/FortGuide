@@ -2,11 +2,13 @@ package es.ulpgc.miguel.fortguide.theory;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
+import es.ulpgc.miguel.fortguide.data.TheoryItem;
 
 public class TheoryActivity
     extends AppCompatActivity implements TheoryContract.View {
@@ -14,9 +16,10 @@ public class TheoryActivity
   public static String TAG = TheoryActivity.class.getSimpleName();
 
   private TheoryContract.Presenter presenter;
+  private TheoryAdapter listAdapter;
 
   // declaring the buttons, texts and images
-  Button addTheoryButton, bananaButton;
+  private Button addTheoryButton, bananaButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,16 @@ public class TheoryActivity
         presenter.startMenuScreen();
       }
     });
+    listAdapter = new TheoryAdapter(new View.OnClickListener() {
+
+      @Override
+      public void onClick(View view) {
+        TheoryItem item = (TheoryItem) view.getTag();
+        presenter.selectTheoryListData(item);
+      }
+    });
+    RecyclerView recyclerView = findViewById(R.id.theoryList);
+    recyclerView.setAdapter(listAdapter);
 
     // do the setup
     TheoryScreen.configure(this);
@@ -54,10 +67,16 @@ public class TheoryActivity
   }
 
   @Override
-  public void displayData(TheoryViewModel viewModel) {
+  public void displayData(final TheoryViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.theoryTextView)).setText(viewModel.data);
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        listAdapter.setItems(viewModel.theoryItemList); //Puts theoryItemList in the cells of the Recycler  }
+      }
+    });
   }
+
 }

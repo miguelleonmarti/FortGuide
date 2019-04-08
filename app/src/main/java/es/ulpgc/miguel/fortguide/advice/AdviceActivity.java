@@ -16,15 +16,19 @@ public class AdviceActivity
 
   private AdviceContract.Presenter presenter;
   private AdviceAdapter listAdapter;
-  Button bananaButton;
+
+  // declaring the buttons, texts and images
+  private Button bananaButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_advice);
 
+    // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
 
+    // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -45,6 +49,7 @@ public class AdviceActivity
 
     // do the setup
     AdviceScreen.configure(this);
+    // calling the presenter in order to fetch data
     presenter.fetchData();
   }
 
@@ -61,7 +66,7 @@ public class AdviceActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        listAdapter.setItems(viewModel.adviceItemList); //Pone los shopItemList en las celdas del Recycler  }
+        listAdapter.setItems(viewModel.adviceItemList); //Puts adviceItemList in the cells of the Recycler  }
       }
     });
     }

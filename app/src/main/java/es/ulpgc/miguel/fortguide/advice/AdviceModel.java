@@ -12,10 +12,11 @@ public class AdviceModel implements AdviceContract.Model {
 
   public static String TAG = AdviceModel.class.getSimpleName();
 
-  private RepositoryContract repositorio;
+  private RepositoryContract repository;
   private List<AdviceItem> adviceItems;
+
   public AdviceModel(RepositoryContract repository) {
-    this.repositorio = repository;
+    this.repository = repository;
     this.adviceItems = new ArrayList<>();
   }
 
@@ -23,11 +24,11 @@ public class AdviceModel implements AdviceContract.Model {
   public void fetchAdviceListData(final RepositoryContract.GetAdviceListCallback callback) {
     Log.e(TAG, "fetchAdviceListData()");
 
-    repositorio.loadAdvice(new RepositoryContract.FetchAdviceDataCallback() {
+    repository.loadAdvice(new RepositoryContract.FetchAdviceDataCallback() {
       @Override
       public void onAdviceDataFetched(boolean error) {
       if(!error){
-        repositorio.getAdviceList(callback);
+        repository.getAdviceList(callback);
       }
       }
     });

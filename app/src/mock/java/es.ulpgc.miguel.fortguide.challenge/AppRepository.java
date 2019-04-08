@@ -431,7 +431,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   private boolean loadTheoryFromJSON(String json) {
-    Log.e(TAG, "loadPlaceFromJSON()");
+    Log.e(TAG, "loadTheoryFromJSON()");
 
     GsonBuilder gsonBuilder = new GsonBuilder();
     Gson gson = gsonBuilder.create();
@@ -445,7 +445,7 @@ public class AppRepository implements RepositoryContract {
 
       if (jsonArray.length() > 0) {
 
-        final List<TheoryItem> adviceList = Arrays.asList(
+        final List<TheoryItem> theoryList = Arrays.asList(
             gson.fromJson(jsonArray.toString(), TheoryItem[].class)
         );
 

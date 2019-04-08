@@ -6,5 +6,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutManager="android.support.v7.widget.GridLayoutManager"
-    tools:context=".advice.AdviceActivity"
+    tools:context=".theory.TheoryActivity"
     tools:listitem="@layout/theory_list_content" />

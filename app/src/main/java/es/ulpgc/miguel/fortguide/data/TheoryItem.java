@@ -12,6 +12,7 @@ public class TheoryItem {
     this.id = id;
     this.user = user;
     this.content = content;
+    this.details = details;
     this.likes = likes;
     this.dislikes = dislikes;
   }

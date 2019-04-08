@@ -2,6 +2,9 @@ package es.ulpgc.miguel.fortguide.theory;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+import es.ulpgc.miguel.fortguide.data.TheoryItem;
+
 public interface TheoryContract {
 
   interface View {
@@ -22,19 +25,23 @@ public interface TheoryContract {
     void startNewTheoryScreen();
 
     void startMenuScreen();
+
+    void selectTheoryListData(TheoryItem item);
   }
 
   interface Model {
-    String fetchData();
+    void fetchTheoryListData(final RepositoryContract.GetTheoryListCallback callback);
   }
 
   interface Router {
 
-    void passDataToNextScreen(TheoryState state);
+    void passDataToTheoryDetailScreen(TheoryItem item);
 
     TheoryState getDataFromPreviousScreen();
 
     void navigateToNewTheoryScreen();
+
+    void navigateToTheoryDetailScreen();
 
     void navigateToMenuScreen();
   }

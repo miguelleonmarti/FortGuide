@@ -1,6 +1,13 @@
 package es.ulpgc.miguel.fortguide.theory;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+import es.ulpgc.miguel.fortguide.data.TheoryItem;
 
 public class TheoryPresenter implements TheoryContract.Presenter {
 
@@ -32,25 +39,20 @@ public class TheoryPresenter implements TheoryContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    Log.e(TAG, "fetchData()");
+    model.fetchTheoryListData(new RepositoryContract.GetTheoryListCallback(){
+      @Override
+      public void setTheoryList(List<TheoryItem> theoryList) {
+        viewModel.theoryItemList = theoryList;
+        view.get().displayData(viewModel);
+      }
+    });
+  }
 
-    // set passed state
-    TheoryState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
+  @Override
+  public void selectTheoryListData(TheoryItem item){
+    router.passDataToTheoryDetailScreen(item);
+    router.navigateToTheoryDetailScreen();
   }
 
   @Override
