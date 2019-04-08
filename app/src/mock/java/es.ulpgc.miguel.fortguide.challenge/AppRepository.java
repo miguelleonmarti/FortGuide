@@ -6,13 +6,19 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +28,7 @@ import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+import es.ulpgc.miguel.fortguide.data.ShopItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 
 public class AppRepository implements RepositoryContract {
@@ -33,6 +40,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_PLACE = "place";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
   private static final String JSON_ROOT_ADVICE = "advice";
+  private static final String JSON_ROOT_SHOP = "https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en";
 
   public static AppRepository INSTANCE;
 
@@ -41,6 +49,7 @@ public class AppRepository implements RepositoryContract {
   private List<PlaceItem> placeList;
   private List<ChallengesWeeksItem> challengeList;
   private List<AdviceItem> adviceList;
+  private List<ShopItem> shopList;
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
@@ -211,7 +220,7 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         boolean error = !loadPlaceFromJSON(loadJSONFromAsset());
-        if (callback!=null) {
+        if (callback != null) {
           callback.onPlaceDataFetched(error);
         }
       }
@@ -235,7 +244,7 @@ public class AppRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (callback!=null) {
+        if (callback != null) {
           callback.setPlaceItem(supportList.get(id));
         }
       }
@@ -344,7 +353,7 @@ public class AppRepository implements RepositoryContract {
           insertWeeksItem(challengesWeeksItem);
         }
         for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
-          for(ChallengeItem challengeItem: challengesWeeksItem.getItems()){
+          for (ChallengeItem challengeItem : challengesWeeksItem.getItems()) {
             challengeItem.setWeeksId(challengesWeeksItem.getId());
           }
         }
@@ -416,7 +425,6 @@ public class AppRepository implements RepositoryContract {
 
   //advice
 
-
   @Override
   public void loadAdvice(final FetchAdviceDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -453,6 +461,104 @@ public class AppRepository implements RepositoryContract {
 
   private List<AdviceItem> loadAdviceList() {
     return this.adviceList;
+  }
+
+  // shop
+
+
+  @Override
+  public void loadShop(final FetchShopDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !load();
+        if (callback != null) {
+          callback.onShopDataFetched(error);
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getShopList(final AppRepository.GetShopListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setShopList(loadShopList());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getShopItem(final int id, final AppRepository.GetShopItemCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setShopItem(loadShopList().get(id));
+        }
+      }
+    });
+  }
+
+  private List<ShopItem> loadShopList() {
+    return this.shopList;
+  }
+
+  // parse JSON from URL
+
+  private String readAll(Reader rd) throws IOException {
+    StringBuilder sb = new StringBuilder();
+    int cp;
+    while ((cp = rd.read()) != -1) {
+      sb.append((char) cp);
+    }
+    return sb.toString();
+  }
+
+  public JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+    InputStream is = new URL(url).openStream();
+    try {
+      BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+      String jsonText = readAll(rd);
+      JSONObject json = new JSONObject(jsonText);
+      return json;
+    } finally {
+      is.close();
+    }
+  }
+
+  private boolean load() {
+    //GsonBuilder gsonBuilder = new GsonBuilder();
+    //Gson gson = gsonBuilder.create();
+
+    try {
+      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_SHOP);
+      JSONArray jsonArray = jsonObject.getJSONArray("items");
+
+      shopList = new ArrayList<>();
+
+      for (int i = 0; i < jsonArray.length(); i++) {
+        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+        String id = jsonObject1.getString("itemid");
+        String content = jsonObject1.getString("name");
+        String details = jsonObject1.getString("cost");
+
+        JSONObject jsonObject2 = jsonObject1.getJSONObject("item").getJSONObject("images");
+        String image = jsonObject2.getString("background");
+        insertShopItem(new ShopItem(id, image, content, details));
+      }
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
+  private void insertShopItem(ShopItem shopItem) {
+    shopList.add(shopItem);
   }
 
 }

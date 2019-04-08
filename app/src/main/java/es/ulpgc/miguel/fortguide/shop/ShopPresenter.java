@@ -1,8 +1,11 @@
 package es.ulpgc.miguel.fortguide.shop;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.ShopItem;
 
 public class ShopPresenter implements ShopContract.Presenter {
@@ -35,17 +38,15 @@ public class ShopPresenter implements ShopContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    Log.e(TAG, "fetchData()");
 
-    // set passed state
-    List<ShopItem> shopItems = model.fetchData();
-    if (shopItems != null) {
-      viewModel.shopItemList = shopItems;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
+    model.fetchData(new RepositoryContract.GetShopListCallback() {
+      @Override
+      public void setShopList(List<ShopItem> shopList) {
+        viewModel.shopItemList = shopList;
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override

@@ -1,13 +1,13 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class ChallengeItem extends Item{
+public class ChallengeItem extends Item {
 
   private int weeksId;
 
-public ChallengeItem(int id,String content,String details,int weeksId){
-  super(id, content, details);
-  this.weeksId = weeksId;
-}
+  public ChallengeItem(int id, String content, String details, int weeksId) {
+    super(id, content, details);
+    this.weeksId = weeksId;
+  }
 
   @Override
   public int getId() {

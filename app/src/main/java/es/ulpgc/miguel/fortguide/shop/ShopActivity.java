@@ -75,7 +75,7 @@ public class ShopActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        ((TextView) findViewById(R.id.shopBar)).setText("TIENDA"); //TODO: CAMBIAR A STRINGS.XML
+        ((TextView) findViewById(R.id.shopBar)).setText(R.string.shop_bar_label);
         shopAdapter.setItems(viewModel.shopItemList);
       }
     });

@@ -61,7 +61,7 @@ public interface RepositoryContract {
   void getWeeksList(AppRepository.GetWeeksListCallback callback);
 
 
-  // callbacks and methods of Place TODO
+  // callbacks and methods of Place
 
   interface FetchPlaceDataCallback {
     void onPlaceDataFetched(boolean error);
@@ -90,6 +90,7 @@ public interface RepositoryContract {
   interface GetAdviceListCallback{
     void setAdviceList(List<AdviceItem> adviceList);
   }
+
   interface GetAdviceItemCallback{
     void setAdviceItem(AdviceItem adviceItem);
   }
@@ -99,4 +100,25 @@ public interface RepositoryContract {
   void getAdviceList(AppRepository.GetAdviceListCallback callback);
 
   void getAdviceItem(int id, AppRepository.GetAdviceItemCallback callback);
+
+  // callbacks and methods of Shop
+
+  interface FetchShopDataCallback {
+    void onShopDataFetched(boolean error);
+  }
+
+  interface GetShopListCallback{
+    void setShopList(List<ShopItem> shopList);
+  }
+
+  interface GetShopItemCallback{
+    void setShopItem(ShopItem shopItem);
+  }
+
+  void loadShop(AppRepository.FetchShopDataCallback callback);
+
+  void getShopList(AppRepository.GetShopListCallback callback);
+
+  void getShopItem(int id, AppRepository.GetShopItemCallback callback);
+
 }
