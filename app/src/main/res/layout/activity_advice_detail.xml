@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60sp"
-        android:layout_marginBottom="300sp"
+        android:layout_marginBottom="250sp"
         android:layout_marginLeft="15sp"
         android:layout_marginRight="15sp"
         android:background="@drawable/round_corners"
