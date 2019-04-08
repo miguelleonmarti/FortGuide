@@ -4,7 +4,7 @@ import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
-public class WeeksListViewModel {
+public class ChallengesWeeksListViewModel {
 
   public List<ChallengesWeeksItem> challengesWeeksItemList;
 }

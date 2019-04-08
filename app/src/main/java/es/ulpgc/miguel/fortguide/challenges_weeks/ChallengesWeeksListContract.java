@@ -5,12 +5,12 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-interface WeeksListContract {
+interface ChallengesWeeksListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayWeeksListData(WeeksListViewModel viewModel);
+    void displayWeeksListData(ChallengesWeeksListViewModel viewModel);
   }
 
   interface Presenter {

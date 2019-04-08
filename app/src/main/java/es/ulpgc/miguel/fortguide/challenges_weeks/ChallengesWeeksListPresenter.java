@@ -6,16 +6,16 @@ import java.util.List;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-public class WeeksListPresenter implements WeeksListContract.Presenter {
+public class ChallengesWeeksListPresenter implements ChallengesWeeksListContract.Presenter {
 
-  public static String TAG = WeeksListPresenter.class.getSimpleName();
+  public static String TAG = ChallengesWeeksListPresenter.class.getSimpleName();
 
-  private WeakReference<WeeksListContract.View> view;
-  private WeeksListViewModel viewModel;
-  private WeeksListContract.Model model;
-  private WeeksListContract.Router router;
+  private WeakReference<ChallengesWeeksListContract.View> view;
+  private ChallengesWeeksListViewModel viewModel;
+  private ChallengesWeeksListContract.Model model;
+  private ChallengesWeeksListContract.Router router;
 
-  public WeeksListPresenter(WeeksListState state) {
+  public ChallengesWeeksListPresenter(ChallengesWeeksListState state) {
     viewModel = state;
   }
 
@@ -49,17 +49,17 @@ public class WeeksListPresenter implements WeeksListContract.Presenter {
   }
 
   @Override
-  public void injectView(WeakReference<WeeksListContract.View> view) {
+  public void injectView(WeakReference<ChallengesWeeksListContract.View> view) {
     this.view = view;
   }
 
   @Override
-  public void injectModel(WeeksListContract.Model model) {
+  public void injectModel(ChallengesWeeksListContract.Model model) {
     this.model = model;
   }
 
   @Override
-  public void injectRouter(WeeksListContract.Router router) {
+  public void injectRouter(ChallengesWeeksListContract.Router router) {
     this.router = router;
   }
 

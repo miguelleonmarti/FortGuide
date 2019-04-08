@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/llama"
-    tools:context=".challenges_weeks.WeeksListActivity">
+    tools:context=".challenges_weeks.ChallengesWeeksListActivity">
 
 
     <TextView

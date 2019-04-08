@@ -4,7 +4,7 @@ import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
 import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailState;
-import es.ulpgc.miguel.fortguide.challenges_weeks.WeeksListState;
+import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
@@ -32,7 +32,7 @@ public class AppMediator extends Application {
   private SupportState supportState;
   private WeaponState weaponState;
   private TheoryState theoryState;
-  private WeeksListState weeksListState;
+  private ChallengesWeeksListState challengesWeeksListState;
   private ChallengesDetailState challengesDetailState;
   private AdviceState adviceState;
   private ShopState shopState;
@@ -60,7 +60,7 @@ public class AppMediator extends Application {
     supportState = new SupportState();
     weaponState = new WeaponState();
     theoryState = new TheoryState();
-    weeksListState = new WeeksListState();
+    challengesWeeksListState = new ChallengesWeeksListState();
     adviceState = new AdviceState();
     shopState = new ShopState();
     newTheoryState = new NewTheoryState();
@@ -120,12 +120,12 @@ public class AppMediator extends Application {
     return theoryState;
   }
 
-  public void setChallengesWeeksListState(WeeksListState weeksListState) {
-    this.weeksListState = weeksListState;
+  public void setChallengesWeeksListState(ChallengesWeeksListState challengesWeeksListState) {
+    this.challengesWeeksListState = challengesWeeksListState;
   }
 
-  public WeeksListState getWeeksListState() {
-    return weeksListState;
+  public ChallengesWeeksListState getChallengesWeeksListState() {
+    return challengesWeeksListState;
   }
 
   public void setAdviceState(AdviceState adviceState) {
@@ -211,9 +211,6 @@ public class AppMediator extends Application {
     this.challengesWeeksItem = challengesWeeksItem;
   }
 
-  public void setWeeksListState(WeeksListState weeksListState) {
-    this.weeksListState = weeksListState;
-  }
 
   public AdviceItem getAdviceItem() {
     return adviceItem;

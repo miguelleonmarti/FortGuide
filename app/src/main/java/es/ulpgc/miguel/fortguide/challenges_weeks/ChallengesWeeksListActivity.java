@@ -12,18 +12,18 @@ import es.ulpgc.miguel.fortguide.R;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
 
-public class WeeksListActivity
-    extends AppCompatActivity implements WeeksListContract.View {
+public class ChallengesWeeksListActivity
+    extends AppCompatActivity implements ChallengesWeeksListContract.View {
 
-  public static String TAG = WeeksListActivity.class.getSimpleName();
+  public static String TAG = ChallengesWeeksListActivity.class.getSimpleName();
 
-  private WeeksListContract.Presenter presenter;
+  private ChallengesWeeksListContract.Presenter presenter;
 
   // declaring the buttons, texts and images
   private Button bananaButton;
 
   // declaring the adapter for the RecyclerView
-  private WeeksListAdapter weeksListAdapter;
+  private ChallengesWeeksListAdapter challengesWeeksListAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class WeeksListActivity
     });
 
     // initializing the adapter
-    weeksListAdapter = new WeeksListAdapter(new View.OnClickListener() {
+    challengesWeeksListAdapter = new ChallengesWeeksListAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag(); //TODO: TE LO COMENTO PARA QUE NO DE ERROR
@@ -52,22 +52,22 @@ public class WeeksListActivity
 
     // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.challenges_weeks_list);
-    recyclerView.setAdapter(weeksListAdapter);
+    recyclerView.setAdapter(challengesWeeksListAdapter);
 
     // do the setup
-    WeeksListScreen.configure(this);
+    ChallengesWeeksListScreen.configure(this);
 
     // calling the presenter in order to fetch data
     presenter.fetchWeeksListData();
   }
 
   @Override
-  public void injectPresenter(WeeksListContract.Presenter presenter) {
+  public void injectPresenter(ChallengesWeeksListContract.Presenter presenter) {
     this.presenter = presenter;
   }
 
   @Override
-  public void displayWeeksListData(final WeeksListViewModel viewModel) {
+  public void displayWeeksListData(final ChallengesWeeksListViewModel viewModel) {
     Log.e(TAG, "displayWeeksListData()");
 
     // we need to get into the main thread to display the fetched data
@@ -75,7 +75,7 @@ public class WeeksListActivity
       @Override
       public void run() {
         ((TextView) findViewById(R.id.challengeBar)).setText(R.string.challenge_text_label);
-        weeksListAdapter.setItems(viewModel.challengesWeeksItemList);
+        challengesWeeksListAdapter.setItems(viewModel.challengesWeeksItemList);
       }
     });
   }

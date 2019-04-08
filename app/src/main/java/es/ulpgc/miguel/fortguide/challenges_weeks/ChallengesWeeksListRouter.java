@@ -8,13 +8,13 @@ import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailActivity;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
-public class WeeksListRouter implements WeeksListContract.Router {
+public class ChallengesWeeksListRouter implements ChallengesWeeksListContract.Router {
 
-  public static String TAG = WeeksListRouter.class.getSimpleName();
+  public static String TAG = ChallengesWeeksListRouter.class.getSimpleName();
 
   private AppMediator mediator;
 
-  public WeeksListRouter(AppMediator mediator) {
+  public ChallengesWeeksListRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
 
