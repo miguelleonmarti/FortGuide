@@ -12,27 +12,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 
 
-public class ChallengesDetailActivity
-    extends AppCompatActivity implements ChallengesDetailContract.View {
+public class ChallengesDetailListActivity
+    extends AppCompatActivity implements ChallengesDetailListContract.View {
 
-  public static String TAG = ChallengesDetailActivity.class.getSimpleName();
+  public static String TAG = ChallengesDetailListActivity.class.getSimpleName();
 
-  private ChallengesDetailContract.Presenter presenter;
+  private ChallengesDetailListContract.Presenter presenter;
 
   // declaring the buttons, texts and images
   private Button bananaButton;
   private ImageView starImage;
 
   // declaring the adapter for the RecyclerView
-  private ChallengesDetailAdapter listAdapter;
+  private ChallengesDetailListAdapter listAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_challenges_detail);
+    setContentView(R.layout.activity_challenges_detail_list);
 
     // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
@@ -47,14 +46,14 @@ public class ChallengesDetailActivity
     });
 
     // initializing the adapter
-    listAdapter = new ChallengesDetailAdapter();
+    listAdapter = new ChallengesDetailListAdapter();
 
     // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.challenges_detail_list);
     recyclerView.setAdapter(listAdapter);
 
     // do the setup
-    ChallengesDetailScreen.configure(this);
+    ChallengesDetailListScreen.configure(this);
 
     // calling the presenter in order to fetch data
     presenter.fetchChallengeDetailListData();
@@ -62,12 +61,12 @@ public class ChallengesDetailActivity
 
 
   @Override
-  public void injectPresenter(ChallengesDetailContract.Presenter presenter) {
+  public void injectPresenter(ChallengesDetailListContract.Presenter presenter) {
     this.presenter = presenter;
   }
 
   @Override
-  public void displayChallengeDetailListData(final ChallengesDetailViewModel viewModel) {
+  public void displayChallengeDetailListData(final ChallengesDetailListViewModel viewModel) {
     Log.e(TAG, "displayChallengeDetailListData()");
 
     // we need to get into the main thread to display the fetched data

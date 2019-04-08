@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
-import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailActivity;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListActivity;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
@@ -21,7 +21,7 @@ public class ChallengesWeeksListRouter implements ChallengesWeeksListContract.Ro
   @Override
   public void navigateToChallengeDetailsScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ChallengesDetailActivity.class);
+    Intent intent = new Intent(context, ChallengesDetailListActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }

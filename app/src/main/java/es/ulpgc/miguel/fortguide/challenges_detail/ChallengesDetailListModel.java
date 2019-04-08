@@ -2,17 +2,16 @@ package es.ulpgc.miguel.fortguide.challenges_detail;
 
 import android.util.Log;
 
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-public class ChallengesDetailModel implements ChallengesDetailContract.Model {
+public class ChallengesDetailListModel implements ChallengesDetailListContract.Model {
 
-  public static String TAG = ChallengesDetailModel.class.getSimpleName();
+  public static String TAG = ChallengesDetailListModel.class.getSimpleName();
 
   private RepositoryContract repository;
 
-  public ChallengesDetailModel(RepositoryContract repository) {
+  public ChallengesDetailListModel(RepositoryContract repository) {
     this.repository = repository;
   }
 

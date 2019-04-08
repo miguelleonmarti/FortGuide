@@ -3,7 +3,7 @@ package es.ulpgc.miguel.fortguide.app;
 import android.app.Application;
 
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
-import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailState;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListState;
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListState;
 import es.ulpgc.miguel.fortguide.advice.AdviceState;
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
@@ -33,7 +33,7 @@ public class AppMediator extends Application {
   private WeaponState weaponState;
   private TheoryState theoryState;
   private ChallengesWeeksListState challengesWeeksListState;
-  private ChallengesDetailState challengesDetailState;
+  private ChallengesDetailListState challengesDetailState;
   private AdviceState adviceState;
   private ShopState shopState;
   private NewTheoryState newTheoryState;
@@ -66,7 +66,7 @@ public class AppMediator extends Application {
     newTheoryState = new NewTheoryState();
     supportProfileState = new SupportProfileState();
     theoryDetailState = new TheoryDetailState();
-    challengesDetailState = new ChallengesDetailState();
+    challengesDetailState = new ChallengesDetailListState();
     adviceDetailState = new AdviceDetailState();
   }
 
@@ -166,11 +166,11 @@ public class AppMediator extends Application {
     this.adviceDetailState = state;
   }
 
-  public ChallengesDetailState getChallengesDetailState() {
+  public ChallengesDetailListState getChallengesDetailState() {
     return challengesDetailState;
   }
 
-  public void setChallengesDetailState(ChallengesDetailState challengesDetailState) { this.challengesDetailState = challengesDetailState; }
+  public void setChallengesDetailState(ChallengesDetailListState challengesDetailState) { this.challengesDetailState = challengesDetailState; }
 
   public PlaceDetailState getPlaceDetailState() {
     return placeDetailState;

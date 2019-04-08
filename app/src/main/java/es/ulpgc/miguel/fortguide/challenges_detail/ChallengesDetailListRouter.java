@@ -8,13 +8,13 @@ import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
 
-public class ChallengesDetailRouter implements ChallengesDetailContract.Router {
+public class ChallengesDetailListRouter implements ChallengesDetailListContract.Router {
 
-  public static String TAG = ChallengesDetailRouter.class.getSimpleName();
+  public static String TAG = ChallengesDetailListRouter.class.getSimpleName();
 
   private AppMediator mediator;
 
-  public ChallengesDetailRouter(AppMediator mediator) {
+  public ChallengesDetailListRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
 
@@ -39,7 +39,7 @@ public class ChallengesDetailRouter implements ChallengesDetailContract.Router {
   @Override
   public void navigateToChallengeDetailScreen(){
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context,ChallengesDetailActivity.class);
+    Intent intent = new Intent(context, ChallengesDetailListActivity.class);
     context.startActivity(intent);
   }
 }

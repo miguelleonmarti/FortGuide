@@ -28,7 +28,7 @@ public class ChallengesWeeksListActivity
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_weeks_list);
+    setContentView(R.layout.activity_challenges_weeks_list);
 
     // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);

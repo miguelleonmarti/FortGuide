@@ -9,31 +9,31 @@ import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-public class ChallengesDetailPresenter implements ChallengesDetailContract.Presenter {
+public class ChallengesDetailListPresenter implements ChallengesDetailListContract.Presenter {
 
-  public static String TAG = ChallengesDetailPresenter.class.getSimpleName();
+  public static String TAG = ChallengesDetailListPresenter.class.getSimpleName();
 
-  private WeakReference<ChallengesDetailContract.View> view;
-  private ChallengesDetailViewModel viewModel;
-  private ChallengesDetailContract.Model model;
-  private ChallengesDetailContract.Router router;
+  private WeakReference<ChallengesDetailListContract.View> view;
+  private ChallengesDetailListViewModel viewModel;
+  private ChallengesDetailListContract.Model model;
+  private ChallengesDetailListContract.Router router;
 
-  public ChallengesDetailPresenter(ChallengesDetailState state) {
+  public ChallengesDetailListPresenter(ChallengesDetailListState state) {
     viewModel = state;
   }
 
   @Override
-  public void injectView(WeakReference<ChallengesDetailContract.View> view) {
+  public void injectView(WeakReference<ChallengesDetailListContract.View> view) {
     this.view = view;
   }
 
   @Override
-  public void injectModel(ChallengesDetailContract.Model model) {
+  public void injectModel(ChallengesDetailListContract.Model model) {
     this.model = model;
   }
 
   @Override
-  public void injectRouter(ChallengesDetailContract.Router router) {
+  public void injectRouter(ChallengesDetailListContract.Router router) {
     this.router = router;
   }
 

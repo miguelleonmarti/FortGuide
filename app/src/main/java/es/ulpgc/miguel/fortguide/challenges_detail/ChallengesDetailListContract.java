@@ -1,19 +1,17 @@
 package es.ulpgc.miguel.fortguide.challenges_detail;
 
-import android.view.MenuItem;
-
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
-interface ChallengesDetailContract {
+interface ChallengesDetailListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void displayChallengeDetailListData(ChallengesDetailViewModel viewModel);
+    void displayChallengeDetailListData(ChallengesDetailListViewModel viewModel);
 
 
   }

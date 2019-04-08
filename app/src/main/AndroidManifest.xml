@@ -47,7 +47,7 @@
         </activity>
         <activity android:name=".advice_detail.AdviceDetailActivity">
         </activity>
-        <activity android:name=".challenges_detail.ChallengesDetailActivity">
+        <activity android:name=".challenges_detail.ChallengesDetailListActivity">
         </activity>
     </application>
 
