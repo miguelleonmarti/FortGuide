@@ -43,6 +43,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_SHOP = "https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en";
   private static final String JSON_ROOT_WEAPON = "https://fortnite-public-api.theapinetwork.com/prod09/weapons/get";
   private static final String JSON_ROOT_STATUS = "https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status";
+  private static final String JSON_ROOT_ENGLISH_CHALLENGE = "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current";
 
   public static AppRepository INSTANCE;
 
@@ -537,7 +538,7 @@ public class AppRepository implements RepositoryContract {
     shopList.add(shopItem);
   }
 
-  // weapon TODO: dejamos el loadWeaponFromJSON preparado, solo hay que usarlo, esta hecho
+  // weapon (ready but not used)
 
   private boolean loadWeaponFromJSON() {
     try {
@@ -578,7 +579,7 @@ public class AppRepository implements RepositoryContract {
     weaponList.add(weaponItem);
   }
 
-  // status (preparado pero no utilizado)
+  // status (prepared but not used)
 
   private boolean loadStatusFromJSON() {
     try {
@@ -592,7 +593,39 @@ public class AppRepository implements RepositoryContract {
     return false;
   }
 
-  //
+  // english challenges (ready but not used)
+
+  private boolean loadEnglishChallengesFromJSON() {
+    try {
+      JSONObject JSON = readJsonFromUrl(JSON_ROOT_ENGLISH_CHALLENGE);
+      String season = JSON.getString("season");
+      String currentWeek = JSON.getString("currentweek");
+      JSONObject challenges = JSON.getJSONObject("challenges");
+      for (int i = 0; i < challenges.length(); i++) {
+        JSONArray WEEK = challenges.getJSONArray("week" + (i + 1));
+        if (WEEK.length() != 0) {
+          for (int j = 0; j < WEEK.length(); j++) {
+            JSONObject CHALLENGE = WEEK.getJSONObject(j);
+            String identifier = CHALLENGE.getString("identifier");
+            String challenge = CHALLENGE.getString("challenge");
+            String total = CHALLENGE.getString("total");
+            String stars = CHALLENGE.getString("stars");
+            String difficulty = CHALLENGE.getString("difficulty");
+
+            // change this line to include an object in a list with these attributes
+            // season, currentWeek, identifier, challenge, total, stars and difficulty
+
+          }
+        }
+      }
+
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
 
   // common (shop and weapon)
 
