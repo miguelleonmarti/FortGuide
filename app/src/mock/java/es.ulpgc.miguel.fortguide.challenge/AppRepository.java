@@ -516,12 +516,12 @@ public class AppRepository implements RepositoryContract {
       shopList = new ArrayList<>();
 
       for (int i = 0; i < jsonArray.length(); i++) {
-        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-        String id = jsonObject1.getString("itemid");
-        String content = jsonObject1.getString("name");
-        String details = jsonObject1.getString("cost");
+        JSONObject jsonIterator = jsonArray.getJSONObject(i);
+        String id = jsonIterator.getString("itemid");
+        String content = jsonIterator.getString("name");
+        String details = jsonIterator.getString("cost");
 
-        JSONObject jsonObject2 = jsonObject1.getJSONObject("item").getJSONObject("images");
+        JSONObject jsonObject2 = jsonIterator.getJSONObject("item").getJSONObject("images");
         String image = jsonObject2.getString("background");
         insertShopItem(new ShopItem(id, image, content, details));
       }

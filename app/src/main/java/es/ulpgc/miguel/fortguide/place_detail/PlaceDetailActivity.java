@@ -63,17 +63,20 @@ public class PlaceDetailActivity
   }
 
   @Override
-  public void displayPlaceDetailData(PlaceDetailViewModel viewModel) {
+  public void displayPlaceDetailData(final PlaceDetailViewModel viewModel) {
     Log.e(TAG, "displayPlaceDetailData()");
-    PlaceItem placeItem = viewModel.placeItem;
 
-    // deal with the data
-    ((TextView) findViewById(R.id.placeBar)).setText(viewModel.placeItem.getContent().toUpperCase());
-    ((TextView) findViewById(R.id.contentPlaceTextView)).setText(viewModel.placeItem.getContent());
-    ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.getDetails());
-    ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.getChest());
-    ((TextView) findViewById(R.id.peoplePercentTextView)).setText(viewModel.placeItem.getPeople());
-    loadImageFromURL((ImageView) findViewById(R.id.placeImageView), placeItem.getPeople());
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        ((TextView) findViewById(R.id.placeBar)).setText(viewModel.placeItem.getContent().toUpperCase());
+        ((TextView) findViewById(R.id.contentPlaceTextView)).setText(viewModel.placeItem.getContent());
+        ((TextView) findViewById(R.id.detailPlaceTextView)).setText(viewModel.placeItem.getDetails());
+        ((TextView) findViewById(R.id.chestNumberTextView)).setText(viewModel.placeItem.getChest());
+        ((TextView) findViewById(R.id.peoplePercentTextView)).setText(viewModel.placeItem.getPeople());
+        loadImageFromURL((ImageView) findViewById(R.id.placeImageView), viewModel.placeItem.getImage());
+      }
+    });
   }
 
   @Override
