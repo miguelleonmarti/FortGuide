@@ -46,4 +46,13 @@
     <string name="chest_image_label">chestImage</string>
     <string name="people_image_label">peopleImage</string>
     <string name="shop_bar_label">TIENDA</string>
+    <string-array name="weapon_class">
+        <item>Fusiles de asalto</item>
+        <item>Subfusiles</item>
+        <item>Francotiradores</item>
+        <item>Escopetas</item>
+        <item>Pistolas</item>
+        <item>Picos</item>
+        <item>Explosivos</item>
+    </string-array>
 </resources>
