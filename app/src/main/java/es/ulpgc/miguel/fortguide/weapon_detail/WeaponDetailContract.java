@@ -2,7 +2,7 @@ package es.ulpgc.miguel.fortguide.weapon_detail;
 
 import java.lang.ref.WeakReference;
 
-interface WeaponDetailContract {
+public interface WeaponDetailContract {
 
   interface View {
     void injectPresenter(Presenter presenter);

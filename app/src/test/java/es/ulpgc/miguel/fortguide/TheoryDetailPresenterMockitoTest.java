@@ -31,7 +31,7 @@ public class TheoryDetailPresenterMockitoTest {
   private TheoryDetailContract.Presenter presenter;
 
   @Before
-  public void setupMenuScreen() {
+  public void setupTheoryDetailScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);

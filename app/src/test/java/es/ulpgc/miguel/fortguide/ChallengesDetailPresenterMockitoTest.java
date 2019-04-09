@@ -31,7 +31,7 @@ public class ChallengesDetailPresenterMockitoTest {
   private ChallengesDetailListContract.Presenter presenter;
 
   @Before
-  public void setupIntroductionScreen() {
+  public void setupChallengesDetailScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);

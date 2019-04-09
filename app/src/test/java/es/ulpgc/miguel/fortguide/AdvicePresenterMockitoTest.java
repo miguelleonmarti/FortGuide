@@ -31,7 +31,7 @@ public class AdvicePresenterMockitoTest {
   private AdviceContract.Presenter presenter;
 
   @Before
-  public void setupMenuScreen() {
+  public void setupAdviceScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);

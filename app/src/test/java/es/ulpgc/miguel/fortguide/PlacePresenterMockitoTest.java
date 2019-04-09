@@ -31,7 +31,7 @@ public class PlacePresenterMockitoTest {
   private PlaceContract.Presenter presenter;
 
   @Before
-  public void setupMenuScreen() {
+  public void setupPlaceScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);

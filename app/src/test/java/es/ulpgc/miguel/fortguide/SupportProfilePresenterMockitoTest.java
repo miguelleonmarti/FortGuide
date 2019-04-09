@@ -31,7 +31,7 @@ public class SupportProfilePresenterMockitoTest {
   private SupportProfileContract.Presenter presenter;
 
   @Before
-  public void setupMenuScreen() {
+  public void setupSupportProfileScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);
