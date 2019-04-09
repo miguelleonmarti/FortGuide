@@ -9,6 +9,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.TheoryItem;
 import es.ulpgc.miguel.fortguide.theory.TheoryContract;
 import es.ulpgc.miguel.fortguide.theory.TheoryPresenter;
 import es.ulpgc.miguel.fortguide.theory.TheoryState;
@@ -50,5 +51,20 @@ public class TheoryPresenterMockitoTest {
   public void goToMenuScreen() {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
+  }
+
+
+  @Test
+  public void goToAdviceDetailScreen() {
+    TheoryItem theoryItem = new TheoryItem(1,"","","","","");
+    presenter.selectTheoryListData(theoryItem);
+    verify(routerMock).passDataToTheoryDetailScreen(theoryItem);
+    verify(routerMock).navigateToTheoryDetailScreen();
+  }
+
+  @Test
+  public void goToNewTheoryScreen() {
+    presenter.startNewTheoryScreen();
+    verify(routerMock).navigateToNewTheoryScreen();
   }
 }

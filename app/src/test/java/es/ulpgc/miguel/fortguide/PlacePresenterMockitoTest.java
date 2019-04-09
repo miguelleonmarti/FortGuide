@@ -9,6 +9,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.place.PlaceContract;
 import es.ulpgc.miguel.fortguide.place.PlacePresenter;
 import es.ulpgc.miguel.fortguide.place.PlaceState;
@@ -52,6 +53,14 @@ public class PlacePresenterMockitoTest {
     verify(routerMock).navigateToMenuScreen();
   }
 
+
+  @Test
+  public void goToPlaceDetailScreen() {
+    PlaceItem placeItem = new PlaceItem(1,"","","","","");
+    presenter.selectPlaceListData(placeItem);
+    verify(routerMock).passDataToNextScreen(placeItem);
+    verify(routerMock).navigateToPlaceDetailScreen();
+  }
   //TODO: FALTAN METODOS QUE TESTEAR
 
 
