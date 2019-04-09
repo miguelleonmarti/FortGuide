@@ -23,6 +23,7 @@ import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
 import es.ulpgc.miguel.fortguide.theory.TheoryState;
 import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailState;
 import es.ulpgc.miguel.fortguide.weapon.WeaponState;
+import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailState;
 
 public class AppMediator extends Application {
 
@@ -42,6 +43,7 @@ public class AppMediator extends Application {
   private TheoryDetailState theoryDetailState;
   private AdviceDetailState adviceDetailState;
   private PlaceDetailState placeDetailState;
+  private WeaponDetailState weaponDetailState;
 
   //declaring items
   private SupportItem supportItem;
@@ -70,6 +72,7 @@ public class AppMediator extends Application {
     theoryDetailState = new TheoryDetailState();
     challengesDetailState = new ChallengesDetailListState();
     adviceDetailState = new AdviceDetailState();
+    weaponDetailState = new WeaponDetailState();
   }
 
   // getters and setters of states
@@ -181,7 +184,21 @@ public class AppMediator extends Application {
   public void setPlaceDetailState(PlaceDetailState placeDetailState) { this.placeDetailState = placeDetailState;
   }
 
+  public WeaponDetailState getWeaponDetailState() {
+    return weaponDetailState;
+  }
 
+  public void setWeaponDetailState(WeaponDetailState weaponDetail) {
+    this.weaponDetailState = weaponDetail;
+  }
+
+  public TheoryItem getTheoryItem() {
+    return theoryItem;
+  }
+
+  public void setTheoryItem(TheoryItem theoryItem) {
+    this.theoryItem = theoryItem;
+  }
 
   //getter and setter of items
 
