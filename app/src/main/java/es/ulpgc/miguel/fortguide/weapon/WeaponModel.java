@@ -11,6 +11,6 @@ public class WeaponModel implements WeaponContract.Model {
   @Override
   public String fetchData() {
     // Log.e(TAG, "fetchData()");
-    return "Hello";
+    return "";
   }
 }

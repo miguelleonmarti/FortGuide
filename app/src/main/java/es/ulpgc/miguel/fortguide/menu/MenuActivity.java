@@ -78,12 +78,6 @@ public class MenuActivity
 
     // do the setup
     MenuScreen.configure(this);
-  }
-
-  //TODO: QUITAR ESTO
-  @Override
-  protected void onResume() {
-    super.onResume();
 
     // do some work
     presenter.fetchData();

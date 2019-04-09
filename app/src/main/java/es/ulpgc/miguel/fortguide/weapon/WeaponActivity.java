@@ -39,6 +39,12 @@ public class WeaponActivity
         presenter.startMenuScreen();
       }
     });
+    weaponSearchButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startWeaponDetailScreen();
+      }
+    });
 
     // do the setup
     WeaponScreen.configure(this);

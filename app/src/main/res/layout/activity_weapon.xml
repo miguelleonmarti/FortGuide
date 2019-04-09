@@ -14,7 +14,6 @@
         android:layout_marginTop="200dp"
         android:dropDownWidth="match_parent"
         android:entries="@array/weapon_class"
-        android:popupBackground="@mipmap/ic_launcher"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,10 +23,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="360dp"
+        android:layout_marginBottom="42dp"
         android:background="@color/colorButton"
         android:text="@string/search_button_label"
         android:textColor="@color/colorTextButtonWhite"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weaponSpinner" />
