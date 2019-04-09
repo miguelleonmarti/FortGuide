@@ -5,7 +5,7 @@ import java.lang.ref.WeakReference;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
-import es.ulpgc.miguel.fortguide.challenge.AppRepository;
+import es.ulpgc.miguel.fortguide.app.AppRepository;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class ShopScreen {

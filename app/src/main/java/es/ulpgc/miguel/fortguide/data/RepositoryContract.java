@@ -1,7 +1,7 @@
 package es.ulpgc.miguel.fortguide.data;
 
 import java.util.List;
-import es.ulpgc.miguel.fortguide.challenge.AppRepository;
+import es.ulpgc.miguel.fortguide.app.AppRepository;
 
 public interface RepositoryContract {
 

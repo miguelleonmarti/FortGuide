@@ -1,11 +1,8 @@
 package es.ulpgc.miguel.fortguide.shop;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
-import es.ulpgc.miguel.fortguide.challenge.AppRepository;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
-import es.ulpgc.miguel.fortguide.data.ShopItem;
 
 public interface ShopContract {
 

@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.challenge;
+package es.ulpgc.miguel.fortguide.app;
 
 import android.content.Context;
 import android.os.AsyncTask;

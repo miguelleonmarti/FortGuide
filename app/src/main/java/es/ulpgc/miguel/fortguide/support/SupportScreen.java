@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
-import es.ulpgc.miguel.fortguide.challenge.AppRepository;
+import es.ulpgc.miguel.fortguide.app.AppRepository;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class SupportScreen {
