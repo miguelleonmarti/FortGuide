@@ -9,36 +9,41 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.advice.AdviceContract;
-import es.ulpgc.miguel.fortguide.advice.AdvicePresenter;
-import es.ulpgc.miguel.fortguide.advice.AdviceState;
-import es.ulpgc.miguel.fortguide.data.AdviceItem;
+import es.ulpgc.miguel.fortguide.theory.TheoryContract;
+import es.ulpgc.miguel.fortguide.theory.TheoryPresenter;
+import es.ulpgc.miguel.fortguide.theory.TheoryState;
+import es.ulpgc.miguel.fortguide.weapon.WeaponContract;
+import es.ulpgc.miguel.fortguide.weapon.WeaponPresenter;
+import es.ulpgc.miguel.fortguide.weapon.WeaponState;
+import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailContract;
+import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailPresenter;
+import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailState;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class AdvicePresenterMockitoTest {
+public class WeaponPresenterMockitoTest {
 
   @Mock
-  private AdviceContract.Model modelMock;
+  private WeaponContract.Model modelMock;
 
   @Mock
-  private AdviceContract.View viewMock;
+  private WeaponContract.View viewMock;
 
   @Mock
-  private AdviceContract.Router routerMock;
+  private WeaponContract.Router routerMock;
 
-  private AdviceContract.Presenter presenter;
+  private WeaponContract.Presenter presenter;
 
   @Before
-  public void setupAdviceScreen() {
+  public void setupWeaponScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);
 
     // Get a reference to the class under test
-    presenter = new AdvicePresenter(new AdviceState());
+    presenter = new WeaponPresenter(new WeaponState());
 
     // Inject dependencies to the class under test
     presenter.injectView(new WeakReference<>(viewMock));
@@ -52,12 +57,5 @@ public class AdvicePresenterMockitoTest {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
   }
-
-  @Test
-  public void goToAdviceDetailScreen() {
-    AdviceItem adviceItem = new AdviceItem(1,"","");
-    presenter.selectAdviceListData(adviceItem);
-    verify(routerMock).passDataToAdviceDetailScreen(adviceItem);
-    verify(routerMock).navigateToAdviceDetailScreen();
-  }
 }
+
