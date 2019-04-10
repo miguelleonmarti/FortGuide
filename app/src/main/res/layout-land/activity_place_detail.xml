@@ -28,80 +28,78 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBottom"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/placeBar">
 
         <ImageView
             android:id="@+id/placeImageView"
-            android:layout_width="250dp"
-            android:layout_height="0dp"
+            android:layout_width="350dp"
+            android:layout_height="280dp"
             android:contentDescription="@string/place_image_label"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            app:srcCompat="@color/colorTextButtonBlack" />
 
-        <ImageView
-            android:id="@+id/chestImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/chest_image_label"
-            app:layout_constraintLeft_toRightOf="@+id/placeImageView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/chest" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/peopleImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/people_image_label"
-            app:layout_constraintLeft_toRightOf="@+id/placeImageView"
-            app:layout_constraintTop_toBottomOf="@+id/chestImageView"
-            app:srcCompat="@drawable/multiple_users_silhouette" />
+            <ImageView
+                android:id="@+id/chestImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/chest_image_label"
+                app:srcCompat="@drawable/chest" />
 
-        <TextView
-            android:id="@+id/chestNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/chestImageView"
-            app:layout_constraintLeft_toRightOf="@+id/chestImageView"
-            tools:text="@string/chestNumber_label_TextView" />
+            <TextView
+                android:id="@+id/chestNumberTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:textSize="18sp" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/peoplePercentTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/peopleImageView"
-            app:layout_constraintLeft_toRightOf="@+id/peopleImageView"
-            tools:text="@string/PeoplePercent_label_textView" />
-    </android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/peopleImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/people_image_label"
+                app:srcCompat="@drawable/multiple_users_silhouette" />
+
+            <TextView
+                android:id="@+id/peoplePercentTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayoutBottom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:background="@drawable/round_corners"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placeBar">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/placeBar"
+        app:layout_constraintVertical_bias="0.034">
 
         <TextView
             android:id="@+id/contentPlaceTextView"
@@ -118,10 +116,12 @@
         <TextView
             android:id="@+id/detailPlaceTextView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_margin="10dp"
+            android:layout_marginBottom="8dp"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contentPlaceTextView"

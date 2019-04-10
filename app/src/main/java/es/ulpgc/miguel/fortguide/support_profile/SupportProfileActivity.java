@@ -104,16 +104,6 @@ public class SupportProfileActivity
 
   }
 
-  @Override
-  public void onConfigurationChanged(Configuration newConfig) {
-    super.onConfigurationChanged(newConfig);
-    if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-      setContentView(R.layout.activity_support_profile);
-    } else {
-      setContentView(R.layout.activity_support_profile);
-    }
-  }
-
   /**
    * Carga desde una URL la imagen
    *
