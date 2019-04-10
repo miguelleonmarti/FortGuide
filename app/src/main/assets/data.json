@@ -686,32 +686,32 @@
     {
       "id": 2,
       "content": "¿Cómo mejoro mi construcción?",
-      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu construcción, pruébalos."
     },
     {
       "id": 3,
       "content": "¿Qué arma es mejor?",
-      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para probar las armas, pruébalos."
     },
     {
       "id": 4,
       "content": "¿Dónde aterrizo?",
-      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+      "details": "Depende en gran parte de tu modo de jugar, ya que hay gente que prefiere la acción y caer en sitios populares y otros que prefieren prepararse mejor. Puedes consultar Lugares para ver las estadisticas de los lugares."
     },
     {
       "id": 5,
       "content": "¿Qué controles debo utilizar?",
-      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+      "details": "Han añadido un modo de juego recientemente llamado Creativo donde puedes practicar con los controles que dispone el juego y adaptarte a ellos."
     },
     {
       "id": 6,
       "content": "¿Madera o metal?",
-      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+      "details": "Generalmente se utiliza la madera para el principio de la partida o en batallas frenéticas, ladrillos si vas a por tus enemigos en sus construcciones y metal si prefieres establecer tu base de forma segura y esperar a tus enemigos."
     },
     {
       "id": 7,
       "content": "¿Escopetas o subfusiles?",
-      "details": "Han añadido un modo de juego recientemente llamado Creativo donde la gente crea mapas. Entre ellos están aquellos especificos para mejorar tu puntería, pruébalos."
+      "details": "Depende en gran parte de la persona, ya que la escopeta hace bastante daño pero necesitas mucha precisión para ser efectiva entre disparos y los subfusiles hacen menos daño pero tienes mas balas para disparar."
     }
   ],
   "theory": [
@@ -727,33 +727,33 @@
       "id": 2,
       "user": "Tacuapinpan",
       "content": "Teoría del tsunami",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo",
-      "likes": "75",
-      "dislikes": "15"
+      "details": "Dado a que estamos en una isla, es natural que pueda suceder un desastre natural como un tsunami, destruyendo asi las zonas mas cercanas a la costa y crear zonas pantanosas para este modo.",
+      "likes": "63",
+      "dislikes": "72"
     },
     {
       "id": 3,
       "user": "MSalAguila",
       "content": "Teoría del yeti",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo",
-      "likes": "75",
-      "dislikes": "15"
+      "details": "En la temporada anterior se pudo notar que el yeti cobró algo de protagonismo al haber una zona de nieve-hielo. Puede darse la ocasión de que este yeti vuelva a aparecer y provocar una avalancha que ocupe todo el mapa, resultando asi en un mapa nevado de nuevo",
+      "likes": "88",
+      "dislikes": "68"
     },
     {
       "id": 4,
       "user": "migueel_1998",
       "content": "Teoría del cometa",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo" ,
-      "likes": "75",
-      "dislikes": "15"
+      "details": "En una de las antiguas temporadas hubo una lluvia de meteoritos en las partidas pública. En mi opinión, molaria que un cometa enorme pasara cerca de la isla durante un tiempo y que cuando este desaparezca, se abrierá nuevas zonas del mapa y aparezcan armas relacionadas con el espacio" ,
+      "likes": "36",
+      "dislikes": "59"
     },
     {
       "id": 5,
       "user": "Kodekey",
       "content": "Teoría del barco",
-      "details": "Ya que el volcán es un nuevo lugar del mapa y es accesible, pienso que será un lugar importante y que explotará reventando la isla. Así dará lugar a una nueva isla y tener dos mapas disponibles, el actual y el nuevo",
-      "likes": "75",
-      "dislikes": "15"
+      "details": "Al estar esta temporada más enfocada a los piratas y aparecer barcos y puestos de vigia pirata por todo el mapa, creo que al terminar la temporada se podrá salir de la isla en un barco con los demás jugadores hacia una isla nueva",
+      "likes": "20",
+      "dislikes": "39"
     }
   ]
 }
