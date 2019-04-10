@@ -97,7 +97,7 @@ public class AppRepository implements RepositoryContract {
     return json;
   }
 
-  // common (shop and weapon)
+  // These two methods are common to shop and weapon
 
   /**
    *
@@ -133,10 +133,10 @@ public class AppRepository implements RepositoryContract {
     }
   }
 
-  // support
+  // The next 6 methods correspond to Support screens
 
   /**
-   * This method load the data needed in the Support Screen
+   * This method load the data needed in the Support screens
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -233,10 +233,10 @@ public class AppRepository implements RepositoryContract {
     return this.supportList;
   }
 
-  // challenge
+  // The next 12 methods correspond to Challenge screens
 
   /**
-   * This method load the data needed in the Challenge Screen
+   * This method load the data needed in the Challenge Screens
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -438,10 +438,10 @@ public class AppRepository implements RepositoryContract {
     return challengeList;
   }
 
-  // place
+  // the next 6 methods correspond to Place screens
 
   /**
-   * This method load the data needed in the Place Screen
+   * This method load the data needed in the Place screens
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -545,10 +545,10 @@ public class AppRepository implements RepositoryContract {
     return this.placeList;
   }
 
-  //advice
+  //The next 6 methods correspond to Advice screens
 
   /**
-   * This method load the data needed in the Advice Screen
+   * This method load the data needed in the Advice screens
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -645,10 +645,10 @@ public class AppRepository implements RepositoryContract {
     return this.adviceList;
   }
 
-  //theory
+  //The next 6 methods correspoond to Theory screens
 
   /**
-   * This method load the data needed in the Theory Screen
+   * This method load the data needed in the Theory screens
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -745,10 +745,10 @@ public class AppRepository implements RepositoryContract {
     return this.theoryList;
   }
 
-  // shop
+  // The next 6 methods correspond to Shop screens
 
   /**
-   * This method load the data needed in the Shop Screen
+   * This method load the data needed in the Shop screens
    * @return boolean that indicate if the load was successful
    */
   private boolean loadShopFromJSON() {
@@ -841,7 +841,7 @@ public class AppRepository implements RepositoryContract {
     shopList.add(shopItem);
   }
 
-  // weapon (ready but not used)
+  //The next 2 methods correspond to Weapon screens which are ready but not used yet
 
   /**
    * This method load the data needed in the Weapon Screen
@@ -890,7 +890,7 @@ public class AppRepository implements RepositoryContract {
     weaponList.add(weaponItem);
   }
 
-  // status (prepared but not used)
+  //The next method correspond to Status screens which is ready but not used
 
   /**
    *
@@ -912,7 +912,7 @@ public class AppRepository implements RepositoryContract {
     return false;
   }
 
-  // english challenges (ready but not used)
+  //The next method correspond to the english challenges which is ready but not used)
 
   /**
    * This method load the data needed in the Challenge Screen in English
