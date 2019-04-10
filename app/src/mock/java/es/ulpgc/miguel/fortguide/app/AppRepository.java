@@ -912,6 +912,10 @@ public class AppRepository implements RepositoryContract {
     return false;
   }
 
+  /**
+   *
+   * @param callback
+   */
   @Override
   public void loadServerStatus(final FetchServerStatusCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -923,6 +927,10 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
+  /**
+   *
+   * @param callback
+   */
   @Override
   public void getServerStatus(final GetServerStatusCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -933,10 +941,18 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
+  /**
+   *
+   * @return
+   */
   public boolean isServerStatus() {
     return serverStatus;
   }
 
+  /**
+   *
+   * @param serverStatus
+   */
   public void setServerStatus(boolean serverStatus) {
     this.serverStatus = serverStatus;
   }
