@@ -5,6 +5,20 @@ import es.ulpgc.miguel.fortguide.app.AppRepository;
 
 public interface RepositoryContract {
 
+  // callback and methods of Menu
+
+  interface FetchServerStatusCallback {
+    void onServerStatusFetch(boolean error);
+  }
+
+  interface GetServerStatusCallback {
+    void setStatus(boolean status);
+  }
+
+  void loadServerStatus(RepositoryContract.FetchServerStatusCallback callback);
+
+  void getServerStatus(RepositoryContract.GetServerStatusCallback callback);
+
   // callbacks and methods of Support
 
   interface FetchSupportDataCallback {

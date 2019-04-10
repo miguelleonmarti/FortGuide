@@ -16,8 +16,8 @@ public class MenuActivity
   private MenuContract.Presenter presenter;
 
   // declaring the buttons, texts and images
-  Button adviceButton, challengeButton, placeButton, shopButton, supportButton, theoryButton, weaponButton;
-
+  private Button adviceButton, challengeButton, placeButton, shopButton, supportButton, theoryButton, weaponButton;
+  private TextView statusText;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -31,6 +31,7 @@ public class MenuActivity
     supportButton = findViewById(R.id.buttonSupport);
     theoryButton = findViewById(R.id.buttonTheory);
     weaponButton = findViewById(R.id.buttonWeapon);
+    statusText = findViewById(R.id.statusText);
 
     // listeners
     adviceButton.setOnClickListener(new View.OnClickListener() {
@@ -89,10 +90,19 @@ public class MenuActivity
   }
 
   @Override
-  public void displayData(MenuViewModel viewModel) {
+  public void displayData(final MenuViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
-    // deal with the data
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        if (viewModel.status) {
+          ((TextView) findViewById(R.id.statusText)).setText("SERVERS' ARE UP");
+        } else {
+          ((TextView) findViewById(R.id.statusText)).setText("SERVERS' ARE DOWN");
+        }
+      }
+    });
 
   }
 }

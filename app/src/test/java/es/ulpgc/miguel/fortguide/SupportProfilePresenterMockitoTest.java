@@ -9,9 +9,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.support_profile.SupportProfileContract;
 import es.ulpgc.miguel.fortguide.support_profile.SupportProfilePresenter;
 import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
+import es.ulpgc.miguel.fortguide.support_profile.SupportProfileViewModel;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -52,7 +54,9 @@ public class SupportProfilePresenterMockitoTest {
     verify(routerMock).navigateToMenuScreen();
   }
 
-  //TODO: FALTAN METODOS QUE TESTEAR
-
-
+  @Test
+  public void goToSocialScreenIG(){
+    //presenter.startInstagramScreen();
+    //verify(routerMock).navigateToInstagramScreen();
+  }
 }

@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.menu;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+
 public interface MenuContract {
 
   interface View {
@@ -35,7 +37,7 @@ public interface MenuContract {
   }
 
   interface Model {
-    String fetchData();
+    void fetchData(RepositoryContract.GetServerStatusCallback callback);
   }
 
   interface Router {

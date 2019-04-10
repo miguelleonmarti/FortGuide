@@ -2,17 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.ulpgc.miguel.fortguide">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".app.AppMediator"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".app.AppMediator"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
-        >
+        android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <activity android:name=".introduction.IntroductionActivity">
             <intent-filter>
@@ -21,36 +20,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menu.MenuActivity">
-        </activity>
-        <activity android:name=".advice.AdviceActivity">
-        </activity>
-        <activity android:name=".challenges_weeks.ChallengesWeeksListActivity">
-        </activity>
-        <activity android:name=".place.PlaceActivity">
-        </activity>
-        <activity android:name=".place_detail.PlaceDetailActivity">
-        </activity>
-        <activity android:name=".theory_detail.TheoryDetailActivity">
-        </activity>
-        <activity android:name=".theory.TheoryActivity">
-        </activity>
-        <activity android:name=".weapon.WeaponActivity">
-        </activity>
-        <activity android:name=".shop.ShopActivity">
-        </activity>
-        <activity android:name=".newTheory.NewTheoryActivity">
-        </activity>
-        <activity android:name=".support.SupportActivity">
-        </activity>
-        <activity android:name=".support_profile.SupportProfileActivity">
-        </activity>
-        <activity android:name=".advice_detail.AdviceDetailActivity">
-        </activity>
-        <activity android:name=".challenges_detail.ChallengesDetailListActivity">
-        </activity>
-        <activity android:name=".weapon_detail.WeaponDetailActivity">
-        </activity>
+        <activity
+            android:name=".menu.MenuActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".advice.AdviceActivity"></activity>
+        <activity android:name=".challenges_weeks.ChallengesWeeksListActivity"></activity>
+        <activity android:name=".place.PlaceActivity"></activity>
+        <activity android:name=".place_detail.PlaceDetailActivity"></activity>
+        <activity android:name=".theory_detail.TheoryDetailActivity"></activity>
+        <activity android:name=".theory.TheoryActivity"></activity>
+        <activity android:name=".weapon.WeaponActivity"></activity>
+        <activity android:name=".shop.ShopActivity"></activity>
+        <activity android:name=".newTheory.NewTheoryActivity"></activity>
+        <activity android:name=".support.SupportActivity"></activity>
+        <activity android:name=".support_profile.SupportProfileActivity"></activity>
+        <activity android:name=".advice_detail.AdviceDetailActivity"></activity>
+        <activity android:name=".challenges_detail.ChallengesDetailListActivity"></activity>
+        <activity android:name=".weapon_detail.WeaponDetailActivity"></activity>
     </application>
 
 </manifest>

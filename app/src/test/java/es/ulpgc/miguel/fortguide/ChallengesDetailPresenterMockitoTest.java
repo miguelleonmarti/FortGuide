@@ -46,12 +46,9 @@ public class ChallengesDetailPresenterMockitoTest {
 
   }
 
-
   @Test
   public void goToMenuScreen() {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
   }
-
-  //TODO Faltan metodos que testear
 }

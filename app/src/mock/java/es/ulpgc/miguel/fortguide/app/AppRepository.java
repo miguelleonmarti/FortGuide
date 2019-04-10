@@ -57,6 +57,7 @@ public class AppRepository implements RepositoryContract {
   private List<ShopItem> shopList;
   private List<WeaponItem> weaponList; //TODO: FALTA USARLO PARA RECOPILAR LOS DATOS
   private List<TheoryItem> theoryList;
+  private boolean serverStatus;
 
   public static RepositoryContract getInstance(Context context) {
     if (INSTANCE == null) {
@@ -899,7 +900,11 @@ public class AppRepository implements RepositoryContract {
     try {
       JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_STATUS);
       String status = jsonObject.getString("status");
-      //TODO: UTILIZAR EL STRING STATUS
+      if (status.equals("UP")) {
+        setServerStatus(true);
+      } else {
+        setServerStatus(false);
+      }
       return true;
     } catch (JSONException | IOException error) {
       Log.e(TAG, "error: " + error);
@@ -943,5 +948,62 @@ public class AppRepository implements RepositoryContract {
     }
     return false;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
+  NUEVOOOOOOOOOOOOOOOOOOOO (DEL MENU SERVER STATUS)
+   */
+
+  @Override
+  public void loadServerStatus(final FetchServerStatusCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadStatusFromJSON();
+        callback.onServerStatusFetch(error);
+      }
+    });
+  }
+
+  @Override
+  public void getServerStatus(final GetServerStatusCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        callback.setStatus(isServerStatus());
+      }
+    });
+  }
+
+  public boolean isServerStatus() {
+    return serverStatus;
+  }
+
+  public void setServerStatus(boolean serverStatus) {
+    this.serverStatus = serverStatus;
+  }
+
+  /*
+  NUEVOOOOOOOOOOOOOOOOOOOO (DEL MENU SERVER STATUS)
+   */
 }
 

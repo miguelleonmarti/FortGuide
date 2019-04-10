@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.menu;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+
 public class MenuPresenter implements MenuContract.Presenter {
 
   public static String TAG = MenuPresenter.class.getSimpleName();
@@ -33,24 +35,13 @@ public class MenuPresenter implements MenuContract.Presenter {
   @Override
   public void fetchData() {
     // Log.e(TAG, "fetchData()");
-
-    // set passed state
-    MenuState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
+    model.fetchData(new RepositoryContract.GetServerStatusCallback() {
+      @Override
+      public void setStatus(boolean status) {
+        viewModel.status = status;
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
   @Override

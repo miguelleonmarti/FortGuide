@@ -20,7 +20,7 @@ public class SupportProfileRouter implements SupportProfileContract.Router {
 
   @Override
   public void navigateToSocialNetworkScreen(String socialNetwork) {
-    Uri uri = Uri.parse(socialNetwork); // missing 'http://' will cause crashed
+    Uri uri = Uri.parse(socialNetwork);
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
     context.startActivity(intent);

@@ -17,8 +17,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/content_description_shop_image"
         app:layout_constraintBottom_toTopOf="@+id/contentView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,8 +42,9 @@
 
     <TextView
         android:id="@+id/detailView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/vbucks"
         android:gravity="center"
         android:text="1500"
         android:textAlignment="center"

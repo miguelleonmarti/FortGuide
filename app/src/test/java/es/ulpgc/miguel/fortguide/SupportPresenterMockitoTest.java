@@ -53,8 +53,6 @@ public class SupportPresenterMockitoTest {
     verify(routerMock).navigateToMenuScreen();
   }
 
-  //TODO: FALATA EL DE FETCHDATA
-
   @Test
   public void selectSupportListData() {
     SupportItem supportItem = new SupportItem(1, "", "", "", "", "", "", "", "");
