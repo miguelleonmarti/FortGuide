@@ -890,7 +890,7 @@ public class AppRepository implements RepositoryContract {
     weaponList.add(weaponItem);
   }
 
-  //The next method correspond to Status screens which is ready but not used
+  //The next 5 methods correspond to Status screens which are ready but not used
 
   /**
    *
@@ -911,6 +911,36 @@ public class AppRepository implements RepositoryContract {
     }
     return false;
   }
+
+  @Override
+  public void loadServerStatus(final FetchServerStatusCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadStatusFromJSON();
+        callback.onServerStatusFetch(error);
+      }
+    });
+  }
+
+  @Override
+  public void getServerStatus(final GetServerStatusCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        callback.setStatus(isServerStatus());
+      }
+    });
+  }
+
+  public boolean isServerStatus() {
+    return serverStatus;
+  }
+
+  public void setServerStatus(boolean serverStatus) {
+    this.serverStatus = serverStatus;
+  }
+
 
   //The next method correspond to the english challenges which is ready but not used)
 
@@ -949,61 +979,5 @@ public class AppRepository implements RepositoryContract {
     return false;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*
-  NUEVOOOOOOOOOOOOOOOOOOOO (DEL MENU SERVER STATUS)
-   */
-
-  @Override
-  public void loadServerStatus(final FetchServerStatusCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        boolean error = !loadStatusFromJSON();
-        callback.onServerStatusFetch(error);
-      }
-    });
-  }
-
-  @Override
-  public void getServerStatus(final GetServerStatusCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        callback.setStatus(isServerStatus());
-      }
-    });
-  }
-
-  public boolean isServerStatus() {
-    return serverStatus;
-  }
-
-  public void setServerStatus(boolean serverStatus) {
-    this.serverStatus = serverStatus;
-  }
-
-  /*
-  NUEVOOOOOOOOOOOOOOOOOOOO (DEL MENU SERVER STATUS)
-   */
 }
 
