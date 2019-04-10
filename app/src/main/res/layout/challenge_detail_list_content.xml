@@ -2,9 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:maxWidth="500dp"
+    android:maxWidth="1000dp"
     android:maxHeight="150dp">
 
 
@@ -17,18 +17,18 @@
         android:layout_marginBottom="85dp"
         android:contentDescription="@string/star_image_label"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/challengeCheckbox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/star" />
 
     <TextView
         android:id="@+id/contentChallengeTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="242dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="71dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="210dp"
+        android:layout_marginEnd="200dp"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,41 +42,29 @@
         android:id="@+id/challengeCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="360dp"
+        android:layout_marginStart="350dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="85dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="310dp"
+    <TextView
+        android:id="@+id/detailChallengeTextView"
+        android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginLeft="8dp"
+        android:textAlignment="viewStart"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintLeft_toRightOf="@+id/starImage"
+        app:layout_constraintRight_toLeftOf="@+id/challengeCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/contentChallengeTextView"
+        tools:text="@string/challenge_detail_content_label" />
 
-        <TextView
-            android:id="@+id/detailChallengeTextView"
-            android:layout_width="205dp"
-            android:layout_height="85dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="24dp"
-            android:textAlignment="viewStart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="@string/challenge_detail_content_label" />
-    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
 

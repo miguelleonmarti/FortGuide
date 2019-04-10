@@ -57,12 +57,12 @@ public class NewTheoryPresenterMockitoTest {
     verify(routerMock).navigateToMenuScreen();
   }
 
-  /*
+
   @Test
   public void fetchNewTheoryData() {
     NewTheoryViewModel newTheoryViewModel = new NewTheoryViewModel();
     presenter.fetchData();
     verify(viewMock).displayData(newTheoryViewModel);
   }
-  */
+
 }
