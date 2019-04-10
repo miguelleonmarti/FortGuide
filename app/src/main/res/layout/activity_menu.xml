@@ -154,7 +154,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
             android:background="@color/cardview_light_background">
 
@@ -165,7 +165,7 @@
                 android:text="Fortnite's Servers are UP "
                 android:textAlignment="center"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
