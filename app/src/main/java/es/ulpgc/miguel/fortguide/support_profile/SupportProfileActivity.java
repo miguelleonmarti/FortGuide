@@ -1,5 +1,6 @@
 package es.ulpgc.miguel.fortguide.support_profile;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,7 +76,7 @@ public class SupportProfileActivity
         presenter.startSocialNetworkScreen("youtube");
       }
     });
-
+    
     // do the setup
     SupportProfileScreen.configure(this);
 
@@ -89,14 +90,29 @@ public class SupportProfileActivity
   }
 
   @Override
-  public void displayData(SupportProfileViewModel viewModel) {
+  public void displayData(final SupportProfileViewModel viewModel) {
     Log.e(TAG, "displayData()");
-    SupportItem supportItem = viewModel.profile;
     // deal with the data
-    ((TextView) findViewById(R.id.creatorCodeText)).setText(supportItem.getCode());
-    loadImageFromURL((ImageView) findViewById(R.id.imageView), supportItem.getImage());
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        ((TextView) findViewById(R.id.creatorCodeText)).setText(viewModel.profile.getCode());
+        loadImageFromURL((ImageView) findViewById(R.id.imageView), viewModel.profile.getImage());
+      }
+    });
+
+
   }
 
+  @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+    if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+      setContentView(R.layout.activity_support_profile);
+    } else {
+      setContentView(R.layout.activity_support_profile);
+    }
+  }
 
   /**
    * Carga desde una URL la imagen

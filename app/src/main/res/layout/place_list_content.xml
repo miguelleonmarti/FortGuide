@@ -16,11 +16,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="125dp"
-        android:layout_height="100dp"
+        android:layout_width="220dp"
+        android:layout_height="176dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        android:useLevel="false"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
