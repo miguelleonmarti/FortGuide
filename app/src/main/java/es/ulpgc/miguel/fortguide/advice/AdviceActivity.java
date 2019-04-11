@@ -18,7 +18,7 @@ public class AdviceActivity
   private AdviceAdapter listAdapter;
 
   // declaring the buttons, texts and images
-  Button bananaButton;
+  private Button bananaButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

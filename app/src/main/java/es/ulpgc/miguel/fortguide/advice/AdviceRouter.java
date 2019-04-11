@@ -32,8 +32,7 @@ public class AdviceRouter implements AdviceContract.Router {
 
   @Override
   public AdviceState getDataFromPreviousScreen() {
-    AdviceState state = mediator.getAdviceState();
-    return state;
+    return mediator.getAdviceState();
   }
   @Override
   public void navigateToMenuScreen() {

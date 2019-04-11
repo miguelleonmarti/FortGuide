@@ -21,7 +21,9 @@ public interface AdviceContract {
     void injectRouter(Router router);
 
     void fetchData();
+
     void selectAdviceListData(AdviceItem item);
+
     void startMenuScreen();
   }
 
@@ -35,6 +37,7 @@ public interface AdviceContract {
     void passDataToAdviceDetailScreen(AdviceItem item);
 
     AdviceState getDataFromPreviousScreen();
+
     void navigateToMenuScreen();
   }
 }
