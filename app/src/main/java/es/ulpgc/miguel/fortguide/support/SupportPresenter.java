@@ -1,5 +1,7 @@
 package es.ulpgc.miguel.fortguide.support;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class SupportPresenter implements SupportContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
+    Log.e(TAG, "fetchData()");
     model.fetchSupportListData(new RepositoryContract.GetSupportListCallback() {
       @Override
       public void setSupportList(List<SupportItem> supportList) {

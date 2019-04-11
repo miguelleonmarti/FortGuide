@@ -19,7 +19,7 @@ public class MenuModel implements MenuContract.Model {
     repository.loadServerStatus(new RepositoryContract.FetchServerStatusCallback() {
       @Override
       public void onServerStatusFetch(boolean error) {
-        if (callback != null) {
+        if (!error) {
           repository.getServerStatus(callback);
         }
       }
