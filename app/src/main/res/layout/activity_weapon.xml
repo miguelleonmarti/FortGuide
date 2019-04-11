@@ -11,7 +11,7 @@
         android:id="@+id/weaponSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="140dp"
         android:dropDownWidth="match_parent"
         android:entries="@array/weapon_class"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,9 +21,10 @@
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
-        android:layout_marginBottom="42dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="8dp"
         android:background="@color/colorButton"
         android:text="@string/search_button_label"
         android:textColor="@color/colorTextButtonWhite"
@@ -32,7 +33,8 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weaponSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/weaponSpinner"
+        app:layout_constraintVertical_bias="0.52" />
 
     <TextView
         android:id="@+id/weaponBar"
