@@ -41,7 +41,7 @@
             android:background="@drawable/round_corners"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="65dp">
 
             <ImageView
                 android:id="@+id/imageView"
