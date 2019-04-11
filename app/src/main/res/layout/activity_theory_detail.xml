@@ -94,10 +94,10 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
                 android:paddingBottom="5dp"
-                android:text="Creador:"
                 android:textAlignment="center"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:text="@string/creador_text_label" />
 
             <TextView
                 android:id="@+id/contentTextView"
@@ -105,31 +105,31 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20sp"
-                android:text="Titulo"
                 android:textAlignment="center"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:text="@string/content_theory_detail" />
 
             <TextView
                 android:id="@+id/userTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
-                android:text="creator12345"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:text="@string/user_test_theory_detail" />
 
             <TextView
                 android:id="@+id/detailTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50sp"
-                android:text="Esto es un texto fleje largo para que se vea que va hacia abajo como deberia, llenandose asi el fondo"
                 android:textAlignment="center"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:text="@string/detail_theory_detail_text" />
 
         </LinearLayout>
     </ScrollView>

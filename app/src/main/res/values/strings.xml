@@ -49,6 +49,10 @@
     <string name="content_description_shop_image">image</string>
     <string name="codigo_del_creador_Text">abcdeegdsg</string>
     <string name="logo_picture_label">LogoPicture</string>
+    <string name="creador_text_label">Creador</string>
+    <string name="content_theory_detail">Titulo</string>
+    <string name="user_test_theory_detail">creator12345</string>
+    <string name="detail_theory_detail_text">Esto es un texto fleje largo para que se vea que va hacia abajo como deberia, llenandose asi el fondo</string>
     <string-array name="weapon_class">
         <item>Fusiles de asalto</item>
         <item>Subfusiles</item>
