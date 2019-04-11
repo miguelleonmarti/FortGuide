@@ -1,9 +1,6 @@
 package es.ulpgc.miguel.fortguide.support;
 
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 

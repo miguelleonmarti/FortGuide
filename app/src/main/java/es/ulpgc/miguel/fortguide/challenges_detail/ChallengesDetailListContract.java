@@ -35,11 +35,11 @@ public interface ChallengesDetailListContract {
   }
 
   interface Router {
-    void navigateToMenuScreen();
+     void navigateToMenuScreen();
 
      void passDataToNextScreen(ChallengeItem item);
 
-    public void navigateToChallengeDetailScreen();
+     void navigateToChallengeDetailScreen();
 
     ChallengesWeeksItem getDataFromWeeksListScreen();
   }

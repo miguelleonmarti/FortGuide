@@ -1,7 +1,6 @@
 package es.ulpgc.miguel.fortguide.place;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;

@@ -6,18 +6,11 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.lang.ref.WeakReference;
-import java.util.List;
-
-
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListContract;
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListPresenter;
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListState;
-import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
-
-
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 

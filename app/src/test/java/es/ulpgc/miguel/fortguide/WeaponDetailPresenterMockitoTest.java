@@ -9,9 +9,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.theory.TheoryContract;
-import es.ulpgc.miguel.fortguide.theory.TheoryPresenter;
-import es.ulpgc.miguel.fortguide.theory.TheoryState;
 import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailContract;
 import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailPresenter;
 import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailState;

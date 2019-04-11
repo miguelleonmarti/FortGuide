@@ -14,7 +14,6 @@ import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListPresenter
 import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ChallengesDetailPresenterMockitoTest {

@@ -1,6 +1,5 @@
 package es.ulpgc.miguel.fortguide.data;
 
-import com.google.gson.annotations.SerializedName;
 
 public class ShopItem {
 

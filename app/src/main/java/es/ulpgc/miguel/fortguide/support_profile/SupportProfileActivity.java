@@ -1,6 +1,5 @@
 package es.ulpgc.miguel.fortguide.support_profile;
 
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,15 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
-
 import es.ulpgc.miguel.fortguide.R;
-import es.ulpgc.miguel.fortguide.data.SupportItem;
+
 
 public class SupportProfileActivity
     extends AppCompatActivity implements SupportProfileContract.View {

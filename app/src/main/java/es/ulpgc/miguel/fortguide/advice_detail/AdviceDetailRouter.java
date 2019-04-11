@@ -2,7 +2,6 @@ package es.ulpgc.miguel.fortguide.advice_detail;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;

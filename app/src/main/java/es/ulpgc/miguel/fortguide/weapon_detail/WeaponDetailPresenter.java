@@ -1,6 +1,5 @@
 package es.ulpgc.miguel.fortguide.weapon_detail;
 
-import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
