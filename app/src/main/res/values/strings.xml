@@ -47,6 +47,8 @@
     <string name="people_image_label">peopleImage</string>
     <string name="shop_bar_label">TIENDA</string>
     <string name="content_description_shop_image">image</string>
+    <string name="codigo_del_creador_Text">abcdeegdsg</string>
+    <string name="logo_picture_label">LogoPicture</string>
     <string-array name="weapon_class">
         <item>Fusiles de asalto</item>
         <item>Subfusiles</item>
