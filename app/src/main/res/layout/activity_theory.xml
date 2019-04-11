@@ -30,13 +30,16 @@
 
     <RelativeLayout
         android:id="@+id/layout1"
-        android:layout_width="150sp"
-        android:layout_height="75sp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="135dp"
+        android:layout_height="80sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/very_round_corners"
         android:orientation="vertical"
         android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -45,7 +48,7 @@
             android:layout_width="59dp"
             android:layout_height="53dp"
             android:layout_marginStart="35sp"
-            android:layout_marginTop="5sp"
+            android:layout_marginTop="7sp"
             android:background="@drawable/addcross" />
     </RelativeLayout>
 
