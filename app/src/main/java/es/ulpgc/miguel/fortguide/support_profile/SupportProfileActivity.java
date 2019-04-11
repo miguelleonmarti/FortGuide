@@ -105,10 +105,10 @@ public class SupportProfileActivity
   }
 
   /**
-   * Carga desde una URL la imagen
+   * Load an image from an URL
    *
-   * @param imageView imagen en la que se guarda
-   * @param imageUrl  url o ruta de la imagen
+   * @param imageView image where it's saved
+   * @param imageUrl  image's URL
    */
   private void loadImageFromURL(ImageView imageView, String imageUrl) {
     RequestManager reqManager = Glide.with(imageView.getContext());

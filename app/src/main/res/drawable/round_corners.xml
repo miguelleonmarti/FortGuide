@@ -3,14 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <!-- Color de fondo de la vista -->
+    <!-- color background -->
     <solid
         android:color="@color/colorTextButtonWhiteOpacity" >
     </solid>
 
-    <!-- Color y ancho del borde del elemento
-
-    <!- Si queremos añadir algún padding -->
+    <!-- If we want to add padding -->
     <padding
         android:left="4dp"
         android:top="4dp"
@@ -18,7 +16,7 @@
         android:bottom="4dp"    >
     </padding>
 
-    <!-- Aquí indicamos el radio a aplicar a las esquinas -->
+    <!-- we indicate here the radius of the corners -->
     <corners
         android:radius="50sp"   >
     </corners>
