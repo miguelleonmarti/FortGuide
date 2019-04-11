@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="4dp"
     android:background="@drawable/round_corners"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -18,7 +18,8 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/content_description_shop_image"/>
 
     <TextView
         android:id="@+id/contentView"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:text="GuilleSergio"
+        android:text="@string/test_text_label"
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
         android:textSize="24sp"
@@ -37,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
-        android:text="Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba. Esto es un texto de prueba."
+        android:text="@string/test_text_label"
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
         android:textColorLink="@color/colorTextButtonBlack"
