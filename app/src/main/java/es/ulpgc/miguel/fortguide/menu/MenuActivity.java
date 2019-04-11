@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.menu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -97,9 +98,11 @@ public class MenuActivity
       @Override
       public void run() {
         if (viewModel.status) {
-          ((TextView) findViewById(R.id.statusText)).setText("SERVERS' ARE UP");
+          ((TextView) findViewById(R.id.statusText)).setText(R.string.status_label_up);
+          findViewById(R.id.status).setBackgroundColor(getResources().getColor(R.color.colorThumbUp));
         } else {
-          ((TextView) findViewById(R.id.statusText)).setText("SERVERS' ARE DOWN");
+          ((TextView) findViewById(R.id.statusText)).setText(R.string.status_label_down);
+          findViewById(R.id.status).setBackgroundColor(getResources().getColor(R.color.colorThumbDown));
         }
       }
     });

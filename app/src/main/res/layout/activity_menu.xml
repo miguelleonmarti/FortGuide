@@ -2,180 +2,173 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/menu"
-    android:padding="0dp"
+    android:gravity="fill"
+    android:orientation="vertical"
     tools:context=".menu.MenuActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/shop_and_challenge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/advice_and_theory"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/relative_layout_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/buttonShop"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorButton"
-                android:text="@string/button_shop_label"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonWhite"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/buttonChallenge"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/buttonChallenge"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorButton"
-                android:text="@string/button_challenge_label"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonWhite"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/buttonShop"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/relative_layout_2"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/buttonShop"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp">
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButton"
+            android:text="@string/button_shop_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonWhite"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle"/>
 
-            <Button
-                android:id="@+id/buttonAdvice"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorButton"
-                android:text="@string/button_advice_label"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonWhite"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/buttonTheory"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/buttonTheory"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorButton"
-                android:text="@string/button_theory_label"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonWhite"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/buttonAdvice"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/relative_layout_1"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/buttonChallenge"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp">
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButton"
+            android:text="@string/button_challenge_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonWhite"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle"/>
 
-            <Button
-                android:id="@+id/buttonWeapon"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorButton"
-                android:text="@string/button_weapon_label"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonWhite"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/buttonPlace"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/buttonPlace"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorButton"
-                android:text="@string/button_place_label"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonWhite"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/buttonWeapon"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp">
-
-            <Button
-                android:id="@+id/buttonSupport"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:background="@color/colorButton"
-                android:text="@string/button_support_label"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonWhite"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="95dp"
-            android:background="@color/cardview_light_background">
-
-            <TextView
-                android:id="@+id/statusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fortnite's Servers are UP "
-                android:textAlignment="center"
-                android:textColor="@color/colorTextButtonBlack"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/advice_and_theory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/weapon_and_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <Button
+            android:id="@+id/buttonAdvice"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButton"
+            android:text="@string/button_advice_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonWhite"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/buttonTheory"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButton"
+            android:text="@string/button_theory_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonWhite"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weapon_and_play"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/support"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/buttonWeapon"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButton"
+            android:text="@string/button_weapon_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonWhite"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/buttonPlace"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorButton"
+            android:text="@string/button_place_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonWhite"
+            android:textSize="24sp"
+            android:textStyle="bold" style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/support"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/buttonSupport"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorButton"
+            android:text="@string/button_support_label"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextButtonWhite"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_text_label"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

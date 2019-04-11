@@ -53,6 +53,9 @@
     <string name="content_theory_detail">Titulo</string>
     <string name="user_test_theory_detail">creator12345</string>
     <string name="detail_theory_detail_text">Esto es un texto fleje largo para que se vea que va hacia abajo como deberia, llenandose asi el fondo</string>
+    <string name="status_label_down">LOS SERVIDORES ESTÁN CAÍDOS ;(</string>
+    <string name="status_label_up">LOS SERVIDORES ESTÁN FUNCIONANDO ;)</string>
+    <string name="test_text_label">Texto de prueba</string>
     <string-array name="weapon_class">
         <item>Fusiles de asalto</item>
         <item>Subfusiles</item>
