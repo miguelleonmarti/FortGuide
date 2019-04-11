@@ -9,17 +9,12 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.advice.AdviceContract;
-import es.ulpgc.miguel.fortguide.advice.AdvicePresenter;
-import es.ulpgc.miguel.fortguide.advice.AdviceState;
-import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryContract;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryPresenter;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryState;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryViewModel;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class NewTheoryPresenterMockitoTest {

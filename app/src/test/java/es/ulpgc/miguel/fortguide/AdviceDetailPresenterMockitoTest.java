@@ -14,7 +14,6 @@ import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailPresenter;
 import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AdviceDetailPresenterMockitoTest {

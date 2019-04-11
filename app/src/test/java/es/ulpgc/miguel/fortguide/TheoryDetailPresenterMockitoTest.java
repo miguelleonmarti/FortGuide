@@ -14,7 +14,6 @@ import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailPresenter;
 import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TheoryDetailPresenterMockitoTest {

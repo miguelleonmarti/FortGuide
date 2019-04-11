@@ -12,7 +12,7 @@ import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListPresenter;
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListState;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class ChallengesWeeksPresenterMockitoTest {

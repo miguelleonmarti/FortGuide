@@ -14,7 +14,7 @@ import es.ulpgc.miguel.fortguide.introduction.IntroductionPresenter;
 import es.ulpgc.miguel.fortguide.introduction.IntroductionState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class IntroductionPresenterMockitoTest {

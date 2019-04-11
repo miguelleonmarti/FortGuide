@@ -14,7 +14,6 @@ import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailPresenter;
 import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
   @RunWith(MockitoJUnitRunner.class)
   public class WeaponDetailPresenterMockitoTest {

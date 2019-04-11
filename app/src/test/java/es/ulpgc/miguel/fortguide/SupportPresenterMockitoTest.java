@@ -15,7 +15,6 @@ import es.ulpgc.miguel.fortguide.support.SupportPresenter;
 import es.ulpgc.miguel.fortguide.support.SupportState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SupportPresenterMockitoTest {

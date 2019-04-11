@@ -14,7 +14,6 @@ import es.ulpgc.miguel.fortguide.menu.MenuPresenter;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MenuPresenterMockitoTest {

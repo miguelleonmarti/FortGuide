@@ -15,7 +15,6 @@ import es.ulpgc.miguel.fortguide.place.PlacePresenter;
 import es.ulpgc.miguel.fortguide.place.PlaceState;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PlacePresenterMockitoTest {
