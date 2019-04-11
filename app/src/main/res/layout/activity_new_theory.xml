@@ -166,8 +166,8 @@
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="75sp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="75sp"
             android:background="@color/colorButton"
             android:text="@string/cancel_button_label" />
 
@@ -175,8 +175,8 @@
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="75sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="75sp"
             android:background="@color/colorButton"
             android:text="@string/send_button_label" />
     </RelativeLayout>
