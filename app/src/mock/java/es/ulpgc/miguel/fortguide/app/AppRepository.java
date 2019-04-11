@@ -125,14 +125,12 @@ public class AppRepository implements RepositoryContract {
    * @throws JSONException because of 'JSONObject'
    */
   private JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-    InputStream is = new URL(url).openStream();
-    try {
+    try (InputStream is = new URL(url).openStream()) {
       BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
       String jsonText = readAll(rd);
       JSONObject json = new JSONObject(jsonText);
       return json;
-    } finally {
-      is.close();
+
     }
   }
 
@@ -202,13 +200,13 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   * @param id of the SupportItem
+   * @param id       of the SupportItem
    * @param callback needed because of async method
    */
   @Override
   public void getSupportItem(int id, AppRepository.GetSupportItemCallback callback) {
 
-  } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
+  }
 
   /**
    * @param supportItem a new item
@@ -285,7 +283,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * @param challengesWeeksItem challenges of a week
-   * @param callback needed because of async method
+   * @param callback            needed because of async method
    */
   @Override
   public void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, GetChallengeDetailListCallback callback) {
@@ -293,7 +291,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   * @param weeksId in order to do more efficient searches
+   * @param weeksId  in order to do more efficient searches
    * @param callback needed because of async method
    */
   @Override
@@ -302,14 +300,14 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setChallengeDetailList(loadChallenges(weeksId)); //TODO: FALTA EL METODO
+          callback.setChallengeDetailList(loadChallenges(weeksId));
         }
       }
     });
   }
 
   /**
-   * @param id in order to do more efficient searches
+   * @param id       in order to do more efficient searches
    * @param callback needed because of async method
    */
   @Override
@@ -340,7 +338,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   * @param id in order to do more efficient searches
+   * @param id       in order to do more efficient searches
    * @param callback needed because of async method
    */
   @Override
@@ -360,7 +358,7 @@ public class AppRepository implements RepositoryContract {
    * @return the list of challenges
    */
   private List<ChallengeItem> loadChallenges(int weeksId) {
-    List<ChallengeItem> challenges = new ArrayList();
+    List<ChallengeItem> challenges = new ArrayList<>();
 
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
       if (challengesWeeksItem.getId() == weeksId) {
@@ -479,7 +477,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   * @param id because is the primary key of a challengesWeeksItem
+   * @param id       because is the primary key of a challengesWeeksItem
    * @param callback needed because of async method
    */
   @Override
@@ -492,7 +490,7 @@ public class AppRepository implements RepositoryContract {
         }
       }
     });
-  } //TODO: ESTA IMPLEMENTADO PERO NO HACE FALTA
+  }
 
   /**
    * @param placeItem a new placeItem
@@ -502,7 +500,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   * @return
+   * @return the list of places
    */
   private List<PlaceItem> loadPlaceList() {
     return this.placeList;
@@ -527,7 +525,7 @@ public class AppRepository implements RepositoryContract {
       JSONObject jsonObject = new JSONObject(json);
       JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_ADVICE);
 
-      adviceList = new ArrayList();
+      adviceList = new ArrayList<>();
 
       if (jsonArray.length() > 0) {
 
@@ -549,8 +547,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void loadAdvice(final FetchAdviceDataCallback callback) {
@@ -566,8 +563,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void getAdviceList(final AppRepository.GetAdviceListCallback callback) {
@@ -582,26 +578,25 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
+   * IT IS NOT IMPLEMENTED
    *
-   * @param id
-   * @param callback
+   * @param id       because is the primary key of an adviceItem
+   * @param callback needed because of async method
    */
   @Override
   public void getAdviceItem(int id, AppRepository.GetAdviceItemCallback callback) {
 
-  } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
+  }
 
   /**
-   *
-   * @param adviceItem
+   * @param adviceItem a new item
    */
   private void insertAdviceItem(AdviceItem adviceItem) {
     adviceList.add(adviceItem);
   }
 
   /**
-   *
-   * @return
+   * @return the list of advices after fetching the data
    */
   private List<AdviceItem> loadAdviceList() {
     return this.adviceList;
@@ -626,7 +621,7 @@ public class AppRepository implements RepositoryContract {
       JSONObject jsonObject = new JSONObject(json);
       JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_THEORY);
 
-      theoryList = new ArrayList();
+      theoryList = new ArrayList<>();
 
       if (jsonArray.length() > 0) {
 
@@ -648,8 +643,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void loadTheory(final FetchTheoryDataCallback callback) {
@@ -665,8 +659,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void getTheoryList(final AppRepository.GetTheoryListCallback callback) {
@@ -681,9 +674,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @param callback
+   * @param id       because is the primary key of a theoryItem
+   * @param callback needed because of async method
    */
   @Override
   public void getTheoryItem(int id, AppRepository.GetTheoryItemCallback callback) {
@@ -691,16 +683,14 @@ public class AppRepository implements RepositoryContract {
   } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
 
   /**
-   *
-   * @param theoryItem
+   * @param theoryItem a new item
    */
   private void insertAdviceItem(TheoryItem theoryItem) {
     theoryList.add(theoryItem);
   }
 
   /**
-   *
-   * @return
+   * @return the theoryItem list
    */
   private List<TheoryItem> loadTheoryList() {
     return this.theoryList;
@@ -738,8 +728,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void loadShop(final FetchShopDataCallback callback) {
@@ -755,8 +744,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void getShopList(final AppRepository.GetShopListCallback callback) {
@@ -771,9 +759,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @param callback
+   * @param id       because is the primary key of a shopItem
+   * @param callback needed because of async method
    */
   @Override
   public void getShopItem(final int id, final AppRepository.GetShopItemCallback callback) {
@@ -788,16 +775,14 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @return
+   * @return the shop list after fetching the data
    */
   private List<ShopItem> loadShopList() {
     return this.shopList;
   }
 
   /**
-   *
-   * @param shopItem
+   * @param shopItem a new item
    */
   private void insertShopItem(ShopItem shopItem) {
     shopList.add(shopItem);
@@ -846,8 +831,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param weaponItem
+   * @param weaponItem a new item
    */
   private void insertWeaponItem(WeaponItem weaponItem) {
     weaponList.add(weaponItem);
@@ -856,8 +840,7 @@ public class AppRepository implements RepositoryContract {
   //The next 5 methods correspond to Status screens which are ready but not used
 
   /**
-   *
-   * @return
+   * @return true if the json has been loaded correctly
    */
   private boolean loadStatusFromJSON() {
     try {
@@ -876,8 +859,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void loadServerStatus(final FetchServerStatusCallback callback) {
@@ -891,8 +873,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void getServerStatus(final GetServerStatusCallback callback) {
@@ -905,18 +886,16 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @return
+   * @return the server status
    */
-  public boolean isServerStatus() {
+  private boolean isServerStatus() {
     return serverStatus;
   }
 
   /**
-   *
-   * @param serverStatus
+   * @param serverStatus the current server status
    */
-  public void setServerStatus(boolean serverStatus) {
+  private void setServerStatus(boolean serverStatus) {
     this.serverStatus = serverStatus;
   }
 
