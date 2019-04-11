@@ -10,4 +10,5 @@
     <color name="colorTextButtonWhiteOpacity">#E5FFFFFF</color>
     <color name="colorThumbUp">#1BD31B</color>
     <color name="colorThumbDown">#D81313</color>
+    <color name="colorTextButtonGreyOpacity">#B96C6C6C</color>
 </resources>

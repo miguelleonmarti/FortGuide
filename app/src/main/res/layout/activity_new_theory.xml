@@ -47,11 +47,11 @@
             android:id="@+id/relative1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:layout_marginBottom="80sp"
             android:layout_marginLeft="20sp"
+            android:layout_marginTop="20sp"
             android:layout_marginRight="20sp"
-            android:background="@color/colorTextButtonWhiteOpacity"
+            android:layout_marginBottom="80sp"
+            android:background="@drawable/round_corners"
             android:visibility="visible">
 
             <EditText
@@ -61,9 +61,10 @@
                 android:autofillHints="string/user_edit_text"
                 android:ems="10"
                 android:hint="@string/user_edit_text"
+                android:textAlignment="center"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textColorHint="@color/colorTextButtonBlack"
+                android:textColorHint="@color/colorTextButtonGreyOpacity"
                 android:textSize="24sp"
                 android:visibility="visible" />
         </RelativeLayout>
@@ -72,11 +73,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="200sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_marginTop="200sp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/nameTextView"
@@ -92,34 +92,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
             android:layout_marginTop="20sp"
+            android:layout_marginRight="20sp"
             android:layout_marginBottom="80sp"
-            android:background="@color/colorTextButtonWhiteOpacity"
+            android:background="@drawable/round_corners"
             android:visibility="visible">
 
             <EditText
                 android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="60sp"
+                android:autofillHints="@string/name_text_view"
+                android:textAlignment="center"
                 android:ems="10"
                 android:hint="@string/name_text_view"
-                android:autofillHints="@string/name_text_view"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textColorHint="@color/colorTextButtonBlack"
+                android:textColorHint="@color/colorTextButtonGreyOpacity"
                 android:textSize="24sp"
                 android:visibility="visible" />
         </RelativeLayout>
 
 
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="350sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_marginTop="350sp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/descriptionTextView"
@@ -133,24 +134,25 @@
         <RelativeLayout
             android:id="@+id/relative3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="200sp"
             android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
             android:layout_marginTop="20sp"
+            android:layout_marginRight="20sp"
             android:layout_marginBottom="100sp"
-            android:background="@color/colorTextButtonWhiteOpacity"
+            android:background="@drawable/round_corners"
             android:visibility="visible">
 
             <EditText
                 android:id="@+id/descriptionEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints="@string/description_text_view"
                 android:ems="10"
                 android:hint="@string/description_text_view"
-                android:autofillHints="@string/description_text_view"
                 android:inputType="textMultiLine"
+                android:textAlignment="center"
                 android:textColor="@color/colorTextButtonBlack"
-                android:textColorHint="@color/colorTextButtonBlack"
+                android:textColorHint="@color/colorTextButtonGreyOpacity"
                 android:textSize="24sp"
                 android:visibility="visible" />
         </RelativeLayout>
@@ -159,26 +161,27 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_marginTop="650sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginTop="650dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/cancelButton"
-            android:layout_width="wrap_content"
+            android:layout_width="120sp"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="75sp"
+            android:layout_marginEnd="60dp"
+            android:layout_toStartOf="@+id/sendButton"
             android:background="@color/colorButton"
             android:text="@string/cancel_button_label" />
 
         <Button
             android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
+            android:layout_width="120sp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="75sp"
             android:background="@color/colorButton"
             android:text="@string/send_button_label" />
     </RelativeLayout>
