@@ -1,8 +1,8 @@
 package es.ulpgc.miguel.fortguide.advice;
 
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,53 +16,47 @@ import es.ulpgc.miguel.fortguide.data.AdviceItem;
 
 public class AdviceAdapter extends RecyclerView.Adapter<AdviceAdapter.ViewHolder> {
 
-    private List<AdviceItem> adviceItemList;
-    private final View.OnClickListener clickListener;
+  private List<AdviceItem> adviceItemList;
+  private final View.OnClickListener clickListener;
 
+  public AdviceAdapter(View.OnClickListener listener) {
+    adviceItemList = new ArrayList<>();
+    clickListener = listener;
+  }
 
-    public AdviceAdapter(View.OnClickListener listener){
+  public void setItems(List<AdviceItem> items) {
+    adviceItemList = items;
+    notifyDataSetChanged();
+  }
 
-        adviceItemList = new ArrayList<>();
-        clickListener = listener;
-    }
-    public void addItem(AdviceItem item){
-        adviceItemList.add(item);
-        notifyDataSetChanged();
-    }
-    public void  addItems(List<AdviceItem> items){
-        adviceItemList.addAll(items);
-        notifyDataSetChanged();
-    }
-    public void setItems(List<AdviceItem> items){
-        adviceItemList =items;
-        notifyDataSetChanged();
-    }
-    class ViewHolder extends RecyclerView.ViewHolder{
-        final TextView contentView;
+  class ViewHolder extends RecyclerView.ViewHolder {
+    final TextView contentView;
 
-        ViewHolder (View view){
-            super(view);
-            contentView = view.findViewById(R.id.contentView);
-
-        }
-    }
-
-    @Override
-    public int getItemCount(){return adviceItemList.size();}
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.advice_list_content, parent, false);
-        return new ViewHolder(view);
+    ViewHolder(View view) {
+      super(view);
+      contentView = view.findViewById(R.id.contentView);
 
     }
-    @Override
-    public void onBindViewHolder(final ViewHolder holder, int position){
-        holder.itemView.setTag(adviceItemList.get(position));
-        holder.itemView.setOnClickListener(clickListener);
+  }
 
-        holder.contentView.setText(adviceItemList.get(position).getContent());
-    }
+  @Override
+  public int getItemCount() {
+    return adviceItemList.size();
+  }
 
+  @NonNull
+  @Override
+  public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.advice_list_content, parent, false);
+    return new ViewHolder(view);
+  }
+
+  @Override
+  public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    holder.itemView.setTag(adviceItemList.get(position));
+    holder.itemView.setOnClickListener(clickListener);
+
+    holder.contentView.setText(adviceItemList.get(position).getContent());
+  }
 
 }

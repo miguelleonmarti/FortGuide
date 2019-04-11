@@ -18,6 +18,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,7 +56,7 @@ public class AppRepository implements RepositoryContract {
   private List<ChallengesWeeksItem> challengeList;
   private List<AdviceItem> adviceList;
   private List<ShopItem> shopList;
-  private List<WeaponItem> weaponList; //TODO: FALTA USARLO PARA RECOPILAR LOS DATOS
+  private List<WeaponItem> weaponList;
   private List<TheoryItem> theoryList;
   private boolean serverStatus;
 
@@ -74,6 +75,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the archive JSON from the folder assets
+   *
    * @return String json: The JSON archive converted to String
    */
   private String loadJSONFromAsset() {
@@ -88,7 +90,7 @@ public class AppRepository implements RepositoryContract {
       byte[] buffer = new byte[size];
       is.read(buffer);
       is.close();
-      json = new String(buffer, "UTF-8");
+      json = new String(buffer, StandardCharsets.UTF_8);
 
     } catch (IOException error) {
       Log.e(TAG, "error: " + error);
@@ -97,13 +99,14 @@ public class AppRepository implements RepositoryContract {
     return json;
   }
 
-  // These two methods are common to shop and weapon
+  // These two methods are common to shop and weapon activities
 
   /**
+   * -
    *
-   * @param rd
-   * @return
-   * @throws IOException
+   * @param rd BufferedReader
+   * @return jsonText
+   * @throws IOException because of 'rd.read'
    */
   private String readAll(Reader rd) throws IOException {
     StringBuilder sb = new StringBuilder();
@@ -115,11 +118,12 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
+   * -
    *
-   * @param url
-   * @return
-   * @throws IOException
-   * @throws JSONException
+   * @param url api
+   * @return jsonObject
+   * @throws IOException   because of 'readAll(rd)' and 'URL'
+   * @throws JSONException because of 'JSONObject'
    */
   private JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
     InputStream is = new URL(url).openStream();
@@ -133,16 +137,16 @@ public class AppRepository implements RepositoryContract {
     }
   }
 
-  // The next 6 methods correspond to Support screens
+  // the next 6 methods correspond to Support screens
 
   /**
    * This method load the data needed in the Support screens
+   *
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
   private boolean loadSupportFromJSON(String json) {
-    Log.e(TAG, "loadCatalogFromJSON()");
-
+    Log.e(TAG, "loadSupportFromJSON()");
     GsonBuilder gsonBuilder = new GsonBuilder();
     Gson gson = gsonBuilder.create();
 
@@ -150,16 +154,9 @@ public class AppRepository implements RepositoryContract {
 
       JSONObject jsonObject = new JSONObject(json);
       JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_SUPPORT);
-
-      supportList = new ArrayList();
-
+      supportList = new ArrayList<>();
       if (jsonArray.length() > 0) {
-
-        final List<SupportItem> supportList = Arrays.asList(
-            gson.fromJson(jsonArray.toString(), SupportItem[].class)
-        );
-
-
+        final SupportItem[] supportList = gson.fromJson(jsonArray.toString(), SupportItem[].class);
         for (SupportItem supportItem : supportList) {
           insertSupportItem(supportItem);
         }
@@ -175,8 +172,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void loadSupport(final FetchSupportDataCallback callback) {
@@ -192,8 +188,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void getSupportList(final AppRepository.GetSupportListCallback callback) {
@@ -208,9 +203,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @param callback
+   * @param id of the SupportItem
+   * @param callback needed because of async method
    */
   @Override
   public void getSupportItem(int id, AppRepository.GetSupportItemCallback callback) {
@@ -218,16 +212,14 @@ public class AppRepository implements RepositoryContract {
   } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
 
   /**
-   *
-   * @param supportItem
+   * @param supportItem a new item
    */
   private void insertSupportItem(SupportItem supportItem) {
     supportList.add(supportItem);
   }
 
   /**
-   *
-   * @return
+   * @return the supportList
    */
   private List<SupportItem> loadSupportList() {
     return this.supportList;
@@ -237,6 +229,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the data needed in the Challenge Screens
+   *
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -250,16 +243,9 @@ public class AppRepository implements RepositoryContract {
 
       JSONObject jsonObject = new JSONObject(json);
       JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_CHALLENGE);
-
-      challengeList = new ArrayList();
-
+      challengeList = new ArrayList<>();
       if (jsonArray.length() > 0) {
-
-        final List<ChallengesWeeksItem> weeksList = Arrays.asList(
-            gson.fromJson(jsonArray.toString(), ChallengesWeeksItem[].class)
-        );
-
-
+        final ChallengesWeeksItem[] weeksList = gson.fromJson(jsonArray.toString(), ChallengesWeeksItem[].class);
         for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
           insertWeeksItem(challengesWeeksItem);
         }
@@ -280,8 +266,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void loadWeeks(final FetchWeeksDataCallback callback) {
@@ -300,9 +285,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param challengesWeeksItem
-   * @param callback
+   * @param challengesWeeksItem challenges of a week
+   * @param callback needed because of async method
    */
   @Override
   public void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, GetChallengeDetailListCallback callback) {
@@ -310,9 +294,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param weeksId
-   * @param callback
+   * @param weeksId in order to do more efficient searches
+   * @param callback needed because of async method
    */
   @Override
   public void getChallengeDetailList(final int weeksId, final GetChallengeDetailListCallback callback) {
@@ -327,9 +310,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @param callback
+   * @param id in order to do more efficient searches
+   * @param callback needed because of async method
    */
   @Override
   public void getChallengeDetails(final int id, final GetChallengeDetailCallback callback) {
@@ -344,8 +326,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void getWeeksList(final GetWeeksListCallback callback) {
@@ -360,9 +341,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @param callback
+   * @param id in order to do more efficient searches
+   * @param callback needed because of async method
    */
   @Override
   public void getWeeksItem(final int id, final GetWeeksItemCallback callback) {
@@ -370,16 +350,15 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setWeeksItem(loadChallengesWeeksItem(id)); //TODO: FALTAN METODOS
+          callback.setWeeksItem(loadChallengesWeeksItem(id));
         }
       }
     });
   }
 
   /**
-   *
-   * @param weeksId
-   * @return
+   * @param weeksId in order to do more efficient searches
+   * @return the list of challenges
    */
   private List<ChallengeItem> loadChallenges(int weeksId) {
     List<ChallengeItem> challenges = new ArrayList();
@@ -393,9 +372,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @return
+   * @param id bacause is the primary key of a challengeItem
+   * @return the challengeItem
    */
   private ChallengeItem loadChallenge(int id) {
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
@@ -409,9 +387,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @return
+   * @param id because is the primary key of a challengesWeeksItem
+   * @return the challengesWeeksItem or null if it does not exist
    */
   private ChallengesWeeksItem loadChallengesWeeksItem(int id) {
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
@@ -423,16 +400,14 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param challengesWeeksItem
+   * @param challengesWeeksItem a new challengesWeeksItem
    */
   private void insertWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
     challengeList.add(challengesWeeksItem);
   }
 
   /**
-   *
-   * @return
+   * @return the list of challengesWeeksItem
    */
   private List<ChallengesWeeksItem> loadWeeksList() {
     return challengeList;
@@ -442,6 +417,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the data needed in the Place screens
+   *
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -455,16 +431,9 @@ public class AppRepository implements RepositoryContract {
 
       JSONObject jsonObject = new JSONObject(json);
       JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_PLACE);
-
-      placeList = new ArrayList();
-
+      placeList = new ArrayList<>();
       if (jsonArray.length() > 0) {
-
-        final List<PlaceItem> placeList = Arrays.asList(
-            gson.fromJson(jsonArray.toString(), PlaceItem[].class)
-        );
-
-
+        final PlaceItem[] placeList = gson.fromJson(jsonArray.toString(), PlaceItem[].class);
         for (PlaceItem placeItem : placeList) {
           insertPlaceItem(placeItem);
         }
@@ -480,8 +449,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void loadPlace(final FetchPlaceDataCallback callback) {
@@ -497,8 +465,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param callback
+   * @param callback needed because of async method
    */
   @Override
   public void getPlaceList(final GetPlaceListCallback callback) {
@@ -513,9 +480,8 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   *
-   * @param id
-   * @param callback
+   * @param id because is the primary key of a challengesWeeksItem
+   * @param callback needed because of async method
    */
   @Override
   public void getPlaceItem(final int id, final GetPlaceItemCallback callback) {
@@ -530,15 +496,13 @@ public class AppRepository implements RepositoryContract {
   } //TODO: ESTA IMPLEMENTADO PERO NO HACE FALTA
 
   /**
-   *
-   * @param placeItem
+   * @param placeItem a new placeItem
    */
   private void insertPlaceItem(PlaceItem placeItem) {
     placeList.add(placeItem);
   }
 
   /**
-   *
    * @return
    */
   private List<PlaceItem> loadPlaceList() {
@@ -549,6 +513,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the data needed in the Advice screens
+   *
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -567,9 +532,7 @@ public class AppRepository implements RepositoryContract {
 
       if (jsonArray.length() > 0) {
 
-        final List<AdviceItem> adviceList = Arrays.asList(
-            gson.fromJson(jsonArray.toString(), AdviceItem[].class)
-        );
+        final AdviceItem[] adviceList = gson.fromJson(jsonArray.toString(), AdviceItem[].class);
 
 
         for (AdviceItem adviceItem : adviceList) {
@@ -649,6 +612,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the data needed in the Theory screens
+   *
    * @param json The archive JSON converted to String
    * @return boolean that indicate if the load was successful
    */
@@ -667,9 +631,7 @@ public class AppRepository implements RepositoryContract {
 
       if (jsonArray.length() > 0) {
 
-        final List<TheoryItem> theoryList = Arrays.asList(
-            gson.fromJson(jsonArray.toString(), TheoryItem[].class)
-        );
+        final TheoryItem[] theoryList = gson.fromJson(jsonArray.toString(), TheoryItem[].class);
 
 
         for (TheoryItem theoryItem : theoryList) {
@@ -749,6 +711,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the data needed in the Shop screens
+   *
    * @return boolean that indicate if the load was successful
    */
   private boolean loadShopFromJSON() {
@@ -845,6 +808,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the data needed in the Weapon Screen
+   *
    * @return boolean that indicate if the load was successful
    */
   private boolean loadWeaponFromJSON() {
@@ -962,6 +926,7 @@ public class AppRepository implements RepositoryContract {
 
   /**
    * This method load the data needed in the Challenge Screen in English
+   *
    * @return boolean that indicate if the load was successful
    */
   private boolean loadEnglishChallengesFromJSON() {

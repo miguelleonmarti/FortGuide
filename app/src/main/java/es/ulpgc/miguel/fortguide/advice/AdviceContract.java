@@ -1,7 +1,6 @@
 package es.ulpgc.miguel.fortguide.advice;
 
 import java.lang.ref.WeakReference;
-import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.AdviceItem;
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
