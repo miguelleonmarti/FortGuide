@@ -6,7 +6,6 @@ public interface WeaponContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
-
     void displayData(WeaponViewModel viewModel);
   }
 
@@ -14,10 +13,9 @@ public interface WeaponContract {
     void injectView(WeakReference<View> view);
     void injectModel(Model model);
     void injectRouter(Router router);
-
     void fetchData();
     void startMenuScreen();
-    void startWeaponDetailScreen();
+
   }
 
   interface Model {
@@ -25,12 +23,7 @@ public interface WeaponContract {
   }
 
   interface Router {
-    void navigateToWeaponDetailScreen();
-
-    void passDataToWeaponDetailScreen(WeaponState state);
-
     WeaponState getDataFromPreviousScreen();
-
     void navigateToMenuScreen();
   }
 }

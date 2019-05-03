@@ -17,9 +17,8 @@ public class WeaponActivity
   private WeaponContract.Presenter presenter;
 
   // declaring the buttons, texts, images and spinners
-  private Button bananaButton, weaponSearchButton;
+  private Button bananaButton;
   private TextView weaponBar;
-  private Spinner weaponSpinner;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +26,6 @@ public class WeaponActivity
     setContentView(R.layout.activity_weapon);
 
     // finding buttons, texts and images id
-    weaponSpinner = findViewById(R.id.weaponSpinner);
-    weaponSearchButton = findViewById(R.id.searchButton);
     bananaButton = findViewById(R.id.bananaButton);
     weaponBar = findViewById(R.id.weaponBar);
 
@@ -37,12 +34,6 @@ public class WeaponActivity
       @Override
       public void onClick(View v) {
         presenter.startMenuScreen();
-      }
-    });
-    weaponSearchButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        presenter.startWeaponDetailScreen();
       }
     });
 

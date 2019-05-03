@@ -5,7 +5,6 @@ import android.content.Context;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.menu.MenuActivity;
-import es.ulpgc.miguel.fortguide.weapon_detail.WeaponDetailActivity;
 
 public class WeaponRouter implements WeaponContract.Router {
 
@@ -18,22 +17,10 @@ public class WeaponRouter implements WeaponContract.Router {
   }
 
   @Override
-  public void navigateToWeaponDetailScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, WeaponDetailActivity.class);
-    context.startActivity(intent);
-  }
-
-  @Override
   public void navigateToMenuScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, MenuActivity.class);
     context.startActivity(intent);
-  }
-
-  @Override
-  public void passDataToWeaponDetailScreen(WeaponState state) {
-    mediator.setWeaponState(state);
   }
 
   @Override
