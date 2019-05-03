@@ -96,7 +96,7 @@
         android:layout_marginTop="100sp"
         layout="@layout/weapon_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent" />
         ></include>
 </android.support.constraint.ConstraintLayout>
 
