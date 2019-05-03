@@ -789,6 +789,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   //The next 2 methods correspond to Weapon screens which are ready but not used yet
+  // todo: cambiar comentarios del weapon (hice c&p de shop)
 
   /**
    * This method load the data needed in the Weapon Screen
@@ -828,6 +829,44 @@ public class AppRepository implements RepositoryContract {
       Log.e(TAG, "error: " + error);
     }
     return false;
+  }
+
+  /**
+   * @param callback needed because of async method
+   */
+  @Override
+  public void loadWeapon(final FetchWeaponDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        boolean error = !loadWeaponFromJSON();
+        if (callback != null) {
+          callback.onWeaponDataFetched(error);
+        }
+      }
+    });
+  }
+
+  /**
+   * @param callback needed because of async method
+   */
+  @Override
+  public void getWeaponList(final AppRepository.GetWeaponListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setWeaponList(loadWeaponList());
+        }
+      }
+    });
+  }
+
+  /**
+   * @return the shop list after fetching the data
+   */
+  private List<WeaponItem> loadWeaponList() {
+    return this.weaponList;
   }
 
   /**

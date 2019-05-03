@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.weapon;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -17,8 +19,9 @@ public class WeaponActivity
   private WeaponContract.Presenter presenter;
 
   // declaring the buttons, texts, images and spinners
-  private Button bananaButton;
+  private Button bananaButton, commonRarityButton, uncommonRarityButton, rareRarityButton, epicRarityButton, legendaryRarityButton;
   private TextView weaponBar;
+  private WeaponAdapter weaponAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +31,57 @@ public class WeaponActivity
     // finding buttons, texts and images id
     bananaButton = findViewById(R.id.bananaButton);
     weaponBar = findViewById(R.id.weaponBar);
+    commonRarityButton = findViewById(R.id.commonRarityButton);
+    uncommonRarityButton = findViewById(R.id.uncommonRarityButton);
+    rareRarityButton = findViewById(R.id.rareRarityButton);
+    epicRarityButton = findViewById(R.id.epicRarityButton);
+    legendaryRarityButton = findViewById(R.id.legendaryRarityButton);
 
     // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View v) {
+      public void onClick(View view) {
         presenter.startMenuScreen();
       }
     });
+    commonRarityButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        presenter.fetchData();
+      }
+    });
+    uncommonRarityButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+
+      }
+    });
+    rareRarityButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+
+      }
+    });
+    epicRarityButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+
+      }
+    });
+    legendaryRarityButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+
+      }
+    });
+
+    // initializing the adapter
+    weaponAdapter = new WeaponAdapter();
+
+    // declaring the recyclerView, finding its id and changing its adapter
+    RecyclerView recyclerView = findViewById(R.id.weaponList);
+    recyclerView.setAdapter(weaponAdapter);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
     // do the setup
     WeaponScreen.configure(this);
@@ -50,10 +96,18 @@ public class WeaponActivity
   }
 
   @Override
-  public void displayData(WeaponViewModel viewModel) {
+  public void displayData(final WeaponViewModel viewModel) {
     //Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.weaponBar)).setText(R.string.weapon_bar_label);
+
+    // we need to get into the main thread to display the fetched data
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        ((TextView) findViewById(R.id.weaponBar)).setText(R.string.weapon_bar_label);
+        weaponAdapter.setItems(viewModel.weaponItemList);
+      }
+    });
   }
 }

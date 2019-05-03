@@ -1,6 +1,14 @@
 package es.ulpgc.miguel.fortguide.weapon;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+import es.ulpgc.miguel.fortguide.data.ShopItem;
+import es.ulpgc.miguel.fortguide.data.WeaponItem;
+import es.ulpgc.miguel.fortguide.shop.ShopState;
 
 public class WeaponPresenter implements WeaponContract.Presenter {
 
@@ -32,25 +40,21 @@ public class WeaponPresenter implements WeaponContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
-
-    // set passed state
-    WeaponState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
+    Log.e(TAG, "fetchData()");
+    final WeaponState state = router.getDataFromPreviousScreen();
+    if (state.weaponItemList != null) {
+      viewModel.weaponItemList = state.weaponItemList;
+      view.get().displayData(viewModel);
+    } else {
+      model.fetchData(new RepositoryContract.GetWeaponListCallback() {
+        @Override
+        public void setWeaponList(List<WeaponItem> weaponList) {
+          viewModel.weaponItemList = weaponList;
+          state.weaponItemList = viewModel.weaponItemList;
+          view.get().displayData(viewModel);
+        }
+      });
     }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
   }
 
   @Override

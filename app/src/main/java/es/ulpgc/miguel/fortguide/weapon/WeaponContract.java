@@ -2,6 +2,8 @@ package es.ulpgc.miguel.fortguide.weapon;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+
 public interface WeaponContract {
 
   interface View {
@@ -19,7 +21,7 @@ public interface WeaponContract {
   }
 
   interface Model {
-    String fetchData();
+    void fetchData(RepositoryContract.GetWeaponListCallback callback);
   }
 
   interface Router {

@@ -39,6 +39,19 @@ public interface RepositoryContract {
 
   void getSupportItem(int id, AppRepository.GetSupportItemCallback callback);
 
+  // callbacks and methods of Weapon
+
+  interface FetchWeaponDataCallback {
+    void onWeaponDataFetched(boolean error);
+  }
+
+  interface GetWeaponListCallback {
+    void setWeaponList(List<WeaponItem> weaponList);
+  }
+
+  void loadWeapon(AppRepository.FetchWeaponDataCallback callback);
+
+  void getWeaponList(AppRepository.GetWeaponListCallback callback);
 
   // callbacks and methods of Challenge
 

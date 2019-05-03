@@ -5,6 +5,8 @@ import java.lang.ref.WeakReference;
 import android.support.v4.app.FragmentActivity;
 
 import es.ulpgc.miguel.fortguide.app.AppMediator;
+import es.ulpgc.miguel.fortguide.app.AppRepository;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
 
 public class WeaponScreen {
 
@@ -15,10 +17,11 @@ public class WeaponScreen {
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
     WeaponState state = mediator.getWeaponState();
+    RepositoryContract repository = AppRepository.getInstance(context.get());
 
     WeaponContract.Router router = new WeaponRouter(mediator);
     WeaponContract.Presenter presenter = new WeaponPresenter(state);
-    WeaponContract.Model model = new WeaponModel();
+    WeaponContract.Model model = new WeaponModel(repository);
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));
