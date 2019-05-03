@@ -104,6 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
+            android:background="@color/colorButton"
             android:orientation="vertical">
 
             <TextView
@@ -111,78 +112,134 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="70dp"
                 android:text="@string/icon_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="125dp"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/nameText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="19dp"
                 android:text="@string/weapon_name_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/damageBodyText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/weapon_damage_body_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/damageHeadText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/weapon_damage_head_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/dpsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/weapon_dps_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/fireRateText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="19dp"
                 android:text="@string/weapon_firerate_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/reloadText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/weapon_reload_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/sizeText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="20dp"
                 android:text="@string/weapon_size_label"
                 android:textStyle="bold"
                 android:textAlignment="center" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
             <TextView
                 android:id="@+id/ammoText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
                 android:textAlignment="center"
                 android:text="@string/weapon_ammo_label"
                 android:textStyle="bold"/>
