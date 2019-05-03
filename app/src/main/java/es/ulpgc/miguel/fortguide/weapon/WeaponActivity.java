@@ -53,7 +53,7 @@ public class WeaponActivity
     uncommonRarityButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-
+        presenter.fetchData();
       }
     });
     rareRarityButton.setOnClickListener(new View.OnClickListener() {

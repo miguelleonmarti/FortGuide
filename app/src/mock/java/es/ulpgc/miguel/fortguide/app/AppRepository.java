@@ -789,7 +789,6 @@ public class AppRepository implements RepositoryContract {
   }
 
   //The next 2 methods correspond to Weapon screens which are ready but not used yet
-  // todo: cambiar comentarios del weapon (hice c&p de shop)
 
   /**
    * This method load the data needed in the Weapon Screen
@@ -863,7 +862,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   /**
-   * @return the shop list after fetching the data
+   * @return the weapon list after fetching the data
    */
   private List<WeaponItem> loadWeaponList() {
     return this.weaponList;
