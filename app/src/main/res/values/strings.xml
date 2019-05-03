@@ -56,6 +56,11 @@
     <string name="status_label_down">LOS SERVIDORES ESTÁN CAÍDOS ;(</string>
     <string name="status_label_up">LOS SERVIDORES ESTÁN FUNCIONANDO ;)</string>
     <string name="test_text_label">Texto de prueba</string>
+    <string name="common_label">Common</string>
+    <string name="uncommon_label">Uncommon</string>
+    <string name="rare_label">Rare</string>
+    <string name="epic_label">Epic</string>
+    <string name="legendary_label">Legendary</string>
     <string-array name="weapon_class">
         <item>Fusiles de asalto</item>
         <item>Subfusiles</item>

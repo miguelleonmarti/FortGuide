@@ -43,51 +43,50 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button" />
-
-                <Button
-                    android:id="@+id/button"
+                    android:id="@+id/commonRarityButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
                     android:layout_weight="1"
                     android:background="@color/colorCommonRarity"
-                    android:text="Button" />
+                    android:text="@string/common_label" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/uncommonRarityButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="10sp"
                     android:layout_weight="1"
                     android:background="@color/colorUncommonRarity"
-                    android:text="Button" />
+                    android:text="@string/uncommon_label" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/rareRarityButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="10sp"
                     android:layout_weight="1"
                     android:background="@color/colorRareRarity"
-                    android:text="Button" />
+                    android:text="@string/rare_label" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/epicRarityButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="10sp"
                     android:layout_weight="1"
                     android:background="@color/colorEpicRarity"
-                    android:text="Button" />
+                    android:text="@string/epic_label" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/legendaryRarityButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="10sp"
                     android:layout_weight="1"
                     android:background="@color/colorLegendaryRarity"
-                    android:text="Button" />
+                    android:text="@string/legendary_label" />
 
             </LinearLayout>
         </HorizontalScrollView>
