@@ -11,4 +11,9 @@
     <color name="colorThumbUp">#1BD31B</color>
     <color name="colorThumbDown">#D81313</color>
     <color name="colorTextButtonGreyOpacity">#B96C6C6C</color>
+    <color name="colorCommonRarity">#A1A1A1</color>
+    <color name="colorUncommonRarity">#11F032</color>
+    <color name="colorRareRarity">#45A5FF</color>
+    <color name="colorEpicRarity">#B11DD9</color>
+    <color name="colorLegendaryRarity">#FFD900</color>
 </resources>
