@@ -6,7 +6,7 @@ public class TheoryItem extends Item {
   private String likes;
   private String dislikes;
 
-  public TheoryItem(int id,String user, String content, String details, String likes, String dislikes){
+  public TheoryItem(int id, String content, String details, String user,String likes, String dislikes){
     super(id,content,details);
     this.user = user;
     this.likes = likes;

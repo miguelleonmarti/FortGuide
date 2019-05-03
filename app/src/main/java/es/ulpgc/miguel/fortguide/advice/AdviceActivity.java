@@ -66,8 +66,9 @@ public class AdviceActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        listAdapter.setItems(viewModel.adviceItemList); //Puts adviceItemList in the cells of the Recycler  }
+        listAdapter.setItems(viewModel.adviceItemList); //Puts adviceItemList in the cells
+        // of the Recycler  }
       }
     });
-    }
+  }
 }

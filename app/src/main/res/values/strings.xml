@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">FortGuide</string>
 
-    <string name="button_weapon_label">ARMAS</string>
-    <string name="button_place_label">LUGARES</string>
-    <string name="button_theory_label">TEORÍAS</string>
-    <string name="button_advice_label">CONSEJOS</string>
-    <string name="button_challenge_label">DESAFÍOS</string>
-    <string name="button_shop_label">TIENDA</string>
-    <string name="button_support_label">APOYO</string>
+    <string name="weapon_text_label">ARMAS</string>
+    <string name="place_text_label">LUGARES</string>
+    <string name="theory_text_label">TEORÍAS</string>
+    <string name="advice_text_label">CONSEJOS</string>
+    <string name="challenge_text_label">DESAFÍOS</string>
+    <string name="shop_text_label">TIENDA</string>
+    <string name="support_text_label">APOYO</string>
     <string name="button_continue_label">CONTINUAR</string>
 
     <string name="menu_label">MENÚ</string>
@@ -42,7 +42,7 @@
     <string name="PeoplePercent_label_textView">PeoplePercent</string>
     <string name="detail_label_text">Detail Text</string>
     <string name="content_label_text">Content text</string>
-    <string name="place_image_label">placeImage</string>
+    <string name="place_image_menu_label">placeImage</string>
     <string name="chest_image_label">chestImage</string>
     <string name="people_image_label">peopleImage</string>
     <string name="shop_bar_label">TIENDA</string>
@@ -61,6 +61,14 @@
     <string name="rare_label">Rare</string>
     <string name="epic_label">Epic</string>
     <string name="legendary_label">Legendary</string>
+    <string name="opcion_text_label">Opcion</string>
+    <string name="shop_image_label">shopImage</string>
+    <string name="theory_image_label">theoryImage</string>
+    <string name="advice_image_label">adviceImage</string>
+    <string name="challenge_image_label">challengeImage</string>
+    <string name="weapon_image_label">weaponImage</string>
+    <string name="place_image_label">placeImage</string>
+    <string name="support_image_label">supportImage</string>
     <string-array name="weapon_class">
         <item>Fusiles de asalto</item>
         <item>Subfusiles</item>

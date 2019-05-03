@@ -1,163 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/menu"
-    android:gravity="fill"
     android:orientation="vertical"
+    android:scrollbars="vertical"
     tools:context=".menu.MenuActivity">
 
-    <LinearLayout
-        android:id="@+id/shop_and_challenge"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/advice_and_theory"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/buttonShop"
-            android:layout_width="140dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/colorButton"
-            android:text="@string/button_shop_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonWhite"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            style="?android:attr/buttonBarButtonStyle"/>
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/buttonChallenge"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/colorButton"
-            android:text="@string/button_challenge_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonWhite"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            style="?android:attr/buttonBarButtonStyle"/>
+            <LinearLayout
+                android:id="@+id/shopLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButton"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/advice_and_theory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/weapon_and_play"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+                <TextView
+                    android:id="@+id/shopTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="55dp"
+                    android:text="@string/shop_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonAdvice"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/colorButton"
-            android:text="@string/button_advice_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonWhite"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            style="?android:attr/buttonBarButtonStyle"/>
+                <ImageView
+                    android:id="@+id/shopImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/shop_image_label"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
-        <Button
-            android:id="@+id/buttonTheory"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/colorButton"
-            android:text="@string/button_theory_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonWhite"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            style="?android:attr/buttonBarButtonStyle"/>
-    </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/challengesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButton"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/weapon_and_play"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/support"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/buttonWeapon"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/colorButton"
-            android:text="@string/button_weapon_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonWhite"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            style="?android:attr/buttonBarButtonStyle"/>
+                <TextView
+                    android:id="@+id/challengeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/challenge_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonPlace"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@color/colorButton"
-            android:text="@string/button_place_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonWhite"
-            android:textSize="24sp"
-            android:textStyle="bold" style="?android:attr/buttonBarButtonStyle"/>
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/challengeImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/challenge_image_label"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+            </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/support"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/status"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+            <LinearLayout
+                android:id="@+id/advicesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButton"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonSupport"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorButton"
-            android:text="@string/button_support_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonWhite"
-            android:textSize="24sp"
-            android:textStyle="bold" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/adviceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/advice_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/adviceImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/advice_image_label"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/theoryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButton"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/theoryTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="@string/theory_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/theoryImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/theory_image_label"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weaponLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButton"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/weaponTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="@string/weapon_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/weaponImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/weapon_image_label"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/placeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButton"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/placeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="@string/place_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/placeImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/place_image_menu_label"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/supportLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorButton"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/supportextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="@string/support_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/supportImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/support_image_label"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <LinearLayout
         android:id="@+id/status"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-</android.support.constraint.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical" />
+
+
+</LinearLayout>

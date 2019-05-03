@@ -1,9 +1,11 @@
 package es.ulpgc.miguel.fortguide.menu;
 
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,60 +19,70 @@ public class MenuActivity
   private MenuContract.Presenter presenter;
 
   // declaring the buttons, texts and images
-  private Button adviceButton, challengeButton, placeButton, shopButton, supportButton, theoryButton, weaponButton;
-  private TextView statusText;
+  private TextView statusText,shopText,adviceText,challengeText,placeText,supportText,theoryText,weaponText;
+  private LinearLayout shop,advice,challenge,place,support,theory,weapon;
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_menu);
 
     // finding buttons, texts and images id
-    adviceButton = findViewById(R.id.buttonAdvice);
-    challengeButton = findViewById(R.id.buttonChallenge);
-    placeButton = findViewById(R.id.buttonPlace);
-    shopButton = findViewById(R.id.buttonShop);
-    supportButton = findViewById(R.id.buttonSupport);
-    theoryButton = findViewById(R.id.buttonTheory);
-    weaponButton = findViewById(R.id.buttonWeapon);
+    advice = findViewById(R.id.advicesLayout);
+    challenge = findViewById(R.id.challengesLayout);
+    place = findViewById(R.id.placeLayout);
+    support = findViewById(R.id.supportLayout);
+    theory = findViewById(R.id.theoryLayout);
+    weapon = findViewById(R.id.weaponLayout);
+    shop = findViewById(R.id.shopLayout);
+    adviceText = findViewById(R.id.adviceTextView);
+    challengeText = findViewById(R.id.challengeTextView);
+    placeText = findViewById(R.id.placeTextView);
+    supportText = findViewById(R.id.supportextView);
+    theoryText = findViewById(R.id.theoryTextView);
+    weaponText = findViewById(R.id.weaponTextView);
+    shopText = findViewById(R.id.shopTextView);
+
 
     // listeners
-    adviceButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        presenter.startAdviceScreen();
-      }
-    });
-    challengeButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        presenter.startChallengeScreen();
-      }
-    });
-    placeButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        presenter.startPlaceScreen();
-      }
-    });
-    shopButton.setOnClickListener(new View.OnClickListener() {
+    shop.setOnClickListener(new View.OnClickListener(){
       @Override
       public void onClick(View v) {
         presenter.startShopScreen();
       }
     });
-    supportButton.setOnClickListener(new View.OnClickListener() {
+    advice.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startAdviceScreen();
+      }
+    });
+    challenge.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startChallengeScreen();
+      }
+    });
+    place.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startPlaceScreen();
+      }
+    });
+    support.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         presenter.startSupportScreen();
       }
     });
-    theoryButton.setOnClickListener(new View.OnClickListener() {
+    theory.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         presenter.startTheoryScreen();
       }
     });
-    weaponButton.setOnClickListener(new View.OnClickListener() {
+    weapon.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         presenter.startWeaponScreen();
