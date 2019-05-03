@@ -16,7 +16,7 @@ public class NewTheoryActivity
   private NewTheoryContract.Presenter presenter;
 
   // declaring the buttons, texts and images
-   Button bananaButton;
+   Button bananaButton, cancelButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class NewTheoryActivity
 
     // finding buttons, texts and images id
     bananaButton=findViewById(R.id.bananaButton);
+    cancelButton=findViewById(R.id.cancelButton);
 
     // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +35,12 @@ public class NewTheoryActivity
       }
     });
 
-
+    cancelButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        onBackPressed();
+      }
+    });
 
     // do the setup
     NewTheoryScreen.configure(this);
