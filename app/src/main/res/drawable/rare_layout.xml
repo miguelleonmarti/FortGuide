@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- color background -->
+    <solid
+        android:color="@color/colorRareRarity" >
+    </solid>
+
+    <!-- If we want to add padding -->
+    <padding
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp"    >
+    </padding>
+
+    <!-- we indicate here the radius of the corners -->
+    <corners
+        android:radius="50sp"   >
+    </corners>
+
+</shape>

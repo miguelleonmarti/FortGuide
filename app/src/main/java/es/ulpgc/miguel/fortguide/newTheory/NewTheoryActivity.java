@@ -34,6 +34,8 @@ public class NewTheoryActivity
       }
     });
 
+
+
     // do the setup
     NewTheoryScreen.configure(this);
 
