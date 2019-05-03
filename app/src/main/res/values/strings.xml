@@ -69,6 +69,15 @@
     <string name="weapon_image_label">weaponImage</string>
     <string name="place_image_label">placeImage</string>
     <string name="support_image_label">supportImage</string>
+    <string name="icon_label">Icono</string>
+    <string name="weapon_name_label">Nombre</string>
+    <string name="weapon_damage_body_label">Daño en el cuerpo</string>
+    <string name="weapon_damage_head_label">Daño en la cabeza</string>
+    <string name="weapon_dps_label">Daño por segundo</string>
+    <string name="weapon_firerate_label">Cadencia</string>
+    <string name="weapon_reload_label">Tiempo de recarga</string>
+    <string name="weapon_size_label">Tamaño del cargador</string>
+    <string name="weapon_ammo_label">Tipo de munición</string>
     <string-array name="weapon_class">
         <item>Fusiles de asalto</item>
         <item>Subfusiles</item>
