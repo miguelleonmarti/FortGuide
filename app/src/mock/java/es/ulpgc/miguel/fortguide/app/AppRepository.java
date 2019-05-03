@@ -712,13 +712,13 @@ public class AppRepository implements RepositoryContract {
 
       for (int i = 0; i < jsonArray.length(); i++) {
         JSONObject jsonIterator = jsonArray.getJSONObject(i);
-        String id = jsonIterator.getString("itemid");
+        //String id = jsonIterator.getString("itemid");
         String content = jsonIterator.getString("name");
         String details = jsonIterator.getString("cost");
 
         JSONObject jsonObject2 = jsonIterator.getJSONObject("item").getJSONObject("images");
         String image = jsonObject2.getString("background");
-        insertShopItem(new ShopItem(id, image, content, details));
+        insertShopItem(new ShopItem(i, image, content, details));
       }
       return true;
     } catch (JSONException | IOException error) {

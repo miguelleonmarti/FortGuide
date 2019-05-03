@@ -53,7 +53,7 @@ public class SupportActivity
     // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.supportList);
     recyclerView.setAdapter(supportAdapter);
-    recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // number of columns
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 1)); // number of columns
 
     // do the setup
     SupportScreen.configure(this);

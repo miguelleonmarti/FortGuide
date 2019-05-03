@@ -1,5 +1,9 @@
 package es.ulpgc.miguel.fortguide.shop;
 
-public class ShopState extends ShopViewModel {
+import java.util.List;
 
+import es.ulpgc.miguel.fortguide.data.ShopItem;
+
+public class ShopState extends ShopViewModel {
+  List<ShopItem> shopItemList;
 }

@@ -1,5 +1,7 @@
 package es.ulpgc.miguel.fortguide.place;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -36,14 +38,22 @@ public class PlacePresenter implements PlaceContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
-    model.fetchPlaceListData(new RepositoryContract.GetPlaceListCallback(){
-      @Override
-      public void setPlaceList(List<PlaceItem> placeList) {
-        viewModel.places = placeList;
-        view.get().displayData(viewModel);
-      }
-    });
+    Log.e(TAG, "fetchData()");
+    final PlaceState state = router.getDataFromPreviousScreen();
+    if (state.placeItemList != null) {
+      viewModel.places = state.placeItemList;
+      view.get().displayData(viewModel);
+    } else {
+      model.fetchPlaceListData(new RepositoryContract.GetPlaceListCallback(){
+        @Override
+        public void setPlaceList(List<PlaceItem> placeList) {
+          viewModel.places = placeList;
+          state.placeItemList = viewModel.places;
+          view.get().displayData(viewModel);
+        }
+      });
+    }
+
   }
 
   @Override

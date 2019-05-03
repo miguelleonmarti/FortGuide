@@ -39,14 +39,20 @@ public class ShopPresenter implements ShopContract.Presenter {
   @Override
   public void fetchData() {
     Log.e(TAG, "fetchData()");
-
-    model.fetchData(new RepositoryContract.GetShopListCallback() {
-      @Override
-      public void setShopList(List<ShopItem> shopList) {
-        viewModel.shopItemList = shopList;
-        view.get().displayData(viewModel);
-      }
-    });
+    final ShopState state = router.getDataFromPreviousScreen();
+    if (state.shopItemList != null) {
+      viewModel.shopItemList = state.shopItemList;
+      view.get().displayData(viewModel);
+    } else {
+      model.fetchData(new RepositoryContract.GetShopListCallback() {
+        @Override
+        public void setShopList(List<ShopItem> shopList) {
+          viewModel.shopItemList = shopList;
+          state.shopItemList = viewModel.shopItemList;
+          view.get().displayData(viewModel);
+        }
+      });
+    }
   }
 
   @Override

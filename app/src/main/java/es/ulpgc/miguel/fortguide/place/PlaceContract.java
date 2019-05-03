@@ -38,5 +38,7 @@ public interface PlaceContract {
     void passDataToNextScreen(PlaceItem placeItem);
 
     void navigateToMenuScreen();
+
+    PlaceState getDataFromPreviousScreen();
   }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import es.ulpgc.miguel.fortguide.R;
 
@@ -31,7 +32,6 @@ public class MenuActivity
     supportButton = findViewById(R.id.buttonSupport);
     theoryButton = findViewById(R.id.buttonTheory);
     weaponButton = findViewById(R.id.buttonWeapon);
-    statusText = findViewById(R.id.statusText);
 
     // listeners
     adviceButton.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +85,12 @@ public class MenuActivity
   }
 
   @Override
+  public void onBackPressed() {
+    super.onBackPressed();
+
+  }
+
+  @Override
   public void injectPresenter(MenuContract.Presenter presenter) {
     this.presenter = presenter;
   }
@@ -97,14 +103,18 @@ public class MenuActivity
       @Override
       public void run() {
         if (viewModel.status) {
-          ((TextView) findViewById(R.id.statusText)).setText(R.string.status_label_up);
-          findViewById(R.id.status).setBackgroundColor(getResources().getColor(R.color.colorThumbUp));
+          Toast toast = Toast.makeText(getApplicationContext(), R.string.status_label_up, Toast.LENGTH_LONG);
+          toast.getView().setBackgroundColor(getResources().getColor(R.color.colorThumbUp));
+          toast.show();
         } else {
-          ((TextView) findViewById(R.id.statusText)).setText(R.string.status_label_down);
-          findViewById(R.id.status).setBackgroundColor(getResources().getColor(R.color.colorThumbDown));
+          Toast toast = Toast.makeText(getApplicationContext(), R.string.status_label_down, Toast.LENGTH_LONG);
+          toast.getView().setBackgroundColor(getResources().getColor(R.color.colorThumbDown));
+          toast.show();
         }
       }
     });
 
   }
+
+
 }

@@ -36,5 +36,7 @@ public interface SupportContract {
     void passDataToSupportProfileScreen(SupportItem supportItem);
 
     void navigateToMenuScreen();
+
+    SupportState getDataFromPreviousScreen();
   }
 }

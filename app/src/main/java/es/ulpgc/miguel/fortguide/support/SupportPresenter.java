@@ -39,13 +39,20 @@ public class SupportPresenter implements SupportContract.Presenter {
   @Override
   public void fetchData() {
     Log.e(TAG, "fetchData()");
-    model.fetchSupportListData(new RepositoryContract.GetSupportListCallback() {
-      @Override
-      public void setSupportList(List<SupportItem> supportList) {
-        viewModel.profiles = supportList;
-        view.get().displayData(viewModel);
-      }
-    });
+    final SupportState state = router.getDataFromPreviousScreen();
+    if (state.supportItemList != null) {
+      viewModel.profiles = state.supportItemList;
+      view.get().displayData(viewModel);
+    } else {
+      model.fetchSupportListData(new RepositoryContract.GetSupportListCallback() {
+        @Override
+        public void setSupportList(List<SupportItem> supportList) {
+          viewModel.profiles = supportList;
+          state.supportItemList = viewModel.profiles;
+          view.get().displayData(viewModel);
+        }
+      });
+    }
   }
 
   @Override

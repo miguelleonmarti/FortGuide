@@ -37,4 +37,8 @@ public class SupportRouter implements SupportContract.Router {
     mediator.setSupportItem(item);
   }
 
+  @Override
+  public SupportState getDataFromPreviousScreen() {
+    return mediator.getSupportState();
+  }
 }

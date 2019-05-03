@@ -30,8 +30,7 @@ public class NewTheoryRouter implements NewTheoryContract.Router {
 
   @Override
   public NewTheoryState getDataFromPreviousScreen() {
-    NewTheoryState state = mediator.getNewTheoryState();
-    return state;
+    return mediator.getNewTheoryState();
   }
 
   @Override

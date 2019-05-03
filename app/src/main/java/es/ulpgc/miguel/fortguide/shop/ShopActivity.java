@@ -57,6 +57,11 @@ public class ShopActivity
 
     // do the setup
     ShopScreen.configure(this);
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
 
     // calling the presenter in order to fetch data
     presenter.fetchData();
