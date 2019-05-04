@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/shopLayout"
@@ -26,8 +26,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorButton"
-                android:gravity="center"
+                android:background="@color/menu"
                 android:orientation="horizontal">
 
 
@@ -35,7 +34,9 @@
                     android:id="@+id/shopTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="55dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="40dp"
                     android:text="@string/shop_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -46,10 +47,12 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
-                    android:contentDescription="@string/shop_image_label"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shop"
+                    android:contentDescription="@string/shop_image_label" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/challengesLayout"
                 android:layout_width="match_parent"
@@ -57,8 +60,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorButton"
-                android:gravity="center"
+                android:background="@color/menu"
                 android:orientation="horizontal">
 
 
@@ -66,7 +68,9 @@
                     android:id="@+id/challengeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="8dp"
                     android:text="@string/challenge_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -77,8 +81,9 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
-                    android:contentDescription="@string/challenge_image_label"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/challenge"
+                    android:contentDescription="@string/challenge_image_label" />
             </LinearLayout>
 
             <LinearLayout
@@ -88,8 +93,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorButton"
-                android:gravity="center"
+                android:background="@color/menu"
                 android:orientation="horizontal">
 
 
@@ -97,7 +101,8 @@
                     android:id="@+id/adviceTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
                     android:text="@string/advice_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -107,10 +112,10 @@
                     android:id="@+id/adviceImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
-                    android:contentDescription="@string/advice_image_label"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+                    android:background="@drawable/advice"
+                    android:contentDescription="@string/advice_image_label" />
             </LinearLayout>
 
             <LinearLayout
@@ -120,8 +125,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorButton"
-                android:gravity="center"
+                android:background="@color/menu"
                 android:orientation="horizontal">
 
 
@@ -129,8 +133,9 @@
                     android:id="@+id/theoryTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="22dp"
                     android:text="@string/theory_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -142,8 +147,8 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:contentDescription="@string/theory_image_label"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+                    android:background="@drawable/advice"
+                    android:contentDescription="@string/theory_image_label" />
             </LinearLayout>
 
             <LinearLayout
@@ -153,8 +158,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorButton"
-                android:gravity="center"
+                android:background="@color/menu"
                 android:orientation="horizontal">
 
 
@@ -162,8 +166,9 @@
                     android:id="@+id/weaponTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="41dp"
                     android:text="@string/weapon_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -175,8 +180,8 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:contentDescription="@string/weapon_image_label"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+                    android:background="@drawable/weapons"
+                    android:contentDescription="@string/weapon_image_label" />
             </LinearLayout>
 
             <LinearLayout
@@ -186,8 +191,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorButton"
-                android:gravity="center"
+                android:background="@color/menu"
                 android:orientation="horizontal">
 
 
@@ -195,8 +199,9 @@
                     android:id="@+id/placeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="15dp"
                     android:text="@string/place_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -208,8 +213,8 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:contentDescription="@string/place_image_menu_label"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+                    android:background="@drawable/place"
+                    android:contentDescription="@string/place_image_menu_label" />
             </LinearLayout>
 
             <LinearLayout
@@ -219,8 +224,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/colorButton"
-                android:gravity="center"
+                android:background="@color/menu"
                 android:orientation="horizontal">
 
 
@@ -228,8 +232,9 @@
                     android:id="@+id/supportextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="47dp"
                     android:text="@string/support_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -241,8 +246,41 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:contentDescription="@string/support_image_label"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+                    android:background="@drawable/multiple_users_silhouette"
+                    android:contentDescription="@string/support_image_label" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contactLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/menu"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/contactTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/contact_text_label"
+                    android:textColor="@color/colorTextButtonWhite"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/contactImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/support"
+                    android:contentDescription="@string/support_image_label" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

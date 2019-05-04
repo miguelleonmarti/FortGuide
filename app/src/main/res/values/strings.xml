@@ -77,5 +77,6 @@
     <string name="weapon_reload_label">TIEMPO DE RECARGA</string>
     <string name="weapon_size_label">TAMAÑO DE CARGADOR</string>
     <string name="weapon_ammo_label">TIPO DE MUNICIÓN</string>
+    <string name="contact_text_label">SOPORTE</string>
 
 </resources>
