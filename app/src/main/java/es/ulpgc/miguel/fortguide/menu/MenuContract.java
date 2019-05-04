@@ -34,6 +34,8 @@ public interface MenuContract {
     void startTheoryScreen();
 
     void startWeaponScreen();
+
+    void startContactScreen();
   }
 
   interface Model {
@@ -59,5 +61,7 @@ public interface MenuContract {
     void navigateToChallengeScreen();
 
     void navigateToAdviceScreen();
+
+    void navigateToContactScreen();
   }
 }

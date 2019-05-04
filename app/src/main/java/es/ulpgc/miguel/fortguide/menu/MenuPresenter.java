@@ -75,7 +75,8 @@ public class MenuPresenter implements MenuContract.Presenter {
   }
 
   @Override
-  public void startWeaponScreen() {
-    router.navigateToWeaponScreen();
-  }
+  public void startWeaponScreen() { router.navigateToWeaponScreen(); }
+
+  @Override
+  public void startContactScreen() { router.navigateToContactScreen(); }
 }

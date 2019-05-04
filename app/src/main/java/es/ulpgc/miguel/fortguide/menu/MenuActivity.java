@@ -21,7 +21,7 @@ public class MenuActivity
 
   // declaring the buttons, texts and images
   private TextView statusText,shopText,adviceText,challengeText,placeText,supportText,theoryText,weaponText;
-  private LinearLayout shop,advice,challenge,place,support,theory,weapon;
+  private LinearLayout shop,advice,challenge,place,support,theory,weapon,contact;
 
 
   @Override
@@ -37,6 +37,7 @@ public class MenuActivity
     theory = findViewById(R.id.theoryLayout);
     weapon = findViewById(R.id.weaponLayout);
     shop = findViewById(R.id.shopLayout);
+    contact = findViewById(R.id.contactLayout);
     adviceText = findViewById(R.id.adviceTextView);
     challengeText = findViewById(R.id.challengeTextView);
     placeText = findViewById(R.id.placeTextView);
@@ -87,6 +88,12 @@ public class MenuActivity
       @Override
       public void onClick(View v) {
         presenter.startWeaponScreen();
+      }
+    });
+    contact.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        presenter.startContactScreen();
       }
     });
 

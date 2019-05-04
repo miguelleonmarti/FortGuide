@@ -2,7 +2,9 @@ package es.ulpgc.miguel.fortguide.menu;
 
 import android.content.Intent;
 import android.content.Context;
+import android.net.Uri;
 
+import es.ulpgc.miguel.fortguide.R;
 import es.ulpgc.miguel.fortguide.advice.AdviceActivity;
 import es.ulpgc.miguel.fortguide.app.AppMediator;
 import es.ulpgc.miguel.fortguide.challenges_weeks.ChallengesWeeksListActivity;
@@ -82,6 +84,13 @@ public class MenuRouter implements MenuContract.Router {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, AdviceActivity.class);
     context.startActivity(intent);
+  }
+
+  @Override
+  public void navigateToContactScreen() {
+    Context context = mediator.getApplicationContext();
+    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","app.kdm@gmail.com", null));
+    context.startActivity(emailIntent);
   }
 
 }
