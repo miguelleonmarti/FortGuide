@@ -102,7 +102,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="630dp"
             android:layout_marginTop="10dp"
             android:background="@color/colorButton"
             android:orientation="vertical">
@@ -240,9 +240,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
+                android:layout_marginBottom="20dp"
                 android:textAlignment="center"
                 android:text="@string/weapon_ammo_label"
                 android:textStyle="bold"/>
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorTextButtonWhite" />
 
         </LinearLayout>
 
