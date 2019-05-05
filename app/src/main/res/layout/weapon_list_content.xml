@@ -14,7 +14,7 @@
 
     <ImageView
         android:id="@+id/weaponImage"
-        android:layout_width="fill_parent"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="2"
