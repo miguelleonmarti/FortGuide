@@ -1,6 +1,10 @@
 package es.ulpgc.miguel.fortguide.data;
 
+import android.arch.persistence.room.PrimaryKey;
+
 public abstract class Item {
+
+  @PrimaryKey
   private final int id;
   private final String content, details;
 

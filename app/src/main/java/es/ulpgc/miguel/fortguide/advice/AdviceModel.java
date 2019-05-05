@@ -24,7 +24,7 @@ public class AdviceModel implements AdviceContract.Model {
   public void fetchAdviceListData(final RepositoryContract.GetAdviceListCallback callback) {
     Log.e(TAG, "fetchAdviceListData()");
 
-    repository.loadAdvice(new RepositoryContract.FetchAdviceDataCallback() {
+    repository.loadAdvice(true, new RepositoryContract.FetchAdviceDataCallback() {
       @Override
       public void onAdviceDataFetched(boolean error) {
       if(!error){

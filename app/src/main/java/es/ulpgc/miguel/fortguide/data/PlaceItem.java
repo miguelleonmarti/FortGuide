@@ -1,29 +1,35 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class PlaceItem extends Item {
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
-  private final String image, chest, people;
+@Entity(tableName = "place")
+public class PlaceItem {
+
+  @PrimaryKey
+  private final int id;
+
+  private final String content, details, image, chest, people;
 
   public PlaceItem(int id, String image, String content, String details, String chest, String people) {
-    super(id, content, details);
+    this.id = id;
+    this.content = content;
+    this.details = details;
     this.image = image;
     this.chest = chest;
     this.people = people;
   }
 
-  @Override
   public int getId() {
-    return super.getId();
+    return id;
   }
 
-  @Override
   public String getContent() {
-    return super.getContent();
+    return content;
   }
 
-  @Override
   public String getDetails() {
-    return super.getDetails();
+    return details;
   }
 
   public String getImage() {

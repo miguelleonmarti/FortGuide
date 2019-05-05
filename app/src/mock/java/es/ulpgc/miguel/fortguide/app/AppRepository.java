@@ -1,5 +1,6 @@
 package es.ulpgc.miguel.fortguide.app;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -31,12 +32,21 @@ import es.ulpgc.miguel.fortguide.data.ShopItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.data.TheoryItem;
 import es.ulpgc.miguel.fortguide.data.WeaponItem;
+import es.ulpgc.miguel.fortguide.database.AdviceDao;
+import es.ulpgc.miguel.fortguide.database.AppDatabase;
+import es.ulpgc.miguel.fortguide.database.PlaceDao;
+import es.ulpgc.miguel.fortguide.database.ShopDao;
+import es.ulpgc.miguel.fortguide.database.SupportDao;
+import es.ulpgc.miguel.fortguide.database.WeaponDao;
 
 public class AppRepository implements RepositoryContract {
 
   public static String TAG = AppRepository.class.getSimpleName();
 
+  private static final String DB_FILE = "app.db";
+
   private static final String JSON_FILE = "data.json";
+
   private static final String JSON_ROOT_SUPPORT = "support";
   private static final String JSON_ROOT_PLACE = "place";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
@@ -49,7 +59,9 @@ public class AppRepository implements RepositoryContract {
 
   public static AppRepository INSTANCE;
 
+  private AppDatabase database;
   private Context context;
+
   private List<SupportItem> supportList;
   private List<PlaceItem> placeList;
   private List<ChallengesWeeksItem> challengeList;
@@ -68,6 +80,8 @@ public class AppRepository implements RepositoryContract {
 
   private AppRepository(Context context) {
     this.context = context;
+
+    database = Room.databaseBuilder(context, AppDatabase.class, DB_FILE).build();
   }
 
   // the next three methods are essential for the correct functionality of the repository
@@ -97,8 +111,6 @@ public class AppRepository implements RepositoryContract {
 
     return json;
   }
-
-  // These two methods are common to shop and weapon activities
 
   /**
    * -
@@ -134,8 +146,6 @@ public class AppRepository implements RepositoryContract {
     }
   }
 
-  // the next 6 methods correspond to Support screens
-
   /**
    * This method load the data needed in the Support screens
    *
@@ -155,7 +165,7 @@ public class AppRepository implements RepositoryContract {
       if (jsonArray.length() > 0) {
         final SupportItem[] supportList = gson.fromJson(jsonArray.toString(), SupportItem[].class);
         for (SupportItem supportItem : supportList) {
-          insertSupportItem(supportItem);
+          getSupportDao().insertSupport(supportItem);
         }
 
         return true;
@@ -167,62 +177,6 @@ public class AppRepository implements RepositoryContract {
 
     return false;
   }
-
-  /**
-   * @param callback needed because of async method
-   */
-  @Override
-  public void loadSupport(final FetchSupportDataCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        boolean error = !loadSupportFromJSON(loadJSONFromAsset());
-        if (callback != null) {
-          callback.onSupportDataFetched(error);
-        }
-      }
-    });
-  }
-
-  /**
-   * @param callback needed because of async method
-   */
-  @Override
-  public void getSupportList(final AppRepository.GetSupportListCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setSupportList(loadSupportList());
-        }
-      }
-    });
-  }
-
-  /**
-   * @param id       of the SupportItem
-   * @param callback needed because of async method
-   */
-  @Override
-  public void getSupportItem(int id, AppRepository.GetSupportItemCallback callback) {
-
-  }
-
-  /**
-   * @param supportItem a new item
-   */
-  private void insertSupportItem(SupportItem supportItem) {
-    supportList.add(supportItem);
-  }
-
-  /**
-   * @return the supportList
-   */
-  private List<SupportItem> loadSupportList() {
-    return this.supportList;
-  }
-
-  // The next 12 methods correspond to Challenge screens
 
   /**
    * This method load the data needed in the Challenge Screens
@@ -261,6 +215,382 @@ public class AppRepository implements RepositoryContract {
 
     return false;
   }
+
+  /**
+   * This method load the data needed in the Place screens
+   *
+   * @param json The archive JSON converted to String
+   * @return boolean that indicate if the load was successful
+   */
+  private boolean loadPlaceFromJSON(String json) {
+    Log.e(TAG, "loadPlaceFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_PLACE);
+      placeList = new ArrayList<>();
+      if (jsonArray.length() > 0) {
+        final PlaceItem[] placeList = gson.fromJson(jsonArray.toString(), PlaceItem[].class);
+        for (PlaceItem placeItem : placeList) {
+          getPlaceDao().insertPlace(placeItem);
+        }
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  }
+
+  /**
+   * This method load the data needed in the Advice screens
+   *
+   * @param json The archive JSON converted to String
+   * @return boolean that indicate if the load was successful
+   */
+  private boolean loadAdviceFromJSON(String json) {
+    Log.e(TAG, "loadPlaceFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_ADVICE);
+
+      adviceList = new ArrayList<>();
+
+      if (jsonArray.length() > 0) {
+
+        final AdviceItem[] adviceList = gson.fromJson(jsonArray.toString(), AdviceItem[].class);
+
+
+        for (AdviceItem adviceItem : adviceList) {
+          getAdviceDao().insertAdvice(adviceItem);
+        }
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  }
+
+  /**
+   * @return true if the json has been loaded correctly
+   */
+  private boolean loadStatusFromJSON() {
+    try {
+      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_STATUS);
+      String status = jsonObject.getString("status");
+      if (status.equals("UP")) {
+        setServerStatus(true);
+      } else {
+        setServerStatus(false);
+      }
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
+  /**
+   * This method load the data needed in the Weapon Screen
+   *
+   * @return boolean that indicate if the load was successful
+   */
+  private boolean loadWeaponFromJSON() {
+    try {
+      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_WEAPON);
+      JSONArray jsonArray = jsonObject.getJSONArray("weapons");
+
+      weaponList = new ArrayList<>();
+
+      for (int i = 0; i < jsonArray.length(); i++) {
+        JSONObject weapon = jsonArray.getJSONObject(i);
+        JSONObject images = weapon.getJSONObject("images");
+        JSONObject stats = weapon.getJSONObject("stats");
+        JSONObject damage = stats.getJSONObject("damage");
+        JSONObject magazine = stats.getJSONObject("magazine");
+
+        String id = weapon.getString("hash");
+        String name = weapon.getString("name");
+        String rarity = weapon.getString("rarity");
+        String image = images.getString("image");
+        String damageBody = damage.getString("body");
+        String damageHead = damage.getString("head");
+        String dps = stats.getString("dps");
+        String fireRate = stats.getString("firerate");
+        String reload = magazine.getString("reload");
+        String size = magazine.getString("size");
+        String ammo = stats.getString("ammocost");
+
+        getWeaponDao().insertWeapon(new WeaponItem(id, name, rarity, image, damageBody, damageHead, dps, fireRate, reload, size, ammo));
+      }
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
+  /**
+   * This method load the data needed in the Theory screens
+   *
+   * @param json The archive JSON converted to String
+   * @return boolean that indicate if the load was successful
+   */
+  private boolean loadTheoryFromJSON(String json) {
+    Log.e(TAG, "loadTheoryFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_THEORY);
+
+      theoryList = new ArrayList<>();
+
+      if (jsonArray.length() > 0) {
+
+        final TheoryItem[] theoryList = gson.fromJson(jsonArray.toString(), TheoryItem[].class);
+
+
+        for (TheoryItem theoryItem : theoryList) {
+          insertAdviceItem(theoryItem);
+        }
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  }
+
+  /**
+   * This method load the data needed in the Shop screens
+   *
+   * @return boolean that indicate if the load was successful
+   */
+  private boolean loadShopFromJSON() {
+    try {
+      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_SHOP);
+      JSONArray jsonArray = jsonObject.getJSONArray("items");
+
+      shopList = new ArrayList<>();
+
+      for (int i = 0; i < jsonArray.length(); i++) {
+        JSONObject jsonIterator = jsonArray.getJSONObject(i);
+        //String id = jsonIterator.getString("itemid");
+        String content = jsonIterator.getString("name");
+        String details = jsonIterator.getString("cost");
+
+        JSONObject jsonObject2 = jsonIterator.getJSONObject("item").getJSONObject("images");
+        String image = jsonObject2.getString("background");
+        getShopDao().insertShop(new ShopItem(i, image, content, details));
+      }
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
+  /**
+   * This method load the data needed in the Challenge Screen in English
+   *
+   * @return boolean that indicate if the load was successful
+   */
+  private boolean loadEnglishChallengesFromJSON() {
+    try {
+      JSONObject JSON = readJsonFromUrl(JSON_ROOT_ENGLISH_CHALLENGE);
+      String season = JSON.getString("season");
+      String currentWeek = JSON.getString("currentweek");
+      JSONObject challenges = JSON.getJSONObject("challenges");
+      for (int i = 0; i < challenges.length(); i++) {
+        JSONArray WEEK = challenges.getJSONArray("week" + (i + 1));
+        if (WEEK.length() != 0) {
+          for (int j = 0; j < WEEK.length(); j++) {
+            JSONObject CHALLENGE = WEEK.getJSONObject(j);
+            String identifier = CHALLENGE.getString("identifier");
+            String challenge = CHALLENGE.getString("challenge");
+            String total = CHALLENGE.getString("total");
+            String stars = CHALLENGE.getString("stars");
+            String difficulty = CHALLENGE.getString("difficulty");
+
+            // change this line to include an object in a list with these attributes
+            // season, currentWeek, identifier, challenge, total, stars and difficulty
+
+          }
+        }
+      }
+
+      return true;
+    } catch (JSONException | IOException error) {
+      Log.e(TAG, "error: " + error);
+    }
+    return false;
+  }
+
+  // ------------------------------------------------------
+
+  private SupportDao getSupportDao() {
+    return database.supportDao();
+  }
+
+  /**
+   * @param callback needed because of async method
+   */
+  @Override
+  public void loadSupport(final boolean clearFirst, final FetchSupportDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (!clearFirst) {
+          database.clearAllTables();
+        }
+        boolean error = false;
+        if (getSupportDao().loadSupport().size() == 0) {
+          error = !loadSupportFromJSON(loadJSONFromAsset());
+        }
+        if (callback != null) {
+          callback.onSupportDataFetched(error);
+        }
+      }
+    });
+  }
+
+
+  /**
+   * @param callback needed because of async method
+   */
+  @Override
+  public void getSupportList(final AppRepository.GetSupportListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setSupportList(getSupportDao().loadSupport());
+        }
+      }
+    });
+  }
+
+  //todo: borrar
+  /**
+   * @param id       of the SupportItem
+   * @param callback needed because of async method
+   */
+  @Override
+  public void getSupportItem(int id, AppRepository.GetSupportItemCallback callback) {
+
+  }
+
+  /**
+   * @param supportItem a new item
+   */
+  private void insertSupportItem(SupportItem supportItem) {
+    supportList.add(supportItem);
+  }
+
+  /**
+   * @return the supportList
+   */
+  private List<SupportItem> loadSupportList() {
+    return this.supportList;
+  }
+
+  // ------------------------------------------------------------------------------------------------todo: the next 6 methods correspond to Place screens
+
+  private PlaceDao getPlaceDao() {
+    return database.placeDao();
+  }
+
+  /**
+   * @param callback needed because of async method
+   */
+  @Override
+  public void loadPlace(final boolean clearFirst, final FetchPlaceDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (!clearFirst) {
+          database.clearAllTables();
+        }
+        boolean error = false;
+        if (getPlaceDao().loadPlace().size() == 0) {
+          error = !loadPlaceFromJSON(loadJSONFromAsset());
+        }
+        if (callback != null) {
+          callback.onPlaceDataFetched(error);
+        }
+      }
+    });
+  }
+
+  /**
+   * @param callback needed because of async method
+   */
+  @Override
+  public void getPlaceList(final GetPlaceListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setPlaceList(getPlaceDao().loadPlace());
+        }
+      }
+    });
+  }
+
+  /**
+   * @param id       because is the primary key of a challengesWeeksItem
+   * @param callback needed because of async method
+   */
+  @Override
+  public void getPlaceItem(final int id, final GetPlaceItemCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setPlaceItem(supportList.get(id));
+        }
+      }
+    });
+  }
+
+  /**
+   * @param placeItem a new placeItem
+   */
+  private void insertPlaceItem(PlaceItem placeItem) {
+    placeList.add(placeItem);
+  }
+
+  /**
+   * @return the list of places
+   */
+  private List<PlaceItem> loadPlaceList() {
+    return this.placeList;
+  }
+
+  // The next 12 methods correspond to Challenge screens
 
   /**
    * @param callback needed because of async method
@@ -410,151 +740,29 @@ public class AppRepository implements RepositoryContract {
     return challengeList;
   }
 
-  // the next 6 methods correspond to Place screens
 
-  /**
-   * This method load the data needed in the Place screens
-   *
-   * @param json The archive JSON converted to String
-   * @return boolean that indicate if the load was successful
-   */
-  private boolean loadPlaceFromJSON(String json) {
-    Log.e(TAG, "loadPlaceFromJSON()");
 
-    GsonBuilder gsonBuilder = new GsonBuilder();
-    Gson gson = gsonBuilder.create();
+  //-----------------------------------------------------------todo: The next 6 methods correspond to Advice screens
 
-    try {
-
-      JSONObject jsonObject = new JSONObject(json);
-      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_PLACE);
-      placeList = new ArrayList<>();
-      if (jsonArray.length() > 0) {
-        final PlaceItem[] placeList = gson.fromJson(jsonArray.toString(), PlaceItem[].class);
-        for (PlaceItem placeItem : placeList) {
-          insertPlaceItem(placeItem);
-        }
-
-        return true;
-      }
-
-    } catch (JSONException error) {
-      Log.e(TAG, "error: " + error);
-    }
-
-    return false;
+  private AdviceDao getAdviceDao() {
+    return database.adviceDao();
   }
 
   /**
    * @param callback needed because of async method
    */
   @Override
-  public void loadPlace(final FetchPlaceDataCallback callback) {
+  public void loadAdvice(final boolean clearFirst, final FetchAdviceDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !loadPlaceFromJSON(loadJSONFromAsset());
-        if (callback != null) {
-          callback.onPlaceDataFetched(error);
+        if (!clearFirst) {
+          database.clearAllTables();
         }
-      }
-    });
-  }
-
-  /**
-   * @param callback needed because of async method
-   */
-  @Override
-  public void getPlaceList(final GetPlaceListCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setPlaceList(loadPlaceList());
+        boolean error = false;
+        if (getAdviceDao().loadAdvice().size() == 0) {
+          error = !loadAdviceFromJSON(loadJSONFromAsset());
         }
-      }
-    });
-  }
-
-  /**
-   * @param id       because is the primary key of a challengesWeeksItem
-   * @param callback needed because of async method
-   */
-  @Override
-  public void getPlaceItem(final int id, final GetPlaceItemCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setPlaceItem(supportList.get(id));
-        }
-      }
-    });
-  }
-
-  /**
-   * @param placeItem a new placeItem
-   */
-  private void insertPlaceItem(PlaceItem placeItem) {
-    placeList.add(placeItem);
-  }
-
-  /**
-   * @return the list of places
-   */
-  private List<PlaceItem> loadPlaceList() {
-    return this.placeList;
-  }
-
-  //The next 6 methods correspond to Advice screens
-
-  /**
-   * This method load the data needed in the Advice screens
-   *
-   * @param json The archive JSON converted to String
-   * @return boolean that indicate if the load was successful
-   */
-  private boolean loadAdviceFromJSON(String json) {
-    Log.e(TAG, "loadPlaceFromJSON()");
-
-    GsonBuilder gsonBuilder = new GsonBuilder();
-    Gson gson = gsonBuilder.create();
-
-    try {
-
-      JSONObject jsonObject = new JSONObject(json);
-      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_ADVICE);
-
-      adviceList = new ArrayList<>();
-
-      if (jsonArray.length() > 0) {
-
-        final AdviceItem[] adviceList = gson.fromJson(jsonArray.toString(), AdviceItem[].class);
-
-
-        for (AdviceItem adviceItem : adviceList) {
-          insertAdviceItem(adviceItem);
-        }
-
-        return true;
-      }
-
-    } catch (JSONException error) {
-      Log.e(TAG, "error: " + error);
-    }
-
-    return false;
-  }
-
-  /**
-   * @param callback needed because of async method
-   */
-  @Override
-  public void loadAdvice(final FetchAdviceDataCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        boolean error = !loadAdviceFromJSON(loadJSONFromAsset());
         if (callback != null) {
           callback.onAdviceDataFetched(error);
         }
@@ -571,7 +779,7 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setAdviceList(loadAdviceList());
+          callback.setAdviceList(getAdviceDao().loadAdvice());
         }
       }
     });
@@ -604,43 +812,7 @@ public class AppRepository implements RepositoryContract {
 
   //The next 6 methods correspoond to Theory screens
 
-  /**
-   * This method load the data needed in the Theory screens
-   *
-   * @param json The archive JSON converted to String
-   * @return boolean that indicate if the load was successful
-   */
-  private boolean loadTheoryFromJSON(String json) {
-    Log.e(TAG, "loadTheoryFromJSON()");
 
-    GsonBuilder gsonBuilder = new GsonBuilder();
-    Gson gson = gsonBuilder.create();
-
-    try {
-
-      JSONObject jsonObject = new JSONObject(json);
-      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_THEORY);
-
-      theoryList = new ArrayList<>();
-
-      if (jsonArray.length() > 0) {
-
-        final TheoryItem[] theoryList = gson.fromJson(jsonArray.toString(), TheoryItem[].class);
-
-
-        for (TheoryItem theoryItem : theoryList) {
-          insertAdviceItem(theoryItem);
-        }
-
-        return true;
-      }
-
-    } catch (JSONException error) {
-      Log.e(TAG, "error: " + error);
-    }
-
-    return false;
-  }
 
   /**
    * @param callback needed because of async method
@@ -696,46 +868,27 @@ public class AppRepository implements RepositoryContract {
     return this.theoryList;
   }
 
-  // The next 6 methods correspond to Shop screens
+  // ------------------------------------------------------------------------------------------todo: The next 6 methods correspond to Shop screens
 
-  /**
-   * This method load the data needed in the Shop screens
-   *
-   * @return boolean that indicate if the load was successful
-   */
-  private boolean loadShopFromJSON() {
-    try {
-      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_SHOP);
-      JSONArray jsonArray = jsonObject.getJSONArray("items");
-
-      shopList = new ArrayList<>();
-
-      for (int i = 0; i < jsonArray.length(); i++) {
-        JSONObject jsonIterator = jsonArray.getJSONObject(i);
-        //String id = jsonIterator.getString("itemid");
-        String content = jsonIterator.getString("name");
-        String details = jsonIterator.getString("cost");
-
-        JSONObject jsonObject2 = jsonIterator.getJSONObject("item").getJSONObject("images");
-        String image = jsonObject2.getString("background");
-        insertShopItem(new ShopItem(i, image, content, details));
-      }
-      return true;
-    } catch (JSONException | IOException error) {
-      Log.e(TAG, "error: " + error);
-    }
-    return false;
+  private ShopDao getShopDao() {
+    return database.shopDao();
   }
 
   /**
    * @param callback needed because of async method
    */
   @Override
-  public void loadShop(final FetchShopDataCallback callback) {
+  public void loadShop(final boolean clearFirst, final FetchShopDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !loadShopFromJSON();
+        if (!clearFirst) {
+          database.clearAllTables();
+        }
+        boolean error = false;
+        if (getShopDao().loadShop().size() == 0) {
+          error = !loadShopFromJSON();
+        }
         if (callback != null) {
           callback.onShopDataFetched(error);
         }
@@ -752,7 +905,7 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setShopList(loadShopList());
+          callback.setShopList(getShopDao().loadShop());
         }
       }
     });
@@ -790,55 +943,25 @@ public class AppRepository implements RepositoryContract {
 
   //The next 2 methods correspond to Weapon screens which are ready but not used yet
 
-  /**
-   * This method load the data needed in the Weapon Screen
-   *
-   * @return boolean that indicate if the load was successful
-   */
-  private boolean loadWeaponFromJSON() {
-    try {
-      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_WEAPON);
-      JSONArray jsonArray = jsonObject.getJSONArray("weapons");
-
-      weaponList = new ArrayList<>();
-
-      for (int i = 0; i < jsonArray.length(); i++) {
-        JSONObject weapon = jsonArray.getJSONObject(i);
-        JSONObject images = weapon.getJSONObject("images");
-        JSONObject stats = weapon.getJSONObject("stats");
-        JSONObject damage = stats.getJSONObject("damage");
-        JSONObject magazine = stats.getJSONObject("magazine");
-
-        String id = weapon.getString("hash");
-        String name = weapon.getString("name");
-        String rarity = weapon.getString("rarity");
-        String image = images.getString("image");
-        String damageBody = damage.getString("body");
-        String damageHead = damage.getString("head");
-        String dps = stats.getString("dps");
-        String fireRate = stats.getString("firerate");
-        String reload = magazine.getString("reload");
-        String size = magazine.getString("size");
-        String ammo = stats.getString("ammocost");
-
-        insertWeaponItem(new WeaponItem(id, name, rarity, image, damageBody, damageHead, dps, fireRate, reload, size, ammo));
-      }
-      return true;
-    } catch (JSONException | IOException error) {
-      Log.e(TAG, "error: " + error);
-    }
-    return false;
+  private WeaponDao getWeaponDao() {
+    return database.weaponDao();
   }
 
   /**
    * @param callback needed because of async method
    */
   @Override
-  public void loadWeapon(final FetchWeaponDataCallback callback) {
+  public void loadWeapon(final boolean clearFirst, final FetchWeaponDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !loadWeaponFromJSON();
+        if (!clearFirst) {
+          database.clearAllTables();
+        }
+        boolean error = false;
+        if (getWeaponDao().loadWeapon().size() == 0) {
+          error = !loadWeaponFromJSON();
+        }
         if (callback != null) {
           callback.onWeaponDataFetched(error);
         }
@@ -855,7 +978,7 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setWeaponList(loadWeaponList());
+          callback.setWeaponList(getWeaponDao().loadWeapon());
         }
       }
     });
@@ -877,24 +1000,7 @@ public class AppRepository implements RepositoryContract {
 
   //The next 5 methods correspond to Status screens which are ready but not used
 
-  /**
-   * @return true if the json has been loaded correctly
-   */
-  private boolean loadStatusFromJSON() {
-    try {
-      JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_STATUS);
-      String status = jsonObject.getString("status");
-      if (status.equals("UP")) {
-        setServerStatus(true);
-      } else {
-        setServerStatus(false);
-      }
-      return true;
-    } catch (JSONException | IOException error) {
-      Log.e(TAG, "error: " + error);
-    }
-    return false;
-  }
+
 
   /**
    * @param callback needed because of async method
@@ -940,41 +1046,7 @@ public class AppRepository implements RepositoryContract {
 
   //The next method correspond to the english challenges which is ready but not used)
 
-  /**
-   * This method load the data needed in the Challenge Screen in English
-   *
-   * @return boolean that indicate if the load was successful
-   */
-  private boolean loadEnglishChallengesFromJSON() {
-    try {
-      JSONObject JSON = readJsonFromUrl(JSON_ROOT_ENGLISH_CHALLENGE);
-      String season = JSON.getString("season");
-      String currentWeek = JSON.getString("currentweek");
-      JSONObject challenges = JSON.getJSONObject("challenges");
-      for (int i = 0; i < challenges.length(); i++) {
-        JSONArray WEEK = challenges.getJSONArray("week" + (i + 1));
-        if (WEEK.length() != 0) {
-          for (int j = 0; j < WEEK.length(); j++) {
-            JSONObject CHALLENGE = WEEK.getJSONObject(j);
-            String identifier = CHALLENGE.getString("identifier");
-            String challenge = CHALLENGE.getString("challenge");
-            String total = CHALLENGE.getString("total");
-            String stars = CHALLENGE.getString("stars");
-            String difficulty = CHALLENGE.getString("difficulty");
 
-            // change this line to include an object in a list with these attributes
-            // season, currentWeek, identifier, challenge, total, stars and difficulty
-
-          }
-        }
-      }
-
-      return true;
-    } catch (JSONException | IOException error) {
-      Log.e(TAG, "error: " + error);
-    }
-    return false;
-  }
 
 }
 

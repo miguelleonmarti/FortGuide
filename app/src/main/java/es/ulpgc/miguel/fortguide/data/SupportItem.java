@@ -1,11 +1,20 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class SupportItem extends Item{
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
-  private final String image, code, instagram, twitter, twitch, youtube;
+@Entity(tableName = "support")
+public class SupportItem {
+
+  @PrimaryKey
+  private int id;
+
+  private final String content, details, image, code, instagram, twitter, twitch, youtube;
 
   public SupportItem(int id, String image, String content, String details, String code, String instagram, String twitter, String twitch, String youtube) {
-    super(id, content, details);
+    this.id = id;
+    this.content = content;
+    this.details = details;
     this.image = image;
     this.code = code;
     this.instagram = instagram;
@@ -14,19 +23,16 @@ public class SupportItem extends Item{
     this.youtube = youtube;
   }
 
-  @Override
   public int getId() {
-    return super.getId();
+    return id;
   }
 
-  @Override
   public String getContent() {
-    return super.getContent();
+    return content;
   }
 
-  @Override
   public String getDetails() {
-    return super.getDetails();
+    return details;
   }
 
   public String getImage() {

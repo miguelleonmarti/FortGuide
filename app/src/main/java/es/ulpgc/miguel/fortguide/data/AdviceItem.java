@@ -1,26 +1,31 @@
 package es.ulpgc.miguel.fortguide.data;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "advice")
-public class AdviceItem extends Item{
+public class AdviceItem {
+
+    @PrimaryKey
+    private final int id;
+
+    private final String content, details;
 
     public AdviceItem(int id, String content, String details){
-        super(id, content, details);
+        this.id = id;
+        this.content = content;
+        this.details = details;
     }
 
-    @Override
     public int getId() {
-        return super.getId();
+        return id;
     }
 
-    @Override
     public String getContent() {
-        return super.getContent();
+        return content;
     }
 
-    @Override
     public String getDetails() {
-        return super.getDetails();
+        return details;
     }
 }

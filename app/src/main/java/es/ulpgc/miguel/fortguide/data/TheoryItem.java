@@ -1,36 +1,67 @@
 package es.ulpgc.miguel.fortguide.data;
 
-public class TheoryItem extends Item {
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
-  private String user;
-  private String likes;
-  private String dislikes;
+//@Entity(tableName = "theory")
+public class TheoryItem {
+
+  //@PrimaryKey
+  private int id;
+
+  private String content, details, user, likes, dislikes;
 
   public TheoryItem(int id, String content, String details, String user,String likes, String dislikes){
-    super(id,content,details);
+    this.id = id;
+    this.content = content;
+    this.details = details;
     this.user = user;
     this.likes = likes;
     this.dislikes = dislikes;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
+
+  public String getDetails() {
+    return details;
+  }
+
+  public void setDetails(String details) {
+    this.details = details;
   }
 
   public String getUser() {
     return user;
   }
 
-  public String getLikes() {
-    return likes;
-  }
-
-  public String getDislikes() {
-    return dislikes;
-  }
-
   public void setUser(String user) {
     this.user = user;
   }
 
+  public String getLikes() {
+    return likes;
+  }
+
   public void setLikes(String likes) {
     this.likes = likes;
+  }
+
+  public String getDislikes() {
+    return dislikes;
   }
 
   public void setDislikes(String dislikes) {

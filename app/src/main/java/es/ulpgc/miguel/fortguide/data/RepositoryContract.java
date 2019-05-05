@@ -33,7 +33,7 @@ public interface RepositoryContract {
     void setSupportItem(SupportItem supportItem);
   }
 
-  void loadSupport(AppRepository.FetchSupportDataCallback callback);
+  void loadSupport(final boolean clearFirst, AppRepository.FetchSupportDataCallback callback);
 
   void getSupportList(AppRepository.GetSupportListCallback callback);
 
@@ -49,7 +49,7 @@ public interface RepositoryContract {
     void setWeaponList(List<WeaponItem> weaponList);
   }
 
-  void loadWeapon(AppRepository.FetchWeaponDataCallback callback);
+  void loadWeapon(final boolean clearFirst, AppRepository.FetchWeaponDataCallback callback);
 
   void getWeaponList(AppRepository.GetWeaponListCallback callback);
 
@@ -102,7 +102,7 @@ public interface RepositoryContract {
     void setPlaceItem(SupportItem supportItem);
   }
 
-  void loadPlace(AppRepository.FetchPlaceDataCallback callback);
+  void loadPlace(final boolean clearFirst, AppRepository.FetchPlaceDataCallback callback);
 
   void getPlaceList(AppRepository.GetPlaceListCallback callback);
 
@@ -122,7 +122,7 @@ public interface RepositoryContract {
     void setAdviceItem(AdviceItem adviceItem);
   }
 
-  void loadAdvice (AppRepository.FetchAdviceDataCallback callback);
+  void loadAdvice (final boolean clearFirst, AppRepository.FetchAdviceDataCallback callback);
 
   void getAdviceList(AppRepository.GetAdviceListCallback callback);
 
@@ -142,7 +142,7 @@ public interface RepositoryContract {
     void setShopItem(ShopItem shopItem);
   }
 
-  void loadShop(AppRepository.FetchShopDataCallback callback);
+  void loadShop(final boolean clearFirst, AppRepository.FetchShopDataCallback callback);
 
   void getShopList(AppRepository.GetShopListCallback callback);
 

@@ -24,7 +24,7 @@ public class SupportModel implements SupportContract.Model {
   public void fetchSupportListData(final RepositoryContract.GetSupportListCallback callback) {
     Log.e(TAG, "fetchSupportListData()");
 
-    repository.loadSupport(new RepositoryContract.FetchSupportDataCallback() {
+    repository.loadSupport(true, new RepositoryContract.FetchSupportDataCallback() {
       @Override
       public void onSupportDataFetched(boolean error) {
         if (!error) {

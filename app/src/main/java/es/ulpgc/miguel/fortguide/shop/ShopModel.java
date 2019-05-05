@@ -21,7 +21,7 @@ public class ShopModel implements ShopContract.Model {
   @Override
   public void fetchData(final RepositoryContract.GetShopListCallback callback) {
     // Log.e(TAG, "fetchData()");
-    repository.loadShop(new RepositoryContract.FetchShopDataCallback() {
+    repository.loadShop(true, new RepositoryContract.FetchShopDataCallback() {
       @Override
       public void onShopDataFetched(boolean error) {
         if (!error) {

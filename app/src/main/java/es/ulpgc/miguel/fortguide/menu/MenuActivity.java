@@ -23,7 +23,6 @@ public class MenuActivity
   private TextView statusText,shopText,adviceText,challengeText,placeText,supportText,theoryText,weaponText;
   private LinearLayout shop,advice,challenge,place,support,theory,weapon,contact;
 
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

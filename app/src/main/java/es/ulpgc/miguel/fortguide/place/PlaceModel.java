@@ -24,7 +24,7 @@ public class PlaceModel implements PlaceContract.Model {
   public void fetchPlaceListData(final RepositoryContract.GetPlaceListCallback callback) {
     Log.e(TAG, "fetchPlaceListData()");
 
-    repository.loadPlace(new RepositoryContract.FetchPlaceDataCallback() {
+    repository.loadPlace(true, new RepositoryContract.FetchPlaceDataCallback() {
       @Override
       public void onPlaceDataFetched(boolean error) {
         if (!error) {

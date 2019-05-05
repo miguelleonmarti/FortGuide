@@ -1,8 +1,17 @@
 package es.ulpgc.miguel.fortguide.data;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
+@Entity(tableName = "weapon")
 public class WeaponItem {
 
-  private final String id, name, rarity, image, damageBody, damageHead, dps, fireRate, reload, size, ammo;
+  @NonNull
+  @PrimaryKey
+  private final String id;
+
+  private final String name, rarity, image, damageBody, damageHead, dps, fireRate, reload, size, ammo;
 
   public WeaponItem(String id, String name, String rarity, String image, String damageBody,
                     String damageHead, String dps, String fireRate, String reload, String size, String ammo) {

@@ -20,7 +20,7 @@ public class WeaponModel implements WeaponContract.Model {
 
   @Override
   public void fetchData(final RepositoryContract.GetWeaponListCallback callback) {
-    repository.loadWeapon(new RepositoryContract.FetchWeaponDataCallback() {
+    repository.loadWeapon(true, new RepositoryContract.FetchWeaponDataCallback() {
       @Override
       public void onWeaponDataFetched(boolean error) {
         if (!error) {

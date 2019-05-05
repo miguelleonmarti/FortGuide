@@ -1,28 +1,33 @@
 package es.ulpgc.miguel.fortguide.data;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
-public class ShopItem extends Item{
+@Entity(tableName = "shop")
+public class ShopItem {
 
-  private final String image;
+  @PrimaryKey
+  private final int id;
+
+  private final String content, details, image;
 
   public ShopItem(int id, String image, String content, String details) {
-    super(id, content, details);
+    this.id = id;
+    this.content = content;
+    this.details = details;
     this.image = image;
   }
 
-  @Override
   public int getId() {
-    return super.getId();
+    return id;
   }
 
-  @Override
   public String getContent() {
-    return super.getContent();
+    return content;
   }
 
-  @Override
   public String getDetails() {
-    return super.getDetails();
+    return details;
   }
 
   public String getImage() {
