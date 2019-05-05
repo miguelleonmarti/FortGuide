@@ -16,4 +16,5 @@
     <color name="colorEpicRarity">#B11DD9</color>
     <color name="colorLegendaryRarity">#FFD900</color>
     <color name="menu">#C2F2C94C</color>
+    <color name="colorWeaponBackground">#C8FFFFFF</color>
 </resources>
