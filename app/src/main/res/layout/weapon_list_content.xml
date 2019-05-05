@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:orientation="vertical">
@@ -13,14 +13,14 @@
         android:layout_width="122dp"
         android:layout_height="122dp"
         android:layout_gravity="center"
+        android:layout_weight="1"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
         android:text="@string/weapon_name_label"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -29,7 +29,7 @@
         android:id="@+id/damageBodyText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
         android:text="@string/weapon_damage_body_label"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -38,7 +38,7 @@
         android:id="@+id/damageHeadText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
         android:text="@string/weapon_damage_head_label"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -47,7 +47,7 @@
         android:id="@+id/dpsText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
         android:text="@string/weapon_dps_label"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -56,7 +56,7 @@
         android:id="@+id/fireRateText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
         android:text="@string/weapon_firerate_label"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -65,7 +65,7 @@
         android:id="@+id/reloadText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
         android:text="@string/weapon_reload_label"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -74,7 +74,7 @@
         android:id="@+id/sizeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
         android:text="@string/weapon_size_label"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -83,7 +83,7 @@
         android:id="@+id/ammoText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="110dp"
+        android:layout_weight="1"
         android:text="@string/weapon_ammo_label"
         android:textAlignment="center"
         android:textStyle="bold" />

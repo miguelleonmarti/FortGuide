@@ -81,7 +81,7 @@ public class AppRepository implements RepositoryContract {
   private AppRepository(Context context) {
     this.context = context;
 
-    database = Room.databaseBuilder(context, AppDatabase.class, DB_FILE).build();
+    database = Room.databaseBuilder(context, AppDatabase.class, DB_FILE).fallbackToDestructiveMigration().build();
   }
 
   // the next three methods are essential for the correct functionality of the repository
@@ -140,8 +140,7 @@ public class AppRepository implements RepositoryContract {
     try (InputStream is = new URL(url).openStream()) {
       BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
       String jsonText = readAll(rd);
-      JSONObject json = new JSONObject(jsonText);
-      return json;
+      return new JSONObject(jsonText);
 
     }
   }
