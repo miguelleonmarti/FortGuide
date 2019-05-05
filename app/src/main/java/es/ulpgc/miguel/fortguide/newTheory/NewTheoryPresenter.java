@@ -2,6 +2,9 @@ package es.ulpgc.miguel.fortguide.newTheory;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.miguel.fortguide.app.AppRepository;
+import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+
 public class NewTheoryPresenter implements NewTheoryContract.Presenter {
 
   public static String TAG = NewTheoryPresenter.class.getSimpleName();
@@ -57,4 +60,16 @@ public class NewTheoryPresenter implements NewTheoryContract.Presenter {
   public void startMenuScreen() {
     router.navigateToMenuScreen();
   }
+
+  @Override
+  public void insertNewTheory(String user, String nameTheory, String description) {
+    model.insertTheory(user, nameTheory, description, new RepositoryContract.InsertTheoryCallback() {
+      @Override
+      public void theoryInserted() {
+        view.get().onTheoryInserted();
+      }
+    });
+  }
+
+
 }

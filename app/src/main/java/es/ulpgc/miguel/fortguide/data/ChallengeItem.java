@@ -1,7 +1,12 @@
 package es.ulpgc.miguel.fortguide.data;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+//@Entity(tableName = "challenge")
 public class ChallengeItem extends Item {
 
+  //@PrimaryKey(autoGenerate = true)
   private int weeksId;
 
   public ChallengeItem(int id, String content, String details, int weeksId) {

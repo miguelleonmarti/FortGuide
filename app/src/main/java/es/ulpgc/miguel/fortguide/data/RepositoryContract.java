@@ -162,9 +162,14 @@ public interface RepositoryContract {
     void setTheoryItem(TheoryItem theoryItem);
   }
 
-  void loadTheory (AppRepository.FetchTheoryDataCallback callback);
+  interface InsertTheoryCallback{
+    void theoryInserted();
+  }
+  void loadTheory (final boolean clearFirst, AppRepository.FetchTheoryDataCallback callback);
 
   void getTheoryList(AppRepository.GetTheoryListCallback callback);
 
   void getTheoryItem(int id, AppRepository.GetTheoryItemCallback callback);
+
+  void insertTheory(TheoryItem theory, AppRepository.InsertTheoryCallback callback);
 }

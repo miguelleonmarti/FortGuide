@@ -37,6 +37,7 @@ import es.ulpgc.miguel.fortguide.database.AppDatabase;
 import es.ulpgc.miguel.fortguide.database.PlaceDao;
 import es.ulpgc.miguel.fortguide.database.ShopDao;
 import es.ulpgc.miguel.fortguide.database.SupportDao;
+import es.ulpgc.miguel.fortguide.database.TheoryDao;
 import es.ulpgc.miguel.fortguide.database.WeaponDao;
 
 public class AppRepository implements RepositoryContract {
@@ -370,7 +371,9 @@ public class AppRepository implements RepositoryContract {
 
 
         for (TheoryItem theoryItem : theoryList) {
-          insertAdviceItem(theoryItem);
+          //insertAdviceItem(theoryItem);
+          Log.e(TAG, Integer.toString(theoryItem.getId()));
+          getTheoryDao().insertTheory(theoryItem);
         }
 
         return true;
@@ -817,11 +820,17 @@ public class AppRepository implements RepositoryContract {
    * @param callback needed because of async method
    */
   @Override
-  public void loadTheory(final FetchTheoryDataCallback callback) {
+  public void loadTheory(final boolean clearFirst, final FetchTheoryDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        boolean error = !loadTheoryFromJSON(loadJSONFromAsset());
+        if (!clearFirst) {
+          database.clearAllTables();
+        }
+        boolean error = false;
+        if (getTheoryDao().loadTheory().size() == 0) {
+          error = !loadTheoryFromJSON(loadJSONFromAsset());
+        }
         if (callback != null) {
           callback.onTheoryDataFetched(error);
         }
@@ -838,7 +847,7 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setTheoryList(loadTheoryList());
+          callback.setTheoryList(getTheoryDao().loadTheory());
         }
       }
     });
@@ -853,6 +862,20 @@ public class AppRepository implements RepositoryContract {
 
   } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
 
+  @Override
+  public void insertTheory(final TheoryItem theory, final InsertTheoryCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        getTheoryDao().insertTheory(theory);
+        callback.theoryInserted();
+      }
+    });
+  }
+
+  private TheoryDao getTheoryDao(){
+    return database.theoryDao();
+  }
   /**
    * @param theoryItem a new item
    */

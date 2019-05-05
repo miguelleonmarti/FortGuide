@@ -58,6 +58,12 @@ public class TheoryActivity
     TheoryScreen.configure(this);
 
     // calling the presenter in order to fetch data
+    //presenter.fetchData();
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
     presenter.fetchData();
   }
 

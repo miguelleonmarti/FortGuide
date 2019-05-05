@@ -25,7 +25,7 @@ public class TheoryModel implements TheoryContract.Model {
   public void fetchTheoryListData(final RepositoryContract.GetTheoryListCallback callback) {
     Log.e(TAG, "fetchTheoryListData()");
 
-    repository.loadTheory(new RepositoryContract.FetchTheoryDataCallback() {
+    repository.loadTheory(true, new RepositoryContract.FetchTheoryDataCallback() {
       @Override
       public void onTheoryDataFetched(boolean error) {
         if(!error){

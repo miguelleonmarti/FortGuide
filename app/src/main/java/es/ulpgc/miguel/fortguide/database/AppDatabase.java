@@ -14,7 +14,8 @@ import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.data.TheoryItem;
 import es.ulpgc.miguel.fortguide.data.WeaponItem;
 
-@Database(entities = {AdviceItem.class, PlaceItem.class, ShopItem.class, SupportItem.class, WeaponItem.class}, version = 4, exportSchema = false)
+@Database(entities = {AdviceItem.class, PlaceItem.class, ShopItem.class, SupportItem.class,
+    WeaponItem.class, TheoryItem.class}, version = 13, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
   public abstract AdviceDao adviceDao();
@@ -29,7 +30,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
   public abstract SupportDao supportDao();
 
-  //public abstract TheoryDao theoryDao();
+  public abstract TheoryDao theoryDao();
 
   public abstract WeaponDao weaponDao();
 }

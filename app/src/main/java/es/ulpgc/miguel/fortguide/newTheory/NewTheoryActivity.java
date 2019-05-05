@@ -53,6 +53,8 @@ public class NewTheoryActivity
         if(userEditText.getText().toString().equals("") || nameEditText.getText().toString().equals("") || descriptionEditText.getText().toString().equals("")){
           Toast toast = Toast.makeText(getApplicationContext(), R.string.newTheory_error, Toast.LENGTH_SHORT);
           toast.show();
+        }else{
+          presenter.insertNewTheory(userEditText.getText().toString(),  nameEditText.getText().toString(), descriptionEditText.getText().toString());
         }
       }
     });
@@ -75,5 +77,17 @@ public class NewTheoryActivity
 
     // deal with the data
     ((TextView) findViewById(R.id.newTheoryTextView)).setText(viewModel.data);
+  }
+
+  @Override
+  public void onTheoryInserted() {
+    runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        Toast toast = Toast.makeText(getApplicationContext(), R.string.theory_inserted, Toast.LENGTH_SHORT);
+        toast.show();
+        finish();
+      }
+    });
   }
 }
