@@ -6,9 +6,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.miguel.fortguide.data.RepositoryContract;
-import es.ulpgc.miguel.fortguide.data.ShopItem;
 import es.ulpgc.miguel.fortguide.data.WeaponItem;
-import es.ulpgc.miguel.fortguide.shop.ShopState;
 
 public class WeaponPresenter implements WeaponContract.Presenter {
 
@@ -39,14 +37,14 @@ public class WeaponPresenter implements WeaponContract.Presenter {
   }
 
   @Override
-  public void fetchData() {
+  public void fetchData(String rarity) {
     Log.e(TAG, "fetchData()");
     final WeaponState state = router.getDataFromPreviousScreen();
-    if (state.weaponItemList != null) {
+    if (state.weaponItemList != null && state.weaponItemList.get(0).getRarity().equals(rarity)) {
       viewModel.weaponItemList = state.weaponItemList;
       view.get().displayData(viewModel);
     } else {
-      model.fetchData(new RepositoryContract.GetWeaponListCallback() {
+      model.fetchData(rarity, new RepositoryContract.GetWeaponListCallback() {
         @Override
         public void setWeaponList(List<WeaponItem> weaponList) {
           viewModel.weaponItemList = weaponList;

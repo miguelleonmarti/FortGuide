@@ -15,13 +15,13 @@ public interface WeaponContract {
     void injectView(WeakReference<View> view);
     void injectModel(Model model);
     void injectRouter(Router router);
-    void fetchData();
+    void fetchData(String rarity);
     void startMenuScreen();
 
   }
 
   interface Model {
-    void fetchData(RepositoryContract.GetWeaponListCallback callback);
+    void fetchData(String rarity, RepositoryContract.GetWeaponListCallback callback);
   }
 
   interface Router {

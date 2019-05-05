@@ -51,7 +51,7 @@ public interface RepositoryContract {
 
   void loadWeapon(final boolean clearFirst, AppRepository.FetchWeaponDataCallback callback);
 
-  void getWeaponList(AppRepository.GetWeaponListCallback callback);
+  void getWeaponList(String rarity, AppRepository.GetWeaponListCallback callback);
 
   // callbacks and methods of Challenge
 

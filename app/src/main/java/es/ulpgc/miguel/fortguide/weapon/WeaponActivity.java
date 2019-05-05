@@ -49,31 +49,31 @@ public class WeaponActivity
     commonRarityButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        presenter.fetchData();
+        presenter.fetchData("common");
       }
     });
     uncommonRarityButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        presenter.fetchData();
+        presenter.fetchData("uncommon");
       }
     });
     rareRarityButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-
+        presenter.fetchData("rare");
       }
     });
     epicRarityButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-
+        presenter.fetchData("uncommon");
       }
     });
     legendaryRarityButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-
+        presenter.fetchData("legendary");
       }
     });
 
@@ -89,7 +89,7 @@ public class WeaponActivity
     WeaponScreen.configure(this);
 
     // calling the presenter in order to fetch data
-    presenter.fetchData();
+    //presenter.fetchData();
   }
 
   @Override

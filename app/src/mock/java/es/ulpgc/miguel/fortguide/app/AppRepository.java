@@ -972,12 +972,12 @@ public class AppRepository implements RepositoryContract {
    * @param callback needed because of async method
    */
   @Override
-  public void getWeaponList(final AppRepository.GetWeaponListCallback callback) {
+  public void getWeaponList(final String rarity, final AppRepository.GetWeaponListCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setWeaponList(getWeaponDao().loadWeapon());
+          callback.setWeaponList(getWeaponDao().loadWeaponRarity(rarity));
         }
       }
     });

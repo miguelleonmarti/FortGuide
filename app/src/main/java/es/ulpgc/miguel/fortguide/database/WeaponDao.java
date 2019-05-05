@@ -26,4 +26,7 @@ public interface WeaponDao {
   @Query("SELECT * FROM weapon")
   List<WeaponItem> loadWeapon();
 
+  @Query("SELECT * FROM weapon WHERE rarity =:rarity")
+  List<WeaponItem> loadWeaponRarity(String rarity);
+
 }
