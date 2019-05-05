@@ -68,15 +68,15 @@
     <string name="weapon_image_label">weaponImage</string>
     <string name="place_image_label">placeImage</string>
     <string name="support_image_label">supportImage</string>
-    <string name="icon_label">Icono</string>
+    <string name="icon_label">ICONO</string>
     <string name="weapon_name_label">NOMBRE</string>
-    <string name="weapon_damage_body_label">DAÑO EN EL CUERPO</string>
-    <string name="weapon_damage_head_label">DAÑO EN LA CABEZA</string>
-    <string name="weapon_dps_label">DAÑO POR SEGUNDO</string>
+    <string name="weapon_damage_body_label">DAÑO CUERPO</string>
+    <string name="weapon_damage_head_label">DAÑO CABEZA</string>
+    <string name="weapon_dps_label">DPS</string>
     <string name="weapon_firerate_label">CADENCIA</string>
-    <string name="weapon_reload_label">TIEMPO DE RECARGA</string>
-    <string name="weapon_size_label">TAMAÑO DE CARGADOR</string>
-    <string name="weapon_ammo_label">TIPO DE MUNICIÓN</string>
+    <string name="weapon_reload_label">RECARGA</string>
+    <string name="weapon_size_label">CARGADOR</string>
+    <string name="weapon_ammo_label">MUNICIÓN</string>
     <string name="contact_text_label">SOPORTE</string>
 
 </resources>
