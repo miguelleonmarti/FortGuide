@@ -89,7 +89,7 @@ public class MenuRouter implements MenuContract.Router {
 
   @Override
   public void navigateToContactScreen() {
-    String TO = "app.kdm@gmail.com";
+    String[] TO = {"app.kdm@gmail.com"};
     String CC = "";
     Context context = mediator.getApplicationContext();
     Intent emailIntent = new Intent(Intent.ACTION_SEND);

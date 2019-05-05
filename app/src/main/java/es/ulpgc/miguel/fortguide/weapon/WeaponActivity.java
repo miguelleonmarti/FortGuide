@@ -26,7 +26,7 @@ public class WeaponActivity
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_weapon);
 
@@ -89,7 +89,7 @@ public class WeaponActivity
     WeaponScreen.configure(this);
 
     // calling the presenter in order to fetch data
-    //presenter.fetchData();
+    //presenter.fetchData(); todo: recuperar estado al girar la pantalla
   }
 
   @Override

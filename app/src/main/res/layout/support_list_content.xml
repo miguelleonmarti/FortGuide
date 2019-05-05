@@ -16,10 +16,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/content_description_shop_image"/>
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:contentDescription="@string/content_description_shop_image"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/contentView"
@@ -30,7 +30,7 @@
         android:text="@string/test_text_label"
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
-        android:textSize="24sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
         android:textColorLink="@color/colorTextButtonBlack"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="italic" />
 
 </LinearLayout>
