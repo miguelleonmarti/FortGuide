@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/weaponImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="122dp"
+        android:layout_height="122dp"
         android:layout_gravity="center"
         tools:srcCompat="@tools:sample/avatars" />
 
