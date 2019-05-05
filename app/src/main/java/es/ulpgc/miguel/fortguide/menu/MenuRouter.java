@@ -2,6 +2,7 @@ package es.ulpgc.miguel.fortguide.menu;
 
 import android.content.Intent;
 import android.content.Context;
+import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
 
 import es.ulpgc.miguel.fortguide.R;
@@ -88,9 +89,17 @@ public class MenuRouter implements MenuContract.Router {
 
   @Override
   public void navigateToContactScreen() {
+    String TO = "app.kdm@gmail.com";
+    String CC = "";
     Context context = mediator.getApplicationContext();
-    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto","app.kdm@gmail.com", null));
-    context.startActivity(emailIntent);
+    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+    emailIntent.setData(Uri.parse("mailto:"));
+    emailIntent.setType("text/plain");
+    emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+    emailIntent.putExtra(Intent.EXTRA_CC, CC);
+    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Support");
+
+    context.startActivity(Intent.createChooser(emailIntent,"Enviar email."));
   }
 
 }
