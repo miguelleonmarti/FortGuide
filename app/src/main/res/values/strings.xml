@@ -78,5 +78,6 @@
     <string name="weapon_size_label">CARGADOR</string>
     <string name="weapon_ammo_label">MUNICIÓN</string>
     <string name="contact_text_label">SOPORTE</string>
+    <string name="newTheory_error">Por favor, rellene todos los campos antes de seguir con la solicitud</string>
 
 </resources>

@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import es.ulpgc.miguel.fortguide.R;
 
@@ -16,16 +18,21 @@ public class NewTheoryActivity
   private NewTheoryContract.Presenter presenter;
 
   // declaring the buttons, texts and images
-   Button bananaButton, cancelButton;
+   Button bananaButton, cancelButton, sendButton;
+   EditText userEditText, nameEditText, descriptionEditText;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_new_theory);
 
     // finding buttons, texts and images id
     bananaButton=findViewById(R.id.bananaButton);
     cancelButton=findViewById(R.id.cancelButton);
+    sendButton=findViewById(R.id.sendButton);
+    userEditText=findViewById(R.id.userEditText);
+    nameEditText=findViewById(R.id.nameEditText);
+    descriptionEditText=findViewById(R.id.descriptionEditText);
 
     // listeners
     bananaButton.setOnClickListener(new View.OnClickListener() {
@@ -34,11 +41,19 @@ public class NewTheoryActivity
         presenter.startMenuScreen();
       }
     });
-
     cancelButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         onBackPressed();
+      }
+    });
+    sendButton.setOnClickListener(new View.OnClickListener(){
+      @Override
+      public void onClick(View v){
+        if(userEditText.getText().toString().equals("") || nameEditText.getText().toString().equals("") || descriptionEditText.getText().toString().equals("")){
+          Toast toast = Toast.makeText(getApplicationContext(), R.string.newTheory_error, Toast.LENGTH_SHORT);
+          toast.show();
+        }
       }
     });
 
