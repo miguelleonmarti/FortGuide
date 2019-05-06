@@ -75,7 +75,7 @@ public class PlaceActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        ((TextView) findViewById(R.id.placeBar)).setText("LUGARES"); //TODO: CAMBIAR POR EL STRINGS.XML
+        ((TextView) findViewById(R.id.placeBar)).setText(R.string.place_text_label);
         placeAdapter.setItems(viewModel.places);
       }
     });

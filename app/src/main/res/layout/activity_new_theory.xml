@@ -33,22 +33,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/userTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50sp"
-            android:text="@string/user_text_label"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonBlack"
-            android:textSize="24sp" />
-
         <RelativeLayout
             android:id="@+id/relative1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
-            android:layout_marginTop="20sp"
+            android:layout_marginTop="85sp"
             android:layout_marginRight="20sp"
             android:layout_marginBottom="80sp"
             android:background="@drawable/round_corners"
@@ -77,15 +67,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="200sp"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/nameTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/name_text_view"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonBlack"
-            android:textSize="24sp" />
 
         <RelativeLayout
             android:id="@+id/relative2"
@@ -121,15 +102,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="350sp"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/descriptionTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/description_text_view"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextButtonBlack"
-            android:textSize="24sp" />
 
         <RelativeLayout
             android:id="@+id/relative3"

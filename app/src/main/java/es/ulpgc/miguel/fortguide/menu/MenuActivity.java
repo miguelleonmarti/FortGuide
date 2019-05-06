@@ -40,7 +40,7 @@ public class MenuActivity
     adviceText = findViewById(R.id.adviceTextView);
     challengeText = findViewById(R.id.challengeTextView);
     placeText = findViewById(R.id.placeTextView);
-    supportText = findViewById(R.id.supportextView);
+    supportText = findViewById(R.id.supportTextView);
     theoryText = findViewById(R.id.theoryTextView);
     weaponText = findViewById(R.id.weaponTextView);
     shopText = findViewById(R.id.shopTextView);

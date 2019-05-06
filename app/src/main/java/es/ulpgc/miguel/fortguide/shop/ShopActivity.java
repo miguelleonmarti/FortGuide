@@ -45,7 +45,7 @@ public class ShopActivity
     shopAdapter = new ShopAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        ShopItem shopItem = (ShopItem) view.getTag(); //TODO: PENSAR QUE PODEMOS HACER CUANDO PULSEMOS EN UN ITEM
+        ShopItem shopItem = (ShopItem) view.getTag();
         presenter.startMenuScreen();
       }
     });
