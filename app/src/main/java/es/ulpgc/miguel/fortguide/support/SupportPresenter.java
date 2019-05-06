@@ -38,7 +38,7 @@ public class SupportPresenter implements SupportContract.Presenter {
 
   @Override
   public void fetchData() {
-    Log.e(TAG, "fetchData()");
+    //Log.e(TAG, "fetchData()");
     final SupportState state = router.getDataFromPreviousScreen();
     if (state.supportItemList != null) {
       viewModel.profiles = state.supportItemList;
