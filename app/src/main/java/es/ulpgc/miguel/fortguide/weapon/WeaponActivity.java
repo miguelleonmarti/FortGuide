@@ -88,8 +88,8 @@ public class WeaponActivity
     // do the setup
     WeaponScreen.configure(this);
 
-    // calling the presenter in order to fetch data
-    //presenter.fetchData(); todo: recuperar estado al girar la pantalla
+    // calling the presenter in order to refresh data on UI
+    presenter.refreshUI();
   }
 
   @Override

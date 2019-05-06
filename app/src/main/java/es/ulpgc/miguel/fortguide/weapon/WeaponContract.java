@@ -16,6 +16,7 @@ public interface WeaponContract {
     void injectModel(Model model);
     void injectRouter(Router router);
     void fetchData(String rarity);
+    void refreshUI();
     void startMenuScreen();
 
   }

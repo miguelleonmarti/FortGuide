@@ -1,12 +1,12 @@
 package es.ulpgc.miguel.fortguide.weapon;
 
-import android.util.Log;
+    import android.util.Log;
 
-import java.lang.ref.WeakReference;
-import java.util.List;
+    import java.lang.ref.WeakReference;
+    import java.util.List;
 
-import es.ulpgc.miguel.fortguide.data.RepositoryContract;
-import es.ulpgc.miguel.fortguide.data.WeaponItem;
+    import es.ulpgc.miguel.fortguide.data.RepositoryContract;
+    import es.ulpgc.miguel.fortguide.data.WeaponItem;
 
 public class WeaponPresenter implements WeaponContract.Presenter {
 
@@ -52,6 +52,16 @@ public class WeaponPresenter implements WeaponContract.Presenter {
           view.get().displayData(viewModel);
         }
       });
+    }
+  }
+
+  @Override
+  public void refreshUI() {
+    Log.e(TAG, "refreshUI()");
+    WeaponState state = router.getDataFromPreviousScreen();
+    if (state.weaponItemList != null) {
+      viewModel.weaponItemList = state.weaponItemList;
+      view.get().displayData(viewModel);
     }
   }
 
