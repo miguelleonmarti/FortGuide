@@ -51,7 +51,7 @@ public class PlaceDetailPresenterMockitoTest {
     verify(routerMock).navigateToMenuScreen();
   }
 
-  //TODO: FALTAN METODOS QUE TESTEAR
+
 
 
 }

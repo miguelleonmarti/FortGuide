@@ -18,9 +18,9 @@ import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.support.SupportContract;
 import es.ulpgc.miguel.fortguide.support.SupportPresenter;
 import es.ulpgc.miguel.fortguide.support.SupportState;
-import es.ulpgc.miguel.fortguide.support.SupportViewModel;
 
-import static org.mockito.Mockito.times;
+
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -41,14 +41,17 @@ public class SupportPresenterMockitoTest {
 
   private SupportContract.Presenter presenter;
 
+  private SupportState supportState;
+
   @Before
   public void setupSupportScreen() {
+    supportState = new SupportState();
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);
 
     // Get a reference to the class under test
-    presenter = new SupportPresenter(new SupportState());
+    presenter = new SupportPresenter(supportState);
 
     // Inject dependencies to the class under test
     presenter.injectView(new WeakReference<>(viewMock));
@@ -73,8 +76,7 @@ public class SupportPresenterMockitoTest {
 
   @Test
   public void fetchDataAsyncTask() {
-    SupportState supportState = new SupportState();
-    when(routerMock.getDataFromPreviousScreen()).thenReturn(supportState);
+    when(routerMock.getDataFromPreviousScreen()).thenReturn(new SupportState());
 
     List<SupportItem> supportList = new ArrayList<>();
     supportList.add(new SupportItem(1, "", "", "", "", "", "", "", ""));
@@ -87,7 +89,9 @@ public class SupportPresenterMockitoTest {
     verify(modelMock).fetchSupportListData(callbackCaptor.capture());
     callbackCaptor.getValue().setSupportList(supportList);
 
-    supportState.supportItemList = null;
+
+    supportState.supportItemList = supportList;
+    supportState.profiles = supportList;
 
     verify(viewMock).displayData(supportState);
   }

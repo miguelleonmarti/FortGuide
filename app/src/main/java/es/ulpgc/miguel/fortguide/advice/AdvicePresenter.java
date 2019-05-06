@@ -38,14 +38,21 @@ public class AdvicePresenter implements AdviceContract.Presenter {
 
   @Override
   public void fetchData() {
-    Log.e(TAG, "fetchData()");
-    model.fetchAdviceListData(new RepositoryContract.GetAdviceListCallback(){
-      @Override
-      public void setAdviceList(List<AdviceItem> adviceList) {
-        viewModel.adviceItemList = adviceList;
-        view.get().displayData(viewModel);
-      }
-    });
+    //Log.e(TAG, "fetchData()");
+    final AdviceState state = router.getDataFromPreviousScreen();
+    if (state.adviceItemList != null) {
+      viewModel.adviceItemList = state.adviceItemList;
+      view.get().displayData(viewModel);
+    } else {
+      model.fetchAdviceListData(new RepositoryContract.GetAdviceListCallback(){
+        @Override
+        public void setAdviceList(List<AdviceItem> adviceList) {
+          viewModel.adviceItemList = adviceList;
+          state.adviceItemList = viewModel.adviceItemList;
+          view.get().displayData(viewModel);
+        }
+      });
+    }
   }
 
   @Override

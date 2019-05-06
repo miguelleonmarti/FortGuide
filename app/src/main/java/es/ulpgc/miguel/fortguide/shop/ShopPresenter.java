@@ -38,7 +38,7 @@ public class ShopPresenter implements ShopContract.Presenter {
 
   @Override
   public void fetchData() {
-    Log.e(TAG, "fetchData()");
+    //Log.e(TAG, "fetchData()");
     final ShopState state = router.getDataFromPreviousScreen();
     if (state.shopItemList != null) {
       viewModel.shopItemList = state.shopItemList;

@@ -39,14 +39,20 @@ public class TheoryPresenter implements TheoryContract.Presenter {
 
   @Override
   public void fetchData() {
-    Log.e(TAG, "fetchData()");
-    model.fetchTheoryListData(new RepositoryContract.GetTheoryListCallback(){
-      @Override
-      public void setTheoryList(List<TheoryItem> theoryList) {
-        viewModel.theoryItemList = theoryList;
-        view.get().displayData(viewModel);
-      }
-    });
+    //Log.e(TAG, "fetchData()");
+    TheoryState state = router.getDataFromPreviousScreen();
+    if (state.theoryItemList != null) {
+      viewModel.theoryItemList = state.theoryItemList;
+      view.get().displayData(viewModel);
+    } else {
+      model.fetchTheoryListData(new RepositoryContract.GetTheoryListCallback(){
+        @Override
+        public void setTheoryList(List<TheoryItem> theoryList) {
+          viewModel.theoryItemList = theoryList;
+          view.get().displayData(viewModel);
+        }
+      });
+    }
   }
 
   @Override

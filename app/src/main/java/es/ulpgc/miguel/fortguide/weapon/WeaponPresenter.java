@@ -38,7 +38,7 @@ public class WeaponPresenter implements WeaponContract.Presenter {
 
   @Override
   public void fetchData(String rarity) {
-    Log.e(TAG, "fetchData()");
+    //Log.e(TAG, "fetchData()");
     final WeaponState state = router.getDataFromPreviousScreen();
     if (state.weaponItemList != null && state.weaponItemList.get(0).getRarity().equals(rarity)) {
       viewModel.weaponItemList = state.weaponItemList;
@@ -57,7 +57,7 @@ public class WeaponPresenter implements WeaponContract.Presenter {
 
   @Override
   public void refreshUI() {
-    Log.e(TAG, "refreshUI()");
+    //Log.e(TAG, "refreshUI()");
     WeaponState state = router.getDataFromPreviousScreen();
     if (state.weaponItemList != null) {
       viewModel.weaponItemList = state.weaponItemList;

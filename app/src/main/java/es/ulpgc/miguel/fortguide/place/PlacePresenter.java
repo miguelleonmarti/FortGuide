@@ -38,7 +38,7 @@ public class PlacePresenter implements PlaceContract.Presenter {
 
   @Override
   public void fetchData() {
-    Log.e(TAG, "fetchData()");
+    //Log.e(TAG, "fetchData()");
     final PlaceState state = router.getDataFromPreviousScreen();
     if (state.placeItemList != null) {
       viewModel.places = state.placeItemList;
