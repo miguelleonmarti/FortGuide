@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.introduction;
+package es.ulpgc.miguel.fortguide.TestEspresso;
 
 
 import android.content.Intent;

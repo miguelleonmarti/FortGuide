@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.introduction;
+package es.ulpgc.miguel.fortguide.TestEspresso;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

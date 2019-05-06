@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
-        <activity android:name=".introduction.IntroductionActivity">
+        <activity android:name=".TestEspresso.IntroductionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

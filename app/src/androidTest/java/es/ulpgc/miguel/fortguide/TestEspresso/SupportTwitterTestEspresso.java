@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.introduction;
+package es.ulpgc.miguel.fortguide.TestEspresso;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -32,13 +32,13 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class SupportTwitchTestEspresso {
+public class SupportTwitterTestEspresso {
 
   @Rule
   public ActivityTestRule<IntroductionActivity> mActivityTestRule = new ActivityTestRule<>(IntroductionActivity.class);
 
   @Test
-  public void supportTwitchTestEspresso() {
+  public void supportTwitterTestEspresso() {
     ViewInteraction appCompatButton = onView(
         allOf(withId(R.id.buttonContinue), withText("CONTINUAR"),
             childAtPosition(
@@ -81,7 +81,7 @@ public class SupportTwitchTestEspresso {
             childAtPosition(
                 withClassName(is("android.widget.FrameLayout")),
                 0)));
-    recyclerView.perform(actionOnItemAtPosition(2, click()));
+    recyclerView.perform(actionOnItemAtPosition(1, click()));
 
     // Added a sleep statement to match the app's execution delay.
     // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -93,12 +93,12 @@ public class SupportTwitchTestEspresso {
     }
 
     ViewInteraction appCompatImageView = onView(
-        allOf(withId(R.id.twitchButton), withContentDescription("twitch"),
+        allOf(withId(R.id.twitterButton), withContentDescription("twitter"),
             childAtPosition(
                 childAtPosition(
                     withClassName(is("android.support.constraint.ConstraintLayout")),
                     2),
-                5),
+                4),
             isDisplayed()));
     appCompatImageView.perform(click());
   }
