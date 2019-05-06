@@ -42,19 +42,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/supportBar">
 
+
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
             android:shape="ring"
             tools:src="@tools:sample/avatars" />
 
-
         <TextView
             android:id="@+id/creatorCodeLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="20dp"
+            android:layout_weight="1"
             android:paddingTop="10dp"
             android:text="@string/creator_code_label"
             android:textAlignment="center"
@@ -64,9 +66,10 @@
 
         <TextView
             android:id="@+id/creatorCodeText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="20dp"
+            android:layout_weight="1"
             android:paddingBottom="10dp"
             android:text="abcdefgh"
             android:textAlignment="center"
@@ -76,33 +79,37 @@
 
         <ImageView
             android:id="@+id/instagramButton"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="20dp"
+            android:layout_weight="2"
             android:contentDescription="@string/content_description_instagram"
             android:src="@drawable/instagram" />
 
         <ImageView
             android:id="@+id/twitterButton"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="20dp"
+            android:layout_weight="2"
             android:contentDescription="@string/content_description_twitter"
             android:src="@drawable/twitter" />
 
         <ImageView
             android:id="@+id/twitchButton"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="20dp"
+            android:layout_weight="2"
             android:contentDescription="@string/content_description_twitch"
             android:src="@drawable/twitch" />
 
         <ImageView
             android:id="@+id/youtubeButton"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="20dp"
+            android:layout_weight="2"
             android:contentDescription="@string/content_description_youtube"
             android:src="@drawable/youtube" />
 
