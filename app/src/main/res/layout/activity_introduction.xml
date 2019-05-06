@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/introduction"
     android:padding="16dp"
-    tools:context=".TestEspresso.IntroductionActivity">
+    tools:context=".test_espresso.IntroductionActivity">
 
     <ImageView
         android:id="@+id/starImage"

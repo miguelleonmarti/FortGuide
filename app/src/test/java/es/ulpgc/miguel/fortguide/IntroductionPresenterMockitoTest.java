@@ -9,9 +9,9 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.TestEspresso.IntroductionContract;
-import es.ulpgc.miguel.fortguide.TestEspresso.IntroductionPresenter;
-import es.ulpgc.miguel.fortguide.TestEspresso.IntroductionState;
+import es.ulpgc.miguel.fortguide.test_espresso.IntroductionContract;
+import es.ulpgc.miguel.fortguide.test_espresso.IntroductionPresenter;
+import es.ulpgc.miguel.fortguide.test_espresso.IntroductionState;
 
 import static org.mockito.Mockito.verify;
 

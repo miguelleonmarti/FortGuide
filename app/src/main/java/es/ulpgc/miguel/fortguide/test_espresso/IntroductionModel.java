@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.TestEspresso;
+package es.ulpgc.miguel.fortguide.test_espresso;
 
 
 public class IntroductionModel implements IntroductionContract.Model {

@@ -80,5 +80,10 @@
     <string name="contact_text_label">SOPORTE</string>
     <string name="newTheory_error">Por favor, rellene todos los campos antes de seguir con la solicitud</string>
     <string name="theory_inserted">Teoría añadida correctamente</string>
+    <string name="dislike_number_label">456</string>
+    <string name="likes_number_label">123</string>
+    <string name="place_pisos_label">PisosPicados</string>
+    <string name="name_example_label">GuilleSergio</string>
+    <string name="prize_example_label">1500</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.TestEspresso;
+package es.ulpgc.miguel.fortguide.test_espresso;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -30,13 +30,13 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class WeaponTestEspresso {
+public class ShopTestEspresso {
 
   @Rule
   public ActivityTestRule<IntroductionActivity> mActivityTestRule = new ActivityTestRule<>(IntroductionActivity.class);
 
   @Test
-  public void weaponTestEspresso() {
+  public void shopTestEspresso() {
     ViewInteraction appCompatButton = onView(
         allOf(withId(R.id.buttonContinue), withText("CONTINUAR"),
             childAtPosition(
@@ -57,12 +57,12 @@ public class WeaponTestEspresso {
     }
 
     ViewInteraction linearLayout = onView(
-        allOf(withId(R.id.weaponLayout),
+        allOf(withId(R.id.shopLayout),
             childAtPosition(
                 childAtPosition(
                     withClassName(is("android.widget.ScrollView")),
                     0),
-                4)));
+                0)));
     linearLayout.perform(scrollTo(), click());
 
     // Added a sleep statement to match the app's execution delay.
@@ -75,60 +75,6 @@ public class WeaponTestEspresso {
     }
 
     ViewInteraction appCompatButton2 = onView(
-        allOf(withId(R.id.commonRarityButton), withText("Common"),
-            childAtPosition(
-                childAtPosition(
-                    withClassName(is("android.widget.HorizontalScrollView")),
-                    0),
-                0)));
-    appCompatButton2.perform(scrollTo(), click());
-
-    // Added a sleep statement to match the app's execution delay.
-    // The recommended way to handle such scenarios is to use Espresso idling resources:
-    // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-    try {
-      Thread.sleep(700);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
-    ViewInteraction appCompatButton3 = onView(
-        allOf(withId(R.id.uncommonRarityButton), withText("Uncommon"),
-            childAtPosition(
-                childAtPosition(
-                    withClassName(is("android.widget.HorizontalScrollView")),
-                    0),
-                1)));
-    appCompatButton3.perform(scrollTo(), click());
-
-    ViewInteraction appCompatButton4 = onView(
-        allOf(withId(R.id.rareRarityButton), withText("Rare"),
-            childAtPosition(
-                childAtPosition(
-                    withClassName(is("android.widget.HorizontalScrollView")),
-                    0),
-                2)));
-    appCompatButton4.perform(scrollTo(), click());
-
-    ViewInteraction appCompatButton5 = onView(
-        allOf(withId(R.id.epicRarityButton), withText("Epic"),
-            childAtPosition(
-                childAtPosition(
-                    withClassName(is("android.widget.HorizontalScrollView")),
-                    0),
-                3)));
-    appCompatButton5.perform(scrollTo(), click());
-
-    ViewInteraction appCompatButton6 = onView(
-        allOf(withId(R.id.legendaryRarityButton), withText("Legendary"),
-            childAtPosition(
-                childAtPosition(
-                    withClassName(is("android.widget.HorizontalScrollView")),
-                    0),
-                4)));
-    appCompatButton6.perform(scrollTo(), click());
-
-    ViewInteraction appCompatButton7 = onView(
         allOf(withId(R.id.bananaButton),
             childAtPosition(
                 childAtPosition(
@@ -136,7 +82,7 @@ public class WeaponTestEspresso {
                     1),
                 0),
             isDisplayed()));
-    appCompatButton7.perform(click());
+    appCompatButton2.perform(click());
   }
 
   private static Matcher<View> childAtPosition(

@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.TestEspresso;
+package es.ulpgc.miguel.fortguide.test_espresso;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -32,13 +32,13 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class PlaceTestEspresso {
+public class AdviceTestEspresso {
 
   @Rule
   public ActivityTestRule<IntroductionActivity> mActivityTestRule = new ActivityTestRule<>(IntroductionActivity.class);
 
   @Test
-  public void placeTestEspresso() {
+  public void adviceTestEspresso() {
     ViewInteraction appCompatButton = onView(
         allOf(withId(R.id.buttonContinue), withText("CONTINUAR"),
             childAtPosition(
@@ -59,12 +59,12 @@ public class PlaceTestEspresso {
     }
 
     ViewInteraction linearLayout = onView(
-        allOf(withId(R.id.placeLayout),
+        allOf(withId(R.id.advicesLayout),
             childAtPosition(
                 childAtPosition(
                     withClassName(is("android.widget.ScrollView")),
                     0),
-                5)));
+                2)));
     linearLayout.perform(scrollTo(), click());
 
     // Added a sleep statement to match the app's execution delay.
@@ -77,11 +77,11 @@ public class PlaceTestEspresso {
     }
 
     ViewInteraction recyclerView = onView(
-        allOf(withId(R.id.placeList),
+        allOf(withId(R.id.adviceList),
             childAtPosition(
-                withClassName(is("android.widget.FrameLayout")),
-                0)));
-    recyclerView.perform(actionOnItemAtPosition(13, click()));
+                withClassName(is("android.support.constraint.ConstraintLayout")),
+                2)));
+    recyclerView.perform(actionOnItemAtPosition(1, click()));
 
     // Added a sleep statement to match the app's execution delay.
     // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -104,11 +104,11 @@ public class PlaceTestEspresso {
     }
 
     ViewInteraction recyclerView2 = onView(
-        allOf(withId(R.id.placeList),
+        allOf(withId(R.id.adviceList),
             childAtPosition(
-                withClassName(is("android.widget.FrameLayout")),
-                0)));
-    recyclerView2.perform(actionOnItemAtPosition(6, click()));
+                withClassName(is("android.support.constraint.ConstraintLayout")),
+                2)));
+    recyclerView2.perform(actionOnItemAtPosition(4, click()));
 
     // Added a sleep statement to match the app's execution delay.
     // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -131,11 +131,11 @@ public class PlaceTestEspresso {
     }
 
     ViewInteraction recyclerView3 = onView(
-        allOf(withId(R.id.placeList),
+        allOf(withId(R.id.adviceList),
             childAtPosition(
-                withClassName(is("android.widget.FrameLayout")),
-                0)));
-    recyclerView3.perform(actionOnItemAtPosition(16, click()));
+                withClassName(is("android.support.constraint.ConstraintLayout")),
+                2)));
+    recyclerView3.perform(actionOnItemAtPosition(6, click()));
 
     // Added a sleep statement to match the app's execution delay.
     // The recommended way to handle such scenarios is to use Espresso idling resources:

@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.TestEspresso;
+package es.ulpgc.miguel.fortguide.test_espresso;
 
 
 import android.support.test.espresso.ViewInteraction;

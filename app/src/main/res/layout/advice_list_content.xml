@@ -13,7 +13,7 @@
         android:background="@drawable/very_round_corners"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:text="Advice"
+        android:text="@string/advice_bar_label"
         android:textAlignment="center"
         android:textColor="@color/colorTextButtonBlack"
         android:textSize="18sp"

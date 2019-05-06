@@ -67,7 +67,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1.5"
-            android:text="abcdefgh"
+            android:text="@string/name_example_label"
             android:textAlignment="center"
             android:textColor="@color/colorTextButtonBlack"
             android:textSize="24sp"

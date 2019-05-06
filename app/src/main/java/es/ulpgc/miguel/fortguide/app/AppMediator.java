@@ -12,7 +12,7 @@ import es.ulpgc.miguel.fortguide.data.PlaceItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 import es.ulpgc.miguel.fortguide.data.SupportItem;
 import es.ulpgc.miguel.fortguide.data.TheoryItem;
-import es.ulpgc.miguel.fortguide.TestEspresso.IntroductionState;
+import es.ulpgc.miguel.fortguide.test_espresso.IntroductionState;
 import es.ulpgc.miguel.fortguide.menu.MenuState;
 import es.ulpgc.miguel.fortguide.newTheory.NewTheoryState;
 import es.ulpgc.miguel.fortguide.place.PlaceState;

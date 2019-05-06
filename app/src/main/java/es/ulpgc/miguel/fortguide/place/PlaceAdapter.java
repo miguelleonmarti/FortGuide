@@ -86,8 +86,6 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
     RequestManager reqManager = Glide.with(imageView.getContext());
     RequestBuilder reqBuilder = reqManager.load(imageUrl);
     RequestOptions reqOptions = new RequestOptions();
-    reqOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
-    reqBuilder.apply(reqOptions);
     reqBuilder.into(imageView);
   }
 }
