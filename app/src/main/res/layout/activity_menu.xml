@@ -37,7 +37,6 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="60dp"
                     android:layout_marginEnd="40dp"
-                    android:layout_weight="1"
                     android:text="@string/shop_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -49,7 +48,6 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
                     android:background="@drawable/shop"
                     android:contentDescription="@string/shop_image_label" />
 
