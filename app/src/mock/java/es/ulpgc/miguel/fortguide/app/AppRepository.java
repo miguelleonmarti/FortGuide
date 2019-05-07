@@ -201,8 +201,8 @@ public class AppRepository implements RepositoryContract {
           insertWeeksItem(challengesWeeksItem);
         }
         for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
-          for (ChallengeItem challengeItem : challengesWeeksItem.getItems()) {
-            challengeItem.setWeeksId(challengesWeeksItem.getId());
+          for (ChallengeItem challengeItem : challengesWeeksItem.items) {
+            challengeItem.weeksId = challengesWeeksItem.id;
           }
         }
 
@@ -496,6 +496,7 @@ public class AppRepository implements RepositoryContract {
   }
 
   //todo: borrar
+
   /**
    * @param id       of the SupportItem
    * @param callback needed because of async method
@@ -618,8 +619,8 @@ public class AppRepository implements RepositoryContract {
    * @param callback            needed because of async method
    */
   @Override
-  public void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, GetChallengeDetailListCallback callback) {
-    getChallengeDetailList(challengesWeeksItem.getId(), callback);
+  public void getChallengeDetailList(final ChallengesWeeksItem challengesWeeksItem, final GetChallengeDetailListCallback callback) {
+    getChallengeDetailList(challengesWeeksItem.id, callback);
   }
 
   /**
@@ -693,8 +694,8 @@ public class AppRepository implements RepositoryContract {
     List<ChallengeItem> challenges = new ArrayList<>();
 
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      if (challengesWeeksItem.getId() == weeksId) {
-        challenges = challengesWeeksItem.getItems();
+      if (challengesWeeksItem.id == weeksId) {
+        challenges = challengesWeeksItem.items;
       }
     }
     return challenges;
@@ -706,8 +707,8 @@ public class AppRepository implements RepositoryContract {
    */
   private ChallengeItem loadChallenge(int id) {
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      for (ChallengeItem challengeItem : challengesWeeksItem.getItems()) {
-        if (challengeItem.getId() == id) {
+      for (ChallengeItem challengeItem : challengesWeeksItem.items) {
+        if (challengeItem.id == id) {
           return challengeItem;
         }
       }
@@ -721,7 +722,7 @@ public class AppRepository implements RepositoryContract {
    */
   private ChallengesWeeksItem loadChallengesWeeksItem(int id) {
     for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      if (challengesWeeksItem.getId() == id) {
+      if (challengesWeeksItem.id == id) {
         return challengesWeeksItem;
       }
     }
@@ -741,7 +742,6 @@ public class AppRepository implements RepositoryContract {
   private List<ChallengesWeeksItem> loadWeeksList() {
     return challengeList;
   }
-
 
 
   //-----------------------------------------------------------todo: The next 6 methods correspond to Advice screens
@@ -815,7 +815,6 @@ public class AppRepository implements RepositoryContract {
   //The next 6 methods correspoond to Theory screens
 
 
-
   /**
    * @param callback needed because of async method
    */
@@ -873,9 +872,10 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  private TheoryDao getTheoryDao(){
+  private TheoryDao getTheoryDao() {
     return database.theoryDao();
   }
+
   /**
    * @param theoryItem a new item
    */
@@ -1023,7 +1023,6 @@ public class AppRepository implements RepositoryContract {
   //The next 5 methods correspond to Status screens which are ready but not used
 
 
-
   /**
    * @param callback needed because of async method
    */
@@ -1067,7 +1066,6 @@ public class AppRepository implements RepositoryContract {
 
 
   //The next method correspond to the english challenges which is ready but not used)
-
 
 
 }

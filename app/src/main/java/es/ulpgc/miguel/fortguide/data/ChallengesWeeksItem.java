@@ -6,33 +6,17 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ChallengesWeeksItem extends Item {
+public class ChallengesWeeksItem {
+
+  public int id;
+
+  public String content;
+  public String details;
 
   @SerializedName("detail")
-  private final List<ChallengeItem> items;
-
-  public ChallengesWeeksItem(int id, String content, String details, List<ChallengeItem> items) {
-    super(id, content, details);
-    this.items = items;
-  }
+  public List<ChallengeItem> items;
 
   @Override
-  public int getId() {
-    return super.getId();
-  }
-
-  @Override
-  public String getContent() {
-    return super.getContent();
-  }
-
-  @Override
-  public String getDetails() {
-    return super.getDetails();
-  }
-
-  public List<ChallengeItem> getItems() {
-    return items;
-  }
+  public String toString(){return content;}
 }
 

@@ -4,36 +4,15 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 //@Entity(tableName = "challenge")
-public class ChallengeItem extends Item {
+public class ChallengeItem {
 
-  //@PrimaryKey(autoGenerate = true)
-  private int weeksId;
+  public int id;
 
-  public ChallengeItem(int id, String content, String details, int weeksId) {
-    super(id, content, details);
-    this.weeksId = weeksId;
-  }
+  public String content;
+  public String details;
 
-  @Override
-  public int getId() {
-    return super.getId();
-  }
+  public int weeksId;
 
   @Override
-  public String getContent() {
-    return super.getContent();
-  }
-
-  @Override
-  public String getDetails() {
-    return super.getDetails();
-  }
-
-  public int getWeeksId() {
-    return weeksId;
-  }
-
-  public void setWeeksId(int weeksId) {
-    this.weeksId = weeksId;
-  }
+  public String toString(){return  content;}
 }
