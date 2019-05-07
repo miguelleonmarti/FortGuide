@@ -17,7 +17,7 @@ public class ChallengesWeeksListModel implements ChallengesWeeksListContract.Mod
 
   @Override
  public void fetchWeeksListData(final RepositoryContract.GetWeeksListCallback callback){
-    Log.e(TAG, "fetchWeeksListData");
+    //Log.e(TAG, "fetchWeeksListData");
     repository.loadWeeks(new RepositoryContract.FetchWeeksDataCallback() {
       @Override
       public void onWeeksDataFetched(boolean error) {
