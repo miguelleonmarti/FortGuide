@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.test_espresso;
+package es.ulpgc.miguel.fortguide.testEspresso;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -17,6 +17,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import es.ulpgc.miguel.fortguide.R;
+import es.ulpgc.miguel.fortguide.introduction.IntroductionActivity;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -32,13 +33,13 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class SupportInstagramTestEspresso {
+public class SupportYoutubeTestEspresso {
 
   @Rule
   public ActivityTestRule<IntroductionActivity> mActivityTestRule = new ActivityTestRule<>(IntroductionActivity.class);
 
   @Test
-  public void supportInstagramTestEspresso() {
+  public void supportYoutubeTestEspresso() {
     ViewInteraction appCompatButton = onView(
         allOf(withId(R.id.buttonContinue), withText("CONTINUAR"),
             childAtPosition(
@@ -81,7 +82,7 @@ public class SupportInstagramTestEspresso {
             childAtPosition(
                 withClassName(is("android.widget.FrameLayout")),
                 0)));
-    recyclerView.perform(actionOnItemAtPosition(0, click()));
+    recyclerView.perform(actionOnItemAtPosition(8, click()));
 
     // Added a sleep statement to match the app's execution delay.
     // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -93,12 +94,12 @@ public class SupportInstagramTestEspresso {
     }
 
     ViewInteraction appCompatImageView = onView(
-        allOf(withId(R.id.instagramButton), withContentDescription("instagram"),
+        allOf(withId(R.id.youtubeButton), withContentDescription("youtube"),
             childAtPosition(
                 childAtPosition(
                     withClassName(is("android.support.constraint.ConstraintLayout")),
                     2),
-                3),
+                6),
             isDisplayed()));
     appCompatImageView.perform(click());
   }

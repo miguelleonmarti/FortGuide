@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.test_espresso;
+package es.ulpgc.miguel.fortguide.testEspresso;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -17,14 +17,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import es.ulpgc.miguel.fortguide.R;
+import es.ulpgc.miguel.fortguide.introduction.IntroductionActivity;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.scrollTo;
-import static android.support.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
@@ -32,13 +31,13 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class SupportTwitterTestEspresso {
+public class WeaponTestEspresso {
 
   @Rule
   public ActivityTestRule<IntroductionActivity> mActivityTestRule = new ActivityTestRule<>(IntroductionActivity.class);
 
   @Test
-  public void supportTwitterTestEspresso() {
+  public void weaponTestEspresso() {
     ViewInteraction appCompatButton = onView(
         allOf(withId(R.id.buttonContinue), withText("CONTINUAR"),
             childAtPosition(
@@ -59,12 +58,12 @@ public class SupportTwitterTestEspresso {
     }
 
     ViewInteraction linearLayout = onView(
-        allOf(withId(R.id.supportLayout),
+        allOf(withId(R.id.weaponLayout),
             childAtPosition(
                 childAtPosition(
                     withClassName(is("android.widget.ScrollView")),
                     0),
-                6)));
+                4)));
     linearLayout.perform(scrollTo(), click());
 
     // Added a sleep statement to match the app's execution delay.
@@ -76,12 +75,14 @@ public class SupportTwitterTestEspresso {
       e.printStackTrace();
     }
 
-    ViewInteraction recyclerView = onView(
-        allOf(withId(R.id.supportList),
+    ViewInteraction appCompatButton2 = onView(
+        allOf(withId(R.id.commonRarityButton), withText("Common"),
             childAtPosition(
-                withClassName(is("android.widget.FrameLayout")),
+                childAtPosition(
+                    withClassName(is("android.widget.HorizontalScrollView")),
+                    0),
                 0)));
-    recyclerView.perform(actionOnItemAtPosition(1, click()));
+    appCompatButton2.perform(scrollTo(), click());
 
     // Added a sleep statement to match the app's execution delay.
     // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -92,15 +93,51 @@ public class SupportTwitterTestEspresso {
       e.printStackTrace();
     }
 
-    ViewInteraction appCompatImageView = onView(
-        allOf(withId(R.id.twitterButton), withContentDescription("twitter"),
+    ViewInteraction appCompatButton3 = onView(
+        allOf(withId(R.id.uncommonRarityButton), withText("Uncommon"),
+            childAtPosition(
+                childAtPosition(
+                    withClassName(is("android.widget.HorizontalScrollView")),
+                    0),
+                1)));
+    appCompatButton3.perform(scrollTo(), click());
+
+    ViewInteraction appCompatButton4 = onView(
+        allOf(withId(R.id.rareRarityButton), withText("Rare"),
+            childAtPosition(
+                childAtPosition(
+                    withClassName(is("android.widget.HorizontalScrollView")),
+                    0),
+                2)));
+    appCompatButton4.perform(scrollTo(), click());
+
+    ViewInteraction appCompatButton5 = onView(
+        allOf(withId(R.id.epicRarityButton), withText("Epic"),
+            childAtPosition(
+                childAtPosition(
+                    withClassName(is("android.widget.HorizontalScrollView")),
+                    0),
+                3)));
+    appCompatButton5.perform(scrollTo(), click());
+
+    ViewInteraction appCompatButton6 = onView(
+        allOf(withId(R.id.legendaryRarityButton), withText("Legendary"),
+            childAtPosition(
+                childAtPosition(
+                    withClassName(is("android.widget.HorizontalScrollView")),
+                    0),
+                4)));
+    appCompatButton6.perform(scrollTo(), click());
+
+    ViewInteraction appCompatButton7 = onView(
+        allOf(withId(R.id.bananaButton),
             childAtPosition(
                 childAtPosition(
                     withClassName(is("android.support.constraint.ConstraintLayout")),
-                    2),
-                4),
+                    1),
+                0),
             isDisplayed()));
-    appCompatImageView.perform(click());
+    appCompatButton7.perform(click());
   }
 
   private static Matcher<View> childAtPosition(

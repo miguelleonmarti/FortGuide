@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide.test_espresso;
+package es.ulpgc.miguel.fortguide.testEspresso;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -17,6 +17,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import es.ulpgc.miguel.fortguide.R;
+import es.ulpgc.miguel.fortguide.introduction.IntroductionActivity;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.pressBack;
