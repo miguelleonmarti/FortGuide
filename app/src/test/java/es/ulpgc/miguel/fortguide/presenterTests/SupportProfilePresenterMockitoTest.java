@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide;
+package es.ulpgc.miguel.fortguide.presenterTests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,35 +9,34 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.test_espresso.IntroductionContract;
-import es.ulpgc.miguel.fortguide.test_espresso.IntroductionPresenter;
-import es.ulpgc.miguel.fortguide.test_espresso.IntroductionState;
+import es.ulpgc.miguel.fortguide.support_profile.SupportProfileContract;
+import es.ulpgc.miguel.fortguide.support_profile.SupportProfilePresenter;
+import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
 
 import static org.mockito.Mockito.verify;
 
-
 @RunWith(MockitoJUnitRunner.class)
-public class IntroductionPresenterMockitoTest {
+public class SupportProfilePresenterMockitoTest {
 
   @Mock
-  private IntroductionContract.Model modelMock;
+  private SupportProfileContract.Model modelMock;
 
   @Mock
-  private IntroductionContract.View viewMock;
+  private SupportProfileContract.View viewMock;
 
   @Mock
-  private IntroductionContract.Router routerMock;
+  private SupportProfileContract.Router routerMock;
 
-  private IntroductionContract.Presenter presenter;
+  private SupportProfileContract.Presenter presenter;
 
   @Before
-  public void setupIntroductionScreen() {
+  public void setupSupportProfileScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);
 
     // Get a reference to the class under test
-    presenter = new IntroductionPresenter(new IntroductionState());
+    presenter = new SupportProfilePresenter(new SupportProfileState());
 
     // Inject dependencies to the class under test
     presenter.injectView(new WeakReference<>(viewMock));
@@ -46,20 +45,15 @@ public class IntroductionPresenterMockitoTest {
 
   }
 
-
   @Test
   public void goToMenuScreen() {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
   }
 
-  /*
   @Test
-  public void initializedNoButtonPressed(){
-    IntroductionState viewModel = new IntroductionState();
-    viewModel.data="";
-    presenter.fetchData();
-    verify(viewMock).displayData(viewModel);
+  public void goToSocialScreenIG(){
+    //presenter.startInstagramScreen();
+    //verify(routerMock).navigateToInstagramScreen();
   }
-*/
 }

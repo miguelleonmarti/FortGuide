@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide;
+package es.ulpgc.miguel.fortguide.presenterTests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,35 +9,34 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.newTheory.NewTheoryContract;
-import es.ulpgc.miguel.fortguide.newTheory.NewTheoryPresenter;
-import es.ulpgc.miguel.fortguide.newTheory.NewTheoryState;
-import es.ulpgc.miguel.fortguide.newTheory.NewTheoryViewModel;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListContract;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListPresenter;
+import es.ulpgc.miguel.fortguide.challenges_detail.ChallengesDetailListState;
 
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class NewTheoryPresenterMockitoTest {
+public class ChallengesDetailPresenterMockitoTest {
 
   @Mock
-  private NewTheoryContract.Model modelMock;
+  public ChallengesDetailListContract.Model modelMock;
 
   @Mock
-  private NewTheoryContract.View viewMock;
+  private ChallengesDetailListContract.View viewMock;
 
   @Mock
-  private NewTheoryContract.Router routerMock;
+  private ChallengesDetailListContract.Router routerMock;
 
-  private NewTheoryContract.Presenter presenter;
+  private ChallengesDetailListContract.Presenter presenter;
 
   @Before
-  public void setupNewTheoryScreen() {
+  public void setupChallengesDetailScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);
 
     // Get a reference to the class under test
-    presenter = new NewTheoryPresenter(new NewTheoryState());
+    presenter = new ChallengesDetailListPresenter(new ChallengesDetailListState());
 
     // Inject dependencies to the class under test
     presenter.injectView(new WeakReference<>(viewMock));
@@ -51,13 +50,4 @@ public class NewTheoryPresenterMockitoTest {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
   }
-
-
-  /*@Test
-  public void fetchNewTheoryData() {
-    NewTheoryViewModel newTheoryViewModel = new NewTheoryViewModel();
-    presenter.fetchData();
-    verify(viewMock).displayData(newTheoryViewModel);
-  }*/
-
 }

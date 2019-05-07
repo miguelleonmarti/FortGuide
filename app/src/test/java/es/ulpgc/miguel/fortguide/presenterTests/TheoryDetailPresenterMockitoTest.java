@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide;
+package es.ulpgc.miguel.fortguide.presenterTests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,34 +9,34 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.support_profile.SupportProfileContract;
-import es.ulpgc.miguel.fortguide.support_profile.SupportProfilePresenter;
-import es.ulpgc.miguel.fortguide.support_profile.SupportProfileState;
+import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailContract;
+import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailPresenter;
+import es.ulpgc.miguel.fortguide.theory_detail.TheoryDetailState;
 
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class SupportProfilePresenterMockitoTest {
+public class TheoryDetailPresenterMockitoTest {
 
   @Mock
-  private SupportProfileContract.Model modelMock;
+  private TheoryDetailContract.Model modelMock;
 
   @Mock
-  private SupportProfileContract.View viewMock;
+  private TheoryDetailContract.View viewMock;
 
   @Mock
-  private SupportProfileContract.Router routerMock;
+  private TheoryDetailContract.Router routerMock;
 
-  private SupportProfileContract.Presenter presenter;
+  private TheoryDetailContract.Presenter presenter;
 
   @Before
-  public void setupSupportProfileScreen() {
+  public void setupTheoryDetailScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);
 
     // Get a reference to the class under test
-    presenter = new SupportProfilePresenter(new SupportProfileState());
+    presenter = new TheoryDetailPresenter(new TheoryDetailState());
 
     // Inject dependencies to the class under test
     presenter.injectView(new WeakReference<>(viewMock));
@@ -49,11 +49,5 @@ public class SupportProfilePresenterMockitoTest {
   public void goToMenuScreen() {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
-  }
-
-  @Test
-  public void goToSocialScreenIG(){
-    //presenter.startInstagramScreen();
-    //verify(routerMock).navigateToInstagramScreen();
   }
 }

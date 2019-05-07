@@ -1,4 +1,4 @@
-package es.ulpgc.miguel.fortguide;
+package es.ulpgc.miguel.fortguide.presenterTests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,34 +9,34 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.miguel.fortguide.place_detail.PlaceDetailContract;
-import es.ulpgc.miguel.fortguide.place_detail.PlaceDetailPresenter;
-import es.ulpgc.miguel.fortguide.place_detail.PlaceDetailState;
+import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailContract;
+import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailPresenter;
+import es.ulpgc.miguel.fortguide.advice_detail.AdviceDetailState;
 
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PlaceDetailPresenterMockitoTest {
+public class AdviceDetailPresenterMockitoTest {
 
   @Mock
-  private PlaceDetailContract.Model modelMock;
+  private AdviceDetailContract.Model modelMock;
 
   @Mock
-  private PlaceDetailContract.View viewMock;
+  private AdviceDetailContract.View viewMock;
 
   @Mock
-  private PlaceDetailContract.Router routerMock;
+  private AdviceDetailContract.Router routerMock;
 
-  private PlaceDetailContract.Presenter presenter;
+  private AdviceDetailContract.Presenter presenter;
 
   @Before
-  public void setupPlaceDetailScreen() {
+  public void setupAdviceDetailScreen() {
 
     // To inject the mocks in the test this method needs to be called
     MockitoAnnotations.initMocks(this);
 
     // Get a reference to the class under test
-    presenter = new PlaceDetailPresenter(new PlaceDetailState());
+    presenter = new AdviceDetailPresenter(new AdviceDetailState());
 
     // Inject dependencies to the class under test
     presenter.injectView(new WeakReference<>(viewMock));
@@ -50,9 +50,4 @@ public class PlaceDetailPresenterMockitoTest {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
   }
-
-
-
-
 }
-
