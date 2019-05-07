@@ -55,7 +55,7 @@ public class ChallengesWeeksListAdapter
     holder.itemView.setTag(itemList.get(position));
     holder.itemView.setOnClickListener(clickListener);
 
-    holder.contentView.setText(itemList.get(position).content);
+    holder.contentView.setText(itemList.get(position).getContent());
 
   }
 

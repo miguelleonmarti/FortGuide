@@ -8,15 +8,51 @@ import java.util.List;
 
 public class ChallengesWeeksItem {
 
-  public int id;
+  private int id;
 
-  public String content;
-  public String details;
+  private String content;
+  private String details;
 
   @SerializedName("detail")
-  public List<ChallengeItem> items;
+  private List<ChallengeItem> items;
 
-  @Override
-  public String toString(){return content;}
+  public ChallengesWeeksItem(int id, String content, String details, List<ChallengeItem> items) {
+    this.id = id;
+    this.content = content;
+    this.details = details;
+    this.items = items;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
+
+  public String getDetails() {
+    return details;
+  }
+
+  public void setDetails(String details) {
+    this.details = details;
+  }
+
+  public List<ChallengeItem> getItems() {
+    return items;
+  }
+
+  public void setItems(List<ChallengeItem> items) {
+    this.items = items;
+  }
 }
 

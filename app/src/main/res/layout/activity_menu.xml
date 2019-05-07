@@ -147,7 +147,7 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:background="@drawable/advice"
+                    android:background="@drawable/teoria"
                     android:contentDescription="@string/theory_image_label" />
             </LinearLayout>
 
@@ -180,7 +180,7 @@
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:background="@drawable/weapons"
+                    android:background="@drawable/scar"
                     android:contentDescription="@string/weapon_image_label" />
             </LinearLayout>
 

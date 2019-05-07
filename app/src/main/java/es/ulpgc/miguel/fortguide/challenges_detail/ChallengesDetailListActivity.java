@@ -74,7 +74,7 @@ public class ChallengesDetailListActivity
       @Override
       public void run() {
         // deal with the data
-        ((TextView) findViewById(R.id.challengeDetailBarTextView)).setText(viewModel.challengesWeeksItem.content);
+        ((TextView) findViewById(R.id.challengeDetailBarTextView)).setText(viewModel.challengesWeeksItem.getContent());
         listAdapter.setItems(viewModel.challengeItemList);
       }
     });

@@ -6,13 +6,49 @@ import android.arch.persistence.room.PrimaryKey;
 //@Entity(tableName = "challenge")
 public class ChallengeItem {
 
-  public int id;
+  private int id;
 
-  public String content;
-  public String details;
+  private String content;
+  private String details;
 
   public int weeksId;
 
-  @Override
-  public String toString(){return  content;}
+  public ChallengeItem(int id,String content,String details){
+    this.id = id;
+    this.content = content;
+    this.details = details;
+  }
+
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
+
+  public String getDetails() {
+    return details;
+  }
+
+  public void setDetails(String details) {
+    this.details = details;
+  }
+
+  public int getWeeksId() {
+    return weeksId;
+  }
+
+  public void setWeeksId(int weeksId) {
+    this.weeksId = weeksId;
+  }
 }

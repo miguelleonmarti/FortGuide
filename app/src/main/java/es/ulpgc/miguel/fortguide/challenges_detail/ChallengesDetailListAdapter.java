@@ -55,8 +55,8 @@ public class ChallengesDetailListAdapter
   public void onBindViewHolder(final ViewHolder holder, int position) {
     holder.itemView.setTag(challengesList.get(position));
 
-    holder.contentView.setText(challengesList.get(position).content);
-    holder.detailView.setText(challengesList.get(position).details);
+    holder.contentView.setText(challengesList.get(position).getContent());
+    holder.detailView.setText(challengesList.get(position).getDetails());
   }
 
 
