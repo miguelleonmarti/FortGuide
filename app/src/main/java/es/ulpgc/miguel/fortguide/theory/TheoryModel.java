@@ -13,17 +13,14 @@ public class TheoryModel implements TheoryContract.Model {
   public static String TAG = TheoryModel.class.getSimpleName();
 
   private RepositoryContract repository;
-  private List<TheoryItem> theoryItems;
 
   public TheoryModel(RepositoryContract repository) {
     this.repository = repository;
-    this.theoryItems = new ArrayList<>();
   }
-
 
   @Override
   public void fetchTheoryListData(final RepositoryContract.GetTheoryListCallback callback) {
-    Log.e(TAG, "fetchTheoryListData()");
+    //Log.e(TAG, "fetchTheoryListData()");
 
     repository.loadTheory(true, new RepositoryContract.FetchTheoryDataCallback() {
       @Override

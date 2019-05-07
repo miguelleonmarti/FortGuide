@@ -32,24 +32,13 @@ public class WeaponModelMockitoTest {
   private ArgumentCaptor<RepositoryContract.FetchWeaponDataCallback> callbackCaptor;
 
   @Mock
-  private WeaponContract.Presenter presenterMock;
-
-  @Mock
-  private WeaponContract.View viewMock;
-
-  @Mock
-  private WeaponContract.Router routerMock;
+  private RepositoryContract repositoryMock;
 
   private WeaponContract.Model model;
 
-  @Mock
-  private RepositoryContract repositoryMock;
-
   private RepositoryContract.GetWeaponListCallback callback = new RepositoryContract.GetWeaponListCallback() {
     @Override
-    public void setWeaponList(List<WeaponItem> weaponList) {
-
-    }
+    public void setWeaponList(List<WeaponItem> weaponList) {}
   };
   private static final String rarity = "legendary";
   private static final boolean clearFirst = true;
@@ -58,34 +47,15 @@ public class WeaponModelMockitoTest {
   @Before
   public void setupWeaponScreen() {
     model = new WeaponModel(repositoryMock);
-
   }
 
   @Test
-  public void dummy() {
-
-  }
-  /*@Test
   public void fetchDataAsyncTask() {
     model.fetchData(rarity, callback);
     verify(repositoryMock).loadWeapon(eq(clearFirst), callbackCaptor.capture());
-    callbackCaptor.getValue().onWeaponDataFetched(eq(error));
-    verify(repositoryMock).getWeaponList(eq(rarity), callback);
-  }*/
-
-  /*  @Override
-  public void fetchData(final String rarity, final RepositoryContract.GetWeaponListCallback callback) {
-    repository.loadWeapon(true, new RepositoryContract.FetchWeaponDataCallback() {
-      @Override
-      public void onWeaponDataFetched(boolean error) {
-        if (!error) {
-          repository.getWeaponList(rarity, callback);
-        }
-      }
-    });
-  }*/
-
-
+    callbackCaptor.getValue().onWeaponDataFetched(error);
+    verify(repositoryMock).getWeaponList(rarity, callback);
+  }
 }
 
 

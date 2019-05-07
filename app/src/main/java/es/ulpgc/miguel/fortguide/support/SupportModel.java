@@ -12,17 +12,15 @@ public class SupportModel implements SupportContract.Model {
 
   public static String TAG = SupportModel.class.getSimpleName();
 
-  private List<SupportItem> supportItems;
   private RepositoryContract repository;
 
   public SupportModel(RepositoryContract repository) {
     this.repository = repository;
-    this.supportItems = new ArrayList<>();
   }
 
   @Override
   public void fetchSupportListData(final RepositoryContract.GetSupportListCallback callback) {
-    Log.e(TAG, "fetchSupportListData()");
+    //Log.e(TAG, "fetchSupportListData()");
 
     repository.loadSupport(true, new RepositoryContract.FetchSupportDataCallback() {
       @Override

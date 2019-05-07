@@ -12,17 +12,15 @@ public class PlaceModel implements PlaceContract.Model {
 
   public static String TAG = PlaceModel.class.getSimpleName();
 
-  private List<PlaceItem> placeItems;
   private RepositoryContract repository;
 
   public PlaceModel(RepositoryContract repository) {
     this.repository = repository;
-    this.placeItems = new ArrayList<>();
   }
 
   @Override
   public void fetchPlaceListData(final RepositoryContract.GetPlaceListCallback callback) {
-    Log.e(TAG, "fetchPlaceListData()");
+    //Log.e(TAG, "fetchPlaceListData()");
 
     repository.loadPlace(true, new RepositoryContract.FetchPlaceDataCallback() {
       @Override
