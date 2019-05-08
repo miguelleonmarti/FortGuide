@@ -32,11 +32,11 @@
 
                 <TextView
                     android:id="@+id/shopTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/shop_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -46,8 +46,8 @@
                     android:id="@+id/shopImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/shop"
                     android:contentDescription="@string/shop_image_label" />
 
@@ -66,11 +66,11 @@
 
                 <TextView
                     android:id="@+id/challengeTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/challenge_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -80,8 +80,8 @@
                     android:id="@+id/challengeImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/challenge"
                     android:contentDescription="@string/challenge_image_label" />
             </LinearLayout>
@@ -99,10 +99,11 @@
 
                 <TextView
                     android:id="@+id/adviceTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/advice_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -112,8 +113,8 @@
                     android:id="@+id/adviceImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/advice"
                     android:contentDescription="@string/advice_image_label" />
             </LinearLayout>
@@ -131,11 +132,11 @@
 
                 <TextView
                     android:id="@+id/theoryTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="22dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/theory_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -145,8 +146,8 @@
                     android:id="@+id/theoryImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/teoria"
                     android:contentDescription="@string/theory_image_label" />
             </LinearLayout>
@@ -164,11 +165,11 @@
 
                 <TextView
                     android:id="@+id/weaponTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="41dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/weapon_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -178,8 +179,8 @@
                     android:id="@+id/weaponImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/scar"
                     android:contentDescription="@string/weapon_image_label" />
             </LinearLayout>
@@ -197,11 +198,11 @@
 
                 <TextView
                     android:id="@+id/placeTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/place_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -211,8 +212,8 @@
                     android:id="@+id/placeImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/place"
                     android:contentDescription="@string/place_image_menu_label" />
             </LinearLayout>
@@ -230,11 +231,11 @@
 
                 <TextView
                     android:id="@+id/supportTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="47dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/support_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -244,8 +245,8 @@
                     android:id="@+id/supportImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/multiple_users_silhouette"
                     android:contentDescription="@string/support_image_label" />
             </LinearLayout>
@@ -263,11 +264,11 @@
 
                 <TextView
                     android:id="@+id/contactTextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="6"
                     android:text="@string/contact_text_label"
                     android:textColor="@color/colorTextButtonWhite"
                     android:textSize="30sp"
@@ -277,8 +278,8 @@
                     android:id="@+id/contactImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
                     android:background="@drawable/support"
                     android:contentDescription="@string/support_image_label" />
             </LinearLayout>
