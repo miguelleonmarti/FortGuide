@@ -84,7 +84,34 @@ public class TheoryTestEspresso {
             childAtPosition(
                 withClassName(is("android.support.constraint.ConstraintLayout")),
                 3)));
-    recyclerView.perform(actionOnItemAtPosition(3, click()));
+    recyclerView.perform(actionOnItemAtPosition(1, click()));
+
+    // Added a sleep statement to match the app's execution delay.
+    // The recommended way to handle such scenarios is to use Espresso idling resources:
+    // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+    try {
+      Thread.sleep(700);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    pressBack();
+
+    // Added a sleep statement to match the app's execution delay.
+    // The recommended way to handle such scenarios is to use Espresso idling resources:
+    // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+    try {
+      Thread.sleep(700);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    ViewInteraction recyclerView2 = onView(
+        allOf(withId(R.id.theoryList),
+            childAtPosition(
+                withClassName(is("android.support.constraint.ConstraintLayout")),
+                3)));
+    recyclerView2.perform(actionOnItemAtPosition(3, click()));
 
     // Added a sleep statement to match the app's execution delay.
     // The recommended way to handle such scenarios is to use Espresso idling resources:
@@ -132,7 +159,7 @@ public class TheoryTestEspresso {
                 allOf(withId(R.id.relative1),
                     childAtPosition(
                         withClassName(is("android.widget.LinearLayout")),
-                        1)),
+                        0)),
                 0),
             isDisplayed()));
     appCompatEditText.perform(replaceText("Dayron"), closeSoftKeyboard());
@@ -143,10 +170,10 @@ public class TheoryTestEspresso {
                 allOf(withId(R.id.relative2),
                     childAtPosition(
                         withClassName(is("android.widget.LinearLayout")),
-                        1)),
+                        0)),
                 0),
             isDisplayed()));
-    appCompatEditText2.perform(replaceText("Teoria Espresso"), closeSoftKeyboard());
+    appCompatEditText2.perform(replaceText("Teoría de Espesso"), closeSoftKeyboard());
 
     ViewInteraction appCompatEditText3 = onView(
         allOf(withId(R.id.descriptionEditText),
@@ -154,10 +181,10 @@ public class TheoryTestEspresso {
                 allOf(withId(R.id.relative3),
                     childAtPosition(
                         withClassName(is("android.widget.LinearLayout")),
-                        1)),
+                        0)),
                 0),
             isDisplayed()));
-    appCompatEditText3.perform(replaceText("Esto es una prueba con Espresso"), closeSoftKeyboard());
+    appCompatEditText3.perform(replaceText("Esto es una prueba de test Espresso"), closeSoftKeyboard());
 
     ViewInteraction appCompatButton3 = onView(
         allOf(withId(R.id.sendButton), withText("ENVIAR"),
@@ -178,106 +205,7 @@ public class TheoryTestEspresso {
       e.printStackTrace();
     }
 
-    ViewInteraction recyclerView2 = onView(
-        allOf(withId(R.id.theoryList),
-            childAtPosition(
-                withClassName(is("android.support.constraint.ConstraintLayout")),
-                3)));
-    recyclerView2.perform(actionOnItemAtPosition(5, click()));
-
-    // Added a sleep statement to match the app's execution delay.
-    // The recommended way to handle such scenarios is to use Espresso idling resources:
-    // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-    try {
-      Thread.sleep(700);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
-    pressBack();
-
-    // Added a sleep statement to match the app's execution delay.
-    // The recommended way to handle such scenarios is to use Espresso idling resources:
-    // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-    try {
-      Thread.sleep(700);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
     ViewInteraction appCompatButton4 = onView(
-        allOf(withId(R.id.addButton),
-            childAtPosition(
-                allOf(withId(R.id.layout1),
-                    childAtPosition(
-                        withClassName(is("android.support.constraint.ConstraintLayout")),
-                        2)),
-                0),
-            isDisplayed()));
-    appCompatButton4.perform(click());
-
-    // Added a sleep statement to match the app's execution delay.
-    // The recommended way to handle such scenarios is to use Espresso idling resources:
-    // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-    try {
-      Thread.sleep(700);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
-    ViewInteraction appCompatEditText4 = onView(
-        allOf(withId(R.id.userEditText),
-            childAtPosition(
-                allOf(withId(R.id.relative1),
-                    childAtPosition(
-                        withClassName(is("android.widget.LinearLayout")),
-                        1)),
-                0),
-            isDisplayed()));
-    appCompatEditText4.perform(replaceText("fghfgh"), closeSoftKeyboard());
-
-    ViewInteraction appCompatEditText5 = onView(
-        allOf(withId(R.id.nameEditText),
-            childAtPosition(
-                allOf(withId(R.id.relative2),
-                    childAtPosition(
-                        withClassName(is("android.widget.LinearLayout")),
-                        1)),
-                0),
-            isDisplayed()));
-    appCompatEditText5.perform(replaceText("asdasd"), closeSoftKeyboard());
-
-    ViewInteraction appCompatEditText6 = onView(
-        allOf(withId(R.id.descriptionEditText),
-            childAtPosition(
-                allOf(withId(R.id.relative3),
-                    childAtPosition(
-                        withClassName(is("android.widget.LinearLayout")),
-                        1)),
-                0),
-            isDisplayed()));
-    appCompatEditText6.perform(replaceText("sdfsdfsdf"), closeSoftKeyboard());
-
-    ViewInteraction appCompatButton5 = onView(
-        allOf(withId(R.id.cancelButton), withText("Cancelar"),
-            childAtPosition(
-                childAtPosition(
-                    withClassName(is("android.support.constraint.ConstraintLayout")),
-                    5),
-                0),
-            isDisplayed()));
-    appCompatButton5.perform(click());
-
-    // Added a sleep statement to match the app's execution delay.
-    // The recommended way to handle such scenarios is to use Espresso idling resources:
-    // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-    try {
-      Thread.sleep(700);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
-    ViewInteraction appCompatButton6 = onView(
         allOf(withId(R.id.bananaButton),
             childAtPosition(
                 childAtPosition(
@@ -285,7 +213,7 @@ public class TheoryTestEspresso {
                     1),
                 0),
             isDisplayed()));
-    appCompatButton6.perform(click());
+    appCompatButton4.perform(click());
   }
 
   private static Matcher<View> childAtPosition(
