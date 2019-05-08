@@ -53,7 +53,7 @@ public class PlaceActivity
     // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.placeList);
     recyclerView.setAdapter(placeAdapter);
-    recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); //TODO: CAMBIAR EL NUMERO DE COLUMNAS O NO?
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
     // do the setup
     PlaceScreen.configure(this);
