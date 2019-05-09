@@ -60,7 +60,7 @@ public interface AdviceContract {
 
   interface Model {
     /**
-     * Calls the repository in order to the fetch data (advice list
+     * Calls the repository in order to the fetch data (advice list)
      * It is an async task
      * @param callback GetAdviceListCallback
      */
