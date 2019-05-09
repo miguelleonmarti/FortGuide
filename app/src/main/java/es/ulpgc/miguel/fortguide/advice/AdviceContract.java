@@ -47,7 +47,8 @@ public interface AdviceContract {
     void fetchData();
 
     /**
-     * When a piece of advice is pressed
+     * When an item (advice) is pressed it tells the router
+     * what to pass to next screen
      * @param item AdviceItem
      */
     void selectAdviceListData(AdviceItem item);
@@ -81,7 +82,7 @@ public interface AdviceContract {
     void passDataToAdviceDetailScreen(AdviceItem item);
 
     /**
-     * Recovering the advice state (which it has the list)
+     * Recovering the advice state (it has the list)
      * in case the fetch data has been done before
      * @return AdviceState
      */
