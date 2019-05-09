@@ -17,13 +17,6 @@ public class ShopRouter implements ShopContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ShopActivity.class);
-    context.startActivity(intent);
-  }
-
-  @Override
   public void navigateToMenuScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, MenuActivity.class);
