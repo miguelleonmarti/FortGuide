@@ -40,19 +40,8 @@ public class SupportProfilePresenter implements SupportProfileContract.Presenter
     SupportItem supportItem = router.getDataFromSupportScreen();
     if (supportItem != null) {
       viewModel.profile = supportItem;
+      view.get().displayData(viewModel);
     }
-
-    if (viewModel.profile == null) {
-      // call the model
-      String code = model.fetchData(); //TODO: hay que poner el resto??
-
-      // set initial state
-      //viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
-
   }
 
   @Override

@@ -48,7 +48,7 @@ public class SupportProfileActivity
     instagramButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        //String socialNetwork = (String) view.getTag(); //TODO: de que forma hago esto??
+        //String socialNetwork = (String) view.getTag();
         presenter.startSocialNetworkScreen("instagram");
       }
     });
