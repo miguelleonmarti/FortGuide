@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -52,11 +53,14 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_PLACE = "place";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
   private static final String JSON_ROOT_ADVICE = "advice";
-  private static final String JSON_ROOT_SHOP = "https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en";
+  //private static final String JSON_ROOT_SHOP = "https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en";
+  private static final String JSON_ROOT_SHOP = "https://fortnite-api.theapinetwork.com/store/get";
   private static final String JSON_ROOT_WEAPON = "https://fortnite-public-api.theapinetwork.com/prod09/weapons/get";
   private static final String JSON_ROOT_STATUS = "https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status";
   private static final String JSON_ROOT_ENGLISH_CHALLENGE = "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current";
   private static final String JSON_ROOT_THEORY = "theory";
+
+  private static final String PASSWD = "d0dff89c7aee96727216cb8109fa1d74";
 
   public static AppRepository INSTANCE;
 
@@ -138,13 +142,38 @@ public class AppRepository implements RepositoryContract {
    * @throws JSONException because of 'JSONObject'
    */
   private JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-    try (InputStream is = new URL(url).openStream()) {
+    /*try (InputStream is = new URL(url).openStream()) {
       BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
       String jsonText = readAll(rd);
-      return new JSONObject(jsonText);
-
-    }
+      return new JSONObject(jsonText); //todo: esto funcionaba con la API anterior
+    }*/
+    URL apiURL = new URL(url);
+    HttpURLConnection con = (HttpURLConnection) apiURL.openConnection();
+    con.setRequestMethod("GET");
+    con.setRequestProperty("Authorization", PASSWD);
+    BufferedReader rd = new BufferedReader(new InputStreamReader(con.getInputStream(), Charset.forName("UTF-8")));
+    String jsonText = readAll(rd);
+    return new JSONObject(jsonText);
   }
+
+  /**
+   * -
+   *
+   * @param url api
+   * @return jsonObject
+   * @throws IOException   because of 'readAll(rd)' and 'URL'
+   * @throws JSONException because of 'JSONObject'
+   */
+  private JSONObject readJsonFromUrl2(String url) throws IOException, JSONException {
+    URL apiURL = new URL(url);
+    HttpURLConnection con = (HttpURLConnection) apiURL.openConnection();
+    con.setRequestMethod("GET");
+    con.setRequestProperty("Authorization", PASSWD);
+    BufferedReader rd = new BufferedReader(new InputStreamReader(con.getInputStream(), Charset.forName("UTF-8")));
+    String jsonText = readAll(rd);
+    return new JSONObject(jsonText);
+  }
+
 
   /**
    * This method load the data needed in the Support screens
@@ -394,15 +423,14 @@ public class AppRepository implements RepositoryContract {
   private boolean loadShopFromJSON() {
     try {
       JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_SHOP);
-      JSONArray jsonArray = jsonObject.getJSONArray("items");
+      JSONArray jsonArray = jsonObject.getJSONArray("data");
 
       shopList = new ArrayList<>();
 
       for (int i = 0; i < jsonArray.length(); i++) {
         JSONObject jsonIterator = jsonArray.getJSONObject(i);
-        //String id = jsonIterator.getString("itemid");
-        String content = jsonIterator.getString("name");
-        String details = jsonIterator.getString("cost");
+        String content = jsonIterator.getJSONObject("item").getString("name");
+        String details = jsonIterator.getJSONObject("store").getString("cost");
 
         JSONObject jsonObject2 = jsonIterator.getJSONObject("item").getJSONObject("images");
         String image = jsonObject2.getString("background");
@@ -494,8 +522,6 @@ public class AppRepository implements RepositoryContract {
       }
     });
   }
-
-  //todo: borrar
 
   /**
    * @param id       of the SupportItem
@@ -904,7 +930,7 @@ public class AppRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (!clearFirst) {
+        if (!clearFirst) { //todo: falta poner !
           database.clearAllTables();
         }
         boolean error = false;
