@@ -53,14 +53,13 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_PLACE = "place";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
   private static final String JSON_ROOT_ADVICE = "advice";
-  //private static final String JSON_ROOT_SHOP = "https://fortnite-public-api.theapinetwork.com/prod09/store/get?language=en";
   private static final String JSON_ROOT_SHOP = "https://fortnite-api.theapinetwork.com/store/get";
   private static final String JSON_ROOT_WEAPON = "https://fortnite-public-api.theapinetwork.com/prod09/weapons/get";
   private static final String JSON_ROOT_STATUS = "https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status";
   private static final String JSON_ROOT_ENGLISH_CHALLENGE = "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current";
   private static final String JSON_ROOT_THEORY = "theory";
 
-  private static final String PASSWD = "d0dff89c7aee96727216cb8109fa1d74";
+  private static final String PASSWORD = "d0dff89c7aee96727216cb8109fa1d74";
 
   public static AppRepository INSTANCE;
 
@@ -150,7 +149,7 @@ public class AppRepository implements RepositoryContract {
     URL apiURL = new URL(url);
     HttpURLConnection con = (HttpURLConnection) apiURL.openConnection();
     con.setRequestMethod("GET");
-    con.setRequestProperty("Authorization", PASSWD);
+    con.setRequestProperty("Authorization", PASSWORD);
     BufferedReader rd = new BufferedReader(new InputStreamReader(con.getInputStream(), Charset.forName("UTF-8")));
     String jsonText = readAll(rd);
     return new JSONObject(jsonText);
@@ -168,7 +167,7 @@ public class AppRepository implements RepositoryContract {
     URL apiURL = new URL(url);
     HttpURLConnection con = (HttpURLConnection) apiURL.openConnection();
     con.setRequestMethod("GET");
-    con.setRequestProperty("Authorization", PASSWD);
+    con.setRequestProperty("Authorization", PASSWORD);
     BufferedReader rd = new BufferedReader(new InputStreamReader(con.getInputStream(), Charset.forName("UTF-8")));
     String jsonText = readAll(rd);
     return new JSONObject(jsonText);
