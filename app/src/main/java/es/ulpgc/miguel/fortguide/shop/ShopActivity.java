@@ -45,7 +45,6 @@ public class ShopActivity
     shopAdapter = new ShopAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        ShopItem shopItem = (ShopItem) view.getTag();
         presenter.startMenuScreen();
       }
     });

@@ -45,10 +45,10 @@ public class NewTheoryPresenter implements NewTheoryContract.Presenter {
 
     if (viewModel.data == null) {
       // call the model
-      String data = model.fetchData();
+      //String data = model.fetchData();
 
       // set initial state
-      viewModel.data = data;
+      //viewModel.data = data;
     }
 
     // update the view

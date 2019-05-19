@@ -32,7 +32,6 @@ public interface NewTheoryContract {
   }
 
   interface Model {
-    String fetchData();
     void insertTheory(String user, String nameTheory, String description, RepositoryContract.InsertTheoryCallback callback);
   }
 

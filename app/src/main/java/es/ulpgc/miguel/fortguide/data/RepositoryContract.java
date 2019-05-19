@@ -165,6 +165,7 @@ public interface RepositoryContract {
   interface InsertTheoryCallback{
     void theoryInserted();
   }
+
   void loadTheory (final boolean clearFirst, AppRepository.FetchTheoryDataCallback callback);
 
   void getTheoryList(AppRepository.GetTheoryListCallback callback);

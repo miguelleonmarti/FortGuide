@@ -13,13 +13,8 @@ public class NewTheoryModel implements NewTheoryContract.Model {
   }
 
   @Override
-  public String fetchData() {
-    // Log.e(TAG, "fetchData()");
-    return "Hello";
-  }
-  @Override
   public void insertTheory(String user, String nameTheory, String description, RepositoryContract.InsertTheoryCallback callback){
-    TheoryItem theory = new TheoryItem(0, nameTheory, description, user, "0","0");
-    repository.insertTheory(theory, callback);
+    //TheoryItem theory = new TheoryItem(0, nameTheory, description, user, "0","0");
+    repository.insertTheory(new TheoryItem(0, nameTheory, description, user, "0","0"), callback);
   }
 }
