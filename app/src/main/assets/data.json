@@ -131,6 +131,36 @@
       "id": 4,
       "content": "Semana 4",
       "details": ""
+    },
+    {
+      "id": 5,
+      "content": "Semana 5",
+      "details": ""
+    },
+    {
+      "id": 6,
+      "content": "Semana 6",
+      "details": ""
+    },
+    {
+      "id": 7,
+      "content": "Semana 7",
+      "details": ""
+    },
+    {
+      "id": 8,
+      "content": "Semana 8",
+      "details": ""
+    },
+    {
+      "id": 9,
+      "content": "Semana 9",
+      "details": ""
+    },
+    {
+      "id": 10,
+      "content": "Semana 10",
+      "details": ""
     }
   ],
   "challenge": [
@@ -174,7 +204,7 @@
       "id": 7,
       "content": "Dificultad: fácil",
       "details": "Visita todos los campamentos piratas 0/7",
-      "weekId": 2
+      "weekId": 1
     },
     {
       "id": 8,
@@ -301,6 +331,258 @@
       "content": "Dificultad: fácil",
       "details": "Visita todos los campamentos piratas 0/7",
       "weekId": 4
+    },
+    {
+      "id": 29,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 5
+    },
+    {
+      "id": 30,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 5
+    },
+    {
+      "id": 31,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 5
+    },
+    {
+      "id": 32,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 5
+    },
+    {
+      "id": 33,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 5
+    },
+    {
+      "id": 34,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 5
+    },
+    {
+      "id": 35,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 5
+    },
+    {
+      "id": 36,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 6
+    },
+    {
+      "id": 37,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 6
+    },
+    {
+      "id": 38,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 6
+    },
+    {
+      "id": 39,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 6
+    },
+    {
+      "id": 40,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 6
+    },
+    {
+      "id": 41,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 6
+    },
+    {
+      "id": 42,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 6
+    },
+    {
+      "id": 43,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 7
+    },
+    {
+      "id": 44,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 7
+    },
+    {
+      "id": 45,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 7
+    },
+    {
+      "id": 46,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 7
+    },
+    {
+      "id": 47,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 7
+    },
+    {
+      "id": 48,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 7
+    },
+    {
+      "id": 49,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 7
+    },
+    {
+      "id": 50,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 8
+    },
+    {
+      "id": 51,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 8
+    },
+    {
+      "id": 52,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 8
+    },
+    {
+      "id": 53,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 8
+    },
+    {
+      "id": 54,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 8
+    },
+    {
+      "id": 55,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 8
+    },
+    {
+      "id": 56,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 8
+    },
+    {
+      "id": 57,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 9
+    },
+    {
+      "id": 58,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 9
+    },
+    {
+      "id": 59,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 9
+    },
+    {
+      "id": 60,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 9
+    },
+    {
+      "id": 61,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 9
+    },
+    {
+      "id": 62,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 9
+    },
+    {
+      "id": 63,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 9
+    },
+    {
+      "id": 64,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 10
+    },
+    {
+      "id": 65,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 10
+    },
+    {
+      "id": 66,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 10
+    },
+    {
+      "id": 67,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 10
+    },
+    {
+      "id": 68,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 10
+    },
+    {
+      "id": 69,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 10
+    },
+    {
+      "id": 70,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 10
     }
   ],
   "place": [

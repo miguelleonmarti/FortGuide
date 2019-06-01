@@ -12,12 +12,11 @@ public class ChallengesWeeksItem {
 
   @PrimaryKey
   private int id;
-  private String content, details;
+  private String content;
 
-  public ChallengesWeeksItem(int id, String content, String details) {
+  public ChallengesWeeksItem(int id, String content) {
     this.id = id;
     this.content = content;
-    this.details = details;
   }
 
   public int getId() {
@@ -35,14 +34,5 @@ public class ChallengesWeeksItem {
   public void setContent(String content) {
     this.content = content;
   }
-
-  public String getDetails() {
-    return details;
-  }
-
-  public void setDetails(String details) {
-    this.details = details;
-  }
-
 }
 

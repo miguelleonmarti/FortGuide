@@ -74,7 +74,7 @@ public class ChallengesDetailListActivity
       @Override
       public void run() {
         // deal with the data
-        ((TextView) findViewById(R.id.challengeDetailBarTextView)).setText("wa da je"); //todo: CAMBIARR
+        ((TextView) findViewById(R.id.challengeDetailBarTextView)).setText("SEMANA " + viewModel.challengeItemList.get(0).getWeekId());
         listAdapter.setItems(viewModel.challengeItemList);
       }
     });

@@ -8,9 +8,8 @@ public class ChallengeItem {
 
   @PrimaryKey
   private int id;
-
   private String content, details;
-  public int weekId;
+  private int weekId;
 
   public ChallengeItem(int id,String content,String details, int weekId){
     this.id = id;
