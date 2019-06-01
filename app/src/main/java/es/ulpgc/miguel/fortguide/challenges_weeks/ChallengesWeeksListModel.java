@@ -8,7 +8,6 @@ public class ChallengesWeeksListModel implements ChallengesWeeksListContract.Mod
 
   public static String TAG = ChallengesWeeksListModel.class.getSimpleName();
 
-
   private RepositoryContract repository;
 
   public ChallengesWeeksListModel(RepositoryContract repository) {
@@ -18,7 +17,7 @@ public class ChallengesWeeksListModel implements ChallengesWeeksListContract.Mod
   @Override
  public void fetchWeeksListData(final RepositoryContract.GetWeeksListCallback callback){
     //Log.e(TAG, "fetchWeeksListData");
-    repository.loadWeeks(new RepositoryContract.FetchWeeksDataCallback() {
+    repository.loadWeeks(true, new RepositoryContract.FetchWeeksDataCallback() {
       @Override
       public void onWeeksDataFetched(boolean error) {
         if(!error){

@@ -1,26 +1,23 @@
 package es.ulpgc.miguel.fortguide.data;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+@Entity(tableName = "weeks")
 public class ChallengesWeeksItem {
 
+  @PrimaryKey
   private int id;
+  private String content, details;
 
-  private String content;
-  private String details;
-
-  @SerializedName("detail")
-  private List<ChallengeItem> items;
-
-  public ChallengesWeeksItem(int id, String content, String details, List<ChallengeItem> items) {
+  public ChallengesWeeksItem(int id, String content, String details) {
     this.id = id;
     this.content = content;
     this.details = details;
-    this.items = items;
   }
 
   public int getId() {
@@ -47,12 +44,5 @@ public class ChallengesWeeksItem {
     this.details = details;
   }
 
-  public List<ChallengeItem> getItems() {
-    return items;
-  }
-
-  public void setItems(List<ChallengeItem> items) {
-    this.items = items;
-  }
 }
 

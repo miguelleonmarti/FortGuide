@@ -42,12 +42,7 @@ public class ShopActivity
     });
 
     // initializing the adapter
-    shopAdapter = new ShopAdapter(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        presenter.startMenuScreen();
-      }
-    });
+    shopAdapter = new ShopAdapter();
 
     // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.shopList);

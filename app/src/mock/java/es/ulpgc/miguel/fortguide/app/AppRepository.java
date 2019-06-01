@@ -35,6 +35,8 @@ import es.ulpgc.miguel.fortguide.data.TheoryItem;
 import es.ulpgc.miguel.fortguide.data.WeaponItem;
 import es.ulpgc.miguel.fortguide.database.AdviceDao;
 import es.ulpgc.miguel.fortguide.database.AppDatabase;
+import es.ulpgc.miguel.fortguide.database.ChallengeDao;
+import es.ulpgc.miguel.fortguide.database.ChallengesWeeksDao;
 import es.ulpgc.miguel.fortguide.database.PlaceDao;
 import es.ulpgc.miguel.fortguide.database.ShopDao;
 import es.ulpgc.miguel.fortguide.database.SupportDao;
@@ -51,6 +53,7 @@ public class AppRepository implements RepositoryContract {
 
   private static final String JSON_ROOT_SUPPORT = "support";
   private static final String JSON_ROOT_PLACE = "place";
+  private static final String JSON_ROOT_WEEK = "weeks";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
   private static final String JSON_ROOT_ADVICE = "advice";
   private static final String JSON_ROOT_SHOP = "https://fortnite-api.theapinetwork.com/store/get";
@@ -221,19 +224,13 @@ public class AppRepository implements RepositoryContract {
     try {
 
       JSONObject jsonObject = new JSONObject(json);
-      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_CHALLENGE);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_WEEK);
       challengeList = new ArrayList<>();
       if (jsonArray.length() > 0) {
         final ChallengesWeeksItem[] weeksList = gson.fromJson(jsonArray.toString(), ChallengesWeeksItem[].class);
         for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
-          insertWeeksItem(challengesWeeksItem);
+          getWeeksDao().insertWeek(challengesWeeksItem);
         }
-        for (ChallengesWeeksItem challengesWeeksItem : weeksList) {
-          for (ChallengeItem challengeItem : challengesWeeksItem.getItems()) {
-            challengeItem.weeksId = challengesWeeksItem.getId();
-          }
-        }
-
         return true;
       }
 
@@ -242,6 +239,42 @@ public class AppRepository implements RepositoryContract {
     }
 
     return false;
+  }
+
+  /**
+   * This method load the data needed in the Challenge Screens
+   *
+   * @param json The archive JSON converted to String
+   * @return boolean that indicate if the load was successful
+   */
+  private boolean loadChallengesFromJSON(String json) {
+    Log.e(TAG, "loadChallengesFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_CHALLENGE);
+      challengeList = new ArrayList<>();
+      if (jsonArray.length() > 0) {
+        final ChallengeItem[] challengeList = gson.fromJson(jsonArray.toString(), ChallengeItem[].class);
+        for (ChallengeItem challengeItem : challengeList) {
+          getChallengesDao().insertChallenge(challengeItem);
+        }
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
+    return false;
+  }
+
+  private ChallengesWeeksDao getWeeksDao() {
+    return database.weekDao();
   }
 
   /**
@@ -624,14 +657,17 @@ public class AppRepository implements RepositoryContract {
    * @param callback needed because of async method
    */
   @Override
-  public void loadWeeks(final FetchWeeksDataCallback callback) {
+  public void loadWeeks(final boolean clearFirst, final FetchWeeksDataCallback callback) {
     AsyncTask.execute(new Runnable() {
-
       @Override
       public void run() {
-
-        boolean error = !loadWeeksFromJSON(loadJSONFromAsset());
-
+        if (!clearFirst) {
+          database.clearAllTables();
+        }
+        boolean error = false;
+        if (getWeeksDao().loadWeeks().size() == 0) {
+          error = !loadWeeksFromJSON(loadJSONFromAsset());
+        }
         if (callback != null) {
           callback.onWeeksDataFetched(error);
         }
@@ -658,11 +694,16 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setChallengeDetailList(loadChallenges(weeksId));
+          callback.setChallengeDetailList(getChallengesDao().loadChallenges(weeksId));
         }
       }
     });
   }
+
+  private ChallengeDao getChallengesDao() {
+    return database.challengeDao();
+  }
+
 
   /**
    * @param id       in order to do more efficient searches
@@ -674,7 +715,7 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setChallengeDetail(loadChallenge(id));
+          //callback.setChallengeDetail(loadChallenge(id));
         }
       }
     });
@@ -689,7 +730,7 @@ public class AppRepository implements RepositoryContract {
       @Override
       public void run() {
         if (callback != null) {
-          callback.setWeeksItemList(loadWeeksList());
+          callback.setWeeksItemList(getWeeksDao().loadWeeks());
         }
       }
     });
@@ -715,30 +756,23 @@ public class AppRepository implements RepositoryContract {
    * @param weeksId in order to do more efficient searches
    * @return the list of challenges
    */
-  private List<ChallengeItem> loadChallenges(int weeksId) {
-    List<ChallengeItem> challenges = new ArrayList<>();
-
-    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      if (challengesWeeksItem.getId() == weeksId) {
-        challenges = challengesWeeksItem.getItems();
-      }
-    }
-    return challenges;
-  }
-
-  /**
-   * @param id bacause is the primary key of a challengeItem
-   * @return the challengeItem
-   */
-  private ChallengeItem loadChallenge(int id) {
-    for (ChallengesWeeksItem challengesWeeksItem : challengeList) {
-      for (ChallengeItem challengeItem : challengesWeeksItem.getItems()) {
-        if (challengeItem.getId() == id) {
-          return challengeItem;
+  @Override
+  public void loadChallenges(final boolean clearFirst, final int weeksId, final FetchChallengesDataCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (!clearFirst) {
+          database.clearAllTables();
+        }
+        boolean error = false;
+        if (getChallengesDao().loadChallenges(weeksId).size() == 0) {
+          error = !loadChallengesFromJSON(loadJSONFromAsset());
+        }
+        if (callback != null) {
+          callback.onChallengesDataFetched(error);
         }
       }
-    }
-    return null;
+    });
   }
 
   /**

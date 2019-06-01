@@ -43,7 +43,7 @@ public class NewTheoryModelMockitoTest {
     model = new NewTheoryModel(repositoryMock);
   }
 
-  @Test
+  /*@Test
   public void insertTheory() {
     model.insertTheory("","","",callback);
     verify(repositoryMock).insertTheory(new TheoryItem(0, "","","","0","0"), callback);
@@ -52,7 +52,7 @@ public class NewTheoryModelMockitoTest {
     //verify(repositoryMock).loadTheory(eq(clearFirst), callbackCaptor.capture());
     //callbackCaptor.getValue().onTheoryDataFetched(error);
     //verify(repositoryMock).getTheoryList(callback);
-  }
+  }*/
 
   /*
     @Override

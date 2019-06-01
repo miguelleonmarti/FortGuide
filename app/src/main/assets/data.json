@@ -111,416 +111,196 @@
       "youtube": "https://www.youtube.com/channel/UCoz3Kpu5lv-ALhR4h9bDvcw"
     }
   ],
-  "challenge": [
+  "weeks": [
     {
       "id": 1,
       "content": "Semana 1",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Visita todos los campamentos piratas 0/7"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Registra cofres en Ciudad Comercio o Chiringuito Chatarra 0/7"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Inflinge daño con escopetas y armas explosivas en la misma partida 0/2"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Visita una cara gigante en el hielo, desierto y jungla 0/3"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Usa un respiradero volcánico en partidas diferentes 0/7"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Consigue un asesinato con una escopeta, un fusil de asalto y un explosivo 0/7"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Inflinge daño a un vehículo conducido por un oponente 0/200"
-        }
-      ]
+      "details": ""
     },
     {
       "id": 2,
       "content": "Semana 2",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Aterriza en El Bloque 0/1"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Inflinge daño a entregas de suministro mientras caen 0/200"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Eliminaciones en Señorio de la Sal o Lomas Lúgubres 0/3"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: recupera salud con manzanas 0/25"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Visita los puntos más alejados al norte, sur, este y oeste de la isla 0/4"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Inflinge daño a enemigos con un caón pirata 0/100"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Registra un cofre en ubicaciones con nombre diferentes en una misma partida 0/3"
-        }
-      ]
+      "detail": ""
     },
     {
       "id": 3,
       "content": "Semana 3",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Visita Latifundio Letal y Señorio de la Sal en una misma partida 0/2"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Destruye cactus en el desierto 0/30"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Coloca trampas y plataformas diferentes en una misma partida 0/2"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Registra el lugar donde se encuentra la lupa en la pantalla de carga del mapa del tesoro 0/1"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Registra cofres en Escalones Estivales o Latifundio Letal 0/7"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Inflinge daño a la cabeza a enemigos 0/500"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Consigue una eliminacion con un subfusil, una pistola y un fusil de tirador 0/3"
-        }
-      ]
+      "details": ""
     },
     {
       "id": 4,
       "content": "Semana 4",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: aterriza en Pisos Picados 0/1"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Usa el boloncho en partidas distintas 0/5"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Consigue una eliminacion con un arma con mira y un arma con silenciador 0/2"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Lánzate y atraviesa estructuras con un cañón pirata 0/25"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Busca el tesoro enterrado 0/2"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Elimina enemigos en Aldehuela Alegre o Parque Placentero 0/3"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Fase 1: sobrevive a 60 oponentes en una misma partida 0/60"
-        }
-      ]
+      "details": ""
+    }
+  ],
+  "challenge": [
+    {
+      "id": 1,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 1
+    },
+    {
+      "id": 2,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 1
+    },
+    {
+      "id": 3,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 1
+    },
+    {
+      "id": 4,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 1
     },
     {
       "id": 5,
-      "content": "Semana 5",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Inflinge daño a tus oponentes con armas con mira 0/200"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Registra cofres en Oasis Ostentoso o Túneles Tortuosos 0/7"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Completa una vuelta de la pista de carreras en Aldehuela Alegre 0/1"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Consigue 15 rebotes con un solo lanzamiento del juguete pelota de goma 0/1"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Fase 1: Obtén escudos con setas 0/50"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Usa un respiradero volcánico, una tirolina y un vehículo en la misma partida 0/3"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Elimina a enemigos en campamentos piratas 0/3"
-        }
-      ]
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 1
     },
     {
       "id": 6,
-      "content": "Semana 6",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Visita un conejo de madera, un cerdo de piedra y una llama de metal 0/3"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Visita los 5 puntos más alto de la isla 0/5"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Elimina a enemigos en Albufera Apacible o Aeródromo Ártico 0/3"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Aterriza en Latifundio Letal 0/1"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Busca dónde apunta el cuchillo en la pantalla de carga del mapa del tesoro 0/1"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Consigue una eliminación con una pistola de mecha o un arco explosivo 0/1"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Usa diferentes objetos que se lanzan en una misma partida 0/2"
-        }
-      ]
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 1
     },
     {
       "id": 7,
-      "content": "Semana 7",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Inflinge daño a tus oponentes con el pico 0/100"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Visita Chiringuito Chatarra y El Bloque en una misma partida 0/2"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Visita campamentos piratas en una misma partida 0/3"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Inflinge daño a jugadores desde arriba 0/500"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Registra cofres en Balsa Botín o Ribera Repipi 0/7"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Fase 1: Inflinge daño a jugadores rivales mientras usas una tirolina 0/1"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Elimina a enemigos en ubicaciones con nombre diferentes 0/5"
-        }
-      ]
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
     },
     {
       "id": 8,
-      "content": "Semana 8",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Busca la señal del mapa del tesoro que hay en Oasis Ostentoso 0/1"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Usa máquinas expendedoras en partidas distintas 0/3"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Inflinge daño a enemigos usando al menos un globo 0/100"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Busca piezas de rompecabezas bajo puentes y en cuevas 0/7"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Fase 1: Marca el número de Hamburrrguesa en el gran teléfono al oeste de Latifundio Letal 0/1"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Elimina a enemigos en Socavón Soterrado o Aterrizaje Afortunado 0/7"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Elimina a un enemigo desde 50 m de distancia 0/2"
-        }
-      ]
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
     },
     {
       "id": 9,
-      "content": "Semana 9",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Aterriza en Balsa Botín 0/1"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Registra cofres en Pico Polar o Soto Solitario 0/7"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Monta en 3 respiraderos volcánicos distintos sin aterrizar 0/1"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Salta entre 3 dinosaurios 0/1"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Inflinge daño a enemigos desde abajo 0/500"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Revive a un compañero de equipo en una furgoneta de reinicio 0/1"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Elimina a un enemigo en diferentes partidas 0/5"
-        }
-      ]
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
     },
     {
       "id": 10,
-      "content": "Semana 10",
-      "detail": [
-        {
-          "id": 1,
-          "content": "Dificultad: fácil",
-          "details": "Lánzate a través de circulos llameantes con un cañón 0/3"
-        },
-        {
-          "id": 2,
-          "content": "Dificultad: fácil",
-          "details": "Fase 1: Recolecta madera en una misma partida 0/500"
-        },
-        {
-          "id": 3,
-          "content": "Dificultad: fácil",
-          "details": "Elimina enemigos en Pisos Picados o en El Bloque 0/3"
-        },
-        {
-          "id": 4,
-          "content": "Dificultad: fácil",
-          "details": "Inflinge daño con un fusil de infantería o un fusil de asalto pesado 0/500"
-        },
-        {
-          "id": 5,
-          "content": "Dificultad: media",
-          "details": "Fase 1: Busca la señal del mapa del tesoro que hay en Chiringuito Chatarra 0/1"
-        },
-        {
-          "id": 6,
-          "content": "Dificultad: media",
-          "details": "Inflinge daño antes de que pasen 10 s tras haber aterrizaado después de usar un respiradero volcánico 0/100"
-        },
-        {
-          "id": 7,
-          "content": "Dificultad: difícil",
-          "details": "Elimina a un enemigo desde 5 m o menos de distancia 0/2"
-        }
-      ]
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
+    },
+    {
+      "id": 11,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
+    },
+    {
+      "id": 12,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
+    },
+    {
+      "id": 13,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
+    },
+    {
+      "id": 14,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 2
+    },
+    {
+      "id": 15,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 3
+    },
+    {
+      "id": 16,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 3
+    },
+    {
+      "id": 17,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 3
+    },
+    {
+      "id": 18,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 3
+    },
+    {
+      "id": 19,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 3
+    },
+    {
+      "id": 20,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 3
+    },
+    {
+      "id": 21,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 3
+    },
+    {
+      "id": 22,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 4
+    },
+    {
+      "id": 23,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 4
+    },
+    {
+      "id": 24,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 4
+    },
+    {
+      "id": 25,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 4
+    },
+    {
+      "id": 26,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 4
+    },
+    {
+      "id": 27,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 4
+    },
+    {
+      "id": 28,
+      "content": "Dificultad: fácil",
+      "details": "Visita todos los campamentos piratas 0/7",
+      "weekId": 4
     }
   ],
   "place": [
@@ -743,7 +523,7 @@
       "id": 4,
       "user": "migueel_1998",
       "content": "Teoría del cometa",
-      "details": "En una de las antiguas temporadas hubo una lluvia de meteoritos en las partidas pública. En mi opinión, molaria que un cometa enorme pasara cerca de la isla durante un tiempo y que cuando este desaparezca, se abrierá nuevas zonas del mapa y aparezcan armas relacionadas con el espacio" ,
+      "details": "En una de las antiguas temporadas hubo una lluvia de meteoritos en las partidas pública. En mi opinión, molaria que un cometa enorme pasara cerca de la isla durante un tiempo y que cuando este desaparezca, se abrierá nuevas zonas del mapa y aparezcan armas relacionadas con el espacio",
       "likes": "36",
       "dislikes": "59"
     },

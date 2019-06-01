@@ -19,7 +19,7 @@ public interface ChallengesWeeksListContract {
     void injectRouter(Router router);
 
     void fetchWeeksListData();
-    void selectWeeksListData(ChallengesWeeksItem item);
+    void selectWeeksListData(int weekId);
     void startMenuScreen();
   }
 
@@ -29,7 +29,7 @@ public interface ChallengesWeeksListContract {
 
   interface Router {
     void navigateToChallengeDetailsScreen();
-    void passDataToChallengeDetailsScreen(ChallengesWeeksItem item);
+    void passDataToChallengeDetailsScreen(int weekId);
     void navigateToMenuScreen();
   }
 }

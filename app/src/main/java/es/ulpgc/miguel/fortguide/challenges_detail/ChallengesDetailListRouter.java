@@ -31,9 +31,8 @@ public class ChallengesDetailListRouter implements ChallengesDetailListContract.
   }
 
   @Override
-  public ChallengesWeeksItem getDataFromWeeksListScreen() {
-    ChallengesWeeksItem challengesWeeksItem = mediator.getChallengesWeeksItem();
-    return challengesWeeksItem;
+  public int getDataFromWeeksListScreen() {
+    return mediator.getWeekId();
   }
 
   @Override

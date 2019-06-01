@@ -59,6 +59,10 @@ public interface RepositoryContract {
     void onWeeksDataFetched(boolean error);
   }
 
+  interface FetchChallengesDataCallback {
+    void onChallengesDataFetched(boolean error);
+  }
+
   interface GetChallengeDetailListCallback {
     void setChallengeDetailList(List<ChallengeItem> challengeItems);
   }
@@ -75,7 +79,9 @@ public interface RepositoryContract {
     void setWeeksItem(ChallengesWeeksItem challengesWeeksItem);
   }
 
-  void loadWeeks(AppRepository.FetchWeeksDataCallback callback);
+  void loadWeeks(final boolean clearFirst, AppRepository.FetchWeeksDataCallback callback);
+
+  void loadChallenges(final boolean clearFirst, final int weekId, AppRepository.FetchChallengesDataCallback callback);
 
   void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, AppRepository.GetChallengeDetailListCallback callback);
 
@@ -86,7 +92,6 @@ public interface RepositoryContract {
   void getWeeksItem(int id, AppRepository.GetWeeksItemCallback callback);
 
   void getWeeksList(AppRepository.GetWeeksListCallback callback);
-
 
   // callbacks and methods of Place
 

@@ -43,9 +43,9 @@ public class AppMediator extends Application {
   private AdviceDetailState adviceDetailState;
   private PlaceDetailState placeDetailState;
 
-  //declaring items
+  //declaring items and variables
   private SupportItem supportItem;
-  private ChallengesWeeksItem challengesWeeksItem;
+  private int weekId;
   private ChallengeItem challengeItem;
   private PlaceItem placeItem;
   private AdviceItem adviceItem;
@@ -191,10 +191,10 @@ public class AppMediator extends Application {
 
   //getter and setter of items
 
-  public ChallengesWeeksItem getChallengesWeeksItem() { return challengesWeeksItem; }
+  public int getWeekId() { return weekId; }
 
-  public void setChallengesWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
-    this.challengesWeeksItem = challengesWeeksItem;
+  public void setWeekId(int weekId) {
+    this.weekId = weekId;
   }
 
   public SupportItem getSupportItem() {

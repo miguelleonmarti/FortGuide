@@ -17,9 +17,16 @@ public class ChallengesDetailListModel implements ChallengesDetailListContract.M
 
   @Override
   public void fetchChallengesDetailData(
-      ChallengesWeeksItem challengesWeeksItem, RepositoryContract.GetChallengeDetailListCallback callback) {
+      final int weekId, final RepositoryContract.GetChallengeDetailListCallback callback) {
+    //Log.e(TAG, "fetchChallengesDetailData()");
 
-    Log.e(TAG, "fetchChallengesDetailData()");
-    repository.getChallengeDetailList(challengesWeeksItem, callback);
+    repository.loadChallenges(true, weekId, new RepositoryContract.FetchChallengesDataCallback() {
+      @Override
+      public void onChallengesDataFetched(boolean error) {
+        if (!error) {
+          repository.getChallengeDetailList(weekId, callback);
+        }
+      }
+    });
   }
 }

@@ -25,11 +25,9 @@ public class ChallengesWeeksListPresenter implements ChallengesWeeksListContract
 
     // call the model
     model.fetchWeeksListData(new RepositoryContract.GetWeeksListCallback() {
-
       @Override
-      public void setWeeksItemList(List<ChallengesWeeksItem> WeeksList) {
-        viewModel.challengesWeeksItemList = WeeksList;
-
+      public void setWeeksItemList(List<ChallengesWeeksItem> weeksList) {
+        viewModel.challengesWeeksItemList = weeksList;
         view.get().displayWeeksListData(viewModel);
       }
     });
@@ -37,8 +35,8 @@ public class ChallengesWeeksListPresenter implements ChallengesWeeksListContract
   }
 
   @Override
-  public void selectWeeksListData(ChallengesWeeksItem item) {
-    router.passDataToChallengeDetailsScreen(item);
+  public void selectWeeksListData(int weekId) {
+    router.passDataToChallengeDetailsScreen(weekId);
     router.navigateToChallengeDetailsScreen();
   }
 

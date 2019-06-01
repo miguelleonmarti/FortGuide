@@ -6,8 +6,5 @@ import es.ulpgc.miguel.fortguide.data.ChallengeItem;
 import es.ulpgc.miguel.fortguide.data.ChallengesWeeksItem;
 
 public class ChallengesDetailListViewModel {
-
-  public ChallengesWeeksItem challengesWeeksItem;
   public List<ChallengeItem> challengeItemList;
-  public ChallengeItem challengeItem;
 }

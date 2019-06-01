@@ -3,20 +3,20 @@ package es.ulpgc.miguel.fortguide.data;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-//@Entity(tableName = "challenge")
+@Entity(tableName = "challenge")
 public class ChallengeItem {
 
+  @PrimaryKey
   private int id;
 
-  private String content;
-  private String details;
+  private String content, details;
+  public int weekId;
 
-  public int weeksId;
-
-  public ChallengeItem(int id,String content,String details){
+  public ChallengeItem(int id,String content,String details, int weekId){
     this.id = id;
     this.content = content;
     this.details = details;
+    this.weekId = weekId;
   }
 
 
@@ -44,11 +44,11 @@ public class ChallengeItem {
     this.details = details;
   }
 
-  public int getWeeksId() {
-    return weeksId;
+  public int getWeekId() {
+    return weekId;
   }
 
-  public void setWeeksId(int weeksId) {
-    this.weeksId = weeksId;
+  public void setWeekId(int weekId) {
+    this.weekId = weekId;
   }
 }

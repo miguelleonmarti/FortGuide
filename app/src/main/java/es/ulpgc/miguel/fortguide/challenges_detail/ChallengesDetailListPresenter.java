@@ -41,28 +41,19 @@ public class ChallengesDetailListPresenter implements ChallengesDetailListContra
   public void fetchChallengeDetailListData() {
     Log.e(TAG, "fetchChallengeDetailListData()");
 
-    // set passed state
-    ChallengesWeeksItem item = router.getDataFromWeeksListScreen();
-
-    if (item != null) {
-      viewModel.challengesWeeksItem = item;
-    }
+    // get week's id
+    int weekId = router.getDataFromWeeksListScreen();
 
     //call the model
-    model.fetchChallengesDetailData(viewModel.challengesWeeksItem,
+    model.fetchChallengesDetailData(weekId,
         new RepositoryContract.GetChallengeDetailListCallback() {
-
           @Override
           public void setChallengeDetailList(List<ChallengeItem> challengeItems) {
             viewModel.challengeItemList = challengeItems;
-
             view.get().displayChallengeDetailListData(viewModel);
           }
         });
   }
-
-
-
 
   @Override
   public void startMenuScreen() {

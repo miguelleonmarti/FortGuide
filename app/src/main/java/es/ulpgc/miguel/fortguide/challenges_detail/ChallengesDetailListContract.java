@@ -12,8 +12,6 @@ public interface ChallengesDetailListContract {
     void injectPresenter(Presenter presenter);
 
     void displayChallengeDetailListData(ChallengesDetailListViewModel viewModel);
-
-
   }
 
   interface Presenter {
@@ -31,16 +29,13 @@ public interface ChallengesDetailListContract {
   interface Model {
 
     void fetchChallengesDetailData(
-        ChallengesWeeksItem challengesWeeksItem, RepositoryContract.GetChallengeDetailListCallback callback);
+        int weekId, RepositoryContract.GetChallengeDetailListCallback callback);
   }
 
   interface Router {
-     void navigateToMenuScreen();
-
-     void passDataToNextScreen(ChallengeItem item);
-
-     void navigateToChallengeDetailScreen();
-
-    ChallengesWeeksItem getDataFromWeeksListScreen();
+    void navigateToMenuScreen();
+    void passDataToNextScreen(ChallengeItem item);
+    void navigateToChallengeDetailScreen();
+    int getDataFromWeeksListScreen();
   }
 }

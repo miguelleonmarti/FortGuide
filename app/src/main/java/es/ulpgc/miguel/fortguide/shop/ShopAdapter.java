@@ -22,11 +22,9 @@ import es.ulpgc.miguel.fortguide.data.ShopItem;
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
   private List<ShopItem> shopItemList;
-  private View.OnClickListener clickListener;
 
-  public ShopAdapter(View.OnClickListener clickListener) {
+  public ShopAdapter() {
     this.shopItemList = new ArrayList<>();
-    this.clickListener = clickListener;
   }
 
   public void addItem(ShopItem shopItem) {
@@ -54,7 +52,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
   @Override
   public void onBindViewHolder(ViewHolder holder, int position) {
     holder.itemView.setTag(shopItemList.get(position));
-    holder.itemView.setOnClickListener(clickListener);
 
     holder.contentView.setText(shopItemList.get(position).getContent());
     holder.detailsView.setText(shopItemList.get(position).getDetails());
@@ -88,7 +85,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
   private void loadImageFromURL(ImageView imageView, String imageUrl) {
     RequestManager reqManager = Glide.with(imageView.getContext());
     RequestBuilder reqBuilder = reqManager.load(imageUrl);
-    RequestOptions reqOptions = new RequestOptions();
     reqBuilder.into(imageView);
   }
 }

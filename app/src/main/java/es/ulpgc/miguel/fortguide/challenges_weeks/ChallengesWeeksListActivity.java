@@ -46,7 +46,7 @@ public class ChallengesWeeksListActivity
       @Override
       public void onClick(View view) {
         ChallengesWeeksItem item = (ChallengesWeeksItem) view.getTag();
-        presenter.selectWeeksListData(item);
+        presenter.selectWeeksListData(item.getId());
       }
     });
 
