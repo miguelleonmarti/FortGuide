@@ -67,7 +67,7 @@ public class WeaponActivity
     epicRarityButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        presenter.fetchData("uncommon");
+        presenter.fetchData("epic");
       }
     });
     legendaryRarityButton.setOnClickListener(new View.OnClickListener() {
