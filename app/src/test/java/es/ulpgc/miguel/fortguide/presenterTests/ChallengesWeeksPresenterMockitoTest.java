@@ -45,13 +45,11 @@ public class ChallengesWeeksPresenterMockitoTest {
 
   }
 
-
   @Test
   public void goToMenuScreen() {
     presenter.startMenuScreen();
     verify(routerMock).navigateToMenuScreen();
   }
-
 
   @Test
   public void goToChallengeDetailListScreen() {
@@ -59,8 +57,5 @@ public class ChallengesWeeksPresenterMockitoTest {
     verify(routerMock).passDataToChallengeDetailsScreen(1);
     verify(routerMock).navigateToChallengeDetailsScreen();
   }
-
-
-  //TODO Faltan metodos que testear
 }
 
