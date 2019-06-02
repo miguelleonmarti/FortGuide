@@ -18,17 +18,6 @@ public class IntroductionRouter implements IntroductionContract.Router {
   }
 
   @Override
-  public void passDataToNextScreen(IntroductionState state) {
-    mediator.setIntroductionState(state);
-  }
-
-  @Override
-  public IntroductionState getDataFromPreviousScreen() {
-    IntroductionState state = mediator.getIntroductionState();
-    return state;
-  }
-
-  @Override
   public void navigateToMenuScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, MenuActivity.class);
