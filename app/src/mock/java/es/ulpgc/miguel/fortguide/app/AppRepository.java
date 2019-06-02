@@ -56,6 +56,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_WEEK = "weeks";
   private static final String JSON_ROOT_CHALLENGE = "challenge";
   private static final String JSON_ROOT_ADVICE = "advice";
+  private static final String JSON_ROOT_WEAPON2 = "weapon";
   private static final String JSON_ROOT_SHOP = "https://fortnite-api.theapinetwork.com/store/get";
   private static final String JSON_ROOT_WEAPON = "https://fortnite-public-api.theapinetwork.com/prod09/weapons/get";
   private static final String JSON_ROOT_STATUS = "https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status";
@@ -364,6 +365,40 @@ public class AppRepository implements RepositoryContract {
     } catch (JSONException | IOException error) {
       Log.e(TAG, "error: " + error);
     }
+    return false;
+  }
+
+  private boolean loadWeaponFromJSON2(String json) {
+    Log.e(TAG, "loadWeaponFromJSON()");
+
+    GsonBuilder gsonBuilder = new GsonBuilder();
+    Gson gson = gsonBuilder.create();
+
+    try {
+
+      JSONObject jsonObject = new JSONObject(json);
+      JSONArray jsonArray = jsonObject.getJSONArray(JSON_ROOT_WEAPON2);
+
+      weaponList = new ArrayList<>();
+
+      if (jsonArray.length() > 0) {
+
+        final WeaponItem[] weaponList = gson.fromJson(jsonArray.toString(), WeaponItem[].class);
+
+
+        for (WeaponItem weaponItem : weaponList) {
+          //insertAdviceItem(theoryItem);
+          Log.e(TAG, weaponItem.getId());
+          getWeaponDao().insertWeapon(weaponItem);
+        }
+
+        return true;
+      }
+
+    } catch (JSONException error) {
+      Log.e(TAG, "error: " + error);
+    }
+
     return false;
   }
 
@@ -1041,7 +1076,8 @@ public class AppRepository implements RepositoryContract {
         }
         boolean error = false;
         if (getWeaponDao().loadWeapon().size() == 0) {
-          error = !loadWeaponFromJSON();
+          //error = !loadWeaponFromJSON(); todo: cuando este disponible la API usamos este
+          error = !loadWeaponFromJSON2(loadJSONFromAsset());
         }
         if (callback != null) {
           callback.onWeaponDataFetched(error);
