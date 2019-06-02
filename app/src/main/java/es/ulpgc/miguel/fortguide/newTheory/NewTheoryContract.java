@@ -44,8 +44,7 @@ public interface NewTheoryContract {
     void injectRouter(Router router);
 
     /**
-     * Fetch data (the item) when it is required
-     * It is an async task
+     * Fetch data (viewModel) when it is required
      */
     void fetchData();
 
