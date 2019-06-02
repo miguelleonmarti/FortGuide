@@ -43,22 +43,15 @@ public class NewTheoryModelMockitoTest {
     model = new NewTheoryModel(repositoryMock);
   }
 
-  /*@Test
+  @Test
   public void insertTheory() {
     model.insertTheory("","","",callback);
-    verify(repositoryMock).insertTheory(new TheoryItem(0, "","","","0","0"), callback);
+    verify(repositoryMock).insertTheory("","","", callback);
 
     //model.fetchTheoryListData(callback);
     //verify(repositoryMock).loadTheory(eq(clearFirst), callbackCaptor.capture());
     //callbackCaptor.getValue().onTheoryDataFetched(error);
     //verify(repositoryMock).getTheoryList(callback);
-  }*/
-
-  /*
-    @Override
-  public void insertTheory(String user, String nameTheory, String description, RepositoryContract.InsertTheoryCallback callback){
-    TheoryItem theory = new TheoryItem(0, nameTheory, description, user, "0","0");
-    repository.insertTheory(theory, callback);
   }
-   */
+
 }
