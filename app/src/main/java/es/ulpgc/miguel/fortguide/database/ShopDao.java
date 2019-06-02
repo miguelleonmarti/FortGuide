@@ -24,4 +24,7 @@ public interface ShopDao {
 
   @Query("SELECT * FROM shop")
   List<ShopItem> loadShop();
+
+  @Query("DELETE FROM shop")
+  void deleteAllShop();
 }

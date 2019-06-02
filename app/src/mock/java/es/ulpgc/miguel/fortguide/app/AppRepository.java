@@ -63,7 +63,7 @@ public class AppRepository implements RepositoryContract {
   private static final String JSON_ROOT_ENGLISH_CHALLENGE = "https://fortnite-public-api.theapinetwork.com/prod09/challenges/get?season=current";
   private static final String JSON_ROOT_THEORY = "theory";
 
-  private static final String PASSWORD = "d0dff89c7aee96727216cb8109fa1d74";
+  private static final String PASSWORD = "d0dff89c7aee96727216cb8109fa1d74"; //API KEY
 
   public static AppRepository INSTANCE;
 
@@ -145,38 +145,18 @@ public class AppRepository implements RepositoryContract {
    * @throws JSONException because of 'JSONObject'
    */
   private JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-    /*try (InputStream is = new URL(url).openStream()) {
-      BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-      String jsonText = readAll(rd);
-      return new JSONObject(jsonText); //todo: esto funcionaba con la API anterior
-    }*/
     URL apiURL = new URL(url);
     HttpURLConnection con = (HttpURLConnection) apiURL.openConnection();
     con.setRequestMethod("GET");
-    con.setRequestProperty("Authorization", PASSWORD);
+    con.setRequestProperty("Authorization", PASSWORD); //An authorization key is needed
     BufferedReader rd = new BufferedReader(new InputStreamReader(con.getInputStream(), Charset.forName("UTF-8")));
     String jsonText = readAll(rd);
     return new JSONObject(jsonText);
   }
 
-  /**
-   * -
-   *
-   * @param url api
-   * @return jsonObject
-   * @throws IOException   because of 'readAll(rd)' and 'URL'
-   * @throws JSONException because of 'JSONObject'
-   */
-  private JSONObject readJsonFromUrl2(String url) throws IOException, JSONException {
-    URL apiURL = new URL(url);
-    HttpURLConnection con = (HttpURLConnection) apiURL.openConnection();
-    con.setRequestMethod("GET");
-    con.setRequestProperty("Authorization", PASSWORD);
-    BufferedReader rd = new BufferedReader(new InputStreamReader(con.getInputStream(), Charset.forName("UTF-8")));
-    String jsonText = readAll(rd);
-    return new JSONObject(jsonText);
-  }
-
+  /*---------------------------------------------------------
+  ----------------------- JSON METHODS -------------------
+  ---------------------------------------------------------*/
 
   /**
    * This method load the data needed in the Support screens
@@ -274,10 +254,6 @@ public class AppRepository implements RepositoryContract {
     return false;
   }
 
-  private ChallengesWeeksDao getWeeksDao() {
-    return database.weekDao();
-  }
-
   /**
    * This method load the data needed in the Place screens
    *
@@ -368,8 +344,9 @@ public class AppRepository implements RepositoryContract {
     return false;
   }
 
+  //while the api is not operative, this method replaces the original method
   private boolean loadWeaponFromJSON2(String json) {
-    Log.e(TAG, "loadWeaponFromJSON()");
+    Log.e(TAG, "loadWeaponFromAPI()");
 
     GsonBuilder gsonBuilder = new GsonBuilder();
     Gson gson = gsonBuilder.create();
@@ -407,7 +384,7 @@ public class AppRepository implements RepositoryContract {
    *
    * @return boolean that indicate if the load was successful
    */
-  private boolean loadWeaponFromJSON() {
+  private boolean loadWeaponFromAPI() {
     try {
       JSONObject jsonObject = readJsonFromUrl(JSON_ROOT_WEAPON);
       JSONArray jsonArray = jsonObject.getJSONArray("weapons");
@@ -440,7 +417,7 @@ public class AppRepository implements RepositoryContract {
       Log.e(TAG, "error: " + error);
     }
     return false;
-  }
+  } // it will work when the API works too
 
   /**
    * This method load the data needed in the Theory screens
@@ -546,12 +523,13 @@ public class AppRepository implements RepositoryContract {
     return false;
   }
 
-  // ------------------------------------------------------
+  /*---------------------------------------------------------
+  ----------------------- SUPPORT METHODS -------------------
+  ---------------------------------------------------------*/
 
   private SupportDao getSupportDao() {
     return database.supportDao();
   }
-
 
   @Override
   public void loadSupport(final boolean clearFirst, final FetchSupportDataCallback callback) {
@@ -572,7 +550,6 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-
   /**
    * @param callback needed because of async method
    */
@@ -588,12 +565,13 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  // ------------------------------------------------------------------------------------------------todo: the next 6 methods correspond to Place screens
+  /*---------------------------------------------------------
+  ----------------------- PLACE METHODS ---------------------
+  ---------------------------------------------------------*/
 
   private PlaceDao getPlaceDao() {
     return database.placeDao();
   }
-
 
   @Override
   public void loadPlace(final boolean clearFirst, final FetchPlaceDataCallback callback) {
@@ -614,7 +592,6 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-
   @Override
   public void getPlaceList(final GetPlaceListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -626,7 +603,6 @@ public class AppRepository implements RepositoryContract {
       }
     });
   }
-
 
   @Override
   public void getPlaceItem(final int id, final GetPlaceItemCallback callback) {
@@ -640,8 +616,17 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  // The next 12 methods correspond to Challenge screens
+  /*---------------------------------------------------------
+  ----------------------- CHALLENGE METHODS -----------------
+  ---------------------------------------------------------*/
 
+  private ChallengesWeeksDao getWeeksDao() {
+    return database.weekDao();
+  }
+
+  private ChallengeDao getChallengesDao() {
+    return database.challengeDao();
+  }
 
   @Override
   public void loadWeeks(final boolean clearFirst, final FetchWeeksDataCallback callback) {
@@ -662,70 +647,6 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-
-  @Override
-  public void getChallengeDetailList(final ChallengesWeeksItem challengesWeeksItem, final GetChallengeDetailListCallback callback) {
-    getChallengeDetailList(challengesWeeksItem.getId(), callback);
-  }
-
-
-  @Override
-  public void getChallengeDetailList(final int weeksId, final GetChallengeDetailListCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setChallengeDetailList(getChallengesDao().loadChallenges(weeksId));
-        }
-      }
-    });
-  }
-
-  private ChallengeDao getChallengesDao() {
-    return database.challengeDao();
-  }
-
-
-
-  @Override
-  public void getChallengeDetails(final int id, final GetChallengeDetailCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          //callback.setChallengeDetail(loadChallenge(id));
-        }
-      }
-    });
-  }
-
-
-  @Override
-  public void getWeeksList(final GetWeeksListCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setWeeksItemList(getWeeksDao().loadWeeks());
-        }
-      }
-    });
-  }
-
-
-  @Override
-  public void getWeeksItem(final int id, final GetWeeksItemCallback callback) {
-    AsyncTask.execute(new Runnable() {
-      @Override
-      public void run() {
-        if (callback != null) {
-          callback.setWeeksItem(loadChallengesWeeksItem(id));
-        }
-      }
-    });
-  }
-
-
   @Override
   public void loadChallenges(final boolean clearFirst, final int weeksId, final FetchChallengesDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -745,6 +666,60 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
+  @Override
+  public void getChallengeDetailList(final ChallengesWeeksItem challengesWeeksItem, final GetChallengeDetailListCallback callback) {
+    getChallengeDetailList(challengesWeeksItem.getId(), callback);
+  }
+
+  @Override
+  public void getChallengeDetailList(final int weeksId, final GetChallengeDetailListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setChallengeDetailList(getChallengesDao().loadChallenges(weeksId));
+        }
+      }
+    });
+  }
+
+  // NOT IMPLEMENTED YET
+  @Override
+  public void getChallengeDetails(final int id, final GetChallengeDetailCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          //callback.setChallengeDetail(loadChallenge(id));
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getWeeksList(final GetWeeksListCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setWeeksItemList(getWeeksDao().loadWeeks());
+        }
+      }
+    });
+  }
+
+  @Override
+  public void getWeeksItem(final int id, final GetWeeksItemCallback callback) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        if (callback != null) {
+          callback.setWeeksItem(loadChallengesWeeksItem(id));
+        }
+      }
+    });
+  }
+
   /**
    * @param id because is the primary key of a challengesWeeksItem
    * @return the challengesWeeksItem or null if it does not exist
@@ -758,12 +733,13 @@ public class AppRepository implements RepositoryContract {
     return null;
   }
 
-  //-----------------------------------------------------------todo: The next 6 methods correspond to Advice screens
+  /*---------------------------------------------------------
+  ----------------------- ADVICE METHODS --------------------
+  ---------------------------------------------------------*/
 
   private AdviceDao getAdviceDao() {
     return database.adviceDao();
   }
-
 
   @Override
   public void loadAdvice(final boolean clearFirst, final FetchAdviceDataCallback callback) {
@@ -784,7 +760,6 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-
   @Override
   public void getAdviceList(final AppRepository.GetAdviceListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -797,9 +772,13 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  //The next 6 methods correspoond to Theory screens
+  /*---------------------------------------------------------
+  ----------------------- THEORY METHODS --------------------
+  ---------------------------------------------------------*/
 
-
+  private TheoryDao getTheoryDao() {
+    return database.theoryDao();
+  }
 
   @Override
   public void loadTheory(final boolean clearFirst, final FetchTheoryDataCallback callback) {
@@ -820,7 +799,6 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-
   @Override
   public void getTheoryList(final AppRepository.GetTheoryListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -836,7 +814,7 @@ public class AppRepository implements RepositoryContract {
   @Override
   public void getTheoryItem(int id, GetTheoryItemCallback callback) {
 
-  }
+  } // NOT IMPLEMENTED YET
 
   @Override
   public void insertTheory(final String user, final String nameTheory, final String description, final InsertTheoryCallback callback) {
@@ -850,24 +828,21 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  private TheoryDao getTheoryDao() {
-    return database.theoryDao();
-  }
-
-  // ------------------------------------------------------------------------------------------todo: The next 6 methods correspond to Shop screens
+  /*---------------------------------------------------------
+  ----------------------- SHOP METHODS ----------------------
+  ---------------------------------------------------------*/
 
   private ShopDao getShopDao() {
     return database.shopDao();
   }
-
 
   @Override
   public void loadShop(final boolean clearFirst, final FetchShopDataCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (clearFirst) { //todo: falta poner !
-          database.clearAllTables();
+        if (clearFirst) {
+          getShopDao().deleteAllShop(); // updating the table all the time (it's important)
         }
         boolean error = false;
         if (getShopDao().loadShop().size() == 0) {
@@ -880,7 +855,6 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-
   @Override
   public void getShopList(final AppRepository.GetShopListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -892,7 +866,6 @@ public class AppRepository implements RepositoryContract {
       }
     });
   }
-
 
   @Override
   public void getShopItem(final int id, final AppRepository.GetShopItemCallback callback) {
@@ -913,12 +886,13 @@ public class AppRepository implements RepositoryContract {
     return this.shopList;
   }
 
-  //The next 2 methods correspond to Weapon screens which are ready but not used yet
+  /*---------------------------------------------------------
+  ----------------------- WEAPON METHODS --------------------
+  ---------------------------------------------------------*/
 
   private WeaponDao getWeaponDao() {
     return database.weaponDao();
   }
-
 
   @Override
   public void loadWeapon(final boolean clearFirst, final FetchWeaponDataCallback callback) {
@@ -930,7 +904,7 @@ public class AppRepository implements RepositoryContract {
         }
         boolean error = false;
         if (getWeaponDao().loadWeapon().size() == 0) {
-          //error = !loadWeaponFromJSON(); todo: cuando este disponible la API usamos este
+          //error = !loadWeaponFromAPI(); todo: cuando este disponible la API usamos este
           error = !loadWeaponFromJSON2(loadJSONFromAsset());
         }
         if (callback != null) {
@@ -952,8 +926,9 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  //The next 5 methods correspond to Status screens which are ready but not used
-
+  /*---------------------------------------------------------
+  ----------------------- STATUS METHODS --------------------
+  ---------------------------------------------------------*/
 
   /**
    * @param callback needed because of async method
@@ -995,10 +970,5 @@ public class AppRepository implements RepositoryContract {
   private void setServerStatus(boolean serverStatus) {
     this.serverStatus = serverStatus;
   }
-
-
-  //The next method correspond to the english challenges which is ready but not used)
-
-
 }
 
