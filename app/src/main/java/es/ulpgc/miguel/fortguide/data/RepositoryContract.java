@@ -33,11 +33,16 @@ public interface RepositoryContract {
     void setSupportItem(SupportItem supportItem);
   }
 
+  /**
+   * @param callback needed because of async method
+   */
   void loadSupport(final boolean clearFirst, AppRepository.FetchSupportDataCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getSupportList(AppRepository.GetSupportListCallback callback);
 
-  void getSupportItem(int id, AppRepository.GetSupportItemCallback callback);
 
   // callbacks and methods of Weapon
 
@@ -79,18 +84,44 @@ public interface RepositoryContract {
     void setWeeksItem(ChallengesWeeksItem challengesWeeksItem);
   }
 
+  /**
+   * @param callback needed because of async method
+   */
   void loadWeeks(final boolean clearFirst, AppRepository.FetchWeeksDataCallback callback);
 
+  /**
+   * @param weekId in order to do more efficient searches
+   * @return the list of challenges
+   */
   void loadChallenges(final boolean clearFirst, final int weekId, AppRepository.FetchChallengesDataCallback callback);
 
+  /**
+   * @param challengesWeeksItem challenges of a week
+   * @param callback            needed because of async method
+   */
   void getChallengeDetailList(ChallengesWeeksItem challengesWeeksItem, AppRepository.GetChallengeDetailListCallback callback);
 
+  /**
+   * @param weeksId  in order to do more efficient searches
+   * @param callback needed because of async method
+   */
   void getChallengeDetailList(int weeksId, AppRepository.GetChallengeDetailListCallback callback);
 
+  /**
+   * @param id       in order to do more efficient searches
+   * @param callback needed because of async method
+   */
   void getChallengeDetails(int id, AppRepository.GetChallengeDetailCallback callback);
 
+  /**
+   * @param id       in order to do more efficient searches
+   * @param callback needed because of async method
+   */
   void getWeeksItem(int id, AppRepository.GetWeeksItemCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getWeeksList(AppRepository.GetWeeksListCallback callback);
 
   // callbacks and methods of Place
@@ -107,10 +138,20 @@ public interface RepositoryContract {
     void setPlaceItem(SupportItem supportItem);
   }
 
+  /**
+   * @param callback needed because of async method
+   */
   void loadPlace(final boolean clearFirst, AppRepository.FetchPlaceDataCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getPlaceList(AppRepository.GetPlaceListCallback callback);
 
+  /**
+   * @param id       because is the primary key of a challengesWeeksItem
+   * @param callback needed because of async method
+   */
   void getPlaceItem(int id, AppRepository.GetPlaceItemCallback callback);
 
   // callbacks and methods of Advice
@@ -127,11 +168,15 @@ public interface RepositoryContract {
     void setAdviceItem(AdviceItem adviceItem);
   }
 
+  /**
+   * @param callback needed because of async method
+   */
   void loadAdvice (final boolean clearFirst, AppRepository.FetchAdviceDataCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getAdviceList(AppRepository.GetAdviceListCallback callback);
-
-  void getAdviceItem(int id, AppRepository.GetAdviceItemCallback callback);
 
   // callbacks and methods of Shop
 
@@ -147,10 +192,20 @@ public interface RepositoryContract {
     void setShopItem(ShopItem shopItem);
   }
 
+  /**
+   * @param callback needed because of async method
+   */
   void loadShop(final boolean clearFirst, AppRepository.FetchShopDataCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getShopList(AppRepository.GetShopListCallback callback);
 
+  /**
+   * @param id       because is the primary key of a shopItem
+   * @param callback needed because of async method
+   */
   void getShopItem(int id, AppRepository.GetShopItemCallback callback);
 
   // callbacks and methods of Theory
@@ -163,16 +218,22 @@ public interface RepositoryContract {
     void setTheoryList(List<TheoryItem> theoryList);
   }
 
-  interface GetTheoryItemCallback{
-    void setTheoryItem(TheoryItem theoryItem);
-  }
-
   interface InsertTheoryCallback{
     void theoryInserted();
   }
 
+  interface GetTheoryItemCallback{
+    void setTheoryItem(TheoryItem theoryItem);
+  }
+
+  /**
+   * @param callback needed because of async method
+   */
   void loadTheory (final boolean clearFirst, AppRepository.FetchTheoryDataCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getTheoryList(AppRepository.GetTheoryListCallback callback);
 
   void getTheoryItem(int id, AppRepository.GetTheoryItemCallback callback);

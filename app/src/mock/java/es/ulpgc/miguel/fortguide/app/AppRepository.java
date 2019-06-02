@@ -552,9 +552,7 @@ public class AppRepository implements RepositoryContract {
     return database.supportDao();
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void loadSupport(final boolean clearFirst, final FetchSupportDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -590,38 +588,13 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param id       of the SupportItem
-   * @param callback needed because of async method
-   */
-  @Override
-  public void getSupportItem(int id, AppRepository.GetSupportItemCallback callback) {
-
-  }
-
-  /**
-   * @param supportItem a new item
-   */
-  private void insertSupportItem(SupportItem supportItem) {
-    supportList.add(supportItem);
-  }
-
-  /**
-   * @return the supportList
-   */
-  private List<SupportItem> loadSupportList() {
-    return this.supportList;
-  }
-
   // ------------------------------------------------------------------------------------------------todo: the next 6 methods correspond to Place screens
 
   private PlaceDao getPlaceDao() {
     return database.placeDao();
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void loadPlace(final boolean clearFirst, final FetchPlaceDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -641,9 +614,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getPlaceList(final GetPlaceListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -656,10 +627,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param id       because is the primary key of a challengesWeeksItem
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getPlaceItem(final int id, final GetPlaceItemCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -672,25 +640,9 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param placeItem a new placeItem
-   */
-  private void insertPlaceItem(PlaceItem placeItem) {
-    placeList.add(placeItem);
-  }
-
-  /**
-   * @return the list of places
-   */
-  private List<PlaceItem> loadPlaceList() {
-    return this.placeList;
-  }
-
   // The next 12 methods correspond to Challenge screens
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void loadWeeks(final boolean clearFirst, final FetchWeeksDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -710,19 +662,13 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param challengesWeeksItem challenges of a week
-   * @param callback            needed because of async method
-   */
+
   @Override
   public void getChallengeDetailList(final ChallengesWeeksItem challengesWeeksItem, final GetChallengeDetailListCallback callback) {
     getChallengeDetailList(challengesWeeksItem.getId(), callback);
   }
 
-  /**
-   * @param weeksId  in order to do more efficient searches
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getChallengeDetailList(final int weeksId, final GetChallengeDetailListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -740,10 +686,7 @@ public class AppRepository implements RepositoryContract {
   }
 
 
-  /**
-   * @param id       in order to do more efficient searches
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getChallengeDetails(final int id, final GetChallengeDetailCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -756,9 +699,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getWeeksList(final GetWeeksListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -771,10 +712,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param id       in order to do more efficient searches
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getWeeksItem(final int id, final GetWeeksItemCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -787,10 +725,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param weeksId in order to do more efficient searches
-   * @return the list of challenges
-   */
+
   @Override
   public void loadChallenges(final boolean clearFirst, final int weeksId, final FetchChallengesDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -823,30 +758,13 @@ public class AppRepository implements RepositoryContract {
     return null;
   }
 
-  /**
-   * @param challengesWeeksItem a new challengesWeeksItem
-   */
-  private void insertWeeksItem(ChallengesWeeksItem challengesWeeksItem) {
-    challengeList.add(challengesWeeksItem);
-  }
-
-  /**
-   * @return the list of challengesWeeksItem
-   */
-  private List<ChallengesWeeksItem> loadWeeksList() {
-    return challengeList;
-  }
-
-
   //-----------------------------------------------------------todo: The next 6 methods correspond to Advice screens
 
   private AdviceDao getAdviceDao() {
     return database.adviceDao();
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void loadAdvice(final boolean clearFirst, final FetchAdviceDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -866,9 +784,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getAdviceList(final AppRepository.GetAdviceListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -881,37 +797,10 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * IT IS NOT IMPLEMENTED
-   *
-   * @param id       because is the primary key of an adviceItem
-   * @param callback needed because of async method
-   */
-  @Override
-  public void getAdviceItem(int id, AppRepository.GetAdviceItemCallback callback) {
-
-  }
-
-  /**
-   * @param adviceItem a new item
-   */
-  private void insertAdviceItem(AdviceItem adviceItem) {
-    adviceList.add(adviceItem);
-  }
-
-  /**
-   * @return the list of advices after fetching the data
-   */
-  private List<AdviceItem> loadAdviceList() {
-    return this.adviceList;
-  }
-
   //The next 6 methods correspoond to Theory screens
 
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void loadTheory(final boolean clearFirst, final FetchTheoryDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -931,9 +820,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getTheoryList(final AppRepository.GetTheoryListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -946,14 +833,10 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param id       because is the primary key of a theoryItem
-   * @param callback needed because of async method
-   */
   @Override
-  public void getTheoryItem(int id, AppRepository.GetTheoryItemCallback callback) {
+  public void getTheoryItem(int id, GetTheoryItemCallback callback) {
 
-  } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
+  }
 
   @Override
   public void insertTheory(final String user, final String nameTheory, final String description, final InsertTheoryCallback callback) {
@@ -971,29 +854,13 @@ public class AppRepository implements RepositoryContract {
     return database.theoryDao();
   }
 
-  /**
-   * @param theoryItem a new item
-   */
-  private void insertAdviceItem(TheoryItem theoryItem) {
-    theoryList.add(theoryItem);
-  }
-
-  /**
-   * @return the theoryItem list
-   */
-  private List<TheoryItem> loadTheoryList() {
-    return this.theoryList;
-  }
-
   // ------------------------------------------------------------------------------------------todo: The next 6 methods correspond to Shop screens
 
   private ShopDao getShopDao() {
     return database.shopDao();
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void loadShop(final boolean clearFirst, final FetchShopDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -1013,9 +880,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getShopList(final AppRepository.GetShopListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -1028,10 +893,7 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param id       because is the primary key of a shopItem
-   * @param callback needed because of async method
-   */
+
   @Override
   public void getShopItem(final int id, final AppRepository.GetShopItemCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -1049,13 +911,6 @@ public class AppRepository implements RepositoryContract {
    */
   private List<ShopItem> loadShopList() {
     return this.shopList;
-  }
-
-  /**
-   * @param shopItem a new item
-   */
-  private void insertShopItem(ShopItem shopItem) {
-    shopList.add(shopItem);
   }
 
   //The next 2 methods correspond to Weapon screens which are ready but not used yet
