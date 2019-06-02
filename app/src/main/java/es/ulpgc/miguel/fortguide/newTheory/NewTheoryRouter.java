@@ -17,13 +17,6 @@ public class NewTheoryRouter implements NewTheoryContract.Router {
   }
 
   @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, NewTheoryActivity.class);
-    context.startActivity(intent);
-  }
-
-  @Override
   public void passDataToNextScreen(NewTheoryState state) {
     mediator.setNewTheoryState(state);
   }
