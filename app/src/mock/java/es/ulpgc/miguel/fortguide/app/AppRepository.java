@@ -956,11 +956,12 @@ public class AppRepository implements RepositoryContract {
   } //TODO: NO ESTA IMPLEMENTADO AUNQUE NO HACE FALTA
 
   @Override
-  public void insertTheory(final TheoryItem theory, final InsertTheoryCallback callback) {
+  public void insertTheory(final String user, final String nameTheory, final String description, final InsertTheoryCallback callback) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        getTheoryDao().insertTheory(theory);
+        int id = getTheoryDao().loadTheory().size()+1;
+        getTheoryDao().insertTheory(new TheoryItem(id, nameTheory, description, user, "0", "0"));
         callback.theoryInserted();
       }
     });

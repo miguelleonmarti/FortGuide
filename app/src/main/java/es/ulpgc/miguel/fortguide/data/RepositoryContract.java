@@ -177,5 +177,5 @@ public interface RepositoryContract {
 
   void getTheoryItem(int id, AppRepository.GetTheoryItemCallback callback);
 
-  void insertTheory(TheoryItem theory, AppRepository.InsertTheoryCallback callback);
+  void insertTheory(String user, String nameTheory, String description, AppRepository.InsertTheoryCallback callback);
 }

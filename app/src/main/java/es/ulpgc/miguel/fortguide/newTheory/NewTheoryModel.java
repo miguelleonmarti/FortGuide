@@ -14,7 +14,6 @@ public class NewTheoryModel implements NewTheoryContract.Model {
 
   @Override
   public void insertTheory(String user, String nameTheory, String description, RepositoryContract.InsertTheoryCallback callback){
-    //TheoryItem theory = new TheoryItem(0, nameTheory, description, user, "0","0");
-    repository.insertTheory(new TheoryItem(0, nameTheory, description, user, "0","0"), callback);
+    repository.insertTheory(user, nameTheory, description, callback);
   }
 }
