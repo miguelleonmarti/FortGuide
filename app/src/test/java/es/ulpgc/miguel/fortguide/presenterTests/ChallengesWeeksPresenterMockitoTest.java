@@ -55,9 +55,8 @@ public class ChallengesWeeksPresenterMockitoTest {
 
   @Test
   public void goToChallengeDetailListScreen() {
-    ChallengesWeeksItem challengesWeeksItem = new ChallengesWeeksItem(1, "", "", null);
-    presenter.selectWeeksListData(challengesWeeksItem);
-    verify(routerMock).passDataToChallengeDetailsScreen(challengesWeeksItem);
+    presenter.selectWeeksListData(1);
+    verify(routerMock).passDataToChallengeDetailsScreen(1);
     verify(routerMock).navigateToChallengeDetailsScreen();
   }
 

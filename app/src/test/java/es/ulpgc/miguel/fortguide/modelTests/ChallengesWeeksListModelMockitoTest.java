@@ -36,6 +36,7 @@ public class ChallengesWeeksListModelMockitoTest {
     }
   };
 
+  private static final boolean clearFirst = true;
   private static final boolean error = false;
 
   @Before
@@ -46,7 +47,7 @@ public class ChallengesWeeksListModelMockitoTest {
   @Test
   public void fetchDataAsyncTask() {
     model.fetchWeeksListData(callback);
-    verify(repositoryMock).loadWeeks(callbackCaptor.capture());
+    verify(repositoryMock).loadWeeks(eq(clearFirst), callbackCaptor.capture());
     callbackCaptor.getValue().onWeeksDataFetched(error);
     verify(repositoryMock).getWeeksList(callback);
   }
