@@ -25,7 +25,6 @@ public interface AdviceDetailContract {
   }
 
   interface Model {
-    String fetchData();
   }
 
   interface Router {
