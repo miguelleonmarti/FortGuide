@@ -26,19 +26,8 @@ public class ChallengesDetailListRouter implements ChallengesDetailListContract.
   }
 
   @Override
-  public void passDataToNextScreen(ChallengeItem item) {
-    mediator.setChallengeItem(item);
-  }
-
-  @Override
   public int getDataFromWeeksListScreen() {
     return mediator.getWeekId();
   }
 
-  @Override
-  public void navigateToChallengeDetailScreen(){
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ChallengesDetailListActivity.class);
-    context.startActivity(intent);
-  }
 }
