@@ -963,7 +963,7 @@ public class AppRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if (!clearFirst) { //todo: falta poner !
+        if (clearFirst) { //todo: falta poner !
           database.clearAllTables();
         }
         boolean error = false;
