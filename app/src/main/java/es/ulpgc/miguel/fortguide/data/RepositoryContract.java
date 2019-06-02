@@ -7,16 +7,28 @@ public interface RepositoryContract {
 
   // callback and methods of Menu
 
+  /**
+   * @param
+   */
   interface FetchServerStatusCallback {
     void onServerStatusFetch(boolean error);
   }
 
+  /**
+   * @param
+   */
   interface GetServerStatusCallback {
     void setStatus(boolean status);
   }
 
+  /**
+   * @param callback needed because of async method
+   */
   void loadServerStatus(RepositoryContract.FetchServerStatusCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getServerStatus(RepositoryContract.GetServerStatusCallback callback);
 
   // callbacks and methods of Support

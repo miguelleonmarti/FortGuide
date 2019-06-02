@@ -25,7 +25,6 @@ public interface TheoryDetailContract {
   }
 
   interface Model {
-    String fetchData();
   }
 
   interface Router {
