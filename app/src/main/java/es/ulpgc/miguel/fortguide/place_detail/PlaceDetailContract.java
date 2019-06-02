@@ -55,6 +55,9 @@ public interface PlaceDetailContract {
   }
 
   interface Router {
+    /**
+     * Intent to the menu screen
+     */
     void navigateToMenuScreen();
 
     /**

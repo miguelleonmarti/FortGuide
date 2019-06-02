@@ -51,7 +51,7 @@ public interface ChallengesWeeksListContract {
     /**
      * When an item (challengeWeeks) is pressed it tells the router
      * what to pass to next screen
-     * @param weekId ChallengeItem
+     * @param weekId int
      */
     void selectWeeksListData(int weekId);
 
@@ -81,7 +81,7 @@ public interface ChallengesWeeksListContract {
     /**
      * Used to pass the id of the week item selected on the list to the
      * next screen
-     * @param weekId ChallengeItem
+     * @param weekId int
      */
     void passDataToChallengeDetailsScreen(int weekId);
 

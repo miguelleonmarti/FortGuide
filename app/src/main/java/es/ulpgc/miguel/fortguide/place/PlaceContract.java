@@ -76,7 +76,7 @@ public interface PlaceContract {
     void navigateToPlaceDetailScreen();
 
     /**
-     * Used to pass the advice item selected on the list to the
+        * Used to pass the advice item selected on the list to the
      * next screen
      * @param placeItem PlaceItem
      */
