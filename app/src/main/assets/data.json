@@ -1023,7 +1023,7 @@
       "damageHead": "46",
       "dps": "155.2",
       "fireRate": "6.75",
-      "reload": "1.5",
+      "reload": "1.5s",
       "size": "16",
       "ammo": "1"
     },
