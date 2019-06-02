@@ -919,9 +919,7 @@ public class AppRepository implements RepositoryContract {
     return database.weaponDao();
   }
 
-  /**
-   * @param callback needed because of async method
-   */
+
   @Override
   public void loadWeapon(final boolean clearFirst, final FetchWeaponDataCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -942,9 +940,6 @@ public class AppRepository implements RepositoryContract {
     });
   }
 
-  /**
-   * @param callback needed because of async method
-   */
   @Override
   public void getWeaponList(final String rarity, final AppRepository.GetWeaponListCallback callback) {
     AsyncTask.execute(new Runnable() {
@@ -955,20 +950,6 @@ public class AppRepository implements RepositoryContract {
         }
       }
     });
-  }
-
-  /**
-   * @return the weapon list after fetching the data
-   */
-  private List<WeaponItem> loadWeaponList() {
-    return this.weaponList;
-  }
-
-  /**
-   * @param weaponItem a new item
-   */
-  private void insertWeaponItem(WeaponItem weaponItem) {
-    weaponList.add(weaponItem);
   }
 
   //The next 5 methods correspond to Status screens which are ready but not used

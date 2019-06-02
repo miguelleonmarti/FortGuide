@@ -54,8 +54,14 @@ public interface RepositoryContract {
     void setWeaponList(List<WeaponItem> weaponList);
   }
 
+  /**
+   * @param callback needed because of async method
+   */
   void loadWeapon(final boolean clearFirst, AppRepository.FetchWeaponDataCallback callback);
 
+  /**
+   * @param callback needed because of async method
+   */
   void getWeaponList(String rarity, AppRepository.GetWeaponListCallback callback);
 
   // callbacks and methods of Challenge
