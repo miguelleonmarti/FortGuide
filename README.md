@@ -1,5 +1,5 @@
 
-# FortGuide
+# FortGuide (currently it does not work because it is necessary to pay for the API)
 A Fortnite tracker app made by three students of Telecommunications Enginnering of ULPGC. 
 ## Description
 - Find out the brand new skins on the item shop.
